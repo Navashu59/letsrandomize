@@ -46,3 +46,27 @@ Next Measurement:
   - team/group
   - word/letter/name
 - Do not judge the cycle by page count or a single query movement.
+
+Follow-up Observation Checklist:
+
+- Use this cycle as the post-change baseline for the edited pages.
+- Compare GSC data against the 2026-04-27 to 2026-05-25 baseline.
+- For `/tools/list-randomizer/`, do not judge only by average position. Track whether the existing high-impression queries gain clicks or CTR:
+  - `list randomizer`
+  - `random order generator`
+  - `random list generator`
+  - `randomise a list`
+  - `random list maker`
+  - `random name order generator`
+- For `/tools/random-team-generator/`, watch whether impressions and positions improve for:
+  - `team randomizer`
+  - `random group generator`
+  - `random team generator`
+  - `classroom team generator`
+  - `PE team generator`
+- For `/guides/how-to-create-balanced-teams/`, watch whether it continues to rank as a support page and whether clicks or impressions grow around balanced teams, random teams, classroom groups, and PE groups.
+- For `/tools/random-letter-generator/`, watch the specific opportunity around `eight random lowercase letters` and related lowercase/count queries.
+- For `/tools/random-name-generator/`, watch whether the new distinction between generated names and `random name order generator` helps pass clearer intent to `/tools/list-randomizer/`.
+- If impressions rise but CTR stays weak, the next action should be title/meta testing, not more body copy.
+- If average position improves into positions 5-12 but clicks remain low, prioritize snippet clarity and above-the-fold copy.
+- If impressions do not move after 14-21 days, revisit whether support pages or new long-tail pages are needed.
