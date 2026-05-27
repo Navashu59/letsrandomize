@@ -40,6 +40,10 @@ Required GitHub repository secrets:
 - `CLOUDFLARE_API_TOKEN`
 - `CLOUDFLARE_ACCOUNT_ID`
 
+## Deferred Maintenance
+
+- Upgrade GitHub Actions workflow/action versions when there is idle capacity. The initial deploy run on 2026-05-27 succeeded, but GitHub reported a Node.js 20 deprecation warning for `actions/checkout@v4` and `cloudflare/wrangler-action@v3`.
+
 ## Manual Deploy
 
 From this repository root:
