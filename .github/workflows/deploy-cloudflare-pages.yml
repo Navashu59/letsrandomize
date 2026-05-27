@@ -1,0 +1,35 @@
+name: Deploy Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: letsrandomize-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy public directory
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify static output
+        run: |
+          test -f public/index.html
+          test -f public/sitemap.xml
+          test -f public/robots.txt
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=letsrandomize --commit-dirty=true

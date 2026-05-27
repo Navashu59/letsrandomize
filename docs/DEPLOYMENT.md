@@ -7,25 +7,37 @@
 | Field | Value |
 |---|---|
 | Cloudflare Pages project | `letsrandomize` |
-| Git Provider | `No` |
+| Cloudflare Git Provider | `No` |
+| GitHub-triggered deploy | `Yes, via GitHub Actions` |
 | Publish directory | `public` |
 | Production domain | `letsrandomize.org` |
 | Latest verified deploy | `https://7b443e2d.letsrandomize.pages.dev` |
 | Verification date | 2026-05-27 |
 
-Cloudflare currently does not use a Git provider for this project. Deployments have been made through Wrangler/CLI from the SEO Revenue System monorepo.
+Cloudflare currently does not use its native Git provider for this project. The project was created as a Direct Uploads Pages project, and Cloudflare API returned this restriction on 2026-05-27:
 
-## Recommended Target
+```text
+You cannot update the `source` object in a Direct Uploads project.
+```
 
-Connect this repository to Cloudflare Pages:
+To avoid changing domains or recreating the production Pages project, GitHub now deploys to the existing `letsrandomize` project through GitHub Actions and Wrangler.
+
+## Active Deploy Path
+
+On every push to `main`, GitHub Actions deploys this repository to Cloudflare Pages:
 
 ```text
 GitHub: Navashu59/letsrandomize
 Cloudflare project: letsrandomize
-Build command: none
 Publish directory: public
 Production branch: main
+Workflow: .github/workflows/deploy-cloudflare-pages.yml
 ```
+
+Required GitHub repository secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
 
 ## Manual Deploy
 
