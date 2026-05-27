@@ -156,3 +156,51 @@ Next measurement:
 - If impressions rise but CTR remains weak, test title/meta next.
 - If positions improve but clicks remain low, sharpen above-the-fold answer copy.
 - If there is no impression movement after 14-21 days, consider one focused support page only where the query intent is clearly separate from the tool page.
+
+## 2026-05-27 - SERP Gap Batch for Priority 1 and 2 Pages
+
+Target pages:
+
+- `/tools/reaction-time-test/`
+  - Baseline: 1,035 impressions, 5 clicks, 0.5% CTR, average position 14.6.
+  - Watch terms: `170ms reaction time`, `is 170ms reaction time good`, `140ms reaction time`, `330 ms reaction time`, `is 330 ms reaction time good`, `reaction time test audio`.
+- `/tools/chimp-test/`
+  - Baseline: 562 impressions, 8 clicks, 1.4% CTR, average position 12.8.
+  - Watch terms: `are you smarter than a chimpanzee test`, `are you smarter than a chimp`, `smarter than a chimp test`, `chimp test`.
+- `/tools/random-color-generator/`
+  - Baseline: 148 impressions, 3 clicks, 2.0% CTR, average position 16.5.
+  - Watch terms: `random hex color generator`, `random hex color`.
+- `/tools/aim-trainer/`
+  - Baseline: 513 impressions, 2 clicks, 0.4% CTR, average position 21.0.
+  - Watch terms: `aim trainer online`, `aim test online`, `mouse aim trainer`, `average time per target`.
+- `/tools/random-number-generator/`
+  - Baseline: 4,824 impressions, 61 clicks, 1.3% CTR, average position 21.6.
+  - Watch terms: `random number 1-26`, `number randomizer`, `random number picker`, `random numbers generator`.
+- `/tools/random-password-generator/`
+  - Baseline: 4,446 impressions, 0 clicks, 0.0% CTR, average position 61.9.
+  - Watch terms: `random password generator`, `generate random password`, `secure random password generator`, `create random password`.
+
+SERP gap used:
+
+- GSC query/page data identified page-specific query gaps and ranking ranges.
+- SEMrush was used as a secondary check where available.
+- Current SERP review confirmed that these pages need clearer exact-intent blocks:
+  - score interpretation for reaction time, chimp, and aim tests,
+  - hex/CSS usage for random color,
+  - range and no-repeat picker language for random number,
+  - password length, entropy, and browser-only generation for password.
+- DeepSeek generated first-pass copy, then final content was rewritten and scoped manually.
+
+Actions:
+
+- Added concise support sections and FAQ entries for all six pages.
+- Updated titles/meta where the observed SERP intent was clearer than the old snippet.
+- Synced JSON-LD FAQ data and `dateModified` to `2026-05-27`.
+- Kept tool behavior unchanged.
+
+Next measurement:
+
+- Observe after 7-14 days in GSC before editing these same pages again.
+- For priority 1 pages, judge mainly by movement in positions 5-20 and CTR lift.
+- For priority 2 pages, judge first by new exact-query impressions and only then by average position.
+- For `/tools/random-password-generator/`, expect slower movement because baseline position is around 60; this page may need a larger authority/internal-link pass after observation.
