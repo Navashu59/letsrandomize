@@ -13,6 +13,7 @@
 | Production domain | `letsrandomize.org` |
 | Initial GitHub Actions verified deploy | `https://6aadc505.letsrandomize.pages.dev` |
 | Initial GitHub Actions run | `26499580253` |
+| Latest content deploy verified | 2026-05-27, commit `bedcb06`, deploy `https://5ffa9d4b.letsrandomize.pages.dev` |
 | Verification date | 2026-05-27 |
 
 Cloudflare currently does not use its native Git provider for this project. The project was created as a Direct Uploads Pages project, and Cloudflare API returned this restriction on 2026-05-27:
@@ -22,6 +23,8 @@ You cannot update the `source` object in a Direct Uploads project.
 ```
 
 To avoid changing domains or recreating the production Pages project, GitHub now deploys to the existing `letsrandomize` project through GitHub Actions and Wrangler.
+
+The first real content update from this independent repository was verified on 2026-05-27: `/tools/list-randomizer/` was updated in commit `bedcb06`, deployed by GitHub Actions run `26500918688`, and confirmed live on `https://letsrandomize.org/tools/list-randomizer/`.
 
 ## Active Deploy Path
 
