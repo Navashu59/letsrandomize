@@ -70,3 +70,42 @@ Follow-up Observation Checklist:
 - If impressions rise but CTR stays weak, the next action should be title/meta testing, not more body copy.
 - If average position improves into positions 5-12 but clicks remain low, prioritize snippet clarity and above-the-fold copy.
 - If impressions do not move after 14-21 days, revisit whether support pages or new long-tail pages are needed.
+
+## 2026-05-27 - GSC-Driven SERP Gap Refresh Test
+
+Target:
+
+- Page: `/tools/random-letter-generator/`
+- GSC evidence: 28-day page data showed 1,242 impressions, 10 clicks, 0.8% CTR, and average position 14.9.
+- Query evidence included `random letter generator`, `eight random lowercase letters`, `random 3 letter generator`, and `a-z randomizer`.
+
+SERP gap used:
+
+- Current SERP competitors for random letter queries commonly expose controls or explanations for repeated vs. unique letters and excluding specific letters.
+- The existing LetsRandomize page already covered lowercase/count/vowel/consonant intent, but did not offer a no-repeat draw or custom excluded-letter pool.
+
+Actions:
+
+- Added an `Exclude Letters` input.
+- Added a `No repeated letters` checkbox.
+- Updated the generator logic so unique draws remove picked letters from the available pool.
+- Added empty-pool handling when exclusions remove all available letters.
+- Added original content sections:
+  - `Repeated vs. Unique Random Letters`
+  - `How to Exclude Letters`
+- Expanded FAQ and JSON-LD FAQ coverage for no-repeat and excluded-letter use cases.
+- Updated meta description and SoftwareApplication description to reflect the new functional options.
+
+Validation:
+
+- JSON-LD parsed successfully.
+- Local browser test verified:
+  - 8 unique lowercase letters can be generated.
+  - excluded vowels are not returned when `AEIOU` is excluded.
+  - a clear message appears when all letters are excluded.
+
+Next measurement:
+
+- Observe 7-14 days in GSC.
+- Compare query/page movement for `random letter generator`, `eight random lowercase letters`, `random 3 letter generator`, `a-z randomizer`, `random letters no repeats`, and excluded-letter variants if they appear.
+- If impressions increase but CTR stays weak, test title/meta next instead of adding more body copy.
