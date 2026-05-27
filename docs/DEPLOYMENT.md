@@ -10,6 +10,8 @@
 | Git Provider | `No` |
 | Publish directory | `public` |
 | Production domain | `letsrandomize.org` |
+| Latest verified deploy | `https://7b443e2d.letsrandomize.pages.dev` |
+| Verification date | 2026-05-27 |
 
 Cloudflare currently does not use a Git provider for this project. Deployments have been made through Wrangler/CLI from the SEO Revenue System monorepo.
 
@@ -35,6 +37,8 @@ bash scripts/deploy.sh
 
 The script deploys `public/` to the `letsrandomize` Cloudflare Pages project.
 
+This path was verified on 2026-05-27.
+
 ## Pre-Deploy Checks
 
 - `public/index.html` exists
@@ -43,4 +47,3 @@ The script deploys `public/` to the `letsrandomize` Cloudflare Pages project.
 - `public/_redirects` exists
 - no secrets are present
 - `.env` is local-only and ignored by git
-
