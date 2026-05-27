@@ -11,7 +11,8 @@
 | GitHub-triggered deploy | `Yes, via GitHub Actions` |
 | Publish directory | `public` |
 | Production domain | `letsrandomize.org` |
-| Latest verified deploy | `https://7b443e2d.letsrandomize.pages.dev` |
+| Initial GitHub Actions verified deploy | `https://6aadc505.letsrandomize.pages.dev` |
+| Initial GitHub Actions run | `26499580253` |
 | Verification date | 2026-05-27 |
 
 Cloudflare currently does not use its native Git provider for this project. The project was created as a Direct Uploads Pages project, and Cloudflare API returned this restriction on 2026-05-27:
