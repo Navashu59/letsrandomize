@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spin the Wheel - Free Random Wheel Spinner &amp; Picker</title>
+<meta name="description" content="Add your choices, spin the wheel, get a random pick instantly. Customize colors, remove winners after each spin.">
+<meta name="keywords" content="spin the wheel, wheel spinner, random wheel, picker wheel, spin wheel, random picker, wheel of names, decision wheel">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/spin-the-wheel/">
+<meta property="og:title" content="Spin the Wheel - Free Random Wheel Spinner &amp; Picker">
+<meta property="og:description" content="Spin the wheel to make random decisions! Free online wheel spinner. Add your choices, spin, and let the wheel decide.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Spin the Wheel - Free Random Wheel Spinner &amp; Picker">
+<meta property="og:url" content="https://letsrandomize.org/tools/spin-the-wheel/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Spin the Wheel - Random Wheel Spinner","url":"https://letsrandomize.org/tools/spin-the-wheel/","applicationCategory":"UtilityApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online wheel spinner for random decisions. Add your choices, spin the wheel, and let it pick for you.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-14","dateModified":"2026-03-04"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"Spin the Wheel","item":"https://letsrandomize.org/tools/spin-the-wheel/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the wheel spinner truly random?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our wheel spinner uses JavaScript's cryptographic random number generator (crypto.getRandomValues) to ensure each spin is truly random and fair."}},{"@type":"Question","name":"Can I use this for classroom activities?","acceptedAnswer":{"@type":"Answer","text":"Absolutely! Teachers commonly use our wheel spinner to pick students randomly, assign groups, or choose classroom activities. Just type student names and spin."}},{"@type":"Question","name":"How many options can I add to the wheel?","acceptedAnswer":{"@type":"Answer","text":"You can add up to 100 options to the wheel. The wheel automatically adjusts the size of each segment to fit all your choices."}},{"@type":"Question","name":"Can I remove a winner after each spin?","acceptedAnswer":{"@type":"Answer","text":"Yes! Enable the 'Remove winner after spin' option and each selected entry will be automatically removed from the wheel for the next spin."}},{"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, our wheel spinner is 100% free with no sign-up required. There are no limits on how many times you can spin."}}]},{"@context":"https://schema.org","@type":"Article","headline":"Spin the Wheel - Random Wheel Spinner","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize"},"datePublished":"2026-02-14","dateModified":"2026-03-04"}]
+</script>
+<style>
+/* === Spin the Wheel — Page-Specific Styles === */
+
+/* Wheel layout: side-by-side on desktop, stacked on mobile */
+.wheel-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .wheel-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .wheel-layout .wheel-side { flex: 0 0 auto; }
+  .wheel-layout .controls-side { flex: 1 1 0; min-width: 0; }
+}
+
+/* Wheel canvas area */
+.wheel-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.wheel-outer {
+  position: relative;
+  display: inline-block;
+}
+#wheel-canvas {
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.13), 0 0 0 6px #111827, 0 0 0 10px #e5e7eb;
+}
+/* Pointer (triangle at top) */
+.wheel-pointer-svg {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+  width: 36px;
+  height: 36px;
+}
+
+/* Spin button overlay on center */
+.wheel-center-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 2;
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wheel-center-btn:hover { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 4px 16px rgba(0,0,0,0.35); }
+.wheel-center-btn:active { transform: translate(-50%, -50%) scale(0.96); }
+.wheel-center-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Big spin button below wheel (mobile-first) */
+#spin-btn {
+  font-size: 1.15rem;
+  padding: 0.875rem 2rem;
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 12px rgba(16,185,129,0.35);
+}
+#spin-btn:hover { background: linear-gradient(135deg, #059669, #047857); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
+#spin-btn:active { transform: translateY(0); }
+#spin-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Controls panel */
+.controls-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.controls-panel textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  color: #1f2937;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 140px;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+.controls-panel textarea:focus {
+  border-color: #10b981;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.1);
+  outline: none;
+}
+
+/* Toolbar row */
+.entry-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.entry-count {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.toolbar-btn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.toolbar-btn:hover { border-color: #10b981; color: #059669; background: #ecfdf5; }
+
+/* Checkbox options */
+.option-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+.option-checks label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #374151;
+  cursor: pointer;
+}
+.option-checks input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #10b981;
+  cursor: pointer;
+}
+
+/* Extra buttons row (fullscreen, sound, etc.) */
+.extra-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+.icon-btn {
+  padding: 0.4rem 0.65rem;
+  font-size: 0.85rem;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.icon-btn:hover { border-color: #10b981; color: #059669; background: #ecfdf5; }
+.icon-btn.active { background: #ecfdf5; border-color: #10b981; color: #059669; }
+
+/* Winner announcement */
+.winner-display {
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 2px solid #10b981;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: winner-pop 0.4s ease;
+}
+@keyframes winner-pop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.winner-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #059669;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.winner-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #065f46;
+  word-break: break-word;
+}
+.winner-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+/* History panel upgrades */
+.history-panel .history-item .history-num {
+  background: #10b981;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+
+/* Popular uses section */
+.uses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+@media (min-width: 640px) { .uses-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .uses-grid { grid-template-columns: repeat(3, 1fr); } }
+.use-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.use-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+.use-card p {
+  font-size: 0.85rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Fullscreen mode */
+.fullscreen-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(17, 24, 39, 0.97);
+  z-index: 9000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.fullscreen-overlay.active { display: flex; }
+.fullscreen-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fullscreen-close:hover { background: rgba(255,255,255,0.25); }
+.fullscreen-spin-btn {
+  margin-top: 1.5rem;
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16,185,129,0.4);
+}
+.fullscreen-spin-btn:hover { background: linear-gradient(135deg, #059669, #047857); }
+.fullscreen-winner {
+  color: #10b981;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  text-align: center;
+  min-height: 2.5rem;
+}
+
+/* Responsive canvas sizes */
+@media (max-width: 479px) {
+  #wheel-canvas, #fs-wheel-canvas { width: 280px; height: 280px; }
+  .wheel-center-btn { width: 52px; height: 52px; font-size: 0.6rem; }
+  .winner-name { font-size: 1.35rem; }
+}
+@media (min-width: 480px) and (max-width: 899px) {
+  #wheel-canvas { width: 360px; height: 360px; }
+}
+@media (min-width: 900px) {
+  #wheel-canvas { width: 400px; height: 400px; }
+}
+</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Spin the Wheel
+    </nav>
+    <h1>Spin the Wheel - Random Wheel Spinner</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p><strong>Add your names or choices, tap Spin, and the wheel picks a random winner.</strong> Uses cryptographic randomness for fair results. Customize colors, remove winners after each spin, or add up to 100 options. Works for classrooms, giveaways, team picks, and any decision you need to make.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:960px;">
+
+
+    <div class="generator-card">
+      <div class="wheel-layout">
+
+        <!-- Left: Wheel -->
+        <div class="wheel-side">
+          <div class="wheel-stage">
+            <div class="wheel-outer">
+              <svg class="wheel-pointer-svg" viewBox="0 0 36 36" aria-hidden="true">
+                <polygon points="18,2 6,34 30,34" fill="#111827" stroke="#fff" stroke-width="2"/>
+              </svg>
+              <canvas id="wheel-canvas" width="400" height="400"></canvas>
+              <button class="wheel-center-btn" id="center-spin-btn" aria-label="Spin">SPIN</button>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" id="spin-btn">Spin the Wheel!</button>
+        </div>
+
+        <!-- Right: Controls -->
+        <div class="controls-side">
+          <div class="controls-panel">
+            <label for="wheel-entries" style="font-size:0.85rem;font-weight:600;color:#374151;">Your Choices (one per line)</label>
+            <textarea id="wheel-entries" rows="8" placeholder="Pizza&#10;Burger&#10;Sushi&#10;Pasta&#10;Tacos&#10;Salad">Pizza
+Burger
+Sushi
+Pasta
+Tacos
+Salad
+Ramen
+Steak</textarea>
+
+            <div class="entry-toolbar">
+              <button class="toolbar-btn" id="add-option-btn">+ Add Option</button>
+              <button class="toolbar-btn" id="dedup-btn">Remove Duplicates</button>
+              <button class="toolbar-btn" id="clear-all-btn">Clear All</button>
+              <span class="entry-count" id="entry-count">8 options</span>
+            </div>
+
+            <div class="option-checks">
+              <label><input type="checkbox" id="remove-winner-chk"> Remove winner after spin</label>
+              <label><input type="checkbox" id="sound-chk" checked> Sound effects</label>
+            </div>
+
+            <div class="extra-controls">
+              <button class="icon-btn" id="fullscreen-btn" title="Fullscreen mode">&#x26F6; Fullscreen</button>
+              <button class="icon-btn" id="shuffle-btn" title="Shuffle entries">&#x1F500; Shuffle</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /wheel-layout -->
+
+      <!-- Winner display -->
+      <div class="winner-display" id="winner-display" style="display:none;">
+        <div class="winner-label">Winner</div>
+        <div class="winner-name" id="winner-name"></div>
+        <div class="winner-actions">
+          <button class="copy-btn" id="copy-winner-btn">Copy Result</button>
+          <button class="copy-btn" id="share-btn">Share</button>
+        </div>
+      </div>
+
+    </div><!-- /generator-card -->
+
+    <!-- History -->
+    <div class="history-panel" id="history-panel">
+      <h3>Spin History <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <!-- How to Use -->
+    <div class="how-to">
+      <h2>How to Use the Wheel Spinner</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Type Your Choices</h3>
+            <p>Enter your options in the text box, one per line. The wheel updates instantly as you type. You can add up to 100 choices.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Click the Spin Button</h3>
+            <p>Press "Spin the Wheel!" or click the center of the wheel. The wheel spins with a smooth, satisfying animation.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Wait for the Result</h3>
+            <p>The wheel gradually slows down and lands on a random choice. A ticking sound plays as it spins.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>See the Winner</h3>
+            <p>The winning choice is highlighted and announced. Copy the result, share it, or spin again for a new pick.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popular Uses -->
+    <div class="how-to">
+      <h2>Popular Uses for Spin the Wheel</h2>
+      <div class="uses-grid">
+        <div class="use-card">
+          <h3>Classroom</h3>
+          <p>Pick students randomly, assign groups, choose activities, or decide who presents next. Fair and fun for everyone.</p>
+        </div>
+        <div class="use-card">
+          <h3>Games &amp; Parties</h3>
+          <p>Truth or Dare, party games, board game decisions, or any situation that needs a random twist.</p>
+        </div>
+        <div class="use-card">
+          <h3>Food Decisions</h3>
+          <p>Can't decide what to eat? Add your favorite restaurants or meals, spin, and let the wheel choose dinner.</p>
+        </div>
+        <div class="use-card">
+          <h3>Giveaways &amp; Raffles</h3>
+          <p>Run fair random prize drawings. Add participant names, spin, and pick a winner that everyone trusts.</p>
+        </div>
+        <div class="use-card">
+          <h3>Work &amp; Teams</h3>
+          <p>Assign tasks, decide meeting order, pick who gets coffee, or select team leads randomly.</p>
+        </div>
+        <div class="use-card">
+          <h3>Daily Decisions</h3>
+          <p>What movie to watch, which book to read, where to go on vacation, any choice you want to leave to chance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">Is the wheel spinner truly random? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Our wheel spinner uses JavaScript's cryptographic random number generator (<code>crypto.getRandomValues</code>) to ensure each spin is truly random and fair. The animated spin is purely visual &mdash; the winner is determined by a secure random number before the animation even begins.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use this for classroom activities? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely! Teachers commonly use our wheel spinner to pick students randomly, assign groups, or choose classroom activities. Just type student names (one per line) and spin. You can also enable "Remove winner after spin" so no student gets picked twice.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How many options can I add to the wheel? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">You can add up to 100 options to the wheel. The wheel automatically adjusts the size of each segment to fit all your choices. For the best visual experience, 2 to 30 entries work great, but more are fully supported.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I remove a winner after each spin? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes! Check the "Remove winner after spin" option and each selected entry will be automatically removed from the wheel after it's picked. This is great for raffles, classroom picks, or any time you want each option chosen only once.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is this free to use? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes, our wheel spinner is 100% free with no sign-up required. There are no limits on how many times you can spin. Your data stays in your browser and is never sent to a server.</div></div>
+      </div>
+    </section>
+
+    <!-- Related Tools -->
+    <section class="related-section">
+      <h2 class="section-title">Related Tools</h2>
+      <div class="related-grid">
+        <a href="/tools/random-number-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#128290;</div>
+          <h3>Random Number Generator</h3>
+          <p>Generate random numbers in any range.</p>
+        </a>
+        <a href="/tools/dice-roller/" class="card tool-card">
+          <div class="tool-card-icon">&#127922;</div>
+          <h3>Dice Roller</h3>
+          <p>Roll virtual dice for any game.</p>
+        </a>
+        <a href="/tools/coin-flip-simulator/" class="card tool-card">
+          <div class="tool-card-icon">&#129689;</div>
+          <h3>Coin Flip</h3>
+          <p>Flip a coin with statistics tracking.</p>
+        </a>
+        <a href="/tools/random-name-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#128100;</div>
+          <h3>Random Name Picker</h3>
+          <p>Pick random names from a list.</p>
+        </a>
+        <a href="/tools/yes-or-no-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#129300;</div>
+          <h3>Yes or No</h3>
+          <p>Quick yes-or-no decision maker.</p>
+        </a>
+        <a href="/tools/reaction-time-test/" class="card tool-card">
+          <div class="tool-card-icon">&#9889;</div>
+          <h3>Reaction Time Test</h3>
+          <p>Test your reflexes in milliseconds.</p>
+        </a>
+        <a href="/tools/cps-test/" class="card tool-card">
+          <div class="tool-card-icon">&#128433;</div>
+          <h3>CPS Test</h3>
+          <p>How fast can you click? Find out!</p>
+        </a>
+        <a href="/tools/aim-trainer/" class="card tool-card">
+          <div class="tool-card-icon">&#127919;</div>
+          <h3>Aim Trainer</h3>
+          <p>Improve your mouse aim accuracy.</p>
+        </a>
+        <a href="/tools/memory-test/" class="card tool-card">
+          <div class="tool-card-icon">&#129504;</div>
+          <h3>Memory Test</h3>
+          <p>Test your visual sequence memory.</p>
+        </a>
+        <a href="/tools/number-memory-test/" class="card tool-card">
+          <div class="tool-card-icon">&#128290;</div>
+          <h3>Number Memory Test</h3>
+          <p>How many digits can you remember?</p>
+        </a>
+        <a href="/tools/typing-speed-test/" class="card tool-card">
+          <div class="tool-card-icon">&#9000;</div>
+          <h3>Typing Speed Test</h3>
+          <p>Test your typing speed in WPM.</p>
+        </a>
+        <a href="/tools/chimp-test/" class="card tool-card">
+          <div class="tool-card-icon">&#128018;</div>
+          <h3>Chimp Test</h3>
+          <p>Are you smarter than a chimpanzee?</p>
+        </a>
+      </div>
+    </section>
+
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/fair-random-selection-methods/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Fair Random Selection Methods</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Learn unbiased methods for making fair random picks and selections.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline">
+      <div class="author-avatar">SP</div>
+      <div>By <a href="/about/">Sam Parker</a> &middot; Updated February 2026</div>
+    </div>
+  </div>
+
+    <section style="margin:2rem 0;padding:1.5rem;background:#f0f4ff;border-radius:12px;">
+      <h2 style="font-size:1.25rem;margin-bottom:1rem;">More Tools You Might Like</h2>
+      <div style="display:grid;gap:0.75rem;">
+        <a href="/tools/random-decision-maker/" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#333;border:1px solid #e5e7eb;transition:border-color 0.2s;">
+          <span style="font-size:1.2rem;">🔗</span>
+          <span><strong style="color:#2563eb;">Random Decision Maker</strong><br><small style="color:#666;">Let chance decide for you</small></span>
+        </a>
+        <a href="/tools/random-card-picker/" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#333;border:1px solid #e5e7eb;transition:border-color 0.2s;">
+          <span style="font-size:1.2rem;">🔗</span>
+          <span><strong style="color:#2563eb;">Random Card Picker</strong><br><small style="color:#666;">Draw random playing cards</small></span>
+        </a>
+        
+      </div>
+    </section>
+    </main>
+
+<!-- Fullscreen overlay -->
+<div class="fullscreen-overlay" id="fullscreen-overlay">
+  <button class="fullscreen-close" id="fullscreen-close-btn" aria-label="Close fullscreen">&times;</button>
+  <div class="wheel-outer" style="position:relative;">
+    <svg class="wheel-pointer-svg" viewBox="0 0 36 36" aria-hidden="true" style="top:-22px;">
+      <polygon points="18,2 6,34 30,34" fill="#10b981" stroke="#fff" stroke-width="2"/>
+    </svg>
+    <canvas id="fs-wheel-canvas" width="500" height="500" style="border-radius:50%;box-shadow:0 0 40px rgba(16,185,129,0.3);"></canvas>
+  </div>
+  <button class="fullscreen-spin-btn" id="fs-spin-btn">Spin!</button>
+  <div class="fullscreen-winner" id="fs-winner"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Name Generator</a>
+        <a href="/tools/random-team-generator/">Team Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/random-word-generator/">Word Generator</a>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+        <a href="/tools/random-color-generator/">Color Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+      <div class="footer-col">
+        <h4>LetsRandomize</h4>
+        <p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up. No tracking.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  /* ===========================================
+     Configuration
+     =========================================== */
+  var MAX_OPTIONS = 100;
+  var COLORS = [
+    '#ef4444','#3b82f6','#10b981','#f59e0b',
+    '#8b5cf6','#f97316','#06b6d4','#ec4899',
+    '#84cc16','#6366f1','#14b8a6','#e11d48',
+    '#a855f7','#0ea5e9','#22c55e','#eab308'
+  ];
+  var SPIN_DURATION_MIN = 3000;
+  var SPIN_DURATION_MAX = 5000;
+  var SPIN_ROTATIONS_MIN = 5;
+  var SPIN_ROTATIONS_MAX = 10;
+
+  /* ===========================================
+     DOM References
+     =========================================== */
+  var canvas = document.getElementById('wheel-canvas');
+  var ctx = canvas.getContext('2d');
+  var spinBtn = document.getElementById('spin-btn');
+  var centerBtn = document.getElementById('center-spin-btn');
+  var entriesInput = document.getElementById('wheel-entries');
+  var winnerDisplay = document.getElementById('winner-display');
+  var winnerName = document.getElementById('winner-name');
+  var entryCountEl = document.getElementById('entry-count');
+  var addOptionBtn = document.getElementById('add-option-btn');
+  var dedupBtn = document.getElementById('dedup-btn');
+  var clearAllBtn = document.getElementById('clear-all-btn');
+  var removeWinnerChk = document.getElementById('remove-winner-chk');
+  var soundChk = document.getElementById('sound-chk');
+  var fullscreenBtn = document.getElementById('fullscreen-btn');
+  var shuffleBtn = document.getElementById('shuffle-btn');
+  var fsOverlay = document.getElementById('fullscreen-overlay');
+  var fsCloseBtn = document.getElementById('fullscreen-close-btn');
+  var fsCanvas = document.getElementById('fs-wheel-canvas');
+  var fsCtx = fsCanvas.getContext('2d');
+  var fsSpinBtn = document.getElementById('fs-spin-btn');
+  var fsWinner = document.getElementById('fs-winner');
+  var copyWinnerBtn = document.getElementById('copy-winner-btn');
+  var shareBtn = document.getElementById('share-btn');
+
+  /* ===========================================
+     State
+     =========================================== */
+  var spinning = false;
+  var currentAngle = 0;
+  var lastWinner = '';
+  var isFullscreen = false;
+
+  /* ===========================================
+     Web Audio API — Sound Effects
+     =========================================== */
+  var audioCtx = null;
+
+  function getAudioCtx() {
+    if (!audioCtx) {
+      try {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (e) { /* no audio support */ }
+    }
+    return audioCtx;
+  }
+
+  /** Short tick sound during spin */
+  function playTick() {
+    if (!soundChk.checked) return;
+    var ac = getAudioCtx();
+    if (!ac) return;
+    var osc = ac.createOscillator();
+    var gain = ac.createGain();
+    osc.connect(gain);
+    gain.connect(ac.destination);
+    osc.type = 'sine';
+    osc.frequency.value = 800 + Math.random() * 400;
+    gain.gain.setValueAtTime(0.08, ac.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.06);
+    osc.start(ac.currentTime);
+    osc.stop(ac.currentTime + 0.06);
+  }
+
+  /** Celebration sound when spin completes */
+  function playCelebration() {
+    if (!soundChk.checked) return;
+    var ac = getAudioCtx();
+    if (!ac) return;
+    var notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+    notes.forEach(function(freq, i) {
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      var t = ac.currentTime + i * 0.1;
+      gain.gain.setValueAtTime(0.12, t);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.3);
+      osc.start(t);
+      osc.stop(t + 0.3);
+    });
+  }
+
+  /* ===========================================
+     Entry Parsing
+     =========================================== */
+  function getEntries() {
+    var raw = entriesInput.value.split('\n');
+    var entries = [];
+    for (var i = 0; i < raw.length; i++) {
+      var s = raw[i].trim();
+      if (s.length > 0 && entries.length < MAX_OPTIONS) {
+        entries.push(s);
+      }
+    }
+    return entries;
+  }
+
+  function updateEntryCount() {
+    var entries = getEntries();
+    var n = entries.length;
+    entryCountEl.textContent = n + ' option' + (n !== 1 ? 's' : '');
+  }
+
+  /* ===========================================
+     Wheel Drawing (reusable for main + fullscreen)
+     =========================================== */
+  function drawWheel(c, context, entries, angle) {
+    var w = c.width;
+    var h = c.height;
+    var cx = w / 2;
+    var cy = h / 2;
+    var r = cx - 8;
+    context.clearRect(0, 0, w, h);
+
+    /* No entries: placeholder */
+    if (entries.length === 0) {
+      context.beginPath();
+      context.arc(cx, cy, r, 0, Math.PI * 2);
+      context.fillStyle = '#e5e7eb';
+      context.fill();
+      context.fillStyle = '#9ca3af';
+      context.font = '600 ' + Math.round(w * 0.04) + 'px -apple-system, BlinkMacSystemFont, sans-serif';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      context.fillText('Add options to spin', cx, cy);
+      drawCenterCircle(context, cx, cy, w);
+      return;
+    }
+
+    /* Single entry: full circle */
+    if (entries.length === 1) {
+      context.beginPath();
+      context.arc(cx, cy, r, 0, Math.PI * 2);
+      context.fillStyle = COLORS[0];
+      context.fill();
+      context.save();
+      context.translate(cx, cy);
+      context.fillStyle = '#fff';
+      context.font = 'bold ' + Math.round(w * 0.045) + 'px -apple-system, BlinkMacSystemFont, sans-serif';
+      context.textAlign = 'center';
+      context.textBaseline = 'middle';
+      var label1 = entries[0].length > 20 ? entries[0].substring(0, 18) + '..' : entries[0];
+      context.fillText(label1, 0, 0);
+      context.restore();
+      drawCenterCircle(context, cx, cy, w);
+      return;
+    }
+
+    var sliceAngle = (Math.PI * 2) / entries.length;
+    var fontSize = Math.round(w * 0.035);
+    if (entries.length > 20) fontSize = Math.round(w * 0.028);
+    if (entries.length > 40) fontSize = Math.round(w * 0.022);
+    var maxLabelLen = entries.length > 20 ? 10 : (entries.length > 10 ? 14 : 18);
+
+    for (var i = 0; i < entries.length; i++) {
+      var startA = angle + i * sliceAngle;
+      var endA = startA + sliceAngle;
+
+      /* Segment */
+      context.beginPath();
+      context.moveTo(cx, cy);
+      context.arc(cx, cy, r, startA, endA);
+      context.closePath();
+      context.fillStyle = COLORS[i % COLORS.length];
+      context.fill();
+      context.strokeStyle = '#fff';
+      context.lineWidth = 2;
+      context.stroke();
+
+      /* Label */
+      context.save();
+      context.translate(cx, cy);
+      context.rotate(startA + sliceAngle / 2);
+      context.fillStyle = '#fff';
+      context.font = 'bold ' + fontSize + 'px -apple-system, BlinkMacSystemFont, sans-serif';
+      context.textAlign = 'right';
+      context.textBaseline = 'middle';
+      context.shadowColor = 'rgba(0,0,0,0.3)';
+      context.shadowBlur = 2;
+      var label = entries[i].length > maxLabelLen ? entries[i].substring(0, maxLabelLen - 2) + '..' : entries[i];
+      context.fillText(label, r - 14, 0);
+      context.shadowBlur = 0;
+      context.restore();
+    }
+
+    drawCenterCircle(context, cx, cy, w);
+  }
+
+  function drawCenterCircle(context, cx, cy, w) {
+    var cr = Math.round(w * 0.055);
+    /* Outer ring */
+    context.beginPath();
+    context.arc(cx, cy, cr + 3, 0, Math.PI * 2);
+    context.fillStyle = '#fff';
+    context.fill();
+    /* Inner circle */
+    context.beginPath();
+    context.arc(cx, cy, cr, 0, Math.PI * 2);
+    context.fillStyle = '#111827';
+    context.fill();
+  }
+
+  function redraw() {
+    drawWheel(canvas, ctx, getEntries(), currentAngle);
+  }
+
+  /* ===========================================
+     Spin Animation
+     =========================================== */
+  function spin(targetCanvas, targetCtx, onComplete) {
+    var entries = getEntries();
+    if (entries.length < 2) {
+      App.showToast('Add at least 2 options to spin.');
+      return;
+    }
+    if (spinning) return;
+    spinning = true;
+    spinBtn.disabled = true;
+    centerBtn.disabled = true;
+    fsSpinBtn.disabled = true;
+    spinBtn.textContent = 'Spinning...';
+    winnerDisplay.style.display = 'none';
+    fsWinner.textContent = '';
+
+    /* Determine winner using crypto-secure random */
+    var winnerIdx = RandomEngine.randomInt(0, entries.length - 1);
+    var sliceAngle = (Math.PI * 2) / entries.length;
+
+    /*
+     * The pointer sits at the top of the canvas, which corresponds to angle -PI/2.
+     * We need the center of the winner's slice to land under the pointer.
+     * Winner slice center (relative) = winnerIdx * sliceAngle + sliceAngle/2
+     * We need: finalAngle + winnerSliceCenter = -PI/2 + 2*PI*N
+     * So: finalAngle = -PI/2 - winnerSliceCenter + 2*PI*N
+     */
+    var winnerSliceCenter = winnerIdx * sliceAngle + sliceAngle / 2;
+    var fullSpins = SPIN_ROTATIONS_MIN + RandomEngine.randomInt(0, SPIN_ROTATIONS_MAX - SPIN_ROTATIONS_MIN);
+    var targetAngle = -Math.PI / 2 - winnerSliceCenter + Math.PI * 2 * fullSpins;
+    var startAngle = currentAngle;
+    var totalRotation = targetAngle - startAngle;
+    var duration = SPIN_DURATION_MIN + RandomEngine.randomInt(0, SPIN_DURATION_MAX - SPIN_DURATION_MIN);
+    var startTime = null;
+    var lastTickAngle = startAngle;
+
+    function easeOutQuart(t) {
+      return 1 - Math.pow(1 - t, 4);
+    }
+
+    function frame(ts) {
+      if (!startTime) startTime = ts;
+      var elapsed = ts - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = easeOutQuart(progress);
+      currentAngle = startAngle + totalRotation * eased;
+
+      drawWheel(targetCanvas, targetCtx, entries, currentAngle);
+
+      /* Tick sound: play when crossing a segment boundary */
+      var angleDiff = Math.abs(currentAngle - lastTickAngle);
+      if (angleDiff >= sliceAngle * 0.9) {
+        playTick();
+        lastTickAngle = currentAngle;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        /* Spin complete */
+        spinning = false;
+        spinBtn.disabled = false;
+        centerBtn.disabled = false;
+        fsSpinBtn.disabled = false;
+        spinBtn.textContent = 'Spin the Wheel!';
+        lastWinner = entries[winnerIdx];
+
+        /* Show winner */
+        winnerName.textContent = lastWinner;
+        winnerDisplay.style.display = 'block';
+        fsWinner.textContent = lastWinner;
+
+        /* Effects */
+        playCelebration();
+        App.confetti();
+        App.addToHistory(lastWinner);
+
+        /* Remove winner from entries if checkbox is checked */
+        if (removeWinnerChk.checked) {
+          var lines = entriesInput.value.split('\n');
+          var removed = false;
+          var newLines = [];
+          for (var j = 0; j < lines.length; j++) {
+            if (!removed && lines[j].trim() === lastWinner) {
+              removed = true; // remove first occurrence only
+            } else {
+              newLines.push(lines[j]);
+            }
+          }
+          entriesInput.value = newLines.join('\n');
+          updateEntryCount();
+          /* Redraw with updated entries after a small delay for visual effect */
+          setTimeout(function() {
+            currentAngle = 0;
+            redraw();
+          }, 1500);
+        }
+
+        if (onComplete) onComplete(lastWinner);
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  /* ===========================================
+     Event Listeners — Toolbar Buttons
+     =========================================== */
+  addOptionBtn.addEventListener('click', function() {
+    var current = entriesInput.value;
+    if (current.length > 0 && !current.endsWith('\n')) {
+      current += '\n';
+    }
+    entriesInput.value = current + 'Option ' + (getEntries().length + 1);
+    entriesInput.focus();
+    entriesInput.scrollTop = entriesInput.scrollHeight;
+    updateEntryCount();
+    currentAngle = 0;
+    redraw();
+  });
+
+  dedupBtn.addEventListener('click', function() {
+    var lines = entriesInput.value.split('\n');
+    var seen = {};
+    var unique = [];
+    for (var i = 0; i < lines.length; i++) {
+      var trimmed = lines[i].trim();
+      if (trimmed.length === 0) continue;
+      var key = trimmed.toLowerCase();
+      if (!seen[key]) {
+        seen[key] = true;
+        unique.push(trimmed);
+      }
+    }
+    entriesInput.value = unique.join('\n');
+    updateEntryCount();
+    currentAngle = 0;
+    redraw();
+    App.showToast('Duplicates removed');
+  });
+
+  clearAllBtn.addEventListener('click', function() {
+    entriesInput.value = '';
+    updateEntryCount();
+    currentAngle = 0;
+    redraw();
+    winnerDisplay.style.display = 'none';
+  });
+
+  shuffleBtn.addEventListener('click', function() {
+    var entries = getEntries();
+    if (entries.length < 2) return;
+    var shuffled = RandomEngine.randomShuffle(entries);
+    entriesInput.value = shuffled.join('\n');
+    currentAngle = 0;
+    redraw();
+    App.showToast('Entries shuffled');
+  });
+
+  /* ===========================================
+     Event Listeners — Spin
+     =========================================== */
+  spinBtn.addEventListener('click', function() {
+    spin(canvas, ctx);
+  });
+
+  centerBtn.addEventListener('click', function() {
+    spin(canvas, ctx);
+  });
+
+  /* ===========================================
+     Event Listeners — Copy & Share
+     =========================================== */
+  copyWinnerBtn.addEventListener('click', function() {
+    if (lastWinner) {
+      App.copyToClipboard(lastWinner, copyWinnerBtn);
+    }
+  });
+
+  shareBtn.addEventListener('click', function() {
+    if (lastWinner) {
+      App.shareResult('The wheel chose: ' + lastWinner, 'Spin the Wheel Result');
+    }
+  });
+
+  /* ===========================================
+     Event Listeners — Textarea changes
+     =========================================== */
+  entriesInput.addEventListener('input', function() {
+    updateEntryCount();
+    currentAngle = 0;
+    redraw();
+  });
+
+  /* ===========================================
+     Fullscreen Mode
+     =========================================== */
+  function openFullscreen() {
+    isFullscreen = true;
+    fsOverlay.classList.add('active');
+    /* Size fullscreen canvas to fit viewport */
+    var maxSize = Math.min(window.innerWidth - 40, window.innerHeight - 200, 600);
+    fsCanvas.style.width = maxSize + 'px';
+    fsCanvas.style.height = maxSize + 'px';
+    fsCanvas.width = maxSize * (window.devicePixelRatio || 1);
+    fsCanvas.height = maxSize * (window.devicePixelRatio || 1);
+    fsCanvas.style.borderRadius = '50%';
+    fsWinner.textContent = '';
+    drawWheel(fsCanvas, fsCtx, getEntries(), currentAngle);
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFullscreen() {
+    isFullscreen = false;
+    fsOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    /* Sync main canvas */
+    redraw();
+  }
+
+  fullscreenBtn.addEventListener('click', openFullscreen);
+  fsCloseBtn.addEventListener('click', closeFullscreen);
+  fsSpinBtn.addEventListener('click', function() {
+    spin(fsCanvas, fsCtx);
+  });
+
+  /* Close fullscreen on Escape */
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isFullscreen) {
+      closeFullscreen();
+    }
+  });
+
+  /* ===========================================
+     Keyboard Shortcut — Space/Enter to spin
+     =========================================== */
+  document.addEventListener('keydown', function(e) {
+    /* Only trigger if not typing in textarea/input */
+    if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (isFullscreen) {
+        spin(fsCanvas, fsCtx);
+      } else {
+        spin(canvas, ctx);
+      }
+    }
+  });
+
+  /* ===========================================
+     Canvas DPI Scaling
+     =========================================== */
+  function handleResize() {
+    /* Set canvas backing store to match CSS display size * device pixel ratio */
+    var dpr = window.devicePixelRatio || 1;
+    var rect = canvas.getBoundingClientRect();
+    var displayW = Math.round(rect.width) || 400;
+    var displayH = Math.round(rect.height) || 400;
+    canvas.width = displayW * dpr;
+    canvas.height = displayH * dpr;
+    redraw();
+  }
+
+  /* Debounced resize handler */
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(handleResize, 150);
+  });
+
+  /* ===========================================
+     Initialization
+     =========================================== */
+  updateEntryCount();
+  /* Give the CSS a frame to compute layout before sizing canvas */
+  requestAnimationFrame(function() {
+    handleResize();
+  });
+
+})();
+</script>
+</body>
+</html>

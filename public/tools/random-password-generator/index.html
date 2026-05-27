@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Password Generator — Create Strong Secure Passwords</title>
+<meta name="description" content="Generate strong, secure random passwords with custom length, uppercase, lowercase, numbers, and symbols. Free password generator with strength indicator.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/random-password-generator/">
+<meta property="og:title" content="Random Password Generator — Create Strong Secure Passwords">
+<meta property="og:description" content="Generate strong, secure random passwords with custom length and character options.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Random Password Generator — Create Strong Secure Passwords">
+<meta property="og:url" content="https://letsrandomize.org/tools/random-password-generator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Password Generator", "url":"https://letsrandomize.org/tools/random-password-generator/", "description":"Generate strong,  secure random passwords with custom options.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-04"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Password Generator", "item":"https://letsrandomize.org/tools/random-password-generator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"How secure are the generated passwords?", "acceptedAnswer":{"@type":"Answer", "text":"Very secure. We use crypto.getRandomValues() for cryptographically secure randomness. Passwords are generated entirely in your browser and never sent to any server."}}, {"@type":"Question", "name":"What is a good password length?", "acceptedAnswer":{"@type":"Answer", "text":"Security experts recommend at least 12-16 characters. Longer passwords are exponentially harder to crack. Our generator supports up to 64 characters."}}, {"@type":"Question", "name":"Should I include symbols in my password?", "acceptedAnswer":{"@type":"Answer", "text":"Yes,  when possible. Including symbols alongside uppercase,  lowercase,  and numbers greatly increases password entropy and makes it much harder to crack."}}, {"@type":"Question", "name":"Are my generated passwords stored anywhere?", "acceptedAnswer":{"@type":"Answer", "text":"No. Passwords are generated in your browser and are never transmitted or stored on any server. Only the local history feature stores recent results in your browser's localStorage."}}, {"@type":"Question", "name":"Can I generate multiple passwords at once?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the count option to generate up to 10 passwords at once,  all with the same settings."}}]}]
+</script>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Password Generator</nav>
+    <h1>Random Password Generator</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p>Create strong, secure passwords with custom length and character types. Uses cryptographic randomization.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+    <div class="generator-card">
+      <div class="option-group mb-3">
+        <label for="pwd-length">Password Length: <span class="range-value" id="pwd-length-val">16</span></label>
+        <input type="range" id="pwd-length" min="8" max="64" value="16">
+      </div>
+
+      <div class="checkbox-group mb-3">
+        <label class="checkbox-label"><input type="checkbox" id="pwd-upper" checked> Uppercase (A-Z)</label>
+        <label class="checkbox-label"><input type="checkbox" id="pwd-lower" checked> Lowercase (a-z)</label>
+        <label class="checkbox-label"><input type="checkbox" id="pwd-numbers" checked> Numbers (0-9)</label>
+        <label class="checkbox-label"><input type="checkbox" id="pwd-symbols" checked> Symbols (!@#$...)</label>
+      </div>
+
+      <div class="option-group mb-3">
+        <label for="pwd-count">Generate Count</label>
+        <select id="pwd-count">
+          <option value="1" selected>1 password</option>
+          <option value="3">3 passwords</option>
+          <option value="5">5 passwords</option>
+          <option value="10">10 passwords</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="generate-btn">Generate Password</button>
+
+      <div class="result-display" id="result-display" style="display:none;">
+        <div id="result-content" class="result-list"></div>
+        <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+        <div class="strength-label" id="strength-label"></div>
+        <div class="result-actions">
+          <button class="copy-btn" data-copy-target="result-content">Copy All</button>
+          <button class="copy-btn" id="share-btn">Share</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-panel" id="history-panel">
+      <h3>Recent Results <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <div class="how-to">
+      <h2>How to Use the Password Generator</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Set Password Length</h3><p>Use the slider to choose a length between 8 and 64 characters. Longer is more secure.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Choose Character Types</h3><p>Toggle uppercase, lowercase, numbers, and symbols. More variety means stronger passwords.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Generate</h3><p>Click the Generate button. The strength indicator shows how secure your password is.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><h3>Copy & Use</h3><p>Click Copy to save the password to your clipboard, then paste it into your account settings.</p></div></div>
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><button class="faq-question">How secure are the generated passwords? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Very secure. We use crypto.getRandomValues() for cryptographically secure randomness. Passwords are generated entirely in your browser and never sent to any server.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What is a good password length? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Security experts recommend at least 12-16 characters. Longer passwords are exponentially harder to crack. Our generator supports up to 64 characters.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Should I include symbols in my password? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes, when possible. Including symbols alongside uppercase, lowercase, and numbers greatly increases password entropy and makes it much harder to crack.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Are my generated passwords stored anywhere? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">No. Passwords are generated in your browser and are never transmitted or stored on any server. Only the local history feature stores recent results in your browser's localStorage.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I generate multiple passwords at once? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Use the count dropdown to generate up to 10 passwords at once, all with the same settings. Each password is independently generated.</div></div></div>
+    </section>
+
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/random-number-generator/" class="card tool-card"><div class="tool-card-icon">&#127922;</div><h3>Number Generator</h3><p>Generate random numbers in any range.</p></a>
+        <a href="/tools/random-letter-generator/" class="card tool-card"><div class="tool-card-icon">&#9991;</div><h3>Letter Generator</h3><p>Random letters A-Z.</p></a>
+        <a href="/tools/random-color-generator/" class="card tool-card"><div class="tool-card-icon">&#127912;</div><h3>Color Generator</h3><p>Random hex colors and palettes.</p></a>
+        <a href="/tools/random-name-generator/" class="card tool-card"><div class="tool-card-icon">&#128100;</div><h3>Name Generator</h3><p>Generate random names.</p></a>
+      </div>
+    </section>
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/strong-password-best-practices/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Strong Password Best Practices</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Essential tips for creating and managing secure passwords.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline"><div class="author-avatar">SP</div><div>By <a href="/about/">Sam Parker</a> &middot; Updated March 2026</div></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Generators</h4><a href="/tools/random-name-generator/">Name Generator</a><a href="/tools/random-team-generator/">Team Generator</a><a href="/tools/random-password-generator/">Password Generator</a><a href="/tools/random-number-generator/">Number Generator</a></div>
+      <div class="footer-col"><h4>More Tools</h4><a href="/tools/random-word-generator/">Word Generator</a><a href="/tools/list-randomizer/">List Randomizer</a><a href="/tools/spin-the-wheel/">Spin the Wheel</a><a href="/tools/random-color-generator/">Color Generator</a></div>
+      <div class="footer-col"><h4>Info</h4><a href="/about/">About</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></div>
+      <div class="footer-col"><h4>LetsRandomize</h4><p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up.</p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var slider = document.getElementById('pwd-length');
+  var valLabel = document.getElementById('pwd-length-val');
+  var generateBtn = document.getElementById('generate-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var resultContent = document.getElementById('result-content');
+  var strengthFill = document.getElementById('strength-fill');
+  var strengthLabel = document.getElementById('strength-label');
+
+  slider.addEventListener('input', function() { valLabel.textContent = this.value; });
+
+  function getCharset() {
+    var cs = '';
+    if (document.getElementById('pwd-upper').checked) cs += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    if (document.getElementById('pwd-lower').checked) cs += 'abcdefghijklmnopqrstuvwxyz';
+    if (document.getElementById('pwd-numbers').checked) cs += '0123456789';
+    if (document.getElementById('pwd-symbols').checked) cs += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    return cs;
+  }
+
+  function calcStrength(len, charset) {
+    var poolSize = charset.length;
+    var entropy = len * Math.log2(poolSize);
+    if (entropy < 40) return { label: 'Weak', cls: 'strength-weak', pct: 25, color: '#ef4444' };
+    if (entropy < 60) return { label: 'Fair', cls: 'strength-fair', pct: 50, color: '#f59e0b' };
+    if (entropy < 80) return { label: 'Good', cls: 'strength-good', pct: 75, color: '#10b981' };
+    return { label: 'Strong', cls: 'strength-strong', pct: 100, color: '#059669' };
+  }
+
+  generateBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var charset = getCharset();
+    if (!charset) { App.showToast('Select at least one character type.'); return; }
+    var len = parseInt(slider.value, 10);
+    var count = parseInt(document.getElementById('pwd-count').value, 10);
+
+    var passwords = [];
+    for (var i = 0; i < count; i++) {
+      passwords.push(RandomEngine.randomString(len, charset));
+    }
+
+    resultContent.innerHTML = passwords.map(function(pw, idx) {
+      return '<div class="result-list-item" style="font-family:monospace;font-size:0.9rem;word-break:break-all;"><span class="num">' + (idx+1) + '</span>' + App.escapeHtml(pw) + '</div>';
+    }).join('');
+
+    var s = calcStrength(len, charset);
+    strengthFill.style.width = s.pct + '%';
+    strengthFill.style.background = s.color;
+    strengthLabel.textContent = 'Strength: ' + s.label;
+    strengthLabel.className = 'strength-label ' + s.cls;
+
+    resultDisplay.style.display = 'block';
+    App.flashResult(resultDisplay);
+    App.addToHistory(passwords[0].substring(0, 20) + '... (' + len + ' chars)');
+  });
+
+  document.getElementById('share-btn').addEventListener('click', function() {
+    App.shareResult('Generate secure passwords at LetsRandomize!', 'Password Generator');
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yes or No Generator — Random Decision Maker & Coin Flip</title>
+<meta name="description" content="Can't decide? Let our yes or no generator decide for you with a coin-flip animation. Magic 8-ball mode and custom options available. Free decision maker.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/yes-or-no-generator/">
+<meta property="og:title" content="Yes or No Generator — Random Decision Maker & Coin Flip">
+<meta property="og:description" content="Quick random decision maker with coin-flip animation and Magic 8-Ball mode.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Yes or No Generator — Random Decision Maker & Coin Flip">
+<meta property="og:url" content="https://letsrandomize.org/tools/yes-or-no-generator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Yes or No Generator", "url":"https://letsrandomize.org/tools/yes-or-no-generator/", "description":"Random yes/no decision maker with coin flip animation and Magic 8-Ball mode.", "applicationCategory":"GameApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-04"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Yes or No Generator", "item":"https://letsrandomize.org/tools/yes-or-no-generator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"Is the yes/no result truly random?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Each result is independently generated using cryptographically secure randomization. There is exactly a 50/50 chance for yes or no."}}, {"@type":"Question", "name":"What is Magic 8-Ball mode?", "acceptedAnswer":{"@type":"Answer", "text":"Magic 8-Ball mode gives you one of 20 classic Magic 8-Ball responses like 'It is certain',  'Ask again later',  or 'Don't count on it' instead of a simple yes or no."}}, {"@type":"Question", "name":"Can I add custom options?", "acceptedAnswer":{"@type":"Answer", "text":"Yes! Switch to Custom mode and enter your own options (one per line) to randomly choose between. Great for choosing between restaurants,  activities,  or any set of options."}}, {"@type":"Question", "name":"How does the coin flip animation work?", "acceptedAnswer":{"@type":"Answer", "text":"The coin flip is a CSS animation. The result is determined by the random number generator before the animation starts,  so the animation is purely visual."}}, {"@type":"Question", "name":"Can I use this for important decisions?", "acceptedAnswer":{"@type":"Answer", "text":"While our generator provides genuinely random results,  we recommend it for fun,  low-stakes decisions. For important life decisions,  please use your best judgment!"}}]}]
+</script>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Yes or No Generator</nav>
+    <h1>Yes or No Generator</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p>Can't decide? Let randomness choose for you. Coin flip animation, Magic 8-Ball mode, and custom options.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+    <div class="generator-card text-center">
+      <div class="generator-options" style="max-width:400px;margin:0 auto 1.5rem;">
+        <div class="option-group">
+          <label for="yesno-mode">Mode</label>
+          <select id="yesno-mode">
+            <option value="yesno">Yes / No</option>
+            <option value="8ball">Magic 8-Ball</option>
+            <option value="custom">Custom Options</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="custom-options-group" style="display:none;max-width:400px;margin:0 auto 1rem;">
+        <div class="option-group">
+          <label for="custom-options">Custom Options (one per line)</label>
+          <textarea id="custom-options" rows="4" placeholder="Option A&#10;Option B&#10;Option C"></textarea>
+        </div>
+      </div>
+
+      <!-- Coin -->
+      <div class="coin" id="coin">?</div>
+
+      <button class="btn btn-primary" id="generate-btn" style="margin-top:1rem;min-width:200px;">Decide for Me!</button>
+
+      <div class="result-display" id="result-display" style="display:none;margin-top:1.5rem;">
+        <div id="result-content" class="result-text large"></div>
+        <div class="result-actions" style="justify-content:center;">
+          <button class="btn btn-primary" id="again-btn" style="font-size:0.95rem;padding:8px 20px;">&#8635; Ask Again</button>
+          <button class="copy-btn" data-copy-target="result-content">Copy</button>
+          <button class="copy-btn" id="share-btn">Share</button>
+        </div>
+        <p id="session-counter" style="text-align:center;margin-top:8px;font-size:0.8rem;color:#888;display:none;"></p>
+      </div>
+    </div>
+
+    <div class="history-panel" id="history-panel">
+      <h3>Recent Results <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <div class="how-to">
+      <h2>How to Use the Yes or No Generator</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Choose Your Mode</h3><p>Select Yes/No for a simple flip, Magic 8-Ball for fun responses, or Custom for your own options.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Think of Your Question</h3><p>Have your question in mind (or just need a quick decision!).</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Click Decide</h3><p>Hit the button and watch the coin flip animation reveal your answer.</p></div></div>
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><button class="faq-question">Is the yes/no result truly random? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Each result is independently generated using cryptographically secure randomization with exactly a 50/50 chance.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What is Magic 8-Ball mode? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">It gives you one of 20 classic Magic 8-Ball responses like "It is certain," "Ask again later," or "Don't count on it" instead of simple yes or no.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I add custom options? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Switch to Custom mode and enter your own options, one per line, to randomly choose between them.</div></div></div>
+      <div class="faq-item"><button class="faq-question">How does the coin flip animation work? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">The coin flip is a CSS animation. The result is determined before the animation starts, so it's purely visual.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I use this for important decisions? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">While our generator is truly random, we recommend it for fun, low-stakes decisions. For important life decisions, use your best judgment!</div></div></div>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>When to Use a Yes or No Generator</h2>
+      <p>Decision fatigue is real — research shows we make over 35,000 decisions per day, and minor ones drain our mental energy just as much as important ones. A random yes/no generator eliminates the friction on low-stakes choices so you can save your focus for what matters:</p>
+      <ul>
+        <li><strong>Dinner decisions:</strong> "Should we order pizza tonight?" — end the 20-minute debate instantly.</li>
+        <li><strong>Task prioritization:</strong> Stuck between two equally important tasks? Let the generator pick which you tackle first.</li>
+        <li><strong>Activity planning:</strong> "Should we go hiking or stay in?" — perfect for couples and friend groups who can't decide.</li>
+        <li><strong>Game night:</strong> Use it as a digital coin flip for board games, truth or dare, or deciding who goes first.</li>
+        <li><strong>Shopping decisions:</strong> "Should I buy this?" — when you're on the fence, a random answer can reveal what you actually want (if you feel disappointed by the result, you already know your real preference).</li>
+        <li><strong>Creative writing:</strong> Authors use random yes/no generators to drive plot decisions and avoid predictable storylines.</li>
+      </ul>
+
+      <h2>Yes/No Generator vs. Coin Flip</h2>
+      <p>Both give you a 50/50 binary result, but they work differently:</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;margin:12px 0;font-size:0.92rem;">
+          <thead>
+            <tr style="background:#f0fdf4;">
+              <th style="padding:8px;text-align:left;border-bottom:2px solid #d1d5db;">Feature</th>
+              <th style="padding:8px;text-align:center;border-bottom:2px solid #d1d5db;">Coin Flip</th>
+              <th style="padding:8px;text-align:center;border-bottom:2px solid #d1d5db;">Yes/No Generator</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Randomness quality</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">~51/49 (slight bias)</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">Exactly 50/50</td></tr>
+            <tr><td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Needs a physical coin</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">Yes</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">No</td></tr>
+            <tr><td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">History tracking</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">No</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">Yes</td></tr>
+            <tr><td style="padding:6px 8px;border-bottom:1px solid #e5e7eb;">Custom options</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">No</td><td style="text-align:center;padding:6px;border-bottom:1px solid #e5e7eb;">Yes (custom mode)</td></tr>
+            <tr><td style="padding:6px 8px;">Fun factor</td><td style="text-align:center;padding:6px;">Classic</td><td style="text-align:center;padding:6px;">Magic 8-Ball mode</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A real coin flip is actually slightly biased — research by Persi Diaconis at Stanford found coins land on the same side they started about 51% of the time. Our digital generator uses cryptographically secure randomization for a true 50/50 split every time.</p>
+
+      <h2>The Psychology of Random Decision-Making</h2>
+      <p>Here is something interesting: the real value of a yes/no generator is not the answer itself — it is how you react to the answer. If the generator says "No" and you feel a pang of disappointment, that tells you something important about what you actually want. Psychologists call this the "coin flip test" — your emotional reaction to a random result reveals your true preference.</p>
+      <p>For genuinely 50/50 decisions where you have no preference, delegating to randomness is a sound strategy. Research published in the <em>Review of Economic Studies</em> found that people who made changes based on a coin flip reported being happier 6 months later than those who maintained the status quo. Sometimes the best decision is simply to decide.</p>
+    </section>
+
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/spin-the-wheel/" class="card tool-card"><div class="tool-card-icon">&#127905;</div><h3>Spin the Wheel</h3><p>Visual spinning picker.</p></a>
+        <a href="/tools/random-number-generator/" class="card tool-card"><div class="tool-card-icon">&#127922;</div><h3>Number Generator</h3><p>Random numbers.</p></a>
+        <a href="/tools/list-randomizer/" class="card tool-card"><div class="tool-card-icon">&#128256;</div><h3>List Randomizer</h3><p>Shuffle any list.</p></a>
+        <a href="/tools/random-name-generator/" class="card tool-card"><div class="tool-card-icon">&#128100;</div><h3>Name Generator</h3><p>Random names.</p></a>
+      </div>
+    </section>
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/probability-of-coin-flips/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Probability of Coin Flips</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the math behind coin flip probability and streaks.</span>
+    </a>
+    <a href="/guides/fair-random-selection-methods/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Fair Random Selection Methods</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Learn unbiased methods for making fair random picks and selections.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline"><div class="author-avatar">SP</div><div>By <a href="/about/">Sam Parker</a> &middot; Updated March 2026</div></div>
+  </div>
+
+    <section style="margin:2rem 0;padding:1.5rem;background:#f0f4ff;border-radius:12px;">
+      <h2 style="font-size:1.25rem;margin-bottom:1rem;">More Tools You Might Like</h2>
+      <div style="display:grid;gap:0.75rem;">
+        <a href="/tools/coin-flip-simulator/" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#333;border:1px solid #e5e7eb;transition:border-color 0.2s;">
+          <span style="font-size:1.2rem;">🔗</span>
+          <span><strong style="color:#2563eb;">Coin Flip Simulator</strong><br><small style="color:#666;">Heads or tails decision maker</small></span>
+        </a>
+        
+      </div>
+    </section>
+    </main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Generators</h4><a href="/tools/random-name-generator/">Name Generator</a><a href="/tools/random-team-generator/">Team Generator</a><a href="/tools/random-password-generator/">Password Generator</a><a href="/tools/random-number-generator/">Number Generator</a></div>
+      <div class="footer-col"><h4>More Tools</h4><a href="/tools/random-word-generator/">Word Generator</a><a href="/tools/list-randomizer/">List Randomizer</a><a href="/tools/spin-the-wheel/">Spin the Wheel</a><a href="/tools/random-color-generator/">Color Generator</a></div>
+      <div class="footer-col"><h4>Info</h4><a href="/about/">About</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></div>
+      <div class="footer-col"><h4>LetsRandomize</h4><p style="font-size:0.8rem;color:#9ca3af;">Free random generators.</p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var eightBallResponses = [
+    'It is certain', 'It is decidedly so', 'Without a doubt', 'Yes definitely',
+    'You may rely on it', 'As I see it, yes', 'Most likely', 'Outlook good',
+    'Yes', 'Signs point to yes',
+    'Reply hazy, try again', 'Ask again later', 'Better not tell you now',
+    'Cannot predict now', 'Concentrate and ask again',
+    'Don\'t count on it', 'My reply is no', 'My sources say no',
+    'Outlook not so good', 'Very doubtful'
+  ];
+
+  var modeSelect = document.getElementById('yesno-mode');
+  var customGroup = document.getElementById('custom-options-group');
+  var coin = document.getElementById('coin');
+  var generateBtn = document.getElementById('generate-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var resultContent = document.getElementById('result-content');
+
+  modeSelect.addEventListener('change', function() {
+    customGroup.style.display = this.value === 'custom' ? '' : 'none';
+  });
+
+  generateBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var mode = modeSelect.value;
+    var result;
+
+    if (mode === '8ball') {
+      result = RandomEngine.randomPick(eightBallResponses);
+    } else if (mode === 'custom') {
+      var raw = document.getElementById('custom-options').value.trim();
+      if (!raw) { App.showToast('Enter custom options first.'); return; }
+      var options = raw.split('\n').map(function(s) { return s.trim(); }).filter(function(s) { return s.length > 0; });
+      if (options.length < 2) { App.showToast('Enter at least 2 options.'); return; }
+      result = RandomEngine.randomPick(options);
+    } else {
+      result = RandomEngine.randomInt(0, 1) === 0 ? 'Yes' : 'No';
+    }
+
+    // Coin flip animation
+    coin.textContent = '?';
+    coin.classList.remove('flipping');
+    void coin.offsetWidth;
+    coin.classList.add('flipping');
+
+    var coinEl = coin;
+    var resEl = resultContent;
+    var resDisp = resultDisplay;
+
+    setTimeout(function() {
+      coinEl.classList.remove('flipping');
+      if (mode === 'yesno') {
+        coinEl.textContent = result;
+        coinEl.style.background = result === 'Yes' ? 'linear-gradient(135deg, #10b981, #059669)' : 'linear-gradient(135deg, #ef4444, #dc2626)';
+      } else if (mode === '8ball') {
+        coinEl.textContent = '8';
+        coinEl.style.background = 'linear-gradient(135deg, #111827, #374151)';
+      } else {
+        coinEl.textContent = result.charAt(0);
+        coinEl.style.background = 'linear-gradient(135deg, #8b5cf6, #6d28d9)';
+      }
+      resEl.textContent = result;
+      resDisp.style.display = 'block';
+      App.flashResult(resDisp);
+      App.addToHistory(result);
+    }, 600);
+  });
+
+  var sessionCount = 0;
+  generateBtn.addEventListener('click', function() {
+    sessionCount++;
+    if (sessionCount > 1) {
+      document.getElementById('session-counter').textContent = 'Decisions this session: ' + sessionCount;
+      document.getElementById('session-counter').style.display = 'block';
+    }
+  });
+
+  document.getElementById('again-btn').addEventListener('click', function() {
+    generateBtn.click();
+  });
+
+  document.getElementById('share-btn').addEventListener('click', function() {
+    App.shareResult('The answer is: ' + resultContent.textContent, 'Yes or No Generator');
+  });
+})();
+</script>
+</body>
+</html>

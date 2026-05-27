@@ -1,0 +1,21 @@
+# LetsRandomize.org
+
+> Free random generators and online tools for fair selection, team building, and decision making.
+
+LetsRandomize provides cryptographically secure random generators using the Web Crypto API and Fisher-Yates algorithm. All tools run client-side in your browser. No data is stored or transmitted.
+
+## Tools
+
+- [Random Number Generator](https://letsrandomize.org/tools/random-number-generator/): Generate random numbers in any range with multiple modes
+- [Random Team Generator](https://letsrandomize.org/tools/random-team-generator/): Split players into 2-8 fair random teams
+- [List Randomizer](https://letsrandomize.org/tools/list-randomizer/): Shuffle any list or pick N random items
+- [Spin the Wheel](https://letsrandomize.org/tools/spin-the-wheel/): Animated random picker wheel
+- [Random Name Generator](https://letsrandomize.org/tools/random-name-generator/): Generate random first and last names
+- [Random Password Generator](https://letsrandomize.org/tools/random-password-generator/): Create strong passwords with customizable rules
+
+## Games
+
+- [Reaction Time Test](https://letsrandomize.org/games/reaction-time-test/): Measure visual reaction time in milliseconds
+- [CPS Test](https://letsrandomize.org/games/cps-test/): Click speed test (clicks per second)
+- [Typing Speed Test](https://letsrandomize.org/games/typing-speed-test/): Measure WPM typing speed
+- [Memory Test](https://letsrandomize.org/games/memory-test/): Test short-term visual memory

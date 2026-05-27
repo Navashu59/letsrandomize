@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Test - How Many Patterns Can You Remember?</title>
+<meta name="description" content="How far can you go? Watch the pattern, repeat it from memory. Levels get harder fast. Most people fail by level 7. Compare your score to averages.">
+<meta name="keywords" content="memory test, visual memory test, sequence memory, memory game, brain test, memory training, pattern memory, human benchmark memory">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/memory-test/">
+<meta property="og:title" content="Memory Test - How Many Patterns Can You Remember?">
+<meta property="og:description" content="Test your visual memory with a free online sequence game. Remember patterns, beat your high score.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Memory Test - How Many Patterns Can You Remember?">
+<meta property="og:url" content="https://letsrandomize.org/tools/memory-test/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Memory Test - Visual Sequence Memory Game","url":"https://letsrandomize.org/tools/memory-test/","applicationCategory":"GameApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online visual memory test. Remember and repeat increasingly complex patterns to test your memory span.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-22","dateModified":"2026-02-22"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"Memory Test","item":"https://letsrandomize.org/tools/memory-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good score on the memory test?","acceptedAnswer":{"@type":"Answer","text":"The average person can remember sequences of 5-7 items (known as Miller's Law). Reaching level 8-10 is above average. Level 12+ is exceptional. The world record for digit span memory is over 80 digits, but sequence memory on a grid is a different skill that tests spatial memory."}},{"@type":"Question","name":"How can I improve my memory?","acceptedAnswer":{"@type":"Answer","text":"Practice regularly with memory games and tests. Use chunking (grouping items into patterns), visualization techniques, and spatial association. Getting adequate sleep (7-9 hours), regular exercise, and a healthy diet also improve memory function. Daily practice for 10-15 minutes shows measurable improvement within 2-3 weeks."}},{"@type":"Question","name":"What is visual memory?","acceptedAnswer":{"@type":"Answer","text":"Visual memory (also called iconic memory) is the ability to remember visual information like shapes, colors, and spatial positions. It's a key component of working memory and is important for reading, navigation, and recognizing faces. This test specifically measures your visual-spatial sequence memory."}},{"@type":"Question","name":"Does this test measure IQ?","acceptedAnswer":{"@type":"Answer","text":"No, this test measures visual-spatial working memory, which is only one component of cognitive ability. While working memory correlates with IQ, this test alone cannot determine intelligence. It's best used as a fun way to train and track your memory skills over time."}},{"@type":"Question","name":"Why does memory decline with age?","acceptedAnswer":{"@type":"Answer","text":"Working memory peaks in your 20s-30s and gradually declines with age. This is partly due to reduced processing speed and changes in the prefrontal cortex. However, regular mental exercise, physical activity, social engagement, and good sleep can slow age-related memory decline significantly."}},{"@type":"Question","name":"What is the difference between short-term and long-term memory?","acceptedAnswer":{"@type":"Answer","text":"Short-term (working) memory holds 5-9 items for about 20-30 seconds. Long-term memory stores information indefinitely. This test challenges your working memory by requiring you to hold and recall sequences of increasing length. Information moves from short-term to long-term memory through repetition and meaningful association."}}]},{"@context":"https://schema.org","@type":"Article","headline":"Memory Test - Test Your Visual Sequence Memory","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize"},"datePublished":"2026-02-22","dateModified":"2026-03-03"}]
+</script>
+<style>
+/* === Memory Test Styles === */
+.mem-container { max-width: 700px; margin: 0 auto; }
+
+.mem-info-bar {
+  display: flex; justify-content: center; align-items: center;
+  gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;
+}
+.mem-info { text-align: center; }
+.mem-info-value { font-size: 1.75rem; font-weight: 800; color: #10b981; }
+.mem-info-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.mem-status {
+  text-align: center; font-size: 1.1rem; font-weight: 600;
+  color: #374151; margin-bottom: 1rem; min-height: 1.5rem;
+}
+
+.mem-grid-wrapper {
+  display: flex; justify-content: center; margin: 1rem 0;
+}
+
+.mem-grid {
+  display: inline-grid; gap: 6px; padding: 12px;
+  background: #1f2937; border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+.mem-cell {
+  width: 80px; height: 80px; border-radius: 8px;
+  background: #374151; cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  border: 2px solid transparent;
+}
+.mem-cell:hover { background: #4b5563; }
+.mem-cell--flash {
+  background: #10b981 !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(16,185,129,0.5);
+}
+.mem-cell--correct {
+  background: #10b981 !important;
+  border-color: #059669;
+}
+.mem-cell--wrong {
+  background: #ef4444 !important;
+  border-color: #b91c1c;
+  animation: shake 0.3s ease;
+}
+.mem-cell--disabled { cursor: default; pointer-events: none; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+@media (max-width: 480px) {
+  .mem-cell { width: 60px; height: 60px; }
+  .mem-grid { gap: 4px; padding: 8px; }
+}
+@media (max-width: 360px) {
+  .mem-cell { width: 50px; height: 50px; }
+}
+
+.mem-start-area {
+  text-align: center; padding: 3rem 1rem;
+  background: #1f2937; border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+.mem-start-area:hover { background: #374151; }
+.mem-start-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+.mem-start-title { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+.mem-start-sub { font-size: 0.9rem; color: #9ca3af; }
+
+.mem-results {
+  background: #fff; border-radius: 0.75rem; padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin: 1.5rem 0;
+  text-align: center;
+}
+.mem-results h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+
+.mem-result-stats {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.mem-result-stat { text-align: center; }
+.mem-result-stat .value { font-size: 2rem; font-weight: 800; color: #10b981; }
+.mem-result-stat .label { font-size: 0.8rem; color: #6b7280; }
+
+.mem-rank {
+  display: inline-block; padding: 0.5rem 1.25rem;
+  border-radius: 9999px; font-weight: 700; font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.mem-history {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+  margin-top: 1rem;
+}
+.mem-history-chip {
+  padding: 0.25rem 0.6rem; border-radius: 9999px;
+  font-size: 0.75rem; font-weight: 600;
+  background: #f3f4f6; color: #374151;
+}
+
+.mem-lives {
+  display: flex; gap: 0.25rem; justify-content: center; margin-bottom: 0.5rem;
+}
+.mem-heart { font-size: 1.25rem; }
+.mem-heart--lost { opacity: 0.2; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/reaction-time-test/">Reaction</a>
+      <a href="/tools/cps-test/">CPS Test</a>
+      <a href="/tools/aim-trainer/">Aim Trainer</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="tool-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> <span>&#8250;</span>
+      <a href="/tools/">Tools</a> <span>&#8250;</span>
+      Memory Test
+    </div>
+    <h1>Memory Test &mdash; Visual Sequence Memory Game</h1>
+    <p><strong>Average score: level 7.</strong> This visual working memory test shows you a sequence of highlighted tiles, then asks you to repeat the pattern from memory. Each level adds one tile. Reaching level 8-10 is above average; level 12+ is exceptional. Based on the Corsi Block-Tapping Task used in clinical neuropsychology.</p>
+    <div class="eeat-byline"><span class="author">By <a href="/about/" style="color:#10b981;">Sam Parker</a></span><span class="sep" style="color:#4b5563;">|</span><time datetime="2026-03-02" style="color:#9ca3af;">Updated Mar 2, 2026</time></div>
+  </div>
+</section>
+
+<main>
+<div class="container">
+<div class="mem-container">
+
+  <!-- Info Bar -->
+  <div class="mem-info-bar">
+    <div class="mem-info"><div class="mem-info-value" id="levelDisplay">1</div><div class="mem-info-label">Level</div></div>
+    <div class="mem-info"><div class="mem-info-value" id="highScoreDisplay">0</div><div class="mem-info-label">High Score</div></div>
+    <div class="mem-info"><div class="mem-info-value" id="streakDisplay">0</div><div class="mem-info-label">Streak</div></div>
+  </div>
+
+  <!-- Lives -->
+  <div class="mem-lives" id="livesDisplay">
+    <span class="mem-heart">&#10084;&#65039;</span>
+    <span class="mem-heart">&#10084;&#65039;</span>
+    <span class="mem-heart">&#10084;&#65039;</span>
+  </div>
+
+  <!-- Status -->
+  <div class="mem-status" id="statusText">Click to start</div>
+
+  <!-- Game Area -->
+  <div class="mem-grid-wrapper">
+    <div id="gameArea">
+      <div class="mem-start-area" id="startArea">
+        <div class="mem-start-icon">&#129504;</div>
+        <div class="mem-start-title">Click to Start</div>
+        <div class="mem-start-sub">Watch the sequence, then repeat it from memory</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad Slot -->
+
+  <!-- Results (hidden until game over) -->
+  <div class="mem-results" id="results" style="display:none;">
+    <h3>&#128171; Game Over</h3>
+    <div class="mem-result-stats">
+      <div class="mem-result-stat"><div class="value" id="resLevel">0</div><div class="label">Level Reached</div></div>
+      <div class="mem-result-stat"><div class="value" id="resStreak">0</div><div class="label">Best Streak</div></div>
+    </div>
+    <div class="mem-rank" id="resRank"></div>
+    <div class="btn-group" style="justify-content:center;margin-top:1rem;">
+      <button class="btn btn-primary" id="playAgainBtn">&#9654; Play Again</button>
+      <button class="btn btn-secondary" id="shareBtn">&#128279; Share Score</button>
+    </div>
+    <h4 style="font-size:0.9rem;margin-top:1rem;color:#6b7280;">Recent Scores</h4>
+    <div class="mem-history" id="historyChips"></div>
+  </div>
+
+  <!-- How to Play -->
+  <div class="how-to">
+    <h2>How to Play the Memory Test</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><h3>Watch the Pattern</h3><p>Tiles on the grid will flash green one at a time in a specific sequence. Pay close attention to the order.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><h3>Repeat the Sequence</h3><p>After the pattern finishes, click the tiles in the same order they flashed. Get it right to advance.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><h3>Each Level Gets Harder</h3><p>Each level adds one more tile to the sequence. Level 1 has 1 tile, level 5 has 5 tiles, and so on.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><h3>Three Lives</h3><p>You have 3 lives (hearts). Making a mistake costs one life. Lose all 3 and the game ends.</p></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Content -->
+  <section style="margin:2rem 0;line-height:1.8;color:#444;">
+    <h2 style="font-size:1.3rem;color:#111827;margin-bottom:0.75rem;">Understanding Visual Memory</h2>
+    <p>Visual memory, also known as visual-spatial memory, is your brain's ability to store and recall visual information. It's a critical component of working memory &mdash; the mental workspace where you temporarily hold and manipulate information. This visual working memory test specifically measures your <strong>sequential visual-spatial memory</strong>: the ability to remember the order in which visual events occurred at specific grid locations.</p>
+    <p>The average human working memory can hold about 7 items (plus or minus 2), a finding known as Miller's Law. However, sequence memory on a spatial grid combines both position and order, making it more challenging than simple digit span. Most people reach level 5-7 on their first attempt.</p>
+
+    <h2 style="font-size:1.3rem;color:#111827;margin:1.5rem 0 0.75rem;">Memory Level Benchmarks</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.9rem;">
+      <thead>
+        <tr style="background:#f3f4f6;">
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Level</th>
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Rank</th>
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Percentile</th>
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">1-3</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Beginner</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Bottom 20%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Just getting started</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">4-6</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Average</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">20-50%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Normal working memory</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">7-9</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Good</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">50-80%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Above-average recall</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">10-13</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Excellent</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">80-95%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Strong spatial memory</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">14-17</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Outstanding</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">95-99%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Exceptional memory span</td></tr>
+        <tr><td style="padding:0.5rem;">18+</td><td style="padding:0.5rem;">Genius</td><td style="padding:0.5rem;">Top 1%</td><td style="padding:0.5rem;">Memory athlete level</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:1.3rem;color:#111827;margin:1.5rem 0 0.75rem;">Tips to Improve Your Memory Score</h2>
+    <ul style="padding-left:1.25rem;list-style:disc;">
+      <li style="margin-bottom:0.5rem;"><strong>Chunking</strong> &mdash; Group tiles into patterns of 2-3. Instead of remembering 8 individual tiles, remember 3-4 small shapes.</li>
+      <li style="margin-bottom:0.5rem;"><strong>Spatial storytelling</strong> &mdash; Create a path or story connecting the tiles. "Top-left, then diagonally down, then across..."</li>
+      <li style="margin-bottom:0.5rem;"><strong>Subvocalize</strong> &mdash; Quietly name the positions (like "row 1 col 3") as they flash. Combining visual and verbal memory improves recall.</li>
+      <li style="margin-bottom:0.5rem;"><strong>Stay calm</strong> &mdash; Anxiety reduces working memory capacity. Take a breath between rounds if needed.</li>
+      <li style="margin-bottom:0.5rem;"><strong>Practice daily</strong> &mdash; Working memory is trainable. Even 5-10 minutes daily shows measurable improvement within weeks.</li>
+      <li style="margin-bottom:0.5rem;"><strong>Sleep well</strong> &mdash; Memory consolidation happens during sleep. 7-9 hours significantly improves cognitive performance.</li>
+    </ul>
+
+    <h2 style="font-size:1.3rem;color:#111827;margin:1.5rem 0 0.75rem;">The Science Behind Memory Tests</h2>
+    <p>This type of memory test is based on the Corsi Block-Tapping Task, developed by neuropsychologist Philip Corsi in 1972. In the original test, an examiner taps blocks in a sequence and the subject repeats it. Our digital version automates this process with a visual grid.</p>
+    <p>Research shows that the average "Corsi span" (the longest sequence a person can reliably remember) is about 5-6 items for adults. Training can extend this by 1-2 items. The test measures visuospatial sketchpad capacity, one of the three components of Baddeley's working memory model alongside the phonological loop and central executive.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        What is a good score on the memory test? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">The average person can remember sequences of 5-7 items (known as Miller's Law). Reaching level 8-10 is above average. Level 12+ is exceptional. The world record for digit span memory is over 80 digits, but sequence memory on a grid is a different skill that tests spatial memory.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        How can I improve my memory? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Practice regularly with memory games and tests. Use chunking (grouping items into patterns), visualization techniques, and spatial association. Getting adequate sleep (7-9 hours), regular exercise, and a healthy diet also improve memory function. Daily practice for 10-15 minutes shows measurable improvement within 2-3 weeks.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        What is visual memory? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Visual memory (also called iconic memory) is the ability to remember visual information like shapes, colors, and spatial positions. It's a key component of working memory and is important for reading, navigation, and recognizing faces. This test specifically measures your visual-spatial sequence memory.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        Does this test measure IQ? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">No, this test measures visual-spatial working memory, which is only one component of cognitive ability. While working memory correlates with IQ, this test alone cannot determine intelligence. It's best used as a fun way to train and track your memory skills over time.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        Why does memory decline with age? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Working memory peaks in your 20s-30s and gradually declines with age. This is partly due to reduced processing speed and changes in the prefrontal cortex. However, regular mental exercise, physical activity, social engagement, and good sleep can slow age-related memory decline significantly.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        What is the difference between short-term and long-term memory? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Short-term (working) memory holds 5-9 items for about 20-30 seconds. Long-term memory stores information indefinitely. This test challenges your working memory by requiring you to hold and recall sequences of increasing length. Information moves from short-term to long-term memory through repetition and meaningful association.</div></div>
+    </div>
+  </section>
+
+  <!-- Related Tools -->
+  <section class="related-section">
+    <h2 class="section-title">Related Tools</h2>
+    <div class="related-grid">
+      <a href="/tools/reaction-time-test/" class="card tool-card">
+        <div class="tool-card-icon">&#9889;</div>
+        <h3>Reaction Time Test</h3>
+        <p>Test your reflexes and measure reaction speed in milliseconds.</p>
+      </a>
+      <a href="/tools/cps-test/" class="card tool-card">
+        <div class="tool-card-icon">&#128433;</div>
+        <h3>CPS Test</h3>
+        <p>Measure your clicks per second and compare your click speed.</p>
+      </a>
+      <a href="/tools/aim-trainer/" class="card tool-card">
+        <div class="tool-card-icon">&#127919;</div>
+        <h3>Aim Trainer</h3>
+        <p>Improve your aim accuracy with target practice exercises.</p>
+      </a>
+      <a href="/tools/number-memory-test/" class="card tool-card">
+        <div class="tool-card-icon">&#128290;</div>
+        <h3>Number Memory Test</h3>
+        <p>How many digits can you remember? Test your digit span memory.</p>
+      </a>
+      <a href="/tools/chimp-test/" class="card tool-card">
+        <div class="tool-card-icon">&#129421;</div>
+        <h3>Chimp Test</h3>
+        <p>Are you smarter than a chimpanzee?</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Author -->
+  
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/human-benchmark-tests/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Human Benchmark Tests Guide</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Compare your scores across all 7 cognitive tests with average benchmarks.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline">
+    <div class="author-avatar">SP</div>
+    <div>Built by <a href="/about/">Sam Parker</a>, a data science enthusiast and developer. This memory test runs 100% in your browser &mdash; no data is sent to any server.</div>
+  </div>
+
+</div>
+</div>
+
+    <section style="margin:2rem 0;padding:1.5rem;background:#f0f4ff;border-radius:12px;">
+      <h2 style="font-size:1.25rem;margin-bottom:1rem;">More Tools You Might Like</h2>
+      <div style="display:grid;gap:0.75rem;">
+        <a href="/guides/strong-password-best-practices/" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#333;border:1px solid #e5e7eb;transition:border-color 0.2s;">
+          <span style="font-size:1.2rem;">🔗</span>
+          <span><strong style="color:#2563eb;">Strong Password Best Practices</strong><br><small style="color:#666;">Create secure passwords</small></span>
+        </a>
+        
+      </div>
+    </section>
+    </main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Benchmark Tests</h4>
+        <a href="/tools/reaction-time-test/">Reaction Time Test</a>
+        <a href="/tools/cps-test/">CPS Test</a>
+        <a href="/tools/aim-trainer/">Aim Trainer</a>
+        <a href="/tools/memory-test/">Memory Test</a>
+      </div>
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Name Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/random-color-generator/">Color Generator</a>
+        <a href="/tools/random-word-generator/">Word Generator</a>
+        <a href="/tools/yes-or-no-generator/">Yes or No</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/about/">About LetsRandomize</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/tools/">All Tools</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LetsRandomize.org. Built by <a href="/about/">Sam Parker</a>. All tools are free to use.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* === Memory Test Logic === */
+(function() {
+  'use strict';
+
+  const GRID_SIZE = 4; // 4x4 grid
+  const FLASH_DURATION = 500; // ms each tile flashes
+  const FLASH_GAP = 200; // ms between flashes
+  const MAX_LIVES = 3;
+
+  let level = 1;
+  let lives = MAX_LIVES;
+  let sequence = [];
+  let playerIndex = 0;
+  let state = 'idle'; // idle, showing, input, gameover
+  let highScore = parseInt(localStorage.getItem('memHighScore') || '0');
+  let streak = 0;
+  let bestStreak = 0;
+  let history = JSON.parse(localStorage.getItem('memHistory') || '[]');
+  let cells = [];
+
+  const gameArea = document.getElementById('gameArea');
+  const startArea = document.getElementById('startArea');
+  const statusText = document.getElementById('statusText');
+  const levelDisplay = document.getElementById('levelDisplay');
+  const highScoreDisplay = document.getElementById('highScoreDisplay');
+  const streakDisplay = document.getElementById('streakDisplay');
+
+  highScoreDisplay.textContent = highScore;
+
+  // Start area click
+  startArea.addEventListener('click', () => startGame());
+
+  function startGame() {
+    level = 1;
+    lives = MAX_LIVES;
+    sequence = [];
+    streak = 0;
+    bestStreak = 0;
+    updateLivesDisplay();
+    buildGrid();
+    nextRound();
+  }
+
+  function buildGrid() {
+    gameArea.innerHTML = '';
+    const grid = document.createElement('div');
+    grid.className = 'mem-grid';
+    grid.style.gridTemplateColumns = `repeat(${GRID_SIZE}, 1fr)`;
+    cells = [];
+
+    for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'mem-cell';
+      cell.dataset.index = i;
+      cell.addEventListener('click', () => handleCellClick(i));
+      grid.appendChild(cell);
+      cells.push(cell);
+    }
+    gameArea.appendChild(grid);
+  }
+
+  function nextRound() {
+    state = 'showing';
+    playerIndex = 0;
+    levelDisplay.textContent = level;
+    streakDisplay.textContent = streak;
+    statusText.textContent = 'Watch the pattern...';
+    disableCells(true);
+
+    // Add one new random tile to sequence
+    const available = [];
+    for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+      if (!sequence.includes(i) || sequence.length >= GRID_SIZE * GRID_SIZE) {
+        available.push(i);
+      }
+    }
+    const next = available[Math.floor(Math.random() * available.length)];
+    sequence.push(next);
+
+    // Flash the sequence
+    setTimeout(() => showSequence(), 500);
+  }
+
+  function showSequence() {
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i > 0) {
+        cells[sequence[i - 1]].classList.remove('mem-cell--flash');
+      }
+      if (i < sequence.length) {
+        cells[sequence[i]].classList.add('mem-cell--flash');
+        i++;
+      } else {
+        clearInterval(interval);
+        setTimeout(() => {
+          state = 'input';
+          statusText.textContent = `Your turn! Repeat the ${sequence.length}-tile sequence`;
+          disableCells(false);
+        }, 200);
+      }
+    }, FLASH_DURATION + FLASH_GAP);
+  }
+
+  function handleCellClick(index) {
+    if (state !== 'input') return;
+
+    if (index === sequence[playerIndex]) {
+      // Correct
+      cells[index].classList.add('mem-cell--correct');
+      setTimeout(() => cells[index].classList.remove('mem-cell--correct'), 300);
+      playerIndex++;
+
+      if (playerIndex === sequence.length) {
+        // Level complete
+        state = 'showing';
+        level++;
+        streak++;
+        if (streak > bestStreak) bestStreak = streak;
+        if (level - 1 > highScore) {
+          highScore = level - 1;
+          localStorage.setItem('memHighScore', highScore);
+          highScoreDisplay.textContent = highScore;
+        }
+        statusText.textContent = 'Correct! Next level...';
+        disableCells(true);
+        setTimeout(() => nextRound(), 800);
+      }
+    } else {
+      // Wrong
+      cells[index].classList.add('mem-cell--wrong');
+      setTimeout(() => cells[index].classList.remove('mem-cell--wrong'), 500);
+      lives--;
+      streak = 0;
+      updateLivesDisplay();
+
+      if (lives <= 0) {
+        endGame();
+      } else {
+        statusText.textContent = `Wrong! ${lives} ${lives === 1 ? 'life' : 'lives'} left. Watch again...`;
+        state = 'showing';
+        playerIndex = 0;
+        disableCells(true);
+        setTimeout(() => {
+          statusText.textContent = 'Watch the pattern again...';
+          showSequence();
+        }, 1000);
+      }
+    }
+  }
+
+  function disableCells(disabled) {
+    cells.forEach(c => {
+      if (disabled) c.classList.add('mem-cell--disabled');
+      else c.classList.remove('mem-cell--disabled');
+    });
+  }
+
+  function updateLivesDisplay() {
+    const container = document.getElementById('livesDisplay');
+    container.innerHTML = '';
+    for (let i = 0; i < MAX_LIVES; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'mem-heart' + (i >= lives ? ' mem-heart--lost' : '');
+      heart.innerHTML = '&#10084;&#65039;';
+      container.appendChild(heart);
+    }
+  }
+
+  function endGame() {
+    state = 'gameover';
+    const reached = level - 1;
+    statusText.textContent = `Game Over! You reached level ${reached}`;
+
+    // Rank
+    let rank, rankColor, rankBg;
+    if (reached >= 18) { rank = 'Genius'; rankColor = '#7c3aed'; rankBg = '#f5f3ff'; }
+    else if (reached >= 14) { rank = 'Outstanding'; rankColor = '#059669'; rankBg = '#ecfdf5'; }
+    else if (reached >= 10) { rank = 'Excellent'; rankColor = '#10b981'; rankBg = '#f0fdf4'; }
+    else if (reached >= 7) { rank = 'Good'; rankColor = '#3b82f6'; rankBg = '#eff6ff'; }
+    else if (reached >= 4) { rank = 'Average'; rankColor = '#f59e0b'; rankBg = '#fffbeb'; }
+    else { rank = 'Beginner'; rankColor = '#6b7280'; rankBg = '#f9fafb'; }
+
+    // Show start area again
+    gameArea.innerHTML = '';
+    const sa = document.createElement('div');
+    sa.className = 'mem-start-area';
+    sa.innerHTML = `<div class="mem-start-icon">&#129504;</div><div class="mem-start-title">Click to Try Again</div><div class="mem-start-sub">Level reached: ${reached} | Rank: ${rank}</div>`;
+    sa.addEventListener('click', () => startGame());
+    gameArea.appendChild(sa);
+
+    // Results
+    const results = document.getElementById('results');
+    results.style.display = 'block';
+    document.getElementById('resLevel').textContent = reached;
+    document.getElementById('resStreak').textContent = bestStreak;
+
+    const rankEl = document.getElementById('resRank');
+    rankEl.textContent = rank;
+    rankEl.style.color = rankColor;
+    rankEl.style.background = rankBg;
+
+    // Save history
+    history.unshift({ level: reached, streak: bestStreak, ts: Date.now() });
+    if (history.length > 20) history = history.slice(0, 20);
+    localStorage.setItem('memHistory', JSON.stringify(history));
+    renderHistory();
+
+    results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function renderHistory() {
+    const container = document.getElementById('historyChips');
+    container.innerHTML = history.slice(0, 10).map(h =>
+      `<span class="mem-history-chip">Lv.${h.level} (${h.streak} streak)</span>`
+    ).join('');
+  }
+
+  // Play Again
+  document.getElementById('playAgainBtn').addEventListener('click', () => startGame());
+
+  // Share
+  document.getElementById('shareBtn').addEventListener('click', () => {
+    const last = history[0];
+    if (!last) return;
+    const text = `Memory Test: Level ${last.level} | ${last.streak} streak\n\nTry it: https://letsrandomize.org/tools/memory-test/`;
+    if (navigator.share) {
+      navigator.share({ title: 'My Memory Test Score', text });
+    } else {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('shareBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.innerHTML = '&#128279; Share Score', 2000);
+      });
+    }
+  });
+
+  // Initial history render
+  renderHistory();
+
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.site-nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+  }
+})();
+</script>
+</body>
+</html>

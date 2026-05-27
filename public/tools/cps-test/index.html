@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPS Test - Click Speed Test | Clicks Per Second Counter</title>
+<meta name="description" content="Free CPS test to measure your clicks per second. Test your click speed in 1, 5, 10, or 30 seconds.">
+<meta name="keywords" content="cps test, click speed test, clicks per second, click counter, cps counter, click test, mouse click speed, jitter click test, butterfly click test">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/cps-test/">
+<meta property="og:title" content="CPS Test - Click Speed Test | Clicks Per Second Counter">
+<meta property="og:description" content="Free CPS test to measure your clicks per second. Test your click speed and compare your score.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="CPS Test - Click Speed Test | Clicks Per Second Counter">
+<meta property="og:url" content="https://letsrandomize.org/tools/cps-test/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CPS Test - Click Speed Test","url":"https://letsrandomize.org/tools/cps-test/","applicationCategory":"GameApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online CPS test. Measure your clicks per second and test your click speed for gaming.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-22","dateModified":"2026-03-04"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"CPS Test","item":"https://letsrandomize.org/tools/cps-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good CPS score?","acceptedAnswer":{"@type":"Answer","text":"The average CPS is 6-7 clicks per second with regular clicking. A score of 8-10 CPS is considered good, 10-14 CPS is fast (achievable with jitter clicking), and 15+ CPS is exceptional (typically using butterfly clicking). The world record is over 16 CPS sustained."}},{"@type":"Question","name":"What is CPS?","acceptedAnswer":{"@type":"Answer","text":"CPS stands for Clicks Per Second. It measures how many times you can click your mouse button in one second. CPS is commonly used in gaming, especially Minecraft PvP, where faster clicking gives combat advantages."}},{"@type":"Question","name":"How do I increase my CPS?","acceptedAnswer":{"@type":"Answer","text":"You can increase your CPS through different clicking techniques: jitter clicking (tensing your arm to vibrate your finger, achieving 10-14 CPS), butterfly clicking (alternating two fingers on the mouse button, achieving 15-25 CPS), or drag clicking (dragging your finger across the button to register multiple clicks). Practice is key."}},{"@type":"Question","name":"What is jitter clicking?","acceptedAnswer":{"@type":"Answer","text":"Jitter clicking is a technique where you tense your arm and hand muscles to make your finger vibrate rapidly on the mouse button. This technique can achieve 10-14 CPS. It requires practice and can cause strain if done for extended periods."}},{"@type":"Question","name":"What is butterfly clicking?","acceptedAnswer":{"@type":"Answer","text":"Butterfly clicking uses two fingers (usually index and middle) alternating rapidly on the mouse button. This technique can achieve 15-25+ CPS but requires a mouse that registers rapid successive clicks. Not all gaming mice support butterfly clicking well."}},{"@type":"Question","name":"Does CPS matter in Minecraft?","acceptedAnswer":{"@type":"Answer","text":"Yes, CPS is important in Minecraft PvP combat. Faster clicking means more hits per second, which deals more damage and reduces knockback you receive. Most competitive PvP players aim for 8-12 CPS. However, aim and strategy matter more than raw clicking speed."}}]},{"@context":"https://schema.org","@type":"Article","headline":"CPS Test - Click Speed Test","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize"},"datePublished":"2026-02-22","dateModified":"2026-03-04"}]
+</script>
+<style>
+/* === CPS Test Styles === */
+
+.cps-container { max-width: 700px; margin: 0 auto; }
+
+/* Timer Mode Selector */
+.cps-timer-modes {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.cps-timer-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.cps-timer-btn:hover { border-color: #10b981; color: #10b981; }
+.cps-timer-btn--active { background: #10b981; color: #fff; border-color: #10b981; }
+
+/* Click Area */
+.cps-click-area {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  transition: background 0.15s, transform 0.05s;
+  overflow: hidden;
+}
+
+.cps-click-area:active { transform: scale(0.99); }
+
+.cps-click-area--idle { background: #10b981; }
+.cps-click-area--active { background: #3b82f6; }
+.cps-click-area--done { background: #8b5cf6; }
+
+.cps-click-area__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.cps-click-area__subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  max-width: 350px;
+}
+
+.cps-click-area__counter {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.cps-click-area__timer {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.5rem;
+}
+
+.cps-click-area__cps-live {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.25rem;
+}
+
+/* Result display */
+.cps-result {
+  text-align: center;
+}
+
+.cps-result__score {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.cps-result__label {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.9);
+  margin-top: 0.25rem;
+}
+
+.cps-result__rank {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+.cps-result__details {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.5rem;
+}
+
+/* Stats Grid */
+.cps-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.cps-stat {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.cps-stat__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.cps-stat__value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.cps-stat__unit {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Rank bar */
+.cps-rank-bar {
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.cps-rank-bar__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.cps-rank-bar__track {
+  position: relative;
+  height: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+}
+
+.cps-rank-bar__segment {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+}
+
+.cps-rank-bar__marker {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 4px;
+  background: #1f2937;
+  border-radius: 2px;
+  transition: left 0.5s ease;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+.cps-rank-bar__marker::after {
+  content: attr(data-cps);
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  white-space: nowrap;
+}
+
+/* History */
+.cps-history {
+  margin-top: 1.5rem;
+}
+
+.cps-history__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+}
+
+.cps-history__list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cps-history__chip {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.cps-history__chip--best {
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+}
+
+/* Buttons */
+.cps-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+}
+
+.cps-btn:active { transform: scale(0.97); }
+.cps-btn--primary { background: #10b981; color: #fff; }
+.cps-btn--primary:hover { background: #059669; }
+.cps-btn--secondary { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+.cps-btn--secondary:hover { background: #e5e7eb; }
+
+/* Click ripples */
+.cps-ripple {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: scale(0);
+  animation: cps-ripple-anim 0.4s ease-out;
+  pointer-events: none;
+}
+
+@keyframes cps-ripple-anim {
+  to { transform: scale(3); opacity: 0; }
+}
+
+/* Content sections */
+.cps-content-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+.cps-content-section h2 { font-size: 1.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem; }
+.cps-content-section h3 { font-size: 1.15rem; font-weight: 600; color: #374151; margin: 1.25rem 0 0.5rem; }
+.cps-content-section p { color: #4b5563; line-height: 1.7; margin-bottom: 0.75rem; }
+.cps-content-section ul { margin: 0.5rem 0 1rem 1.25rem; list-style: disc; }
+.cps-content-section ul li { color: #4b5563; line-height: 1.7; margin-bottom: 0.25rem; }
+
+.cps-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+.cps-table th, .cps-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+.cps-table th { background: #f9fafb; font-weight: 600; color: #374151; }
+.cps-table td { color: #4b5563; }
+
+/* FAQ */
+.faq-item { border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 0.5rem; overflow: hidden; }
+.faq-q { width: 100%; text-align: left; padding: 1rem 1.25rem; background: #fff; font-weight: 600; font-size: 0.95rem; color: #1f2937; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: none; }
+.faq-q:hover { background: #f9fafb; }
+.faq-q::after { content: '+'; font-size: 1.25rem; font-weight: 400; color: #9ca3af; }
+.faq-item.open .faq-q::after { content: '\2212'; }
+.faq-a { display: none; padding: 0 1.25rem 1rem; color: #4b5563; line-height: 1.7; font-size: 0.9rem; }
+.faq-item.open .faq-a { display: block; }
+
+@media (max-width: 600px) {
+  .cps-click-area { height: 280px; }
+  .cps-click-area__counter { font-size: 3.5rem; }
+  .cps-result__score { font-size: 3.5rem; }
+  .cps-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">LetsRandomize</a>
+    <nav class="site-nav">
+      <a href="/tools/">Tools</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; <span>CPS Test</span>
+  </div>
+</nav>
+
+<!-- Main -->
+<main>
+  <div class="container" style="padding-top:2rem;padding-bottom:3rem;">
+    <div class="cps-container">
+      <h1 style="font-size:2rem;font-weight:800;color:#1f2937;margin-bottom:0.5rem;text-align:center;">CPS Test — Click Speed Test</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+      <p style="text-align:center;color:#6b7280;margin-bottom:1rem;">How fast can you click? Measure your clicks per second (CPS) score.</p>
+
+      <!-- Timer Modes -->
+      <div class="cps-timer-modes">
+        <button class="cps-timer-btn" data-dur="1" onclick="setDuration(1)">1 Second</button>
+        <button class="cps-timer-btn cps-timer-btn--active" data-dur="5" onclick="setDuration(5)">5 Seconds</button>
+        <button class="cps-timer-btn" data-dur="10" onclick="setDuration(10)">10 Seconds</button>
+        <button class="cps-timer-btn" data-dur="30" onclick="setDuration(30)">30 Seconds</button>
+      </div>
+
+      <!-- Click Area -->
+      <div id="cps-area" class="cps-click-area cps-click-area--idle" onmousedown="handleCpsClick(event)">
+        <div id="cps-title" class="cps-click-area__title">Click Here to Start!</div>
+        <div id="cps-subtitle" class="cps-click-area__subtitle">Click as fast as you can for <span id="dur-label">5</span> seconds</div>
+        <div id="cps-counter" class="cps-click-area__counter" style="display:none;">0</div>
+        <div id="cps-timer" class="cps-click-area__timer" style="display:none;"></div>
+        <div id="cps-live" class="cps-click-area__cps-live" style="display:none;"></div>
+        <div id="cps-result" class="cps-result" style="display:none;">
+          <div id="cps-result-score" class="cps-result__score"></div>
+          <div class="cps-result__label">clicks per second</div>
+          <div id="cps-result-rank" class="cps-result__rank"></div>
+          <div id="cps-result-details" class="cps-result__details"></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="cps-stats" id="cps-stats" style="display:none;">
+        <div class="cps-stat">
+          <div class="cps-stat__label">Best CPS</div>
+          <div class="cps-stat__value" id="stat-best-cps">--</div>
+          <div class="cps-stat__unit">CPS</div>
+        </div>
+        <div class="cps-stat">
+          <div class="cps-stat__label">Total Clicks</div>
+          <div class="cps-stat__value" id="stat-total-clicks">0</div>
+          <div class="cps-stat__unit">clicks</div>
+        </div>
+        <div class="cps-stat">
+          <div class="cps-stat__label">Avg CPS</div>
+          <div class="cps-stat__value" id="stat-avg-cps">--</div>
+          <div class="cps-stat__unit">CPS</div>
+        </div>
+        <div class="cps-stat">
+          <div class="cps-stat__label">Tests</div>
+          <div class="cps-stat__value" id="stat-tests">0</div>
+          <div class="cps-stat__unit">total</div>
+        </div>
+      </div>
+
+      <!-- Rank Bar -->
+      <div class="cps-rank-bar" id="cps-rank-bar" style="display:none;">
+        <div class="cps-rank-bar__title">Your CPS Ranking</div>
+        <div class="cps-rank-bar__track">
+          <div class="cps-rank-bar__segment" style="background:#ef4444;">Slow<br>&lt;4</div>
+          <div class="cps-rank-bar__segment" style="background:#f59e0b;">Avg<br>4-7</div>
+          <div class="cps-rank-bar__segment" style="background:#22c55e;">Fast<br>7-10</div>
+          <div class="cps-rank-bar__segment" style="background:#3b82f6;">Pro<br>10-14</div>
+          <div class="cps-rank-bar__segment" style="background:#8b5cf6;">God<br>14+</div>
+          <div class="cps-rank-bar__marker" id="rank-marker" style="left:30%;" data-cps=""></div>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="cps-history" id="cps-history" style="display:none;">
+        <div class="cps-history__title">Recent Scores</div>
+        <div class="cps-history__list" id="history-chips"></div>
+      </div>
+
+      <!-- Actions -->
+      <div class="cps-actions" id="cps-actions" style="display:none;">
+        <button class="cps-btn cps-btn--secondary" onclick="resetCps()">Reset All</button>
+        <button class="cps-btn cps-btn--secondary" onclick="shareCps()">Share Score</button>
+      </div>
+    </div>
+
+    <!-- SEO Content -->
+    <div class="cps-container">
+      <div class="cps-content-section">
+        <h2>How to Use the CPS Test</h2>
+        <p>Testing your click speed is simple:</p>
+        <ul>
+          <li><strong>Choose your timer</strong> — Select 1, 5, 10, or 30 seconds.</li>
+          <li><strong>Click the green area</strong> to start. The timer begins on your first click.</li>
+          <li><strong>Click as fast as you can</strong> until the timer runs out.</li>
+          <li>Your CPS (clicks per second) score is calculated automatically.</li>
+        </ul>
+        <p>For the most accurate results, use a 5 or 10 second test. The 1-second test measures burst speed, while 30 seconds tests endurance.</p>
+      </div>
+
+      <div class="cps-content-section">
+        <h2>CPS Score Rankings</h2>
+        <table class="cps-table">
+          <thead>
+            <tr><th>CPS Range</th><th>Rank</th><th>Technique</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1-3 CPS</td><td>Beginner</td><td>Casual clicking</td></tr>
+            <tr><td>4-6 CPS</td><td>Average</td><td>Regular clicking</td></tr>
+            <tr><td>7-9 CPS</td><td>Fast</td><td>Fast regular clicking</td></tr>
+            <tr><td>10-12 CPS</td><td>Pro</td><td>Jitter clicking</td></tr>
+            <tr><td>13-15 CPS</td><td>Elite</td><td>Butterfly clicking</td></tr>
+            <tr><td>16+ CPS</td><td>God-tier</td><td>Drag / auto-click</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cps-content-section">
+        <h2>Click Speed Techniques</h2>
+
+        <h3>Regular Clicking</h3>
+        <p>Standard mouse clicking with your index finger. Most people achieve 4-7 CPS with this method. It offers the most control and accuracy but the lowest speed.</p>
+
+        <h3>Jitter Clicking</h3>
+        <p>Tense your arm and hand muscles to create rapid vibrations that translate into clicks. This technique achieves 10-14 CPS. It takes practice to maintain aim while jitter clicking. Be careful of hand strain with prolonged use.</p>
+
+        <h3>Butterfly Clicking</h3>
+        <p>Alternate between your index and middle fingers on the mouse button, creating a rapid two-finger rhythm. Skilled users achieve 15-25 CPS. This technique requires a mouse that can register rapid successive clicks — not all mice support it.</p>
+
+        <h3>Drag Clicking</h3>
+        <p>Drag your finger across the mouse button so the friction creates multiple click registrations. This can achieve extremely high CPS (30+) but requires specific mouse models with textured buttons and isn't allowed in most gaming competitions.</p>
+      </div>
+
+      <div class="cps-content-section">
+        <h2>Why CPS Matters in Gaming</h2>
+        <p>Click speed is crucial in several gaming contexts:</p>
+        <ul>
+          <li><strong>Minecraft PvP:</strong> Higher CPS means more hits per second in combat. 8-12 CPS gives a significant advantage in 1v1 fights.</li>
+          <li><strong>Competitive shooters:</strong> Semi-automatic weapons benefit from faster trigger fingers. Games like Fortnite and Valorant reward click speed.</li>
+          <li><strong>Clicker games:</strong> Games like Cookie Clicker are literally about clicking fast.</li>
+          <li><strong>Speed challenges:</strong> Many online competitions track CPS as a competitive metric.</li>
+        </ul>
+      </div>
+
+      <!-- FAQ -->
+      <div class="cps-content-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a good CPS score?</button>
+          <div class="faq-a">The average CPS is 6-7 clicks per second with regular clicking. A score of 8-10 CPS is considered good, 10-14 CPS is fast (achievable with jitter clicking), and 15+ CPS is exceptional (typically using butterfly clicking). The world record is over 16 CPS sustained for 10 seconds.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is CPS?</button>
+          <div class="faq-a">CPS stands for Clicks Per Second. It measures how many times you can click your mouse button in one second. CPS is commonly used as a metric in gaming, especially Minecraft PvP, where faster clicking provides combat advantages like more hits and less knockback.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I increase my CPS?</button>
+          <div class="faq-a">You can increase your CPS through practice and different techniques: jitter clicking (tensing your arm to vibrate, 10-14 CPS), butterfly clicking (alternating two fingers, 15-25 CPS), or drag clicking (dragging across the button, 30+ CPS). A gaming mouse with a responsive sensor also helps.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does the mouse I use matter?</button>
+          <div class="faq-a">Yes, significantly. Gaming mice with lower debounce times, mechanical switches, and textured buttons can register clicks faster. Popular choices for CPS tests include mice from Logitech, Razer, and Glorious. The click switch type (Omron, Kailh, optical) affects response time.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is auto-clicking cheating?</button>
+          <div class="faq-a">Using auto-clicker software is considered cheating in CPS tests and is banned in most gaming competitions. Auto-clickers can achieve 50-100+ CPS, which is physically impossible for humans. Our test measures genuine human clicking speed.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can clicking too fast damage my mouse?</button>
+          <div class="faq-a">Most gaming mice are rated for 20-80 million clicks and can handle rapid clicking. However, aggressive techniques like drag clicking can wear out mouse buttons faster. Jitter clicking can also cause hand strain — take breaks if you feel discomfort.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="cps-content-section">
+        <h2>Related Tools</h2>
+        <ul>
+          <li><a href="/tools/reaction-time-test/">Reaction Time Test</a> — Test your reflex speed</li>
+          <li><a href="/tools/aim-trainer/">Aim Trainer</a> — Improve mouse accuracy with target practice</li>
+          <li><a href="/tools/memory-test/">Memory Test</a> — Test your visual sequence memory</li>
+          <li><a href="/tools/number-memory-test/">Number Memory Test</a> — How many digits can you remember?</li>
+          <li><a href="/tools/typing-speed-test/">Typing Speed Test</a> — Test your WPM typing speed</li>
+          <li><a href="/tools/chimp-test/">Chimp Test</a> — Are you smarter than a chimpanzee?</li>
+        </ul>
+      </div>
+    </div>
+
+  
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/human-benchmark-tests/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Human Benchmark Tests Guide</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Compare your scores across all 7 cognitive tests with average benchmarks.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">LetsRandomize</div>
+        <p>Free online randomizer tools for everyone.</p>
+      </div>
+      <div>
+        <div class="footer-title">Tools</div>
+        <ul>
+          <li><a href="/tools/spin-the-wheel/">Spin the Wheel</a></li>
+          <li><a href="/tools/reaction-time-test/">Reaction Time Test</a></li>
+          <li><a href="/tools/cps-test/">CPS Test</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Company</div>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 LetsRandomize.org. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+(function() {
+  'use strict';
+
+  let duration = 5;
+  let clickCount = 0;
+  let testActive = false;
+  let testDone = false;
+  let startTime = 0;
+  let timerInterval = null;
+  let history = [];
+
+  // DOM
+  const area = document.getElementById('cps-area');
+  const titleEl = document.getElementById('cps-title');
+  const subtitleEl = document.getElementById('cps-subtitle');
+  const counterEl = document.getElementById('cps-counter');
+  const timerEl = document.getElementById('cps-timer');
+  const liveEl = document.getElementById('cps-live');
+  const resultEl = document.getElementById('cps-result');
+  const resultScore = document.getElementById('cps-result-score');
+  const resultRank = document.getElementById('cps-result-rank');
+  const resultDetails = document.getElementById('cps-result-details');
+  const durLabel = document.getElementById('dur-label');
+  const statsPanel = document.getElementById('cps-stats');
+  const rankBar = document.getElementById('cps-rank-bar');
+  const rankMarker = document.getElementById('rank-marker');
+  const historyPanel = document.getElementById('cps-history');
+  const historyChips = document.getElementById('history-chips');
+  const actionsPanel = document.getElementById('cps-actions');
+
+  // Load history
+  try {
+    const saved = localStorage.getItem('cps_history');
+    if (saved) {
+      history = JSON.parse(saved);
+      if (history.length > 0) updateStats();
+    }
+  } catch(e) {}
+
+  function getRank(cps) {
+    if (cps >= 14) return { rank: 'God-tier', emoji: '\u{1F451}' };
+    if (cps >= 10) return { rank: 'Pro', emoji: '\u{1F525}' };
+    if (cps >= 7)  return { rank: 'Fast', emoji: '\u26A1' };
+    if (cps >= 4)  return { rank: 'Average', emoji: '\u{1F44D}' };
+    return { rank: 'Beginner', emoji: '\u{1F422}' };
+  }
+
+  window.setDuration = function(dur) {
+    if (testActive) return;
+    duration = dur;
+    durLabel.textContent = dur;
+    document.querySelectorAll('.cps-timer-btn').forEach(function(btn) {
+      btn.classList.toggle('cps-timer-btn--active', parseInt(btn.dataset.dur) === dur);
+    });
+    if (!testDone) {
+      subtitleEl.textContent = 'Click as fast as you can for ' + dur + ' seconds';
+    }
+  };
+
+  window.handleCpsClick = function(e) {
+    if (testDone) {
+      // Reset for new test
+      testDone = false;
+      clickCount = 0;
+      area.className = 'cps-click-area cps-click-area--idle';
+      titleEl.style.display = 'block';
+      titleEl.textContent = 'Click Here to Start!';
+      subtitleEl.style.display = 'block';
+      subtitleEl.textContent = 'Click as fast as you can for ' + duration + ' seconds';
+      counterEl.style.display = 'none';
+      timerEl.style.display = 'none';
+      liveEl.style.display = 'none';
+      resultEl.style.display = 'none';
+      return;
+    }
+
+    if (!testActive) {
+      // Start test
+      testActive = true;
+      clickCount = 1;
+      startTime = performance.now();
+      area.className = 'cps-click-area cps-click-area--active';
+
+      titleEl.style.display = 'none';
+      subtitleEl.style.display = 'none';
+      counterEl.style.display = 'block';
+      counterEl.textContent = '1';
+      timerEl.style.display = 'block';
+      timerEl.textContent = duration.toFixed(1) + 's';
+      liveEl.style.display = 'block';
+      liveEl.textContent = '0.0 CPS';
+
+      timerInterval = setInterval(function() {
+        const elapsed = (performance.now() - startTime) / 1000;
+        const remaining = Math.max(0, duration - elapsed);
+        timerEl.textContent = remaining.toFixed(1) + 's';
+        if (elapsed > 0) {
+          liveEl.textContent = (clickCount / elapsed).toFixed(1) + ' CPS';
+        }
+        if (remaining <= 0) {
+          endTest();
+        }
+      }, 50);
+    } else {
+      clickCount++;
+      counterEl.textContent = clickCount;
+    }
+
+    // Ripple effect
+    const rect = area.getBoundingClientRect();
+    const ripple = document.createElement('div');
+    ripple.className = 'cps-ripple';
+    ripple.style.left = (e.clientX - rect.left - 20) + 'px';
+    ripple.style.top = (e.clientY - rect.top - 20) + 'px';
+    area.appendChild(ripple);
+    setTimeout(function() { ripple.remove(); }, 400);
+  };
+
+  function endTest() {
+    clearInterval(timerInterval);
+    testActive = false;
+    testDone = true;
+
+    const elapsed = duration;
+    const cps = parseFloat((clickCount / elapsed).toFixed(1));
+    const rating = getRank(cps);
+
+    area.className = 'cps-click-area cps-click-area--done';
+    counterEl.style.display = 'none';
+    timerEl.style.display = 'none';
+    liveEl.style.display = 'none';
+
+    resultEl.style.display = 'block';
+    resultScore.textContent = cps;
+    resultRank.textContent = rating.emoji + ' ' + rating.rank;
+    resultDetails.textContent = clickCount + ' clicks in ' + elapsed + ' seconds. Click to try again.';
+
+    // Save to history
+    history.push({ cps: cps, clicks: clickCount, duration: duration, timestamp: Date.now() });
+    if (history.length > 20) history = history.slice(-20);
+    try { localStorage.setItem('cps_history', JSON.stringify(history)); } catch(e) {}
+
+    updateStats();
+  }
+
+  function updateStats() {
+    if (history.length === 0) return;
+
+    statsPanel.style.display = 'grid';
+    rankBar.style.display = 'block';
+    historyPanel.style.display = 'block';
+    actionsPanel.style.display = 'flex';
+
+    const allCps = history.map(function(h) { return h.cps; });
+    const bestCps = Math.max(...allCps);
+    const avgCps = (allCps.reduce(function(a, b) { return a + b; }, 0) / allCps.length).toFixed(1);
+    const totalClicks = history.reduce(function(a, h) { return a + h.clicks; }, 0);
+
+    document.getElementById('stat-best-cps').textContent = bestCps;
+    document.getElementById('stat-avg-cps').textContent = avgCps;
+    document.getElementById('stat-total-clicks').textContent = totalClicks;
+    document.getElementById('stat-tests').textContent = history.length;
+
+    // Rank bar marker
+    const markerCps = parseFloat(avgCps);
+    const markerPos = Math.min(95, Math.max(5, (markerCps / 18) * 100));
+    rankMarker.style.left = markerPos + '%';
+    rankMarker.setAttribute('data-cps', markerCps + ' CPS');
+
+    // History chips
+    historyChips.innerHTML = '';
+    const recent = history.slice(-10).reverse();
+    recent.forEach(function(h) {
+      const chip = document.createElement('span');
+      chip.className = 'cps-history__chip';
+      if (h.cps === bestCps) chip.className += ' cps-history__chip--best';
+      chip.textContent = h.cps + ' CPS (' + h.duration + 's)';
+      historyChips.appendChild(chip);
+    });
+  }
+
+  window.resetCps = function() {
+    history = [];
+    try { localStorage.removeItem('cps_history'); } catch(e) {}
+    statsPanel.style.display = 'none';
+    rankBar.style.display = 'none';
+    historyPanel.style.display = 'none';
+    actionsPanel.style.display = 'none';
+    testDone = false;
+    testActive = false;
+    clickCount = 0;
+    clearInterval(timerInterval);
+    area.className = 'cps-click-area cps-click-area--idle';
+    titleEl.style.display = 'block';
+    titleEl.textContent = 'Click Here to Start!';
+    subtitleEl.style.display = 'block';
+    subtitleEl.textContent = 'Click as fast as you can for ' + duration + ' seconds';
+    counterEl.style.display = 'none';
+    timerEl.style.display = 'none';
+    liveEl.style.display = 'none';
+    resultEl.style.display = 'none';
+  };
+
+  window.shareCps = function() {
+    if (history.length === 0) return;
+    const allCps = history.map(function(h) { return h.cps; });
+    const best = Math.max(...allCps);
+    const avg = (allCps.reduce(function(a, b) { return a + b; }, 0) / allCps.length).toFixed(1);
+    const text = 'My CPS score: ' + best + ' CPS best, ' + avg + ' CPS average! \u{1F5B1}\uFE0F Test yours at https://letsrandomize.org/tools/cps-test/';
+
+    if (navigator.share) {
+      navigator.share({ title: 'My CPS Score', text: text, url: 'https://letsrandomize.org/tools/cps-test/' }).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.querySelector('[onclick="shareCps()"]');
+        var orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = orig; }, 2000);
+      }).catch(function(){});
+    }
+  };
+
+  // Prevent context menu on click area
+  area.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+
+})();
+</script>
+
+</body>
+</html>

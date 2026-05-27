@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chimp Test - Are You Smarter Than a Chimpanzee?</title>
+<meta name="description" content="Free online chimp test. Numbers flash on screen, then get hidden. Click them in order from lowest to highest.">
+<meta name="keywords" content="chimp test, are you smarter than a chimpanzee, chimp memory test, number memory game, ayumu chimp test, human benchmark chimp test">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/chimp-test/">
+<meta property="og:title" content="Chimp Test - Are You Smarter Than a Chimpanzee?">
+<meta property="og:description" content="Can you beat a chimp? Numbers appear briefly, then hide. Click them in order. Based on the Ayumu study.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Chimp Test - Are You Smarter Than a Chimpanzee?">
+<meta property="og:url" content="https://letsrandomize.org/tools/chimp-test/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Chimp Test - Are You Smarter Than a Chimpanzee?","url":"https://letsrandomize.org/tools/chimp-test/","applicationCategory":"GameApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free chimp test based on the Ayumu chimpanzee study. Numbers appear on screen, get hidden, and you must click them in order.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-22","dateModified":"2026-02-22"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"Chimp Test","item":"https://letsrandomize.org/tools/chimp-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the chimp test?","acceptedAnswer":{"@type":"Answer","text":"The chimp test is a working memory game inspired by a 2007 study by Dr. Tetsuro Matsuzawa at Kyoto University. In the study, a chimpanzee named Ayumu could remember the positions of numbers 1-9 after seeing them for just 210 milliseconds, outperforming human participants. This test challenges you to do the same."}},{"@type":"Question","name":"Can chimps really beat humans at memory?","acceptedAnswer":{"@type":"Answer","text":"Yes, in specific short-term memory tasks. Young chimpanzees like Ayumu demonstrated 'eidetic-like' memory for briefly displayed numbers, correctly remembering positions of 9 numbers shown for just 210ms. Most humans can only handle 4-5 numbers at that speed. Scientists believe chimps may have a photographic-like memory that humans traded for language abilities during evolution."}},{"@type":"Question","name":"What is a good score on the chimp test?","acceptedAnswer":{"@type":"Answer","text":"Most humans can consistently handle 4-6 numbers. Reaching 7-8 is above average. Getting 9 or more numbers correct puts you in the top tier. The chimpanzee Ayumu could consistently handle 9 numbers at 210ms display time, which very few humans can match."}},{"@type":"Question","name":"How does this test work?","acceptedAnswer":{"@type":"Answer","text":"Numbers appear briefly on a grid. After a short display time, the numbers are hidden behind squares. You must click the squares in order from 1 to the highest number. Each round adds one more number. If you click the wrong square, the test ends and your score is the highest level you completed."}},{"@type":"Question","name":"Can I improve at the chimp test?","acceptedAnswer":{"@type":"Answer","text":"Yes! Regular practice improves your spatial working memory. Try to use 'chunking' (grouping nearby numbers) and scan the grid in a consistent pattern. Most people improve by 1-2 levels within a week of daily practice. Focus on the spatial relationships between numbers rather than trying to memorize each position individually."}},{"@type":"Question","name":"What does this test measure?","acceptedAnswer":{"@type":"Answer","text":"The chimp test measures visuospatial working memory — your ability to briefly encode and recall the positions of items in space. This type of memory is crucial for navigation, driving, sports, and many everyday tasks. It's a component of fluid intelligence and tends to peak in your 20s."}}]},{"@context":"https://schema.org","@type":"Article","headline":"Chimp Test - Are You Smarter Than a Chimpanzee?","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize"},"datePublished":"2026-02-22","dateModified":"2026-02-22"}]
+</script>
+<style>
+.chimp-container{max-width:600px;margin:0 auto;text-align:center}
+.chimp-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin:20px auto;max-width:480px;aspect-ratio:1;background:#1a1a2e;border-radius:12px;padding:8px}
+.chimp-cell{background:#16213e;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;color:#fff;cursor:pointer;transition:all 0.15s;user-select:none;aspect-ratio:1}
+.chimp-cell:hover:not(.empty):not(.found){background:#1a1a3e;transform:scale(1.05)}
+.chimp-cell.showing{background:#e94560;color:#fff}
+.chimp-cell.hidden{background:#0f3460;cursor:pointer}
+.chimp-cell.hidden:hover{background:#1a4a7a}
+.chimp-cell.found{background:#22c55e;cursor:default;opacity:0.6}
+.chimp-cell.wrong{background:#ef4444;animation:shake 0.4s}
+.chimp-cell.empty{background:transparent;cursor:default}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+.chimp-info{margin:16px 0;font-size:1.1rem;color:#6b7280}
+.chimp-info .level-badge{display:inline-block;background:#6366f1;color:#fff;padding:4px 14px;border-radius:20px;font-weight:600;font-size:0.95rem;margin-left:8px}
+.chimp-info .strikes{color:#ef4444;font-weight:600}
+
+.chimp-start{padding:40px 20px}
+.chimp-start h2{font-size:1.6rem;margin-bottom:12px;color:#1f2937}
+.chimp-start p{color:#6b7280;margin-bottom:24px;font-size:1rem;line-height:1.6}
+.chimp-start button{padding:14px 36px;background:#6366f1;color:#fff;border:none;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer}
+.chimp-start button:hover{background:#4f46e5}
+
+.chimp-result{padding:32px;background:linear-gradient(135deg,#eef2ff,#faf5ff);border-radius:16px;margin:20px 0}
+.chimp-result .score-big{font-size:4rem;font-weight:800;color:#6366f1}
+.chimp-result .score-label{font-size:1rem;color:#6b7280;margin-bottom:16px}
+.chimp-result .rank{font-size:1.1rem;font-weight:600;padding:6px 18px;border-radius:20px;display:inline-block;margin-bottom:20px}
+
+.chimp-history{margin-top:20px;text-align:left}
+.chimp-history h3{font-size:1rem;color:#666;margin-bottom:8px}
+.chimp-history .h-entry{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f3f4f6;font-size:0.85rem;color:#4b5563}
+
+@media(max-width:500px){
+  .chimp-grid{grid-template-columns:repeat(6,1fr);max-width:360px}
+  .chimp-cell{font-size:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="container">
+  <div class="tool-page">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" style="font-size:0.85rem;color:#6b7280;margin-bottom:16px">
+      <a href="/" style="color:#6366f1;text-decoration:none">Home</a>
+      <span style="margin:0 6px">&rsaquo;</span>
+      <a href="/tools/" style="color:#6366f1;text-decoration:none">Tools</a>
+      <span style="margin:0 6px">&rsaquo;</span>
+      <span>Chimp Test</span>
+    </nav>
+
+    <div class="chimp-container">
+      <h1 style="font-size:1.8rem;margin-bottom:8px">Chimp Test</h1>
+      <p style="color:#6b7280;margin-bottom:20px">Are you smarter than a chimpanzee? Numbers appear briefly, then hide. Click them in ascending order.</p>
+
+      <div class="eeat-byline" style="display:flex;align-items:center;justify-content:center;gap:8px;font-size:0.85rem;color:#666;margin:0 0 20px;flex-wrap:wrap">
+        <span class="author" style="font-weight:500;color:#444">By Sam Parker</span>
+        <span class="sep" style="color:#ccc">|</span>
+        <time datetime="2026-02-22">Updated Feb 22, 2026</time>
+      </div>
+
+      <!-- AD_SLOT: top-banner -->
+
+      <!-- Game Area -->
+      <div id="game-area">
+        <div class="chimp-start" id="start-screen">
+          <h2>&#129421; Are You Smarter Than a Chimpanzee?</h2>
+          <p>In a 2007 study, a chimpanzee named Ayumu outperformed humans at remembering number positions. Numbers will flash on screen, then get covered. Click them in order from <strong>1</strong> to the highest number.</p>
+          <button id="start-btn">Start Test</button>
+        </div>
+
+        <div id="game-screen" style="display:none">
+          <div class="chimp-info">
+            <span>Level: <span class="level-badge" id="level-display">4</span></span>
+            <span style="margin-left:16px">Strikes: <span class="strikes" id="strikes-display">0 / 3</span></span>
+          </div>
+          <div class="chimp-grid" id="chimp-grid"></div>
+        </div>
+
+        <div class="chimp-result" id="result-screen" style="display:none">
+          <h2>Game Over</h2>
+          <div class="score-big" id="final-score">0</div>
+          <div class="score-label">Numbers Remembered</div>
+          <div class="rank" id="final-rank"></div>
+          <br>
+          <button id="retry-btn" style="padding:12px 32px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer">Try Again</button>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="chimp-history" id="history-section" style="display:none">
+        <h3>Recent Scores</h3>
+        <div id="history-list"></div>
+      </div>
+    </div>
+
+    <!-- AD_SLOT: in-content-1 -->
+
+    <!-- Educational Content -->
+    <div style="max-width:700px;margin:32px auto;text-align:left">
+      <h2>About the Chimp Test</h2>
+      <p>The chimp test is based on a famous 2007 experiment by <strong>Dr. Tetsuro Matsuzawa</strong> at the Primate Research Institute of Kyoto University. In the study, a young chimpanzee named <strong>Ayumu</strong> was shown numbers 1 through 9 on a touchscreen. After the numbers were displayed for just 210 milliseconds (about one-fifth of a second), they were covered by white squares. Ayumu had to touch the squares in ascending numerical order.</p>
+      <p>Remarkably, Ayumu could consistently remember the positions of all 9 numbers at this extremely brief display time &mdash; a task that most adult humans struggle with beyond 4&ndash;5 numbers. This finding challenged the long-held assumption that humans are superior to other primates in all cognitive tasks.</p>
+
+      <h3>Why Are Chimps Better at This?</h3>
+      <p>Scientists hypothesize that young chimpanzees possess a type of <strong>eidetic (photographic) memory</strong> that allows them to capture and store visual information almost instantly. Researchers believe that during human evolution, we may have traded this raw visual memory capacity for more advanced language and abstract reasoning abilities. This is known as the <strong>"cognitive tradeoff hypothesis."</strong></p>
+
+      <h3>What Does This Test Measure?</h3>
+      <ul>
+        <li><strong>Visuospatial working memory:</strong> Your ability to encode and recall positions of items in space</li>
+        <li><strong>Processing speed:</strong> How quickly you can scan and memorize a visual scene</li>
+        <li><strong>Sequential recall:</strong> Your ability to remember items in a specific order</li>
+      </ul>
+
+      <h3>Tips to Improve</h3>
+      <ol>
+        <li><strong>Chunk nearby numbers:</strong> Group numbers that are close together rather than memorizing each position independently</li>
+        <li><strong>Scan systematically:</strong> Develop a consistent scanning pattern (e.g., left to right, top to bottom)</li>
+        <li><strong>Focus on spatial relationships:</strong> Remember where numbers are relative to each other, not absolute positions</li>
+        <li><strong>Practice daily:</strong> Even 5 minutes of daily practice can improve your score by 1&ndash;2 levels within a week</li>
+      </ol>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What is the chimp test?</summary>
+          <div class="faq-answer" style="padding:12px 0;color:#4b5563;line-height:1.7">The chimp test is a working memory game inspired by Dr. Tetsuro Matsuzawa's 2007 study at Kyoto University. A chimpanzee named Ayumu could remember the positions of numbers 1&ndash;9 after seeing them for just 210 milliseconds, outperforming human participants.</div>
+        </details>
+        <details>
+          <summary>Can chimps really beat humans at memory?</summary>
+          <div class="faq-answer" style="padding:12px 0;color:#4b5563;line-height:1.7">Yes, in specific short-term visuospatial memory tasks. Young chimpanzees demonstrated eidetic-like memory for briefly displayed numbers. Most humans can only handle 4&ndash;5 numbers at that speed. Scientists believe chimps may have retained a photographic-like memory that humans traded for language abilities.</div>
+        </details>
+        <details>
+          <summary>What is a good score on the chimp test?</summary>
+          <div class="faq-answer" style="padding:12px 0;color:#4b5563;line-height:1.7">Most humans can consistently handle 4&ndash;6 numbers. Reaching 7&ndash;8 is above average. Getting 9+ numbers correct puts you in the top tier. Ayumu the chimpanzee could consistently handle 9 numbers at 210ms display time.</div>
+        </details>
+        <details>
+          <summary>Can I improve at the chimp test?</summary>
+          <div class="faq-answer" style="padding:12px 0;color:#4b5563;line-height:1.7">Yes! Regular practice improves visuospatial working memory. Use chunking, scan the grid consistently, and focus on spatial relationships. Most people improve by 1&ndash;2 levels within a week of daily practice.</div>
+        </details>
+        <details>
+          <summary>What does this test measure?</summary>
+          <div class="faq-answer" style="padding:12px 0;color:#4b5563;line-height:1.7">The chimp test measures visuospatial working memory &mdash; your ability to briefly encode and recall item positions in space. This type of memory is crucial for navigation, driving, sports, and many everyday tasks.</div>
+        </details>
+        <details>
+          <summary>How does this test work?</summary>
+          <div class="faq-answer" style="padding:12px 0;color:#4b5563;line-height:1.7">Numbers appear briefly on a grid. After the display time, numbers are hidden behind squares. You click the squares in ascending order (1, 2, 3...). Each round adds one more number. If you click wrong, you get a strike. Three strikes and the test ends.</div>
+        </details>
+      </div>
+
+      <!-- AD_SLOT: in-content-2 -->
+
+      <!-- Related Tools -->
+      <section class="related-section" style="margin-top:32px">
+        <h2 class="section-title">Related Tools</h2>
+        <div class="related-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+          <a href="/tools/memory-test/" class="card tool-card" style="display:block;padding:16px;text-decoration:none;color:#333">
+            <div class="tool-card-icon">&#129504;</div>
+            <h3>Memory Test</h3>
+            <p>Test your visual sequence memory with tile patterns.</p>
+          </a>
+          <a href="/tools/number-memory-test/" class="card tool-card" style="display:block;padding:16px;text-decoration:none;color:#333">
+            <div class="tool-card-icon">&#128290;</div>
+            <h3>Number Memory Test</h3>
+            <p>How many digits can you remember?</p>
+          </a>
+          <a href="/tools/reaction-time-test/" class="card tool-card" style="display:block;padding:16px;text-decoration:none;color:#333">
+            <div class="tool-card-icon">&#9889;</div>
+            <h3>Reaction Time Test</h3>
+            <p>Test your reflexes and measure reaction speed.</p>
+          </a>
+          <a href="/tools/typing-speed-test/" class="card tool-card" style="display:block;padding:16px;text-decoration:none;color:#333">
+            <div class="tool-card-icon">&#9000;</div>
+            <h3>Typing Speed Test</h3>
+            <p>Test your typing speed in WPM.</p>
+          </a>
+          <a href="/tools/spin-the-wheel/" class="card tool-card" style="display:block;padding:16px;text-decoration:none;color:#333">
+            <div class="tool-card-icon">&#127905;</div>
+            <h3>Spin the Wheel</h3>
+            <p>Random wheel spinner for decisions and games.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Author -->
+      <div class="author-byline" style="display:flex;align-items:center;gap:12px;margin:24px 0;padding:16px;background:#f8f9fa;border-radius:10px">
+        <div class="author-avatar" style="width:40px;height:40px;border-radius:50%;background:#6366f1;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem">SP</div>
+        <div style="font-size:0.9rem;color:#4b5563">Built by <a href="/about/" style="color:#6366f1">Sam Parker</a>, a data science enthusiast and developer. This chimp test runs 100% in your browser &mdash; no data is sent to any server.</div>
+      </div>
+    </div>
+
+  </div>
+
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/human-benchmark-tests/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Human Benchmark Tests Guide</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Compare your scores across all 7 cognitive tests with average benchmarks.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Random Name Generator</a>
+        <a href="/tools/random-team-generator/">Random Team Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tests & Games</h4>
+        <a href="/tools/reaction-time-test/">Reaction Time Test</a>
+        <a href="/tools/cps-test/">CPS Test</a>
+        <a href="/tools/aim-trainer/">Aim Trainer</a>
+        <a href="/tools/typing-speed-test/">Typing Speed Test</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+        <a href="/tools/memory-test/">Memory Test</a>
+        <a href="/tools/chimp-test/">Chimp Test</a>
+        <a href="/tools/number-memory-test/">Number Memory</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/about/">About LetsRandomize</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LetsRandomize. Built by <a href="/about/">Sam Parker</a>. All tools are free to use.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+<script>
+(function(){
+  const GRID_COLS = 8;
+  const GRID_ROWS = 8;
+  const GRID_TOTAL = GRID_COLS * GRID_ROWS;
+  const MAX_STRIKES = 3;
+  const DISPLAY_TIME_BASE = 1500; // ms for first level, decreases
+  const START_NUMBERS = 4;
+
+  let level = START_NUMBERS;
+  let strikes = 0;
+  let nextExpected = 1;
+  let numberPositions = {};
+  let isShowing = false;
+  let bestScore = 0;
+  let history = JSON.parse(localStorage.getItem('chimp_history') || '[]');
+
+  const grid = document.getElementById('chimp-grid');
+  const startScreen = document.getElementById('start-screen');
+  const gameScreen = document.getElementById('game-screen');
+  const resultScreen = document.getElementById('result-screen');
+  const levelDisplay = document.getElementById('level-display');
+  const strikesDisplay = document.getElementById('strikes-display');
+
+  function getDisplayTime(){
+    // Starts at 1500ms, decreases as levels increase
+    return Math.max(400, DISPLAY_TIME_BASE - (level - START_NUMBERS) * 100);
+  }
+
+  function startGame(){
+    level = START_NUMBERS;
+    strikes = 0;
+    bestScore = 0;
+    startScreen.style.display = 'none';
+    resultScreen.style.display = 'none';
+    gameScreen.style.display = 'block';
+    startRound();
+  }
+
+  function startRound(){
+    nextExpected = 1;
+    numberPositions = {};
+    levelDisplay.textContent = level;
+    strikesDisplay.textContent = strikes + ' / ' + MAX_STRIKES;
+
+    // Generate random positions for numbers 1..level
+    const positions = [];
+    const used = new Set();
+    for(let n = 1; n <= level; n++){
+      let pos;
+      do {
+        pos = Math.floor(Math.random() * GRID_TOTAL);
+      } while(used.has(pos));
+      used.add(pos);
+      positions.push({num: n, pos: pos});
+      numberPositions[pos] = n;
+    }
+
+    // Render grid with numbers showing
+    renderGrid(true);
+    isShowing = true;
+
+    // Hide numbers after display time
+    setTimeout(function(){
+      isShowing = false;
+      renderGrid(false);
+    }, getDisplayTime());
+  }
+
+  function renderGrid(showNumbers){
+    let html = '';
+    for(let i = 0; i < GRID_TOTAL; i++){
+      if(numberPositions[i] !== undefined){
+        const num = numberPositions[i];
+        if(num === -1){
+          // Already found
+          html += '<div class="chimp-cell found" data-pos="'+i+'"></div>';
+        } else if(showNumbers){
+          html += '<div class="chimp-cell showing" data-pos="'+i+'">'+num+'</div>';
+        } else {
+          html += '<div class="chimp-cell hidden" data-pos="'+i+'" data-num="'+num+'"></div>';
+        }
+      } else {
+        html += '<div class="chimp-cell empty" data-pos="'+i+'"></div>';
+      }
+    }
+    grid.innerHTML = html;
+
+    // Add click handlers
+    grid.querySelectorAll('.chimp-cell.hidden').forEach(function(cell){
+      cell.addEventListener('click', handleClick);
+    });
+  }
+
+  function handleClick(e){
+    if(isShowing) return;
+    const cell = e.currentTarget;
+    const pos = parseInt(cell.dataset.pos);
+    const num = parseInt(cell.dataset.num);
+
+    if(num === nextExpected){
+      // Correct
+      cell.className = 'chimp-cell found';
+      cell.textContent = num;
+      numberPositions[pos] = -1; // Mark as found
+      nextExpected++;
+
+      if(nextExpected > level){
+        // Level complete
+        bestScore = level;
+        level++;
+        setTimeout(startRound, 500);
+      }
+    } else {
+      // Wrong
+      cell.className = 'chimp-cell wrong';
+      strikes++;
+      strikesDisplay.textContent = strikes + ' / ' + MAX_STRIKES;
+
+      if(strikes >= MAX_STRIKES){
+        // Game over
+        bestScore = Math.max(bestScore, level - 1);
+        setTimeout(endGame, 600);
+      } else {
+        // Show the correct answer briefly, then restart round
+        setTimeout(function(){
+          // Show all numbers
+          renderGrid(true);
+          setTimeout(function(){
+            startRound();
+          }, 800);
+        }, 400);
+      }
+    }
+  }
+
+  function endGame(){
+    gameScreen.style.display = 'none';
+    resultScreen.style.display = 'block';
+
+    document.getElementById('final-score').textContent = bestScore;
+    const rank = getRank(bestScore);
+    const rankEl = document.getElementById('final-rank');
+    rankEl.textContent = rank.label;
+    rankEl.style.background = rank.bg;
+    rankEl.style.color = rank.color;
+
+    // Save history
+    history.unshift({score: bestScore, date: new Date().toLocaleDateString()});
+    if(history.length > 20) history = history.slice(0,20);
+    localStorage.setItem('chimp_history', JSON.stringify(history));
+    renderHistory();
+  }
+
+  function getRank(score){
+    if(score >= 12) return {label:'Photographic Memory',bg:'#fef3c7',color:'#92400e'};
+    if(score >= 9)  return {label:'Chimp Level (Top Tier)',bg:'#dcfce7',color:'#166534'};
+    if(score >= 7)  return {label:'Above Average',bg:'#dbeafe',color:'#1e40af'};
+    if(score >= 5)  return {label:'Average Human',bg:'#e0e7ff',color:'#3730a3'};
+    if(score >= 4)  return {label:'Below Average',bg:'#f3f4f6',color:'#374151'};
+    return {label:'Keep Practicing',bg:'#fef2f2',color:'#991b1b'};
+  }
+
+  function renderHistory(){
+    const section = document.getElementById('history-section');
+    const list = document.getElementById('history-list');
+    if(history.length === 0){ section.style.display = 'none'; return; }
+    section.style.display = 'block';
+    list.innerHTML = history.slice(0,10).map(function(h){
+      const rank = getRank(h.score);
+      return '<div class="h-entry"><span><strong>'+h.score+' numbers</strong> &mdash; '+rank.label+'</span><span>'+h.date+'</span></div>';
+    }).join('');
+  }
+
+  // Event listeners
+  document.getElementById('start-btn').addEventListener('click', startGame);
+  document.getElementById('retry-btn').addEventListener('click', function(){
+    resultScreen.style.display = 'none';
+    startGame();
+  });
+
+  renderHistory();
+})();
+</script>
+</body>
+</html>

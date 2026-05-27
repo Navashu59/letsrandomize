@@ -1,0 +1,78 @@
+<!-- template-version: 1.0 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{META_TITLE}}</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="{{CANONICAL_URL}}">
+<meta property="og:title" content="{{OG_TITLE}}">
+<meta property="og:description" content="{{OG_DESCRIPTION}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{OG_URL}}">
+<link rel="stylesheet" href="/assets/css/style.css">
+{{JSON_LD}}
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> {{SITE_NAME}}</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      {{NAV_LINKS}}
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    {{BREADCRUMB_HTML}}
+    <h1>{{H1}}</h1>
+    <p>{{INTRO}}</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+    <div class="content-section">
+      {{CONTENT_SECTIONS}}
+
+      {{RELATED_LINKS_HTML}}
+
+      <div class="privacy-note">
+        <p><strong>Privacy Note:</strong> All calculations are performed locally in your browser. No data is sent to our servers.</p>
+      </div>
+
+      {{EEAT_BYLINE}}
+    </div>
+
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      {{FAQ_HTML}}
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/tools/">All Tools</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+    <p class="copyright">{{FOOTER_TEXT}}</p>
+  </div>
+</footer>
+<script>
+});
+</script>
+</body>
+</html>

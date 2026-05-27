@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reaction Time Test - Measure Your Reflex Speed (2026)</title>
+<meta name="description" content="How fast are your reflexes? Test your reaction time in milliseconds and compare against the human average. Challenge friends and beat your best score.">
+<meta name="keywords" content="reaction time test, reflex test, reaction speed test, response time test, human benchmark, reaction time, reflex speed, visual reaction test">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/reaction-time-test/">
+<meta property="og:title" content="Reaction Time Test - Measure Your Reflex Speed (2026)">
+<meta property="og:description" content="Test your reaction time with this free online reflex test. Measure your response speed in milliseconds and compare to averages.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Reaction Time Test - Measure Your Reflex Speed (2026)">
+<meta property="og:url" content="https://letsrandomize.org/tools/reaction-time-test/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Reaction Time Test - Online Reflex Speed Test","url":"https://letsrandomize.org/tools/reaction-time-test/","applicationCategory":"UtilityApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online reaction time test. Measure your reflex speed in milliseconds and compare to human averages.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-22","dateModified":"2026-03-04"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"Reaction Time Test","item":"https://letsrandomize.org/tools/reaction-time-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good reaction time?","acceptedAnswer":{"@type":"Answer","text":"The average human reaction time to visual stimuli is about 250 milliseconds (ms). Anything under 200ms is considered fast. Professional gamers typically react in 150-180ms, while the fastest recorded human reaction times are around 120ms."}},{"@type":"Question","name":"How does age affect reaction time?","acceptedAnswer":{"@type":"Answer","text":"Reaction time typically peaks in your early 20s (around 200-250ms) and gradually slows with age. By age 60, average reaction times increase to about 270-300ms. However, regular practice and physical fitness can help maintain faster reflexes."}},{"@type":"Question","name":"Can you improve your reaction time?","acceptedAnswer":{"@type":"Answer","text":"Yes, reaction time can be improved with practice. Regular training with reaction time tests, playing fast-paced video games, getting adequate sleep, staying hydrated, and physical exercise all contribute to faster reflexes. Most people see improvement within 1-2 weeks of daily practice."}},{"@type":"Question","name":"What factors affect reaction time?","acceptedAnswer":{"@type":"Answer","text":"Several factors affect reaction time: sleep quality, caffeine intake, age, physical fitness, mental alertness, and the type of stimulus (visual, auditory, or tactile). Auditory reaction times are typically 20-40ms faster than visual ones."}},{"@type":"Question","name":"Is this test accurate?","acceptedAnswer":{"@type":"Answer","text":"Our test measures the time between the visual stimulus appearing and your click response. Results are accurate to within a few milliseconds, depending on your device and display. For the most accurate results, use a wired mouse and a monitor with low input lag."}},{"@type":"Question","name":"What is the fastest human reaction time ever recorded?","acceptedAnswer":{"@type":"Answer","text":"The fastest scientifically verified human reaction times are around 100-120ms for simple visual stimuli. In athletics, any reaction time under 100ms in sprinting is considered a false start, as it's believed to be faster than humanly possible to genuinely react."}}]},{"@context":"https://schema.org","@type":"Article","headline":"Reaction Time Test - Measure Your Reflex Speed","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize"},"datePublished":"2026-02-22","dateModified":"2026-03-04"}]
+</script>
+<style>
+/* === Reaction Time Test Styles === */
+
+.rt-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* The test area */
+.rt-area {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.rt-area--waiting {
+  background: #ef4444;
+}
+.rt-area--ready {
+  background: #22c55e;
+}
+.rt-area--result {
+  background: #3b82f6;
+}
+.rt-area--early {
+  background: #f59e0b;
+}
+.rt-area--idle {
+  background: #10b981;
+}
+
+.rt-area__icon {
+  font-size: 4rem;
+  margin-bottom: 0.75rem;
+}
+
+.rt-area__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.rt-area__subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  text-align: center;
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+.rt-area__time {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.rt-area__time-unit {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+}
+
+.rt-area__rating {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Stats panel */
+.rt-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.rt-stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.rt-stat-card__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.rt-stat-card__value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.rt-stat-card__unit {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* History */
+.rt-history {
+  margin-top: 1.5rem;
+}
+
+.rt-history__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+}
+
+.rt-history__bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.rt-history__attempt-num {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  width: 20px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.rt-history__bar-bg {
+  flex: 1;
+  height: 28px;
+  background: #f3f4f6;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rt-history__bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+.rt-history__bar-value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.rt-history__bar--fast { background: #22c55e; }
+.rt-history__bar--avg { background: #3b82f6; }
+.rt-history__bar--slow { background: #f59e0b; }
+
+/* Percentile meter */
+.rt-percentile {
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+
+.rt-percentile__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.rt-percentile__track {
+  position: relative;
+  height: 12px;
+  background: linear-gradient(to right, #22c55e, #eab308, #ef4444);
+  border-radius: 6px;
+  margin: 0.5rem 0;
+}
+
+.rt-percentile__marker {
+  position: absolute;
+  top: -6px;
+  width: 24px;
+  height: 24px;
+  background: #1f2937;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: left 0.5s ease;
+}
+
+.rt-percentile__labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.rt-percentile__your-score {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.rt-percentile__your-score strong {
+  color: #1f2937;
+}
+
+/* Buttons */
+.rt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+}
+
+.rt-btn:active { transform: scale(0.97); }
+
+.rt-btn--primary {
+  background: #10b981;
+  color: #fff;
+}
+.rt-btn--primary:hover { background: #059669; }
+
+.rt-btn--secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.rt-btn--secondary:hover { background: #e5e7eb; }
+
+.rt-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Mode selector */
+.rt-modes {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.rt-mode-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  transition: all 0.2s;
+}
+
+.rt-mode-btn:hover {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.rt-mode-btn--active {
+  background: #10b981;
+  color: #fff;
+  border-color: #10b981;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .rt-area { height: 320px; }
+  .rt-area__time { font-size: 3.5rem; }
+  .rt-area__title { font-size: 1.4rem; }
+  .rt-stats { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .rt-stat-card { padding: 0.75rem; }
+  .rt-stat-card__value { font-size: 1.35rem; }
+}
+
+/* Content sections */
+.rt-content-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.rt-content-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.rt-content-section h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.rt-content-section p {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.rt-content-section ul {
+  margin: 0.5rem 0 1rem 1.25rem;
+  list-style: disc;
+}
+
+.rt-content-section ul li {
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 0.25rem;
+}
+
+/* Reaction time table */
+.rt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.rt-table th, .rt-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rt-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+}
+
+.rt-table td { color: #4b5563; }
+
+.rt-table tr:last-child td { border-bottom: none; }
+
+/* FAQ accordion */
+.faq-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.faq-q {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1f2937;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+}
+
+.faq-q:hover { background: #f9fafb; }
+
+.faq-q::after {
+  content: '+';
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #9ca3af;
+  transition: transform 0.2s;
+}
+
+.faq-item.open .faq-q::after {
+  content: '−';
+}
+
+.faq-a {
+  display: none;
+  padding: 0 1.25rem 1rem;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.faq-item.open .faq-a { display: block; }
+</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">LetsRandomize</a>
+    <nav class="site-nav">
+      <a href="/tools/">Tools</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="/">Home</a> &rsaquo; <a href="/tools/">Tools</a> &rsaquo; <span>Reaction Time Test</span>
+  </div>
+</nav>
+
+<!-- ===== Main Content ===== -->
+<main>
+  <div class="container" style="padding-top:2rem;padding-bottom:3rem;">
+
+    <div class="rt-container">
+      <h1 style="font-size:2rem;font-weight:800;color:#1f2937;margin-bottom:0.5rem;text-align:center;">Reaction Time Test</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+      <p style="text-align:center;color:#6b7280;margin-bottom:0.75rem;">Measure your visual reaction speed in milliseconds. How fast are your reflexes?</p>
+      <p style="background:#f0fdf4;border-left:4px solid #16a34a;padding:0.75rem 1rem;border-radius:0.5rem;font-size:0.95rem;color:#15803d;margin-bottom:1.5rem;"><strong>Average human reaction time:</strong> 250ms for visual stimuli, 170ms for audio. Under 200ms is fast, under 150ms is exceptional. Click the box below when it turns green to measure yours.</p>
+
+      <!-- Test Modes -->
+      <div class="rt-modes" style="justify-content:center;">
+        <button class="rt-mode-btn rt-mode-btn--active" data-mode="visual" onclick="setMode('visual')">Visual</button>
+        <button class="rt-mode-btn" data-mode="audio" onclick="setMode('audio')">Audio</button>
+      </div>
+
+      <!-- Test Area -->
+      <div id="rt-area" class="rt-area rt-area--idle" style="margin-top:1rem;" onclick="handleClick()">
+        <div class="rt-area__icon" id="rt-icon">&#9889;</div>
+        <div class="rt-area__title" id="rt-title">Click to Start</div>
+        <div class="rt-area__subtitle" id="rt-subtitle">Click anywhere in this box when it turns green</div>
+        <div class="rt-area__time" id="rt-time" style="display:none;"></div>
+        <div class="rt-area__time-unit" id="rt-unit" style="display:none;"></div>
+        <div class="rt-area__rating" id="rt-rating" style="display:none;"></div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="rt-stats" id="rt-stats" style="display:none;">
+        <div class="rt-stat-card">
+          <div class="rt-stat-card__label">Average</div>
+          <div class="rt-stat-card__value" id="stat-avg">--</div>
+          <div class="rt-stat-card__unit">ms</div>
+        </div>
+        <div class="rt-stat-card">
+          <div class="rt-stat-card__label">Best</div>
+          <div class="rt-stat-card__value" id="stat-best">--</div>
+          <div class="rt-stat-card__unit">ms</div>
+        </div>
+        <div class="rt-stat-card">
+          <div class="rt-stat-card__label">Attempts</div>
+          <div class="rt-stat-card__value" id="stat-attempts">0</div>
+          <div class="rt-stat-card__unit">total</div>
+        </div>
+      </div>
+
+      <!-- Percentile Meter -->
+      <div class="rt-percentile" id="rt-percentile" style="display:none;">
+        <div class="rt-percentile__title">How You Compare</div>
+        <div class="rt-percentile__track">
+          <div class="rt-percentile__marker" id="percentile-marker" style="left:50%;"></div>
+        </div>
+        <div class="rt-percentile__labels">
+          <span>100ms (Fastest)</span>
+          <span>250ms (Average)</span>
+          <span>400ms+ (Slow)</span>
+        </div>
+        <div class="rt-percentile__your-score" id="percentile-text">Complete a test to see your ranking</div>
+      </div>
+
+      <!-- History Bars -->
+      <div class="rt-history" id="rt-history" style="display:none;">
+        <div class="rt-history__title">Recent Attempts</div>
+        <div id="history-bars"></div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="rt-actions" id="rt-actions" style="display:none;justify-content:center;">
+        <button class="rt-btn rt-btn--secondary" onclick="resetAll()">Reset All</button>
+        <button class="rt-btn rt-btn--secondary" onclick="shareResult()">Share Result</button>
+      </div>
+    </div>
+
+    <!-- ===== SEO Content Sections ===== -->
+
+    <div class="rt-container">
+      <div class="rt-content-section">
+        <h2>How to Use This Reaction Time Test</h2>
+        <p>Testing your reaction time is simple:</p>
+        <ul>
+          <li><strong>Click the test area</strong> to begin. The box will turn red.</li>
+          <li><strong>Wait for it to turn green</strong> — this happens after a random delay (1-5 seconds).</li>
+          <li><strong>Click as fast as you can</strong> when the color changes.</li>
+          <li>Your reaction time is displayed in milliseconds. Take multiple attempts for an accurate average.</li>
+        </ul>
+        <p>For the audio mode, listen for a beep sound instead of watching for a color change. Auditory reaction times are typically 20-40ms faster than visual ones.</p>
+      </div>
+
+      <div class="rt-content-section">
+        <h2>Average Reaction Time by Age</h2>
+        <p>Reaction time varies significantly with age. Here are typical visual reaction time ranges:</p>
+        <table class="rt-table">
+          <thead>
+            <tr>
+              <th>Age Group</th>
+              <th>Average Reaction Time</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>15-24 years</td><td>200-250ms</td><td>Peak performance</td></tr>
+            <tr><td>25-34 years</td><td>220-270ms</td><td>Excellent</td></tr>
+            <tr><td>35-44 years</td><td>240-290ms</td><td>Good</td></tr>
+            <tr><td>45-54 years</td><td>260-310ms</td><td>Average</td></tr>
+            <tr><td>55-64 years</td><td>280-330ms</td><td>Below average</td></tr>
+            <tr><td>65+ years</td><td>300-400ms</td><td>Slower</td></tr>
+          </tbody>
+        </table>
+        <p>These are averages — individual results vary based on practice, alertness, and health factors.</p>
+      </div>
+
+      <div class="rt-content-section">
+        <h2>Tips to Improve Your Reaction Time</h2>
+        <h3>1. Practice regularly</h3>
+        <p>Like any skill, reaction time improves with consistent practice. Try this test daily and track your progress over time. Most people see measurable improvement within 1-2 weeks.</p>
+
+        <h3>2. Get enough sleep</h3>
+        <p>Sleep deprivation significantly slows reaction time. Studies show that even moderate sleep loss (sleeping 6 hours instead of 8) can increase reaction time by 20-30%. Aim for 7-9 hours per night.</p>
+
+        <h3>3. Stay physically active</h3>
+        <p>Regular exercise improves neural processing speed. Activities like tennis, martial arts, and fast-paced video games specifically train reaction time. Even a 20-minute walk before testing can improve your results.</p>
+
+        <h3>4. Mind your caffeine</h3>
+        <p>Moderate caffeine intake (100-200mg, roughly one cup of coffee) can improve reaction time by 5-10%. However, too much caffeine can cause jitteriness and actually slow your response.</p>
+
+        <h3>5. Use proper equipment</h3>
+        <p>For the most accurate measurements, use a wired mouse (wireless mice add 1-8ms latency), a monitor with low response time (1-5ms), and a stable internet connection. Gaming peripherals are designed to minimize input lag.</p>
+      </div>
+
+      <div class="rt-content-section">
+        <h2>Reaction Time in Different Contexts</h2>
+        <p>Reaction time matters in many real-world scenarios:</p>
+        <ul>
+          <li><strong>Driving:</strong> At 60 mph, a 250ms reaction time means your car travels 22 feet before you start braking. Faster reactions can prevent accidents.</li>
+          <li><strong>Gaming:</strong> In competitive FPS games, professional players average 150-180ms reaction times. This can be the difference between winning and losing a firefight.</li>
+          <li><strong>Sports:</strong> Baseball batters have roughly 400ms to decide whether to swing. A 100ms pitcher reaction in cricket requires near-instant reflexes.</li>
+          <li><strong>Athletics:</strong> In Olympic sprinting, any reaction time under 100ms after the starting gun is considered a false start.</li>
+        </ul>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="rt-content-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a good reaction time?</button>
+          <div class="faq-a">The average human visual reaction time is about 250ms. Anything under 200ms is considered fast, and under 170ms is exceptional. Professional esports players typically average 150-180ms. The absolute fastest human reaction times ever recorded are around 100-120ms.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does age affect reaction time?</button>
+          <div class="faq-a">Reaction time peaks in your early 20s and gradually increases with age. A typical 20-year-old might average 220ms, while a 60-year-old averages 280-300ms. However, regular practice and physical fitness can significantly slow this decline. Active older adults often outperform sedentary younger people.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can you improve your reaction time?</button>
+          <div class="faq-a">Yes! Reaction time improves with practice. Regular training with reaction time tests, playing fast-paced video games, getting adequate sleep, staying hydrated, and physical exercise all contribute to faster reflexes. Most people see 10-20% improvement within 2 weeks of daily practice.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What factors affect reaction time?</button>
+          <div class="faq-a">Key factors include: sleep quality, caffeine intake, age, physical fitness, mental alertness, stress levels, and stimulus type. Auditory reaction times are typically 20-40ms faster than visual ones. Even ambient temperature and hydration levels can affect your results.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is this test accurate?</button>
+          <div class="faq-a">Our test measures the time between the visual stimulus appearing and your click response using high-resolution JavaScript timing. Results are accurate to within a few milliseconds. For the most precise results, use a wired mouse and a monitor with low input lag. Wireless peripherals and high-latency displays can add 5-15ms to your measured time.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the fastest human reaction time ever recorded?</button>
+          <div class="faq-a">The fastest scientifically verified human reaction times are around 100-120ms for simple visual stimuli. In Olympic sprinting, any reaction under 100ms is classified as a false start. The current world record for sprint reaction time is 104ms by Usain Bolt. In gaming, some professional players have recorded consistent reaction times of 120-140ms.</div>
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      <div class="rt-content-section">
+        <h2>Related Tools</h2>
+        <ul>
+          <li><a href="/tools/cps-test/">CPS Test</a> — Measure your clicks per second</li>
+          <li><a href="/tools/aim-trainer/">Aim Trainer</a> — Improve mouse accuracy with target practice</li>
+          <li><a href="/tools/memory-test/">Memory Test</a> — Test your visual sequence memory</li>
+          <li><a href="/tools/number-memory-test/">Number Memory Test</a> — How many digits can you remember?</li>
+          <li><a href="/tools/typing-speed-test/">Typing Speed Test</a> — Test your WPM typing speed</li>
+          <li><a href="/tools/chimp-test/">Chimp Test</a> — Are you smarter than a chimpanzee?</li>
+        </ul>
+      </div>
+    </div>
+
+  
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/human-benchmark-tests/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Human Benchmark Tests Guide</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Compare your scores across all 7 cognitive tests with average benchmarks.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+
+</div>
+
+    <section style="margin:2rem 0;padding:1.5rem;background:#f0f4ff;border-radius:12px;">
+      <h2 style="font-size:1.25rem;margin-bottom:1rem;">More Tools You Might Like</h2>
+      <div style="display:grid;gap:0.75rem;">
+        <a href="/guides/random-generators-for-teachers/" style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#333;border:1px solid #e5e7eb;transition:border-color 0.2s;">
+          <span style="font-size:1.2rem;">🔗</span>
+          <span><strong style="color:#2563eb;">Random Generators for Teachers</strong><br><small style="color:#666;">Classroom tool ideas</small></span>
+        </a>
+        
+      </div>
+    </section>
+    </main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">LetsRandomize</div>
+        <p>Free online randomizer tools for everyone.</p>
+      </div>
+      <div>
+        <div class="footer-title">Tools</div>
+        <ul>
+          <li><a href="/tools/spin-the-wheel/">Spin the Wheel</a></li>
+          <li><a href="/tools/random-number-generator/">Random Number Generator</a></li>
+          <li><a href="/tools/reaction-time-test/">Reaction Time Test</a></li>
+          <li><a href="/tools/">All Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Company</div>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">&copy; 2026 LetsRandomize.org. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ===== JavaScript ===== -->
+<script>
+(function() {
+  'use strict';
+
+  // State
+  let state = 'idle'; // idle, waiting, ready, result, early
+  let mode = 'visual'; // visual, audio
+  let waitTimeout = null;
+  let startTime = 0;
+  let results = [];
+  let audioCtx = null;
+
+  // DOM elements
+  const area = document.getElementById('rt-area');
+  const icon = document.getElementById('rt-icon');
+  const title = document.getElementById('rt-title');
+  const subtitle = document.getElementById('rt-subtitle');
+  const timeEl = document.getElementById('rt-time');
+  const unitEl = document.getElementById('rt-unit');
+  const ratingEl = document.getElementById('rt-rating');
+  const statsPanel = document.getElementById('rt-stats');
+  const statAvg = document.getElementById('stat-avg');
+  const statBest = document.getElementById('stat-best');
+  const statAttempts = document.getElementById('stat-attempts');
+  const percentilePanel = document.getElementById('rt-percentile');
+  const percentileMarker = document.getElementById('percentile-marker');
+  const percentileText = document.getElementById('percentile-text');
+  const historyPanel = document.getElementById('rt-history');
+  const historyBars = document.getElementById('history-bars');
+  const actionsPanel = document.getElementById('rt-actions');
+
+  // Load saved results
+  try {
+    const saved = localStorage.getItem('rt_results');
+    if (saved) {
+      results = JSON.parse(saved);
+      if (results.length > 0) {
+        updateStats();
+      }
+    }
+  } catch(e) {}
+
+  // Audio context for beep
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+  }
+
+  function playBeep(freq, duration) {
+    initAudio();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.frequency.value = freq;
+    gain.gain.value = 0.3;
+    osc.start();
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+    osc.stop(audioCtx.currentTime + duration);
+  }
+
+  // Get rating for a reaction time
+  function getRating(ms) {
+    if (ms < 150) return { text: 'Incredible!', emoji: '\u{1F525}' };
+    if (ms < 200) return { text: 'Excellent!', emoji: '\u26A1' };
+    if (ms < 250) return { text: 'Above Average', emoji: '\u{1F44D}' };
+    if (ms < 300) return { text: 'Average', emoji: '\u{1F610}' };
+    if (ms < 350) return { text: 'Below Average', emoji: '\u{1F614}' };
+    return { text: 'Keep Practicing!', emoji: '\u{1F4AA}' };
+  }
+
+  // Get percentile position (0-100%)
+  function getPercentile(ms) {
+    // Approximate distribution based on population data
+    if (ms <= 100) return 100;
+    if (ms >= 500) return 0;
+    // Map 100-500ms to 100-0% using a curve
+    const normalized = (ms - 100) / 400; // 0 to 1
+    return Math.round((1 - Math.pow(normalized, 0.7)) * 100);
+  }
+
+  // Get bar color class
+  function getBarClass(ms) {
+    if (ms < 230) return 'rt-history__bar--fast';
+    if (ms < 300) return 'rt-history__bar--avg';
+    return 'rt-history__bar--slow';
+  }
+
+  // Set test mode
+  window.setMode = function(m) {
+    mode = m;
+    document.querySelectorAll('.rt-mode-btn').forEach(btn => {
+      btn.classList.toggle('rt-mode-btn--active', btn.dataset.mode === m);
+    });
+    if (state === 'idle') {
+      if (m === 'audio') {
+        subtitle.textContent = 'Click to start, then click when you hear the beep';
+      } else {
+        subtitle.textContent = 'Click anywhere in this box when it turns green';
+      }
+    }
+  };
+
+  // Main click handler
+  window.handleClick = function() {
+    switch (state) {
+      case 'idle':
+      case 'result':
+      case 'early':
+        startWaiting();
+        break;
+      case 'waiting':
+        tooEarly();
+        break;
+      case 'ready':
+        recordResult();
+        break;
+    }
+  };
+
+  function startWaiting() {
+    state = 'waiting';
+    area.className = 'rt-area rt-area--waiting';
+
+    icon.textContent = '';
+    icon.style.display = 'none';
+    title.textContent = 'Wait for it...';
+    timeEl.style.display = 'none';
+    unitEl.style.display = 'none';
+    ratingEl.style.display = 'none';
+
+    if (mode === 'visual') {
+      subtitle.textContent = 'Wait for the screen to turn green, then click!';
+    } else {
+      subtitle.textContent = 'Wait for the beep, then click!';
+      initAudio();
+    }
+
+    // Random delay between 1-5 seconds
+    const delay = 1000 + Math.random() * 4000;
+    waitTimeout = setTimeout(function() {
+      showReady();
+    }, delay);
+  }
+
+  function showReady() {
+    state = 'ready';
+    startTime = performance.now();
+
+    if (mode === 'visual') {
+      area.className = 'rt-area rt-area--ready';
+      icon.style.display = 'block';
+      icon.textContent = '\u{1F7E2}';
+      title.textContent = 'CLICK NOW!';
+      subtitle.textContent = '';
+    } else {
+      // Audio mode: keep red background, play beep
+      area.className = 'rt-area rt-area--ready';
+      icon.style.display = 'block';
+      icon.textContent = '\u{1F50A}';
+      title.textContent = 'CLICK NOW!';
+      subtitle.textContent = '';
+      playBeep(800, 0.3);
+    }
+  }
+
+  function tooEarly() {
+    clearTimeout(waitTimeout);
+    state = 'early';
+    area.className = 'rt-area rt-area--early';
+    icon.style.display = 'block';
+    icon.textContent = '\u26A0\uFE0F';
+    title.textContent = 'Too Early!';
+    subtitle.textContent = 'You clicked before the signal. Click to try again.';
+    timeEl.style.display = 'none';
+    unitEl.style.display = 'none';
+    ratingEl.style.display = 'none';
+  }
+
+  function recordResult() {
+    const endTime = performance.now();
+    const reactionTime = Math.round(endTime - startTime);
+    state = 'result';
+
+    area.className = 'rt-area rt-area--result';
+    icon.style.display = 'none';
+    title.textContent = '';
+    subtitle.textContent = 'Click to try again';
+
+    timeEl.style.display = 'block';
+    timeEl.textContent = reactionTime;
+    unitEl.style.display = 'block';
+    unitEl.textContent = 'milliseconds';
+
+    const rating = getRating(reactionTime);
+    ratingEl.style.display = 'block';
+    ratingEl.textContent = rating.emoji + ' ' + rating.text;
+
+    // Save result
+    results.push(reactionTime);
+    if (results.length > 50) results = results.slice(-50); // Keep last 50
+    try { localStorage.setItem('rt_results', JSON.stringify(results)); } catch(e) {}
+
+    updateStats();
+  }
+
+  function updateStats() {
+    if (results.length === 0) return;
+
+    statsPanel.style.display = 'grid';
+    actionsPanel.style.display = 'flex';
+
+    const avg = Math.round(results.reduce((a, b) => a + b, 0) / results.length);
+    const best = Math.min(...results);
+
+    statAvg.textContent = avg;
+    statBest.textContent = best;
+    statAttempts.textContent = results.length;
+
+    // Percentile
+    percentilePanel.style.display = 'block';
+    const pct = getPercentile(avg);
+    const markerPos = Math.max(2, Math.min(98, ((avg - 100) / 400) * 100));
+    percentileMarker.style.left = markerPos + '%';
+    percentileText.innerHTML = 'Your average: <strong>' + avg + 'ms</strong> — faster than approximately <strong>' + pct + '%</strong> of people';
+
+    // History bars (last 5)
+    historyPanel.style.display = 'block';
+    const recent = results.slice(-5);
+    const maxMs = Math.max(...recent, 400);
+    historyBars.innerHTML = '';
+    recent.forEach(function(ms, i) {
+      const pctWidth = Math.max(10, (ms / maxMs) * 100);
+      const barClass = getBarClass(ms);
+      const html = '<div class="rt-history__bar-wrap">' +
+        '<span class="rt-history__attempt-num">' + (results.length - recent.length + i + 1) + '</span>' +
+        '<div class="rt-history__bar-bg"><div class="rt-history__bar ' + barClass + '" style="width:' + pctWidth + '%">' +
+        '<span class="rt-history__bar-value">' + ms + 'ms</span>' +
+        '</div></div></div>';
+      historyBars.innerHTML += html;
+    });
+  }
+
+  // Reset all results
+  window.resetAll = function() {
+    results = [];
+    try { localStorage.removeItem('rt_results'); } catch(e) {}
+    statsPanel.style.display = 'none';
+    percentilePanel.style.display = 'none';
+    historyPanel.style.display = 'none';
+    actionsPanel.style.display = 'none';
+    state = 'idle';
+    area.className = 'rt-area rt-area--idle';
+    icon.style.display = 'block';
+    icon.textContent = '\u26A1';
+    title.textContent = 'Click to Start';
+    subtitle.textContent = mode === 'audio'
+      ? 'Click to start, then click when you hear the beep'
+      : 'Click anywhere in this box when it turns green';
+    timeEl.style.display = 'none';
+    unitEl.style.display = 'none';
+    ratingEl.style.display = 'none';
+  };
+
+  // Share result
+  window.shareResult = function() {
+    if (results.length === 0) return;
+    const avg = Math.round(results.reduce((a, b) => a + b, 0) / results.length);
+    const best = Math.min(...results);
+    const text = 'My reaction time: ' + avg + 'ms average, ' + best + 'ms best (' + results.length + ' attempts) \u26A1 Test yours at https://letsrandomize.org/tools/reaction-time-test/';
+
+    if (navigator.share) {
+      navigator.share({ title: 'My Reaction Time', text: text, url: 'https://letsrandomize.org/tools/reaction-time-test/' }).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(function() {
+        const btn = document.querySelector('[onclick="shareResult()"]');
+        const orig = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(function() { btn.textContent = orig; }, 2000);
+      }).catch(function(){});
+    }
+  };
+
+  // Keyboard shortcut: Space to click
+  document.addEventListener('keydown', function(e) {
+    if (e.code === 'Space' && !e.repeat) {
+      e.preventDefault();
+      handleClick();
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>

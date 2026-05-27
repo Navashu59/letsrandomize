@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Country Generator — Pick a Random Country</title>
+<meta name="description" content="Generate a random country from all 195 countries. See the flag, capital, continent, and population. Filter by continent. Free random country picker.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/random-country-generator/">
+<meta property="og:title" content="Random Country Generator — Pick a Random Country">
+<meta property="og:description" content="Generate a random country from all 195 countries. See flag, capital, continent, and population.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Random Country Generator — Pick a Random Country">
+<meta property="og:url" content="https://letsrandomize.org/tools/random-country-generator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Country Generator", "url":"https://letsrandomize.org/tools/random-country-generator/", "description":"Generate a random country from all 195 countries with flag,  capital,  continent,  and population info.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-04"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Country Generator", "item":"https://letsrandomize.org/tools/random-country-generator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"How many countries are included?", "acceptedAnswer":{"@type":"Answer", "text":"Our database includes all 195 internationally recognized countries,  including 193 UN member states and 2 observer states (Vatican City and Palestine)."}}, {"@type":"Question", "name":"Can I filter by continent?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. You can filter countries by continent: Africa,  Asia,  Europe,  North America,  South America,  or Oceania. Select 'All' to pick from any continent."}}, {"@type":"Question", "name":"What information is shown for each country?", "acceptedAnswer":{"@type":"Answer", "text":"Each country card displays the country name,  flag emoji,  capital city,  continent,  and approximate population."}}, {"@type":"Question", "name":"Is any data stored or sent to a server?", "acceptedAnswer":{"@type":"Answer", "text":"No. All country selection happens in your browser. The entire country database is embedded in the page. No server requests are made."}}]}, {"@context":"https://schema.org", "@type":"Article", "headline":"Random Country Generator", "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "publisher":{"@type":"Organization", "name":"LetsRandomize"}, "datePublished":"2025-01-01", "dateModified":"2026-03-04"}]
+</script>
+<style>
+.country-card {
+  text-align:center; padding:1.5rem;
+}
+.country-flag { font-size:4rem; margin-bottom:0.5rem; }
+.country-name { font-size:1.5rem; font-weight:800; color:#065f46; margin-bottom:0.75rem; }
+.country-info {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0.75rem;
+  text-align:center; margin-top:1rem;
+}
+.country-info-item { font-size:0.85rem; color:#6b7280; }
+.country-info-item strong { display:block; font-size:0.95rem; color:#1f2937; }
+</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Random Country Generator
+    </nav>
+    <h1>Random Country Generator</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p>Pick a random country from all 195 nations. See the flag, capital, continent, and population. Filter by continent to narrow your results.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+
+    <div class="generator-card">
+      <div class="generator-options">
+        <div class="option-group">
+          <label for="continent-filter">Continent</label>
+          <select id="continent-filter">
+            <option value="all">All Continents</option>
+            <option value="Africa">Africa</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="generate-btn">Generate Country</button>
+
+      <div class="result-display" id="result-display" style="display:none;">
+        <div class="country-card" id="result-content">
+          <div class="country-flag" id="country-flag"></div>
+          <div class="country-name" id="country-name"></div>
+          <div class="country-info">
+            <div class="country-info-item"><strong id="country-capital"></strong>Capital</div>
+            <div class="country-info-item"><strong id="country-continent"></strong>Continent</div>
+            <div class="country-info-item"><strong id="country-population"></strong>Population</div>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="copy-btn" data-copy-target="result-content">Copy</button>
+          <button class="copy-btn" id="share-btn">Share</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-panel" id="history-panel">
+      <h3>Recent Countries <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <!-- How to Use -->
+    <div class="how-to">
+      <h2>How to Use the Random Country Generator</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Choose a Continent</h3>
+            <p>Optionally filter by continent, or select "All Continents" for a worldwide random pick.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Click Generate</h3>
+            <p>Hit the green button to randomly pick a country and display its information card.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Explore the Result</h3>
+            <p>See the country's flag, capital, continent, and population. Copy or share the result.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">How many countries are included? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Our database includes all 195 internationally recognized countries, including 193 UN member states and 2 observer states (Vatican City and Palestine).</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I filter by continent? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. You can filter countries by continent: Africa, Asia, Europe, North America, South America, or Oceania. Select "All Continents" to pick from any continent at random.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What information is shown for each country? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Each country card displays the country name, flag emoji, capital city, continent, and approximate population. This gives you a quick overview of the randomly selected country.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is any data stored or sent to a server? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. All country selection happens entirely in your browser. The entire country database is embedded in the page and no server requests are made.</div></div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/random-name-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#128100;</div>
+          <h3>Random Name Generator</h3>
+          <p>Generate random names with options.</p>
+        </a>
+        <a href="/tools/random-quote-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#128172;</div>
+          <h3>Random Quote Generator</h3>
+          <p>Discover random inspirational quotes.</p>
+        </a>
+        <a href="/tools/list-randomizer/" class="card tool-card">
+          <div class="tool-card-icon">&#128256;</div>
+          <h3>List Randomizer</h3>
+          <p>Shuffle any list into random order.</p>
+        </a>
+        <a href="/tools/spin-the-wheel/" class="card tool-card">
+          <div class="tool-card-icon">&#127905;</div>
+          <h3>Spin the Wheel</h3>
+          <p>Custom spinning wheel picker.</p>
+        </a>
+      </div>
+    </section>
+
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/fair-random-selection-methods/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Fair Random Selection Methods</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Learn unbiased methods for making fair random picks and selections.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline">
+      <div class="author-avatar">SP</div>
+      <div>By <a href="/about/">Sam Parker</a> &middot; Updated February 2026</div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Name Generator</a>
+        <a href="/tools/random-team-generator/">Team Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/random-word-generator/">Word Generator</a>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+        <a href="/tools/random-color-generator/">Color Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+      <div class="footer-col">
+        <h4>LetsRandomize</h4>
+        <p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up. No tracking.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var COUNTRIES = [
+    {n:"Afghanistan",f:"\ud83c\udde6\ud83c\uddeb",cap:"Kabul",co:"Asia",pop:"40.1M"},
+    {n:"Albania",f:"\ud83c\udde6\ud83c\uddf1",cap:"Tirana",co:"Europe",pop:"2.8M"},
+    {n:"Algeria",f:"\ud83c\udde9\ud83c\uddff",cap:"Algiers",co:"Africa",pop:"45.6M"},
+    {n:"Andorra",f:"\ud83c\udde6\ud83c\udde9",cap:"Andorra la Vella",co:"Europe",pop:"80K"},
+    {n:"Angola",f:"\ud83c\udde6\ud83c\uddf4",cap:"Luanda",co:"Africa",pop:"35.6M"},
+    {n:"Antigua and Barbuda",f:"\ud83c\udde6\ud83c\uddec",cap:"St. John's",co:"North America",pop:"100K"},
+    {n:"Argentina",f:"\ud83c\udde6\ud83c\uddf7",cap:"Buenos Aires",co:"South America",pop:"46.3M"},
+    {n:"Armenia",f:"\ud83c\udde6\ud83c\uddf2",cap:"Yerevan",co:"Asia",pop:"3.0M"},
+    {n:"Australia",f:"\ud83c\udde6\ud83c\uddfa",cap:"Canberra",co:"Oceania",pop:"26.4M"},
+    {n:"Austria",f:"\ud83c\udde6\ud83c\uddf9",cap:"Vienna",co:"Europe",pop:"9.1M"},
+    {n:"Azerbaijan",f:"\ud83c\udde6\ud83c\uddff",cap:"Baku",co:"Asia",pop:"10.2M"},
+    {n:"Bahamas",f:"\ud83c\udde7\ud83c\uddf8",cap:"Nassau",co:"North America",pop:"410K"},
+    {n:"Bahrain",f:"\ud83c\udde7\ud83c\udded",cap:"Manama",co:"Asia",pop:"1.5M"},
+    {n:"Bangladesh",f:"\ud83c\udde7\ud83c\udde9",cap:"Dhaka",co:"Asia",pop:"170M"},
+    {n:"Barbados",f:"\ud83c\udde7\ud83c\udde7",cap:"Bridgetown",co:"North America",pop:"288K"},
+    {n:"Belarus",f:"\ud83c\udde7\ud83c\uddfe",cap:"Minsk",co:"Europe",pop:"9.4M"},
+    {n:"Belgium",f:"\ud83c\udde7\ud83c\uddea",cap:"Brussels",co:"Europe",pop:"11.6M"},
+    {n:"Belize",f:"\ud83c\udde7\ud83c\uddff",cap:"Belmopan",co:"North America",pop:"410K"},
+    {n:"Benin",f:"\ud83c\udde7\ud83c\uddef",cap:"Porto-Novo",co:"Africa",pop:"13.4M"},
+    {n:"Bhutan",f:"\ud83c\udde7\ud83c\uddf9",cap:"Thimphu",co:"Asia",pop:"782K"},
+    {n:"Bolivia",f:"\ud83c\udde7\ud83c\uddf4",cap:"Sucre",co:"South America",pop:"12.1M"},
+    {n:"Bosnia and Herzegovina",f:"\ud83c\udde7\ud83c\udde6",cap:"Sarajevo",co:"Europe",pop:"3.2M"},
+    {n:"Botswana",f:"\ud83c\udde7\ud83c\uddfc",cap:"Gaborone",co:"Africa",pop:"2.6M"},
+    {n:"Brazil",f:"\ud83c\udde7\ud83c\uddf7",cap:"Brasilia",co:"South America",pop:"216M"},
+    {n:"Brunei",f:"\ud83c\udde7\ud83c\uddf3",cap:"Bandar Seri Begawan",co:"Asia",pop:"450K"},
+    {n:"Bulgaria",f:"\ud83c\udde7\ud83c\uddec",cap:"Sofia",co:"Europe",pop:"6.5M"},
+    {n:"Burkina Faso",f:"\ud83c\udde7\ud83c\uddeb",cap:"Ouagadougou",co:"Africa",pop:"22.7M"},
+    {n:"Burundi",f:"\ud83c\udde7\ud83c\uddee",cap:"Gitega",co:"Africa",pop:"13.2M"},
+    {n:"Cabo Verde",f:"\ud83c\udde8\ud83c\uddfb",cap:"Praia",co:"Africa",pop:"600K"},
+    {n:"Cambodia",f:"\ud83c\uddf0\ud83c\udded",cap:"Phnom Penh",co:"Asia",pop:"17M"},
+    {n:"Cameroon",f:"\ud83c\udde8\ud83c\uddf2",cap:"Yaounde",co:"Africa",pop:"28.6M"},
+    {n:"Canada",f:"\ud83c\udde8\ud83c\udde6",cap:"Ottawa",co:"North America",pop:"39M"},
+    {n:"Central African Republic",f:"\ud83c\udde8\ud83c\uddeb",cap:"Bangui",co:"Africa",pop:"5.6M"},
+    {n:"Chad",f:"\ud83c\uddf9\ud83c\udde9",cap:"N'Djamena",co:"Africa",pop:"17.7M"},
+    {n:"Chile",f:"\ud83c\udde8\ud83c\uddf1",cap:"Santiago",co:"South America",pop:"19.5M"},
+    {n:"China",f:"\ud83c\udde8\ud83c\uddf3",cap:"Beijing",co:"Asia",pop:"1.41B"},
+    {n:"Colombia",f:"\ud83c\udde8\ud83c\uddf4",cap:"Bogota",co:"South America",pop:"52M"},
+    {n:"Comoros",f:"\ud83c\uddf0\ud83c\uddf2",cap:"Moroni",co:"Africa",pop:"900K"},
+    {n:"Congo (DRC)",f:"\ud83c\udde8\ud83c\udde9",cap:"Kinshasa",co:"Africa",pop:"102M"},
+    {n:"Congo (Republic)",f:"\ud83c\udde8\ud83c\uddec",cap:"Brazzaville",co:"Africa",pop:"6M"},
+    {n:"Costa Rica",f:"\ud83c\udde8\ud83c\uddf7",cap:"San Jose",co:"North America",pop:"5.2M"},
+    {n:"Croatia",f:"\ud83c\udded\ud83c\uddf7",cap:"Zagreb",co:"Europe",pop:"3.9M"},
+    {n:"Cuba",f:"\ud83c\udde8\ud83c\uddfa",cap:"Havana",co:"North America",pop:"11.2M"},
+    {n:"Cyprus",f:"\ud83c\udde8\ud83c\uddfe",cap:"Nicosia",co:"Europe",pop:"1.3M"},
+    {n:"Czech Republic",f:"\ud83c\udde8\ud83c\uddff",cap:"Prague",co:"Europe",pop:"10.8M"},
+    {n:"Denmark",f:"\ud83c\udde9\ud83c\uddf0",cap:"Copenhagen",co:"Europe",pop:"5.9M"},
+    {n:"Djibouti",f:"\ud83c\udde9\ud83c\uddef",cap:"Djibouti",co:"Africa",pop:"1.1M"},
+    {n:"Dominica",f:"\ud83c\udde9\ud83c\uddf2",cap:"Roseau",co:"North America",pop:"72K"},
+    {n:"Dominican Republic",f:"\ud83c\udde9\ud83c\uddf4",cap:"Santo Domingo",co:"North America",pop:"11.2M"},
+    {n:"Ecuador",f:"\ud83c\uddea\ud83c\udde8",cap:"Quito",co:"South America",pop:"18.1M"},
+    {n:"Egypt",f:"\ud83c\uddea\ud83c\uddec",cap:"Cairo",co:"Africa",pop:"104M"},
+    {n:"El Salvador",f:"\ud83c\uddf8\ud83c\uddfb",cap:"San Salvador",co:"North America",pop:"6.3M"},
+    {n:"Equatorial Guinea",f:"\ud83c\uddec\ud83c\uddf6",cap:"Malabo",co:"Africa",pop:"1.7M"},
+    {n:"Eritrea",f:"\ud83c\uddea\ud83c\uddf7",cap:"Asmara",co:"Africa",pop:"3.7M"},
+    {n:"Estonia",f:"\ud83c\uddea\ud83c\uddea",cap:"Tallinn",co:"Europe",pop:"1.3M"},
+    {n:"Eswatini",f:"\ud83c\uddf8\ud83c\uddff",cap:"Mbabane",co:"Africa",pop:"1.2M"},
+    {n:"Ethiopia",f:"\ud83c\uddea\ud83c\uddf9",cap:"Addis Ababa",co:"Africa",pop:"126M"},
+    {n:"Fiji",f:"\ud83c\uddeb\ud83c\uddef",cap:"Suva",co:"Oceania",pop:"930K"},
+    {n:"Finland",f:"\ud83c\uddeb\ud83c\uddee",cap:"Helsinki",co:"Europe",pop:"5.6M"},
+    {n:"France",f:"\ud83c\uddeb\ud83c\uddf7",cap:"Paris",co:"Europe",pop:"68M"},
+    {n:"Gabon",f:"\ud83c\uddec\ud83c\udde6",cap:"Libreville",co:"Africa",pop:"2.4M"},
+    {n:"Gambia",f:"\ud83c\uddec\ud83c\uddf2",cap:"Banjul",co:"Africa",pop:"2.7M"},
+    {n:"Georgia",f:"\ud83c\uddec\ud83c\uddea",cap:"Tbilisi",co:"Asia",pop:"3.7M"},
+    {n:"Germany",f:"\ud83c\udde9\ud83c\uddea",cap:"Berlin",co:"Europe",pop:"84.5M"},
+    {n:"Ghana",f:"\ud83c\uddec\ud83c\udded",cap:"Accra",co:"Africa",pop:"33.5M"},
+    {n:"Greece",f:"\ud83c\uddec\ud83c\uddf7",cap:"Athens",co:"Europe",pop:"10.4M"},
+    {n:"Grenada",f:"\ud83c\uddec\ud83c\udde9",cap:"St. George's",co:"North America",pop:"125K"},
+    {n:"Guatemala",f:"\ud83c\uddec\ud83c\uddf9",cap:"Guatemala City",co:"North America",pop:"17.6M"},
+    {n:"Guinea",f:"\ud83c\uddec\ud83c\uddf3",cap:"Conakry",co:"Africa",pop:"14M"},
+    {n:"Guinea-Bissau",f:"\ud83c\uddec\ud83c\uddfc",cap:"Bissau",co:"Africa",pop:"2.1M"},
+    {n:"Guyana",f:"\ud83c\uddec\ud83c\uddfe",cap:"Georgetown",co:"South America",pop:"810K"},
+    {n:"Haiti",f:"\ud83c\udded\ud83c\uddf9",cap:"Port-au-Prince",co:"North America",pop:"11.7M"},
+    {n:"Honduras",f:"\ud83c\udded\ud83c\uddf3",cap:"Tegucigalpa",co:"North America",pop:"10.4M"},
+    {n:"Hungary",f:"\ud83c\udded\ud83c\uddfa",cap:"Budapest",co:"Europe",pop:"9.6M"},
+    {n:"Iceland",f:"\ud83c\uddee\ud83c\uddf8",cap:"Reykjavik",co:"Europe",pop:"380K"},
+    {n:"India",f:"\ud83c\uddee\ud83c\uddf3",cap:"New Delhi",co:"Asia",pop:"1.43B"},
+    {n:"Indonesia",f:"\ud83c\uddee\ud83c\udde9",cap:"Jakarta",co:"Asia",pop:"277M"},
+    {n:"Iran",f:"\ud83c\uddee\ud83c\uddf7",cap:"Tehran",co:"Asia",pop:"87.9M"},
+    {n:"Iraq",f:"\ud83c\uddee\ud83c\uddf6",cap:"Baghdad",co:"Asia",pop:"43.5M"},
+    {n:"Ireland",f:"\ud83c\uddee\ud83c\uddea",cap:"Dublin",co:"Europe",pop:"5.1M"},
+    {n:"Israel",f:"\ud83c\uddee\ud83c\uddf1",cap:"Jerusalem",co:"Asia",pop:"9.8M"},
+    {n:"Italy",f:"\ud83c\uddee\ud83c\uddf9",cap:"Rome",co:"Europe",pop:"59M"},
+    {n:"Ivory Coast",f:"\ud83c\udde8\ud83c\uddee",cap:"Yamoussoukro",co:"Africa",pop:"28.2M"},
+    {n:"Jamaica",f:"\ud83c\uddef\ud83c\uddf2",cap:"Kingston",co:"North America",pop:"2.8M"},
+    {n:"Japan",f:"\ud83c\uddef\ud83c\uddf5",cap:"Tokyo",co:"Asia",pop:"125M"},
+    {n:"Jordan",f:"\ud83c\uddef\ud83c\uddf4",cap:"Amman",co:"Asia",pop:"11.5M"},
+    {n:"Kazakhstan",f:"\ud83c\uddf0\ud83c\uddff",cap:"Astana",co:"Asia",pop:"19.8M"},
+    {n:"Kenya",f:"\ud83c\uddf0\ud83c\uddea",cap:"Nairobi",co:"Africa",pop:"55.1M"},
+    {n:"Kiribati",f:"\ud83c\uddf0\ud83c\uddee",cap:"Tarawa",co:"Oceania",pop:"130K"},
+    {n:"Kuwait",f:"\ud83c\uddf0\ud83c\uddfc",cap:"Kuwait City",co:"Asia",pop:"4.3M"},
+    {n:"Kyrgyzstan",f:"\ud83c\uddf0\ud83c\uddec",cap:"Bishkek",co:"Asia",pop:"7M"},
+    {n:"Laos",f:"\ud83c\uddf1\ud83c\udde6",cap:"Vientiane",co:"Asia",pop:"7.5M"},
+    {n:"Latvia",f:"\ud83c\uddf1\ud83c\uddfb",cap:"Riga",co:"Europe",pop:"1.8M"},
+    {n:"Lebanon",f:"\ud83c\uddf1\ud83c\udde7",cap:"Beirut",co:"Asia",pop:"5.5M"},
+    {n:"Lesotho",f:"\ud83c\uddf1\ud83c\uddf8",cap:"Maseru",co:"Africa",pop:"2.3M"},
+    {n:"Liberia",f:"\ud83c\uddf1\ud83c\uddf7",cap:"Monrovia",co:"Africa",pop:"5.4M"},
+    {n:"Libya",f:"\ud83c\uddf1\ud83c\uddfe",cap:"Tripoli",co:"Africa",pop:"7M"},
+    {n:"Liechtenstein",f:"\ud83c\uddf1\ud83c\uddee",cap:"Vaduz",co:"Europe",pop:"39K"},
+    {n:"Lithuania",f:"\ud83c\uddf1\ud83c\uddf9",cap:"Vilnius",co:"Europe",pop:"2.8M"},
+    {n:"Luxembourg",f:"\ud83c\uddf1\ud83c\uddfa",cap:"Luxembourg",co:"Europe",pop:"660K"},
+    {n:"Madagascar",f:"\ud83c\uddf2\ud83c\uddec",cap:"Antananarivo",co:"Africa",pop:"30M"},
+    {n:"Malawi",f:"\ud83c\uddf2\ud83c\uddfc",cap:"Lilongwe",co:"Africa",pop:"20.4M"},
+    {n:"Malaysia",f:"\ud83c\uddf2\ud83c\uddfe",cap:"Kuala Lumpur",co:"Asia",pop:"33.9M"},
+    {n:"Maldives",f:"\ud83c\uddf2\ud83c\uddfb",cap:"Male",co:"Asia",pop:"520K"},
+    {n:"Mali",f:"\ud83c\uddf2\ud83c\uddf1",cap:"Bamako",co:"Africa",pop:"22.6M"},
+    {n:"Malta",f:"\ud83c\uddf2\ud83c\uddf9",cap:"Valletta",co:"Europe",pop:"540K"},
+    {n:"Marshall Islands",f:"\ud83c\uddf2\ud83c\udded",cap:"Majuro",co:"Oceania",pop:"42K"},
+    {n:"Mauritania",f:"\ud83c\uddf2\ud83c\uddf7",cap:"Nouakchott",co:"Africa",pop:"4.9M"},
+    {n:"Mauritius",f:"\ud83c\uddf2\ud83c\uddfa",cap:"Port Louis",co:"Africa",pop:"1.3M"},
+    {n:"Mexico",f:"\ud83c\uddf2\ud83c\uddfd",cap:"Mexico City",co:"North America",pop:"130M"},
+    {n:"Micronesia",f:"\ud83c\uddeb\ud83c\uddf2",cap:"Palikir",co:"Oceania",pop:"115K"},
+    {n:"Moldova",f:"\ud83c\uddf2\ud83c\udde9",cap:"Chisinau",co:"Europe",pop:"2.6M"},
+    {n:"Monaco",f:"\ud83c\uddf2\ud83c\udde8",cap:"Monaco",co:"Europe",pop:"40K"},
+    {n:"Mongolia",f:"\ud83c\uddf2\ud83c\uddf3",cap:"Ulaanbaatar",co:"Asia",pop:"3.4M"},
+    {n:"Montenegro",f:"\ud83c\uddf2\ud83c\uddea",cap:"Podgorica",co:"Europe",pop:"620K"},
+    {n:"Morocco",f:"\ud83c\uddf2\ud83c\udde6",cap:"Rabat",co:"Africa",pop:"37.8M"},
+    {n:"Mozambique",f:"\ud83c\uddf2\ud83c\uddff",cap:"Maputo",co:"Africa",pop:"33.9M"},
+    {n:"Myanmar",f:"\ud83c\uddf2\ud83c\uddf2",cap:"Naypyidaw",co:"Asia",pop:"54.8M"},
+    {n:"Namibia",f:"\ud83c\uddf3\ud83c\udde6",cap:"Windhoek",co:"Africa",pop:"2.6M"},
+    {n:"Nauru",f:"\ud83c\uddf3\ud83c\uddf7",cap:"Yaren",co:"Oceania",pop:"12K"},
+    {n:"Nepal",f:"\ud83c\uddf3\ud83c\uddf5",cap:"Kathmandu",co:"Asia",pop:"30.9M"},
+    {n:"Netherlands",f:"\ud83c\uddf3\ud83c\uddf1",cap:"Amsterdam",co:"Europe",pop:"17.7M"},
+    {n:"New Zealand",f:"\ud83c\uddf3\ud83c\uddff",cap:"Wellington",co:"Oceania",pop:"5.2M"},
+    {n:"Nicaragua",f:"\ud83c\uddf3\ud83c\uddee",cap:"Managua",co:"North America",pop:"6.9M"},
+    {n:"Niger",f:"\ud83c\uddf3\ud83c\uddea",cap:"Niamey",co:"Africa",pop:"26.2M"},
+    {n:"Nigeria",f:"\ud83c\uddf3\ud83c\uddec",cap:"Abuja",co:"Africa",pop:"223M"},
+    {n:"North Korea",f:"\ud83c\uddf0\ud83c\uddf5",cap:"Pyongyang",co:"Asia",pop:"26M"},
+    {n:"North Macedonia",f:"\ud83c\uddf2\ud83c\uddf0",cap:"Skopje",co:"Europe",pop:"1.8M"},
+    {n:"Norway",f:"\ud83c\uddf3\ud83c\uddf4",cap:"Oslo",co:"Europe",pop:"5.5M"},
+    {n:"Oman",f:"\ud83c\uddf4\ud83c\uddf2",cap:"Muscat",co:"Asia",pop:"4.6M"},
+    {n:"Pakistan",f:"\ud83c\uddf5\ud83c\uddf0",cap:"Islamabad",co:"Asia",pop:"230M"},
+    {n:"Palau",f:"\ud83c\uddf5\ud83c\uddfc",cap:"Ngerulmud",co:"Oceania",pop:"18K"},
+    {n:"Palestine",f:"\ud83c\uddf5\ud83c\uddf8",cap:"Ramallah",co:"Asia",pop:"5.4M"},
+    {n:"Panama",f:"\ud83c\uddf5\ud83c\udde6",cap:"Panama City",co:"North America",pop:"4.4M"},
+    {n:"Papua New Guinea",f:"\ud83c\uddf5\ud83c\uddec",cap:"Port Moresby",co:"Oceania",pop:"10.1M"},
+    {n:"Paraguay",f:"\ud83c\uddf5\ud83c\uddfe",cap:"Asuncion",co:"South America",pop:"7.4M"},
+    {n:"Peru",f:"\ud83c\uddf5\ud83c\uddea",cap:"Lima",co:"South America",pop:"34M"},
+    {n:"Philippines",f:"\ud83c\uddf5\ud83c\udded",cap:"Manila",co:"Asia",pop:"115M"},
+    {n:"Poland",f:"\ud83c\uddf5\ud83c\uddf1",cap:"Warsaw",co:"Europe",pop:"37.7M"},
+    {n:"Portugal",f:"\ud83c\uddf5\ud83c\uddf9",cap:"Lisbon",co:"Europe",pop:"10.3M"},
+    {n:"Qatar",f:"\ud83c\uddf6\ud83c\udde6",cap:"Doha",co:"Asia",pop:"2.7M"},
+    {n:"Romania",f:"\ud83c\uddf7\ud83c\uddf4",cap:"Bucharest",co:"Europe",pop:"19M"},
+    {n:"Russia",f:"\ud83c\uddf7\ud83c\uddfa",cap:"Moscow",co:"Europe",pop:"144M"},
+    {n:"Rwanda",f:"\ud83c\uddf7\ud83c\uddfc",cap:"Kigali",co:"Africa",pop:"13.8M"},
+    {n:"Saint Kitts and Nevis",f:"\ud83c\uddf0\ud83c\uddf3",cap:"Basseterre",co:"North America",pop:"48K"},
+    {n:"Saint Lucia",f:"\ud83c\uddf1\ud83c\udde8",cap:"Castries",co:"North America",pop:"180K"},
+    {n:"Saint Vincent",f:"\ud83c\uddfb\ud83c\udde8",cap:"Kingstown",co:"North America",pop:"110K"},
+    {n:"Samoa",f:"\ud83c\uddfc\ud83c\uddf8",cap:"Apia",co:"Oceania",pop:"220K"},
+    {n:"San Marino",f:"\ud83c\uddf8\ud83c\uddf2",cap:"San Marino",co:"Europe",pop:"34K"},
+    {n:"Sao Tome and Principe",f:"\ud83c\uddf8\ud83c\uddf9",cap:"Sao Tome",co:"Africa",pop:"230K"},
+    {n:"Saudi Arabia",f:"\ud83c\uddf8\ud83c\udde6",cap:"Riyadh",co:"Asia",pop:"36.4M"},
+    {n:"Senegal",f:"\ud83c\uddf8\ud83c\uddf3",cap:"Dakar",co:"Africa",pop:"17.7M"},
+    {n:"Serbia",f:"\ud83c\uddf7\ud83c\uddf8",cap:"Belgrade",co:"Europe",pop:"6.6M"},
+    {n:"Seychelles",f:"\ud83c\uddf8\ud83c\udde8",cap:"Victoria",co:"Africa",pop:"100K"},
+    {n:"Sierra Leone",f:"\ud83c\uddf8\ud83c\uddf1",cap:"Freetown",co:"Africa",pop:"8.6M"},
+    {n:"Singapore",f:"\ud83c\uddf8\ud83c\uddec",cap:"Singapore",co:"Asia",pop:"5.9M"},
+    {n:"Slovakia",f:"\ud83c\uddf8\ud83c\uddf0",cap:"Bratislava",co:"Europe",pop:"5.4M"},
+    {n:"Slovenia",f:"\ud83c\uddf8\ud83c\uddee",cap:"Ljubljana",co:"Europe",pop:"2.1M"},
+    {n:"Solomon Islands",f:"\ud83c\uddf8\ud83c\udde7",cap:"Honiara",co:"Oceania",pop:"720K"},
+    {n:"Somalia",f:"\ud83c\uddf8\ud83c\uddf4",cap:"Mogadishu",co:"Africa",pop:"18M"},
+    {n:"South Africa",f:"\ud83c\uddff\ud83c\udde6",cap:"Pretoria",co:"Africa",pop:"60.4M"},
+    {n:"South Korea",f:"\ud83c\uddf0\ud83c\uddf7",cap:"Seoul",co:"Asia",pop:"51.7M"},
+    {n:"South Sudan",f:"\ud83c\uddf8\ud83c\uddf8",cap:"Juba",co:"Africa",pop:"11.4M"},
+    {n:"Spain",f:"\ud83c\uddea\ud83c\uddf8",cap:"Madrid",co:"Europe",pop:"47.4M"},
+    {n:"Sri Lanka",f:"\ud83c\uddf1\ud83c\uddf0",cap:"Colombo",co:"Asia",pop:"22M"},
+    {n:"Sudan",f:"\ud83c\uddf8\ud83c\udde9",cap:"Khartoum",co:"Africa",pop:"47M"},
+    {n:"Suriname",f:"\ud83c\uddf8\ud83c\uddf7",cap:"Paramaribo",co:"South America",pop:"620K"},
+    {n:"Sweden",f:"\ud83c\uddf8\ud83c\uddea",cap:"Stockholm",co:"Europe",pop:"10.5M"},
+    {n:"Switzerland",f:"\ud83c\udde8\ud83c\udded",cap:"Bern",co:"Europe",pop:"8.8M"},
+    {n:"Syria",f:"\ud83c\uddf8\ud83c\uddfe",cap:"Damascus",co:"Asia",pop:"22.1M"},
+    {n:"Taiwan",f:"\ud83c\uddf9\ud83c\uddfc",cap:"Taipei",co:"Asia",pop:"23.9M"},
+    {n:"Tajikistan",f:"\ud83c\uddf9\ud83c\uddef",cap:"Dushanbe",co:"Asia",pop:"10M"},
+    {n:"Tanzania",f:"\ud83c\uddf9\ud83c\uddff",cap:"Dodoma",co:"Africa",pop:"65.5M"},
+    {n:"Thailand",f:"\ud83c\uddf9\ud83c\udded",cap:"Bangkok",co:"Asia",pop:"72M"},
+    {n:"Timor-Leste",f:"\ud83c\uddf9\ud83c\uddf1",cap:"Dili",co:"Asia",pop:"1.4M"},
+    {n:"Togo",f:"\ud83c\uddf9\ud83c\uddec",cap:"Lome",co:"Africa",pop:"8.8M"},
+    {n:"Tonga",f:"\ud83c\uddf9\ud83c\uddf4",cap:"Nuku'alofa",co:"Oceania",pop:"107K"},
+    {n:"Trinidad and Tobago",f:"\ud83c\uddf9\ud83c\uddf9",cap:"Port of Spain",co:"North America",pop:"1.5M"},
+    {n:"Tunisia",f:"\ud83c\uddf9\ud83c\uddf3",cap:"Tunis",co:"Africa",pop:"12.5M"},
+    {n:"Turkey",f:"\ud83c\uddf9\ud83c\uddf7",cap:"Ankara",co:"Asia",pop:"85.3M"},
+    {n:"Turkmenistan",f:"\ud83c\uddf9\ud83c\uddf2",cap:"Ashgabat",co:"Asia",pop:"6.4M"},
+    {n:"Tuvalu",f:"\ud83c\uddf9\ud83c\uddfb",cap:"Funafuti",co:"Oceania",pop:"11K"},
+    {n:"Uganda",f:"\ud83c\uddfa\ud83c\uddec",cap:"Kampala",co:"Africa",pop:"48.6M"},
+    {n:"Ukraine",f:"\ud83c\uddfa\ud83c\udde6",cap:"Kyiv",co:"Europe",pop:"37.9M"},
+    {n:"United Arab Emirates",f:"\ud83c\udde6\ud83c\uddea",cap:"Abu Dhabi",co:"Asia",pop:"10M"},
+    {n:"United Kingdom",f:"\ud83c\uddec\ud83c\udde7",cap:"London",co:"Europe",pop:"67.7M"},
+    {n:"United States",f:"\ud83c\uddfa\ud83c\uddf8",cap:"Washington D.C.",co:"North America",pop:"335M"},
+    {n:"Uruguay",f:"\ud83c\uddfa\ud83c\uddfe",cap:"Montevideo",co:"South America",pop:"3.4M"},
+    {n:"Uzbekistan",f:"\ud83c\uddfa\ud83c\uddff",cap:"Tashkent",co:"Asia",pop:"35.6M"},
+    {n:"Vanuatu",f:"\ud83c\uddfb\ud83c\uddfa",cap:"Port Vila",co:"Oceania",pop:"330K"},
+    {n:"Vatican City",f:"\ud83c\uddfb\ud83c\udde6",cap:"Vatican City",co:"Europe",pop:"800"},
+    {n:"Venezuela",f:"\ud83c\uddfb\ud83c\uddea",cap:"Caracas",co:"South America",pop:"28.4M"},
+    {n:"Vietnam",f:"\ud83c\uddfb\ud83c\uddf3",cap:"Hanoi",co:"Asia",pop:"99.5M"},
+    {n:"Yemen",f:"\ud83c\uddfe\ud83c\uddea",cap:"Sana'a",co:"Asia",pop:"33.7M"},
+    {n:"Zambia",f:"\ud83c\uddff\ud83c\uddf2",cap:"Lusaka",co:"Africa",pop:"20.6M"},
+    {n:"Zimbabwe",f:"\ud83c\uddff\ud83c\uddfc",cap:"Harare",co:"Africa",pop:"16.3M"}
+  ];
+
+  var generateBtn = document.getElementById('generate-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var shareBtn = document.getElementById('share-btn');
+
+  generateBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var continent = document.getElementById('continent-filter').value;
+    var pool = continent === 'all' ? COUNTRIES : COUNTRIES.filter(function(c) { return c.co === continent; });
+    var country = RandomEngine.randomPick(pool);
+
+    document.getElementById('country-flag').textContent = country.f;
+    document.getElementById('country-name').textContent = country.n;
+    document.getElementById('country-capital').textContent = country.cap;
+    document.getElementById('country-continent').textContent = country.co;
+    document.getElementById('country-population').textContent = country.pop;
+
+    resultDisplay.style.display = 'block';
+    App.flashResult(resultDisplay);
+    App.addToHistory(country.f + ' ' + country.n + ' (' + country.cap + ')');
+  });
+
+  shareBtn.addEventListener('click', function() {
+    var name = document.getElementById('country-name').textContent;
+    App.shareResult(name, 'Random Country from LetsRandomize');
+  });
+})();
+</script>
+</body>
+</html>

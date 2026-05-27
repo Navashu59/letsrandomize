@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.json.key
+
+# Dependencies and tooling cache
+node_modules/
+.wrangler/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Local reports
+*.log
+*.tmp
+*.bak
+*.backup
+

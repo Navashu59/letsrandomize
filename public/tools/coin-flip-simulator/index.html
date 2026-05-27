@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coin Flip Simulator — Flip a Coin Online | LetsRandomize</title>
+<meta name="description" content="Flip a coin online with animated heads or tails results. Track streaks, view statistics, and multi-flip up to 100 coins at once. Free coin flip simulator.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/coin-flip-simulator/">
+<meta property="og:title" content="Coin Flip Simulator — Flip a Coin Online">
+<meta property="og:description" content="Flip a coin online with animated heads or tails results. Track streaks, view statistics, and multi-flip up to 100 coins at once.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Coin Flip Simulator — Flip a Coin Online | LetsRandomize">
+<meta property="og:url" content="https://letsrandomize.org/tools/coin-flip-simulator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Coin Flip Simulator", "url":"https://letsrandomize.org/tools/coin-flip-simulator/", "description":"Flip a coin online with animated heads or tails results. Track streaks and statistics.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-04"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Coin Flip Simulator", "item":"https://letsrandomize.org/tools/coin-flip-simulator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"Is this coin flip truly random?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Our simulator uses the Web Crypto API (crypto.getRandomValues) for cryptographically secure randomness,  giving a true 50/50 chance for heads or tails."}}, {"@type":"Question", "name":"Can I flip multiple coins at once?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. You can flip 1,  10,  or 100 coins at once and see the full breakdown of heads vs tails with percentage statistics."}}, {"@type":"Question", "name":"Does the simulator track statistics?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. The simulator tracks total flips,  heads count,  tails count,  percentages,  and your current streak of consecutive same-side results."}}, {"@type":"Question", "name":"Is any data sent to a server?", "acceptedAnswer":{"@type":"Answer", "text":"No. All coin flips happen entirely in your browser. No data is stored on any server. History is saved locally in your browser."}}]}, {"@context":"https://schema.org", "@type":"Article", "headline":"Coin Flip Simulator", "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "publisher":{"@type":"Organization", "name":"LetsRandomize"}, "datePublished":"2025-01-01", "dateModified":"2026-03-04"}]
+</script>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Coin Flip Simulator
+    </nav>
+    <h1>Coin Flip Simulator</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p>Flip a virtual coin with realistic animation. Track your streaks, view heads vs tails statistics, and multi-flip up to 100 coins at once.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+
+    <div class="generator-card" style="text-align:center;">
+      <div class="coin" id="coin-display">?</div>
+
+      <div class="generator-options" style="justify-items:center;margin-top:1rem;">
+        <div class="option-group">
+          <label for="flip-count">Flip Count</label>
+          <select id="flip-count">
+            <option value="1" selected>1 Coin</option>
+            <option value="10">10 Coins</option>
+            <option value="100">100 Coins</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="flip-btn" style="margin-top:1rem;">Flip Coin</button>
+
+      <div class="result-display" id="result-display" style="display:none;margin-top:1rem;">
+        <div id="result-content" class="result-text large"></div>
+        <div id="multi-results" style="margin-top:0.75rem;font-size:0.9rem;color:#065f46;display:none;"></div>
+        <div class="result-actions">
+          <button class="copy-btn" data-copy-target="result-content">Copy</button>
+        </div>
+      </div>
+
+      <!-- Statistics -->
+      <div style="margin-top:1.5rem;padding:1rem;background:#f9fafb;border-radius:0.75rem;text-align:left;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.75rem;">Statistics</h3>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;font-size:0.9rem;">
+          <div>Total Flips: <strong id="stat-total">0</strong></div>
+          <div>Current Streak: <strong id="stat-streak">0</strong></div>
+          <div>Heads: <strong id="stat-heads">0</strong> (<span id="stat-heads-pct">0</span>%)</div>
+          <div>Tails: <strong id="stat-tails">0</strong> (<span id="stat-tails-pct">0</span>%)</div>
+        </div>
+        <button class="copy-btn" id="reset-stats-btn" style="margin-top:0.75rem;">Reset Stats</button>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-panel" id="history-panel">
+      <h3>Recent Results <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <!-- How to Use -->
+    <div class="how-to">
+      <h2>How to Use the Coin Flip Simulator</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Choose Flip Count</h3>
+            <p>Select how many coins to flip: 1 for a single flip, or 10 or 100 for bulk flips with statistics.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Click Flip Coin</h3>
+            <p>Hit the green button to flip. The coin animates and lands on Heads or Tails randomly.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Track Your Stats</h3>
+            <p>Watch your running statistics update in real time, including streak tracking and percentages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">Is this coin flip truly random? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Our simulator uses the Web Crypto API (crypto.getRandomValues) for cryptographically secure randomness, giving a true 50/50 chance for heads or tails on every flip.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I flip multiple coins at once? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Use the Flip Count dropdown to flip 10 or 100 coins at once. You will see a full breakdown of how many landed heads vs tails with percentages.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Does the simulator track statistics? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. The simulator tracks total flips, heads count, tails count, percentages, and your current streak of consecutive same-side results. Use the Reset button to start fresh.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is any data sent to a server? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">No. All coin flips happen entirely in your browser using JavaScript. No data is stored on any server. History is saved locally in your browser and you can clear it anytime.</div></div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/dice-roller/" class="card tool-card">
+          <div class="tool-card-icon">&#127922;</div>
+          <h3>Dice Roller</h3>
+          <p>Roll dice online with D4-D20 options.</p>
+        </a>
+        <a href="/tools/yes-or-no-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#129300;</div>
+          <h3>Yes or No Generator</h3>
+          <p>Quick random decision maker.</p>
+        </a>
+        <a href="/tools/random-number-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#128290;</div>
+          <h3>Random Number Generator</h3>
+          <p>Generate random numbers in any range.</p>
+        </a>
+        <a href="/tools/spin-the-wheel/" class="card tool-card">
+          <div class="tool-card-icon">&#127905;</div>
+          <h3>Spin the Wheel</h3>
+          <p>Custom spinning wheel picker.</p>
+        </a>
+      </div>
+    </section>
+
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/probability-of-coin-flips/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Probability of Coin Flips</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the math behind coin flip probability and streaks.</span>
+    </a>
+    <a href="/guides/fair-random-selection-methods/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Fair Random Selection Methods</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Learn unbiased methods for making fair random picks and selections.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline">
+      <div class="author-avatar">SP</div>
+      <div>By <a href="/about/">Sam Parker</a> &middot; Updated February 2026</div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Name Generator</a>
+        <a href="/tools/random-team-generator/">Team Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/random-word-generator/">Word Generator</a>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+        <a href="/tools/random-color-generator/">Color Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+      <div class="footer-col">
+        <h4>LetsRandomize</h4>
+        <p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up. No tracking.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var coin = document.getElementById('coin-display');
+  var flipBtn = document.getElementById('flip-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var resultContent = document.getElementById('result-content');
+  var multiResults = document.getElementById('multi-results');
+  var resetBtn = document.getElementById('reset-stats-btn');
+
+  var stats = { total: 0, heads: 0, tails: 0, streak: 0, lastSide: null };
+
+  function updateStats() {
+    document.getElementById('stat-total').textContent = stats.total;
+    document.getElementById('stat-heads').textContent = stats.heads;
+    document.getElementById('stat-tails').textContent = stats.tails;
+    document.getElementById('stat-streak').textContent = stats.streak;
+    var hPct = stats.total > 0 ? ((stats.heads / stats.total) * 100).toFixed(1) : '0';
+    var tPct = stats.total > 0 ? ((stats.tails / stats.total) * 100).toFixed(1) : '0';
+    document.getElementById('stat-heads-pct').textContent = hPct;
+    document.getElementById('stat-tails-pct').textContent = tPct;
+  }
+
+  function flipOnce() {
+    var result = RandomEngine.randomInt(0, 1) === 0 ? 'Heads' : 'Tails';
+    stats.total++;
+    if (result === 'Heads') stats.heads++;
+    else stats.tails++;
+    if (result === stats.lastSide) {
+      stats.streak++;
+    } else {
+      stats.streak = 1;
+      stats.lastSide = result;
+    }
+    return result;
+  }
+
+  flipBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var count = parseInt(document.getElementById('flip-count').value, 10);
+
+    coin.classList.add('flipping');
+    setTimeout(function() {
+      coin.classList.remove('flipping');
+
+      if (count === 1) {
+        var result = flipOnce();
+        coin.textContent = result === 'Heads' ? 'H' : 'T';
+        resultContent.textContent = result;
+        multiResults.style.display = 'none';
+      } else {
+        var h = 0, t = 0;
+        for (var i = 0; i < count; i++) {
+          var r = flipOnce();
+          if (r === 'Heads') h++;
+          else t++;
+        }
+        coin.textContent = h >= t ? 'H' : 'T';
+        resultContent.textContent = count + ' Coins Flipped';
+        multiResults.style.display = 'block';
+        multiResults.innerHTML = 'Heads: <strong>' + h + '</strong> (' + ((h/count)*100).toFixed(1) + '%) &bull; Tails: <strong>' + t + '</strong> (' + ((t/count)*100).toFixed(1) + '%)';
+      }
+
+      resultDisplay.style.display = 'block';
+      App.flashResult(resultDisplay);
+      updateStats();
+      App.addToHistory(count === 1 ? resultContent.textContent : 'Flipped ' + count + ': H=' + stats.heads + ' T=' + stats.tails);
+    }, 600);
+  });
+
+  resetBtn.addEventListener('click', function() {
+    stats = { total: 0, heads: 0, tails: 0, streak: 0, lastSide: null };
+    updateStats();
+    coin.textContent = '?';
+    resultDisplay.style.display = 'none';
+    App.showToast('Statistics reset!');
+  });
+})();
+</script>
+</body>
+</html>

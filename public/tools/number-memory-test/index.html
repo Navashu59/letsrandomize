@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Memory Test - How Many Digits Can You Remember?</title>
+<meta name="description" content="Test your number memory with this free online digit span test. Remember increasingly long number sequences. Track your level and compare to average scores.">
+<meta name="keywords" content="number memory test, digit span test, number memory, digit memory test, how many numbers can you remember, memory test numbers, human benchmark number memory">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/number-memory-test/">
+<meta property="og:title" content="Number Memory Test - How Many Digits Can You Remember?">
+<meta property="og:description" content="Test your number memory span. Remember digits and beat your high score.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Number Memory Test - How Many Digits Can You Remember?">
+<meta property="og:url" content="https://letsrandomize.org/tools/number-memory-test/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Number Memory Test - Digit Span Test","url":"https://letsrandomize.org/tools/number-memory-test/","applicationCategory":"GameApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free online number memory test. Remember and type back increasingly long digit sequences.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-22","dateModified":"2026-02-22"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"Number Memory Test","item":"https://letsrandomize.org/tools/number-memory-test/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many numbers can the average person remember?","acceptedAnswer":{"@type":"Answer","text":"The average person can remember 7 digits (plus or minus 2), according to psychologist George Miller's famous 1956 paper. This is why phone numbers are 7 digits long. Most people score between 5-9 on a digit span test. Scores of 10+ are above average, and 13+ is exceptional."}},{"@type":"Question","name":"What is a digit span test?","acceptedAnswer":{"@type":"Answer","text":"A digit span test measures your short-term (working) memory by presenting increasingly long sequences of numbers that you must recall in order. It's one of the most widely used cognitive tests in psychology, included in IQ tests like the Wechsler Adult Intelligence Scale (WAIS). Forward digit span tests recall in order; backward tests require reversing the sequence."}},{"@type":"Question","name":"How can I improve my number memory?","acceptedAnswer":{"@type":"Answer","text":"Use chunking: group digits into 2-3 digit clusters (like remembering 149-217-76 instead of 1-4-9-2-1-7-7-6). Practice daily for 10-15 minutes. Use the phonetic number system to convert digits to consonant sounds, then form words. Regular sleep, exercise, and meditation also improve working memory capacity."}},{"@type":"Question","name":"Does number memory correlate with intelligence?","acceptedAnswer":{"@type":"Answer","text":"Digit span moderately correlates with IQ (r = 0.5-0.6), particularly with fluid intelligence and processing speed. However, it only measures one aspect of cognitive ability. People with exceptional number memory may use specific techniques rather than having higher general intelligence."}},{"@type":"Question","name":"What is the world record for memorizing numbers?","acceptedAnswer":{"@type":"Answer","text":"The world record for memorizing random digits is held by memory athletes who can recall over 500 digits in sequence during competition. Rajveer Meena holds the record for reciting Pi to 70,000 decimal places. These feats use specialized memory techniques like the method of loci and the major system, not raw short-term memory."}},{"@type":"Question","name":"Is this test the same as the Human Benchmark number memory?","acceptedAnswer":{"@type":"Answer","text":"This test works similarly to the Human Benchmark number memory test. A number sequence is displayed for a brief time, and you type it back from memory. Each correct answer adds one more digit. The test measures your forward digit span, which is a standard measure of verbal working memory capacity."}}]},{"@context":"https://schema.org","@type":"Article","headline":"Number Memory Test - Test Your Digit Span","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize"},"datePublished":"2026-02-22","dateModified":"2026-02-22"}]
+</script>
+<style>
+.nm-container { max-width: 600px; margin: 0 auto; }
+
+.nm-display {
+  background: #1f2937; border-radius: 16px; padding: 3rem 2rem;
+  text-align: center; min-height: 250px; display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15); margin-bottom: 1.5rem;
+  position: relative; overflow: hidden;
+}
+
+.nm-number {
+  font-size: 3rem; font-weight: 800; color: #fff;
+  letter-spacing: 0.3em; font-variant-numeric: tabular-nums;
+  animation: nm-fadein 0.3s ease;
+}
+@media (max-width: 480px) { .nm-number { font-size: 2rem; letter-spacing: 0.2em; } }
+@keyframes nm-fadein { from { opacity: 0; transform: scale(1.1); } to { opacity: 1; transform: scale(1); } }
+
+.nm-progress {
+  position: absolute; bottom: 0; left: 0; height: 4px;
+  background: #10b981; border-radius: 0 0 16px 16px;
+  transition: width linear;
+}
+
+.nm-input-wrap { width: 100%; max-width: 400px; }
+.nm-input {
+  width: 100%; padding: 1rem; font-size: 1.5rem; font-weight: 600;
+  text-align: center; letter-spacing: 0.2em; background: #374151;
+  border: 2px solid #4b5563; border-radius: 12px; color: #fff;
+  font-variant-numeric: tabular-nums; outline: none;
+  transition: border-color 0.2s;
+}
+.nm-input:focus { border-color: #10b981; box-shadow: 0 0 0 3px rgba(16,185,129,0.2); }
+.nm-input--correct { border-color: #10b981 !important; background: #064e3b !important; }
+.nm-input--wrong { border-color: #ef4444 !important; background: #7f1d1d !important; }
+
+.nm-prompt { color: #9ca3af; font-size: 1rem; margin-bottom: 1rem; }
+.nm-level-badge {
+  display: inline-block; padding: 0.35rem 1rem; border-radius: 9999px;
+  background: rgba(16,185,129,0.15); color: #10b981;
+  font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem;
+}
+
+.nm-start-btn {
+  padding: 0.75rem 2rem; font-size: 1.1rem; font-weight: 700;
+  background: #10b981; color: #fff; border: none; border-radius: 12px;
+  cursor: pointer; transition: all 0.2s;
+}
+.nm-start-btn:hover { background: #059669; transform: translateY(-2px); }
+
+.nm-info-bar {
+  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.nm-info { text-align: center; }
+.nm-info-value { font-size: 1.75rem; font-weight: 800; color: #10b981; }
+.nm-info-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.nm-result-correct { color: #10b981; font-size: 1.25rem; font-weight: 700; }
+.nm-result-wrong { color: #ef4444; font-size: 1.25rem; font-weight: 700; }
+.nm-result-answer { color: #6b7280; font-size: 0.9rem; margin-top: 0.5rem; }
+.nm-result-answer span { color: #fff; font-weight: 600; }
+
+.nm-history {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+  margin-top: 1rem;
+}
+.nm-history-chip {
+  padding: 0.25rem 0.6rem; border-radius: 9999px;
+  font-size: 0.75rem; font-weight: 600;
+  background: #f3f4f6; color: #374151;
+}
+
+.nm-game-over {
+  background: #fff; border-radius: 0.75rem; padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin: 1.5rem 0;
+  text-align: center;
+}
+.nm-game-over h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+.nm-rank {
+  display: inline-block; padding: 0.5rem 1.25rem;
+  border-radius: 9999px; font-weight: 700; font-size: 1rem;
+  margin: 0.5rem 0;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/memory-test/">Memory Test</a>
+      <a href="/tools/reaction-time-test/">Reaction</a>
+      <a href="/tools/aim-trainer/">Aim Trainer</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="tool-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> <span>&#8250;</span>
+      <a href="/tools/">Tools</a> <span>&#8250;</span>
+      Number Memory Test
+    </div>
+    <h1>Number Memory Test &mdash; How Many Digits Can You Remember?</h1>
+    <p>A number will flash on screen. Type it back from memory. Each level adds one more digit.</p>
+    <div class="eeat-byline"><span class="author">By <a href="/about/" style="color:#10b981;">Sam Parker</a></span><span class="sep" style="color:#4b5563;">|</span><time datetime="2026-02-22" style="color:#9ca3af;">Updated Feb 22, 2026</time></div>
+  </div>
+</section>
+
+<main>
+<div class="container">
+<div class="nm-container">
+
+  <!-- Info Bar -->
+  <div class="nm-info-bar">
+    <div class="nm-info"><div class="nm-info-value" id="levelDisplay">1</div><div class="nm-info-label">Level</div></div>
+    <div class="nm-info"><div class="nm-info-value" id="highScoreDisplay">0</div><div class="nm-info-label">Best</div></div>
+    <div class="nm-info"><div class="nm-info-value" id="digitsDisplay">1</div><div class="nm-info-label">Digits</div></div>
+  </div>
+
+  <!-- Game Display -->
+  <div class="nm-display" id="gameDisplay">
+    <div class="nm-prompt">Test your digit span memory</div>
+    <button class="nm-start-btn" id="startBtn">Start Test</button>
+  </div>
+
+
+  <!-- Game Over (hidden) -->
+  <div class="nm-game-over" id="gameOver" style="display:none;">
+    <h3>&#128171; Test Complete</h3>
+    <div class="nm-info-bar" style="margin:1rem 0;">
+      <div class="nm-info"><div class="nm-info-value" id="resLevel">0</div><div class="nm-info-label">Level Reached</div></div>
+      <div class="nm-info"><div class="nm-info-value" id="resDigits">0</div><div class="nm-info-label">Max Digits</div></div>
+    </div>
+    <div class="nm-rank" id="resRank"></div>
+    <div class="btn-group" style="justify-content:center;margin-top:1rem;">
+      <button class="btn btn-primary" id="playAgainBtn">&#9654; Try Again</button>
+      <button class="btn btn-secondary" id="shareBtn">&#128279; Share</button>
+    </div>
+    <h4 style="font-size:0.9rem;margin-top:1rem;color:#6b7280;">Recent Scores</h4>
+    <div class="nm-history" id="historyChips"></div>
+  </div>
+
+  <!-- How to Play -->
+  <div class="how-to">
+    <h2>How the Number Memory Test Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><h3>Watch the Number</h3><p>A number will appear on screen for a brief time. The display time scales with the number of digits.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><h3>Type It Back</h3><p>After the number disappears, type the exact digits you remember and press Enter or click Submit.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><h3>Level Up</h3><p>Get it right and one more digit is added. Level 1 = 1 digit, Level 7 = 7 digits, and so on.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><h3>Game Over</h3><p>The test ends when you enter the wrong number. Your score is the highest level you completed.</p></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Content -->
+  <section style="margin:2rem 0;line-height:1.8;color:#444;">
+    <h2 style="font-size:1.3rem;color:#111827;margin-bottom:0.75rem;">Understanding Digit Span Memory</h2>
+    <p>The digit span test is one of the oldest and most widely used measures of working memory in psychology. First introduced by Jacobs in 1887, it has been included in major intelligence tests including the Wechsler Adult Intelligence Scale (WAIS) and the Stanford-Binet test. Your "digit span" is the longest sequence of numbers you can reliably remember and reproduce in correct order.</p>
+    <p>George Miller's landmark 1956 paper, "The Magical Number Seven, Plus or Minus Two," established that the average human can hold approximately 7 items in short-term memory. This is why telephone numbers in the US were designed to be 7 digits. Our number memory test lets you discover your personal digit span.</p>
+
+    <h2 style="font-size:1.3rem;color:#111827;margin:1.5rem 0 0.75rem;">Digit Span Score Interpretation</h2>
+    <table style="width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.9rem;">
+      <thead>
+        <tr style="background:#f3f4f6;">
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Digits</th>
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Rank</th>
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Percentile</th>
+          <th style="padding:0.6rem;text-align:left;border-bottom:2px solid #e5e7eb;">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">1-4</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Below Average</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Bottom 15%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">May indicate distraction or fatigue</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">5-6</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Average</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">15-50%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Normal working memory</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">7-8</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Good</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">50-80%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Miller's magic number range</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">9-11</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Excellent</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">80-95%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Strong short-term memory</td></tr>
+        <tr><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">12-15</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Outstanding</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">95-99%</td><td style="padding:0.5rem;border-bottom:1px solid #e5e7eb;">Likely using chunking strategies</td></tr>
+        <tr><td style="padding:0.5rem;">16+</td><td style="padding:0.5rem;">Exceptional</td><td style="padding:0.5rem;">Top 1%</td><td style="padding:0.5rem;">Memory athlete territory</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:1.3rem;color:#111827;margin:1.5rem 0 0.75rem;">Tips to Remember More Numbers</h2>
+    <ul style="padding-left:1.25rem;list-style:disc;">
+      <li style="margin-bottom:0.5rem;"><strong>Chunking</strong> &mdash; Group digits into 2-3 digit chunks. Instead of 4-8-2-7-5-1, remember 48-27-51. This effectively triples your capacity.</li>
+      <li style="margin-bottom:0.5rem;"><strong>Rhythmic rehearsal</strong> &mdash; Repeat the digits with a rhythm, like a phone number: "four-eight-two, seven-five-one."</li>
+      <li style="margin-bottom:0.5rem;"><strong>Visual patterns</strong> &mdash; Notice the number pad layout. Some sequences form shapes on a numeric keypad.</li>
+      <li style="margin-bottom:0.5rem;"><strong>The Major System</strong> &mdash; Advanced technique that converts digits to consonant sounds, then words. 42 = "rain," 87 = "fog."</li>
+      <li style="margin-bottom:0.5rem;"><strong>Practice daily</strong> &mdash; Working memory is trainable. Even 5-10 minutes per day yields measurable improvement within 2-3 weeks.</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        How many numbers can the average person remember? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">The average person can remember 7 digits (plus or minus 2), according to psychologist George Miller's famous 1956 paper. This is why phone numbers are 7 digits long. Most people score between 5-9 on a digit span test. Scores of 10+ are above average, and 13+ is exceptional.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        What is a digit span test? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">A digit span test measures your short-term (working) memory by presenting increasingly long sequences of numbers that you must recall in order. It's one of the most widely used cognitive tests in psychology, included in IQ tests like the Wechsler Adult Intelligence Scale (WAIS). Forward digit span tests recall in order; backward tests require reversing the sequence.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        How can I improve my number memory? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Use chunking: group digits into 2-3 digit clusters (like remembering 149-217-76 instead of 1-4-9-2-1-7-7-6). Practice daily for 10-15 minutes. Use the phonetic number system to convert digits to consonant sounds, then form words. Regular sleep, exercise, and meditation also improve working memory capacity.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        Does number memory correlate with intelligence? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">Digit span moderately correlates with IQ (r = 0.5-0.6), particularly with fluid intelligence and processing speed. However, it only measures one aspect of cognitive ability. People with exceptional number memory may use specific techniques rather than having higher general intelligence.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        What is the world record for memorizing numbers? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">The world record for memorizing random digits is held by memory athletes who can recall over 500 digits in sequence during competition. Rajveer Meena holds the record for reciting Pi to 70,000 decimal places. These feats use specialized memory techniques like the method of loci and the major system, not raw short-term memory.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.classList.toggle('active');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px';">
+        Is this test the same as the Human Benchmark number memory? <span class="faq-icon">&#9660;</span>
+      </button>
+      <div class="faq-answer"><div class="faq-answer-inner">This test works similarly to the Human Benchmark number memory test. A number sequence is displayed for a brief time, and you type it back from memory. Each correct answer adds one more digit. The test measures your forward digit span, which is a standard measure of verbal working memory capacity.</div></div>
+    </div>
+  </section>
+
+  <!-- Related Tools -->
+  <section class="related-section">
+    <h2 class="section-title">Related Tests</h2>
+    <div class="related-grid">
+      <a href="/tools/memory-test/" class="card tool-card">
+        <div class="tool-card-icon">&#129504;</div>
+        <h3>Visual Memory Test</h3>
+        <p>Remember tile sequences on a grid. Tests spatial memory.</p>
+      </a>
+      <a href="/tools/reaction-time-test/" class="card tool-card">
+        <div class="tool-card-icon">&#9889;</div>
+        <h3>Reaction Time Test</h3>
+        <p>Test your reflexes and measure reaction speed.</p>
+      </a>
+      <a href="/tools/cps-test/" class="card tool-card">
+        <div class="tool-card-icon">&#128433;</div>
+        <h3>CPS Test</h3>
+        <p>Measure your clicks per second speed.</p>
+      </a>
+      <a href="/tools/aim-trainer/" class="card tool-card">
+        <div class="tool-card-icon">&#127919;</div>
+        <h3>Aim Trainer</h3>
+        <p>Improve your mouse accuracy with target practice.</p>
+      </a>
+      <a href="/tools/chimp-test/" class="card tool-card">
+        <div class="tool-card-icon">&#129421;</div>
+        <h3>Chimp Test</h3>
+        <p>Are you smarter than a chimpanzee?</p>
+      </a>
+      <a href="/tools/typing-speed-test/" class="card tool-card">
+        <div class="tool-card-icon">&#9000;</div>
+        <h3>Typing Speed Test</h3>
+        <p>Test your WPM typing speed.</p>
+      </a>
+    </div>
+  </section>
+
+  
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/human-benchmark-tests/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Human Benchmark Tests Guide</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Compare your scores across all 7 cognitive tests with average benchmarks.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline">
+    <div class="author-avatar">SP</div>
+    <div>Built by <a href="/about/">Sam Parker</a>, a data science enthusiast. This test runs 100% in your browser &mdash; no data is sent to any server.</div>
+  </div>
+
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Benchmark Tests</h4>
+        <a href="/tools/reaction-time-test/">Reaction Time Test</a>
+        <a href="/tools/cps-test/">CPS Test</a>
+        <a href="/tools/aim-trainer/">Aim Trainer</a>
+        <a href="/tools/memory-test/">Memory Test</a>
+        <a href="/tools/number-memory-test/">Number Memory</a>
+      </div>
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Name Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/random-color-generator/">Color Generator</a>
+        <a href="/tools/random-word-generator/">Word Generator</a>
+        <a href="/tools/yes-or-no-generator/">Yes or No</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/about/">About LetsRandomize</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+        <a href="/tools/">All Tools</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LetsRandomize.org. Built by <a href="/about/">Sam Parker</a>. All tools are free to use.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  let level = 1;
+  let currentNumber = '';
+  let state = 'idle'; // idle, showing, input, feedback, gameover
+  let highScore = parseInt(localStorage.getItem('nmHighScore') || '0');
+  let history = JSON.parse(localStorage.getItem('nmHistory') || '[]');
+  let progressTimer = null;
+
+  const display = document.getElementById('gameDisplay');
+  const levelEl = document.getElementById('levelDisplay');
+  const highScoreEl = document.getElementById('highScoreDisplay');
+  const digitsEl = document.getElementById('digitsDisplay');
+
+  highScoreEl.textContent = highScore;
+
+  // Start button
+  document.getElementById('startBtn').addEventListener('click', startGame);
+  document.getElementById('playAgainBtn').addEventListener('click', startGame);
+
+  function startGame() {
+    level = 1;
+    document.getElementById('gameOver').style.display = 'none';
+    nextRound();
+  }
+
+  function generateNumber(digits) {
+    let n = '';
+    for (let i = 0; i < digits; i++) {
+      n += (i === 0) ? Math.floor(Math.random() * 9) + 1 : Math.floor(Math.random() * 10);
+    }
+    return n;
+  }
+
+  function nextRound() {
+    state = 'showing';
+    currentNumber = generateNumber(level);
+    levelEl.textContent = level;
+    digitsEl.textContent = level;
+
+    // Display time: 1s base + 0.4s per digit (minimum 1.2s)
+    const displayTime = Math.max(1200, 1000 + level * 400);
+
+    display.innerHTML = `
+      <div class="nm-level-badge">Level ${level}</div>
+      <div class="nm-number">${currentNumber}</div>
+      <div class="nm-progress" id="progressBar" style="width:100%;"></div>
+    `;
+
+    // Animate progress bar
+    requestAnimationFrame(() => {
+      const bar = document.getElementById('progressBar');
+      if (bar) {
+        bar.style.transition = `width ${displayTime}ms linear`;
+        bar.style.width = '0%';
+      }
+    });
+
+    setTimeout(() => showInput(), displayTime);
+  }
+
+  function showInput() {
+    state = 'input';
+    display.innerHTML = `
+      <div class="nm-prompt">What was the number?</div>
+      <div class="nm-input-wrap">
+        <input type="text" class="nm-input" id="answerInput" inputmode="numeric" pattern="[0-9]*" autocomplete="off" autofocus>
+      </div>
+      <button class="nm-start-btn" id="submitBtn" style="margin-top:1rem;">Submit</button>
+    `;
+
+    const input = document.getElementById('answerInput');
+    const submitBtn = document.getElementById('submitBtn');
+
+    input.focus();
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkAnswer();
+    });
+    submitBtn.addEventListener('click', checkAnswer);
+  }
+
+  function checkAnswer() {
+    if (state !== 'input') return;
+    state = 'feedback';
+    const input = document.getElementById('answerInput');
+    const answer = input.value.trim();
+
+    if (answer === currentNumber) {
+      // Correct
+      input.classList.add('nm-input--correct');
+      display.innerHTML = `
+        <div class="nm-result-correct">&#10004; Correct!</div>
+        <div style="color:#9ca3af;margin-top:0.5rem;">The number was <span style="color:#fff;font-weight:700;letter-spacing:0.1em;">${currentNumber}</span></div>
+        <div class="nm-level-badge" style="margin-top:1rem;">Level ${level} complete</div>
+      `;
+      level++;
+
+      if (level - 1 > highScore) {
+        highScore = level - 1;
+        localStorage.setItem('nmHighScore', highScore);
+        highScoreEl.textContent = highScore;
+      }
+
+      setTimeout(() => nextRound(), 1200);
+    } else {
+      // Wrong
+      endGame(answer);
+    }
+  }
+
+  function endGame(wrongAnswer) {
+    state = 'gameover';
+    const reached = level - 1;
+
+    // Highlight differences
+    let diff = '';
+    for (let i = 0; i < Math.max(currentNumber.length, wrongAnswer.length); i++) {
+      if (i < wrongAnswer.length && wrongAnswer[i] === currentNumber[i]) {
+        diff += `<span style="color:#10b981;">${wrongAnswer[i]}</span>`;
+      } else if (i < wrongAnswer.length) {
+        diff += `<span style="color:#ef4444;text-decoration:underline;">${wrongAnswer[i]}</span>`;
+      }
+    }
+
+    display.innerHTML = `
+      <div class="nm-result-wrong">&#10008; Incorrect</div>
+      <div class="nm-result-answer">The number was: <span style="letter-spacing:0.15em;">${currentNumber}</span></div>
+      <div class="nm-result-answer">Your answer: ${diff || '<span style="color:#ef4444;">(empty)</span>'}</div>
+    `;
+
+    // Rank
+    let rank, rankColor, rankBg;
+    if (reached >= 16) { rank = 'Exceptional'; rankColor = '#7c3aed'; rankBg = '#f5f3ff'; }
+    else if (reached >= 12) { rank = 'Outstanding'; rankColor = '#059669'; rankBg = '#ecfdf5'; }
+    else if (reached >= 9) { rank = 'Excellent'; rankColor = '#10b981'; rankBg = '#f0fdf4'; }
+    else if (reached >= 7) { rank = 'Good'; rankColor = '#3b82f6'; rankBg = '#eff6ff'; }
+    else if (reached >= 5) { rank = 'Average'; rankColor = '#f59e0b'; rankBg = '#fffbeb'; }
+    else { rank = 'Below Average'; rankColor = '#6b7280'; rankBg = '#f9fafb'; }
+
+    const gameOver = document.getElementById('gameOver');
+    gameOver.style.display = 'block';
+    document.getElementById('resLevel').textContent = reached;
+    document.getElementById('resDigits').textContent = reached;
+
+    const rankEl = document.getElementById('resRank');
+    rankEl.textContent = rank + ' (' + reached + ' digits)';
+    rankEl.style.color = rankColor;
+    rankEl.style.background = rankBg;
+
+    // History
+    history.unshift({ level: reached, ts: Date.now() });
+    if (history.length > 20) history = history.slice(0, 20);
+    localStorage.setItem('nmHistory', JSON.stringify(history));
+    renderHistory();
+
+    gameOver.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function renderHistory() {
+    document.getElementById('historyChips').innerHTML = history.slice(0, 10)
+      .map(h => `<span class="nm-history-chip">${h.level} digits</span>`).join('');
+  }
+
+  // Share
+  document.getElementById('shareBtn').addEventListener('click', () => {
+    const last = history[0];
+    if (!last) return;
+    const text = `Number Memory Test: ${last.level} digits remembered!\n\nTry it: https://letsrandomize.org/tools/number-memory-test/`;
+    if (navigator.share) {
+      navigator.share({ title: 'My Number Memory Score', text });
+    } else {
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('shareBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.innerHTML = '&#128279; Share', 2000);
+      });
+    }
+  });
+
+  renderHistory();
+
+  // Mobile menu
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const nav = document.querySelector('.site-nav');
+  if (menuBtn && nav) menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+})();
+</script>
+</body>
+</html>

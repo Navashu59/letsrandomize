@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Animal Generator — Pick a Random Animal</title>
+<meta name="description" content="Generate random animals instantly with emoji, type, habitat, and fun facts. Filter by mammal, bird, reptile, fish, or insect. 100+ animals in our database.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/random-animal-generator/">
+<meta property="og:title" content="Random Animal Generator — Pick a Random Animal">
+<meta property="og:description" content="Generate random animals with emoji, type, habitat, and fun facts. 100+ animals. Free online tool.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Random Animal Generator — Pick a Random Animal">
+<meta property="og:url" content="https://letsrandomize.org/tools/random-animal-generator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Animal Generator", "url":"https://letsrandomize.org/tools/random-animal-generator/", "description":"Generate random animals with emoji,  type,  habitat,  and fun facts.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-04"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Animal Generator", "item":"https://letsrandomize.org/tools/random-animal-generator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"How many animals are in the database?", "acceptedAnswer":{"@type":"Answer", "text":"Our database contains over 100 animals spanning mammals,  birds,  reptiles,  fish,  and insects,  each with an emoji,  habitat info,  and a fun fact."}}, {"@type":"Question", "name":"Can I filter by animal type?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the type filter to show only mammals,  birds,  reptiles,  fish,  or insects,  or choose any to get a random mix."}}, {"@type":"Question", "name":"What information is shown for each animal?", "acceptedAnswer":{"@type":"Answer", "text":"Each animal displays its name,  emoji,  type classification,  natural habitat,  and a fun fact about the species."}}, {"@type":"Question", "name":"What can I use a random animal generator for?", "acceptedAnswer":{"@type":"Answer", "text":"Random animals are great for creative writing prompts,  educational activities,  trivia games,  drawing challenges,  and classroom assignments."}}, {"@type":"Question", "name":"Is the random animal generator truly random?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. We use cryptographic randomization via the Web Crypto API for unbiased,  unpredictable results every time."}}]}, {"@context":"https://schema.org", "@type":"Article", "headline":"Random Animal Generator", "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2025-01-15", "dateModified":"2026-03-04", "publisher":{"@type":"Organization", "name":"LetsRandomize"}}]
+</script>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Random Animal Generator</nav>
+    <h1>Random Animal Generator</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p>Pick a random animal with emoji, type, habitat, and fun facts. Over 100 animals in our database.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+    <div class="generator-card">
+      <div class="generator-options">
+        <div class="option-group">
+          <label for="animal-type">Animal Type</label>
+          <select id="animal-type">
+            <option value="any">Any</option>
+            <option value="mammal">Mammals</option>
+            <option value="bird">Birds</option>
+            <option value="reptile">Reptiles</option>
+            <option value="fish">Fish</option>
+            <option value="insect">Insects</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label for="animal-count">Count</label>
+          <select id="animal-count">
+            <option value="1" selected>1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="generate-btn">Generate Animal</button>
+
+      <div class="result-display" id="result-display" style="display:none;">
+        <div id="result-content" class="result-list"></div>
+        <div class="result-actions">
+          <button class="copy-btn" data-copy-target="result-content">Copy All</button>
+          <button class="copy-btn" id="share-btn">Share</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="history-panel" id="history-panel">
+      <h3>Recent Results <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <div class="how-to">
+      <h2>How to Use the Random Animal Generator</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Choose Type</h3><p>Select a specific animal type like mammals or birds, or pick any for a random mix.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Set Count</h3><p>Choose how many random animals you want to generate at once.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Generate</h3><p>Click Generate to get your random animals with fun facts instantly.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><h3>Learn & Share</h3><p>Read the fun facts, copy the results, or share them with friends.</p></div></div>
+      </div>
+    </div>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><button class="faq-question">How many animals are in the database? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Our database contains over 100 animals spanning mammals, birds, reptiles, fish, and insects, each with an emoji, habitat info, and a fun fact.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I filter by animal type? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Use the type filter to show only mammals, birds, reptiles, fish, or insects, or choose any to get a random mix.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What information is shown for each animal? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Each animal displays its name, emoji, type classification, natural habitat, and a fun fact about the species.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What can I use a random animal generator for? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Random animals are perfect for creative writing prompts, educational activities, trivia games, drawing challenges, and classroom assignments.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Is the random animal generator truly random? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. We use cryptographic randomization via the Web Crypto API for unbiased, unpredictable results every time.</div></div></div>
+    </section>
+
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/random-name-generator/" class="card tool-card"><div class="tool-card-icon">&#128100;</div><h3>Name Generator</h3><p>Generate random names.</p></a>
+        <a href="/tools/random-emoji-generator/" class="card tool-card"><div class="tool-card-icon">&#128522;</div><h3>Emoji Generator</h3><p>Random emojis by category.</p></a>
+        <a href="/tools/random-word-generator/" class="card tool-card"><div class="tool-card-icon">&#128218;</div><h3>Word Generator</h3><p>Random English words.</p></a>
+        <a href="/tools/random-joke-generator/" class="card tool-card"><div class="tool-card-icon">&#128514;</div><h3>Joke Generator</h3><p>Random clean jokes.</p></a>
+      </div>
+    </section>
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline"><div class="author-avatar">SP</div><div>By <a href="/about/">Sam Parker</a> &middot; Updated February 2026</div></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Generators</h4><a href="/tools/random-name-generator/">Name Generator</a><a href="/tools/random-team-generator/">Team Generator</a><a href="/tools/random-password-generator/">Password Generator</a><a href="/tools/random-number-generator/">Number Generator</a></div>
+      <div class="footer-col"><h4>More Tools</h4><a href="/tools/random-word-generator/">Word Generator</a><a href="/tools/list-randomizer/">List Randomizer</a><a href="/tools/spin-the-wheel/">Spin the Wheel</a><a href="/tools/random-color-generator/">Color Generator</a></div>
+      <div class="footer-col"><h4>Info</h4><a href="/about/">About</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></div>
+      <div class="footer-col"><h4>LetsRandomize</h4><p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up.</p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var ANIMALS = [
+    {name:"Dog",emoji:"\u{1F436}",type:"mammal",habitat:"Domestic",fact:"Dogs can understand up to 250 words and gestures."},
+    {name:"Cat",emoji:"\u{1F431}",type:"mammal",habitat:"Domestic",fact:"Cats spend about 70% of their lives sleeping."},
+    {name:"Lion",emoji:"\u{1F981}",type:"mammal",habitat:"Savanna",fact:"A lion's roar can be heard from 5 miles away."},
+    {name:"Tiger",emoji:"\u{1F405}",type:"mammal",habitat:"Forest",fact:"No two tigers have the same stripe pattern."},
+    {name:"Bear",emoji:"\u{1F43B}",type:"mammal",habitat:"Forest",fact:"Bears can run up to 35 miles per hour."},
+    {name:"Elephant",emoji:"\u{1F418}",type:"mammal",habitat:"Savanna",fact:"Elephants are the only animals that cannot jump."},
+    {name:"Giraffe",emoji:"\u{1F992}",type:"mammal",habitat:"Savanna",fact:"Giraffes only need 30 minutes of sleep per day."},
+    {name:"Zebra",emoji:"\u{1F993}",type:"mammal",habitat:"Savanna",fact:"Each zebra has a unique stripe pattern like a fingerprint."},
+    {name:"Wolf",emoji:"\u{1F43A}",type:"mammal",habitat:"Forest",fact:"Wolves can travel up to 30 miles in a single day."},
+    {name:"Fox",emoji:"\u{1F98A}",type:"mammal",habitat:"Forest",fact:"Foxes use the Earth's magnetic field to hunt."},
+    {name:"Deer",emoji:"\u{1F98C}",type:"mammal",habitat:"Forest",fact:"Deer can jump up to 10 feet high and 30 feet forward."},
+    {name:"Horse",emoji:"\u{1F434}",type:"mammal",habitat:"Grassland",fact:"Horses can sleep both standing up and lying down."},
+    {name:"Monkey",emoji:"\u{1F412}",type:"mammal",habitat:"Tropical Forest",fact:"Monkeys can understand basic math and counting."},
+    {name:"Gorilla",emoji:"\u{1F98D}",type:"mammal",habitat:"Tropical Forest",fact:"Gorillas share 98.3% of their DNA with humans."},
+    {name:"Panda",emoji:"\u{1F43C}",type:"mammal",habitat:"Mountain Forest",fact:"Pandas spend up to 14 hours a day eating bamboo."},
+    {name:"Koala",emoji:"\u{1F428}",type:"mammal",habitat:"Eucalyptus Forest",fact:"Koalas sleep up to 22 hours a day."},
+    {name:"Kangaroo",emoji:"\u{1F998}",type:"mammal",habitat:"Grassland",fact:"Kangaroos cannot walk backwards."},
+    {name:"Rabbit",emoji:"\u{1F430}",type:"mammal",habitat:"Meadow",fact:"Rabbits can turn their ears 180 degrees."},
+    {name:"Hamster",emoji:"\u{1F439}",type:"mammal",habitat:"Domestic",fact:"Hamsters can store food in their cheek pouches."},
+    {name:"Mouse",emoji:"\u{1F42D}",type:"mammal",habitat:"Various",fact:"A mouse's heart beats about 632 times per minute."},
+    {name:"Rat",emoji:"\u{1F400}",type:"mammal",habitat:"Urban",fact:"Rats can laugh when tickled and dream while sleeping."},
+    {name:"Pig",emoji:"\u{1F437}",type:"mammal",habitat:"Farm",fact:"Pigs are considered one of the most intelligent domestic animals."},
+    {name:"Cow",emoji:"\u{1F42E}",type:"mammal",habitat:"Farm",fact:"Cows have best friends and get stressed when separated."},
+    {name:"Sheep",emoji:"\u{1F411}",type:"mammal",habitat:"Farm",fact:"Sheep can remember up to 50 individual faces for years."},
+    {name:"Goat",emoji:"\u{1F410}",type:"mammal",habitat:"Mountain",fact:"Goats have rectangular pupils for a wider field of vision."},
+    {name:"Camel",emoji:"\u{1F42B}",type:"mammal",habitat:"Desert",fact:"Camels can drink up to 40 gallons of water at once."},
+    {name:"Whale",emoji:"\u{1F40B}",type:"mammal",habitat:"Ocean",fact:"Blue whales are the largest animals to ever live on Earth."},
+    {name:"Dolphin",emoji:"\u{1F42C}",type:"mammal",habitat:"Ocean",fact:"Dolphins sleep with one eye open and half their brain awake."},
+    {name:"Bat",emoji:"\u{1F987}",type:"mammal",habitat:"Cave",fact:"Bats are the only mammals capable of sustained flight."},
+    {name:"Hedgehog",emoji:"\u{1F994}",type:"mammal",habitat:"Garden",fact:"Hedgehogs have about 5,000 to 7,000 spines on their body."},
+    {name:"Otter",emoji:"\u{1F9A6}",type:"mammal",habitat:"River",fact:"Sea otters hold hands while sleeping so they don't drift apart."},
+    {name:"Sloth",emoji:"\u{1F9A5}",type:"mammal",habitat:"Tropical Forest",fact:"Sloths only go to the bathroom once a week."},
+    {name:"Raccoon",emoji:"\u{1F99D}",type:"mammal",habitat:"Forest",fact:"Raccoons can open complex locks and remember solutions for years."},
+    {name:"Leopard",emoji:"\u{1F406}",type:"mammal",habitat:"Savanna",fact:"Leopards can carry prey twice their own weight up a tree."},
+    {name:"Rhino",emoji:"\u{1F98F}",type:"mammal",habitat:"Savanna",fact:"Rhino horns are made of keratin, the same protein as human hair."},
+    {name:"Hippo",emoji:"\u{1F99B}",type:"mammal",habitat:"River",fact:"Hippos secrete a natural sunscreen that appears red."},
+    {name:"Eagle",emoji:"\u{1F985}",type:"bird",habitat:"Mountain",fact:"Eagles can spot a rabbit from over two miles away."},
+    {name:"Owl",emoji:"\u{1F989}",type:"bird",habitat:"Forest",fact:"Owls can rotate their heads up to 270 degrees."},
+    {name:"Penguin",emoji:"\u{1F427}",type:"bird",habitat:"Antarctic",fact:"Emperor penguins can hold their breath for over 20 minutes."},
+    {name:"Flamingo",emoji:"\u{1F9A9}",type:"bird",habitat:"Wetland",fact:"Flamingos are born white and turn pink from their diet."},
+    {name:"Parrot",emoji:"\u{1F99C}",type:"bird",habitat:"Tropical Forest",fact:"Some parrots can live for over 80 years."},
+    {name:"Peacock",emoji:"\u{1F99A}",type:"bird",habitat:"Forest",fact:"A peacock's tail feathers can span up to 6 feet wide."},
+    {name:"Swan",emoji:"\u{1F9A2}",type:"bird",habitat:"Lake",fact:"Swans mate for life and can live for over 20 years."},
+    {name:"Duck",emoji:"\u{1F986}",type:"bird",habitat:"Wetland",fact:"Ducks have waterproof feathers even when diving underwater."},
+    {name:"Rooster",emoji:"\u{1F413}",type:"bird",habitat:"Farm",fact:"Roosters perform a courtship dance called tidbitting."},
+    {name:"Turkey",emoji:"\u{1F983}",type:"bird",habitat:"Forest",fact:"Wild turkeys can fly at speeds up to 55 mph."},
+    {name:"Dove",emoji:"\u{1F54A}",type:"bird",habitat:"Urban",fact:"Doves can find their way home from over 1,000 miles away."},
+    {name:"Hummingbird",emoji:"\u{1F426}",type:"bird",habitat:"Garden",fact:"Hummingbirds can fly backwards and their hearts beat 1,200 times per minute."},
+    {name:"Pelican",emoji:"\u{1F426}",type:"bird",habitat:"Coast",fact:"A pelican's bill can hold up to 3 gallons of water."},
+    {name:"Stork",emoji:"\u{1F426}",type:"bird",habitat:"Wetland",fact:"White storks migrate up to 12,000 miles each year."},
+    {name:"Crow",emoji:"\u{1F426}",type:"bird",habitat:"Urban",fact:"Crows can recognize and remember human faces."},
+    {name:"Woodpecker",emoji:"\u{1F426}",type:"bird",habitat:"Forest",fact:"Woodpeckers can peck up to 20 times per second."},
+    {name:"Toucan",emoji:"\u{1F426}",type:"bird",habitat:"Tropical Forest",fact:"A toucan's bill can be one-third of its total body length."},
+    {name:"Crocodile",emoji:"\u{1F40A}",type:"reptile",habitat:"Swamp",fact:"Crocodiles have the strongest bite of any living animal."},
+    {name:"Turtle",emoji:"\u{1F422}",type:"reptile",habitat:"Ocean",fact:"Sea turtles can hold their breath for up to 7 hours."},
+    {name:"Snake",emoji:"\u{1F40D}",type:"reptile",habitat:"Various",fact:"Snakes smell with their tongues by flicking them in the air."},
+    {name:"Lizard",emoji:"\u{1F98E}",type:"reptile",habitat:"Desert",fact:"Some lizards can detach their tails to escape predators."},
+    {name:"Chameleon",emoji:"\u{1F98E}",type:"reptile",habitat:"Tropical Forest",fact:"Chameleons change color to communicate, not just for camouflage."},
+    {name:"Gecko",emoji:"\u{1F98E}",type:"reptile",habitat:"Tropical",fact:"Geckos can walk on ceilings using millions of tiny hair-like structures."},
+    {name:"Iguana",emoji:"\u{1F98E}",type:"reptile",habitat:"Tropical Forest",fact:"Iguanas can survive a 40-foot fall without getting hurt."},
+    {name:"Komodo Dragon",emoji:"\u{1F98E}",type:"reptile",habitat:"Island",fact:"Komodo dragons have venomous bites and can eat 80% of their body weight."},
+    {name:"Alligator",emoji:"\u{1F40A}",type:"reptile",habitat:"Swamp",fact:"Alligators have been around for over 37 million years."},
+    {name:"Cobra",emoji:"\u{1F40D}",type:"reptile",habitat:"Tropical",fact:"King cobras can grow up to 18 feet long."},
+    {name:"Python",emoji:"\u{1F40D}",type:"reptile",habitat:"Tropical Forest",fact:"Pythons can go up to two years without eating."},
+    {name:"Tortoise",emoji:"\u{1F422}",type:"reptile",habitat:"Grassland",fact:"Giant tortoises can live for over 150 years."},
+    {name:"Rattlesnake",emoji:"\u{1F40D}",type:"reptile",habitat:"Desert",fact:"Rattlesnakes add a new rattle segment each time they shed skin."},
+    {name:"Shark",emoji:"\u{1F988}",type:"fish",habitat:"Ocean",fact:"Sharks have been around for over 400 million years."},
+    {name:"Clownfish",emoji:"\u{1F41F}",type:"fish",habitat:"Coral Reef",fact:"All clownfish are born male and some change to female."},
+    {name:"Goldfish",emoji:"\u{1F41F}",type:"fish",habitat:"Freshwater",fact:"Goldfish can remember things for at least 5 months."},
+    {name:"Swordfish",emoji:"\u{1F41F}",type:"fish",habitat:"Ocean",fact:"Swordfish can swim at speeds up to 60 mph."},
+    {name:"Pufferfish",emoji:"\u{1F421}",type:"fish",habitat:"Ocean",fact:"Pufferfish contain tetrodotoxin, which is 1,200 times more deadly than cyanide."},
+    {name:"Seahorse",emoji:"\u{1F41F}",type:"fish",habitat:"Coral Reef",fact:"Male seahorses carry and give birth to the babies."},
+    {name:"Tuna",emoji:"\u{1F41F}",type:"fish",habitat:"Ocean",fact:"Bluefin tuna can raise their body temperature above water temperature."},
+    {name:"Salmon",emoji:"\u{1F41F}",type:"fish",habitat:"River",fact:"Salmon return to the exact same stream where they were born to spawn."},
+    {name:"Eel",emoji:"\u{1F41F}",type:"fish",habitat:"Ocean",fact:"Electric eels can produce shocks of up to 860 volts."},
+    {name:"Ray",emoji:"\u{1F41F}",type:"fish",habitat:"Ocean",fact:"Manta rays have the largest brain of any fish species."},
+    {name:"Catfish",emoji:"\u{1F41F}",type:"fish",habitat:"Freshwater",fact:"Catfish have over 100,000 taste buds covering their entire body."},
+    {name:"Anglerfish",emoji:"\u{1F41F}",type:"fish",habitat:"Deep Ocean",fact:"Female anglerfish use a bioluminescent lure to attract prey."},
+    {name:"Barracuda",emoji:"\u{1F41F}",type:"fish",habitat:"Ocean",fact:"Barracuda can swim in bursts up to 36 mph."},
+    {name:"Piranha",emoji:"\u{1F41F}",type:"fish",habitat:"River",fact:"Piranhas bark to warn other piranhas to stay away."},
+    {name:"Butterfly",emoji:"\u{1F98B}",type:"insect",habitat:"Garden",fact:"Butterflies taste with their feet."},
+    {name:"Bee",emoji:"\u{1F41D}",type:"insect",habitat:"Garden",fact:"A single bee visits 50 to 1,000 flowers per day."},
+    {name:"Ant",emoji:"\u{1F41C}",type:"insect",habitat:"Various",fact:"Ants can carry objects 50 times their own body weight."},
+    {name:"Ladybug",emoji:"\u{1F41E}",type:"insect",habitat:"Garden",fact:"A ladybug can eat up to 5,000 aphids in its lifetime."},
+    {name:"Cricket",emoji:"\u{1F997}",type:"insect",habitat:"Grassland",fact:"You can estimate the temperature by counting cricket chirps."},
+    {name:"Dragonfly",emoji:"\u{1F41B}",type:"insect",habitat:"Wetland",fact:"Dragonflies have nearly 360-degree vision."},
+    {name:"Firefly",emoji:"\u{1F41B}",type:"insect",habitat:"Forest",fact:"Firefly light is the most efficient in the world with nearly 100% energy conversion."},
+    {name:"Grasshopper",emoji:"\u{1F997}",type:"insect",habitat:"Grassland",fact:"Grasshoppers can jump 20 times their own body length."},
+    {name:"Beetle",emoji:"\u{1F41E}",type:"insect",habitat:"Various",fact:"Beetles make up about 25% of all known animal species."},
+    {name:"Moth",emoji:"\u{1F98B}",type:"insect",habitat:"Various",fact:"Some moths can detect sound frequencies up to 300 kHz."},
+    {name:"Wasp",emoji:"\u{1F41D}",type:"insect",habitat:"Various",fact:"Wasps can recognize each other's faces."},
+    {name:"Mosquito",emoji:"\u{1F99F}",type:"insect",habitat:"Wetland",fact:"Only female mosquitoes bite; males feed on nectar."},
+    {name:"Caterpillar",emoji:"\u{1F41B}",type:"insect",habitat:"Garden",fact:"Caterpillars have 12 eyes but still have very poor vision."},
+    {name:"Praying Mantis",emoji:"\u{1F41B}",type:"insect",habitat:"Garden",fact:"Praying mantises are the only insects that can turn their heads 180 degrees."},
+    {name:"Scorpion",emoji:"\u{1F982}",type:"insect",habitat:"Desert",fact:"Scorpions glow under ultraviolet light."},
+    {name:"Spider",emoji:"\u{1F577}",type:"insect",habitat:"Various",fact:"Spider silk is five times stronger than steel by weight."},
+    {name:"Cheetah",emoji:"\u{1F406}",type:"mammal",habitat:"Savanna",fact:"Cheetahs can accelerate from 0 to 60 mph in just 3 seconds."},
+    {name:"Polar Bear",emoji:"\u{1F43B}",type:"mammal",habitat:"Arctic",fact:"Polar bear fur is actually transparent, not white."},
+    {name:"Red Panda",emoji:"\u{1F43C}",type:"mammal",habitat:"Mountain Forest",fact:"Red pandas are more closely related to raccoons than giant pandas."},
+    {name:"Moose",emoji:"\u{1F98C}",type:"mammal",habitat:"Forest",fact:"Moose can dive underwater and hold their breath for 30 seconds."},
+    {name:"Walrus",emoji:"\u{1F9AD}",type:"mammal",habitat:"Arctic",fact:"Walrus tusks can grow up to 3 feet long."},
+    {name:"Platypus",emoji:"\u{1F9A6}",type:"mammal",habitat:"River",fact:"The platypus is one of only five species of venomous mammals."},
+    {name:"Octopus",emoji:"\u{1F419}",type:"fish",habitat:"Ocean",fact:"Octopuses have three hearts and blue blood."},
+    {name:"Jellyfish",emoji:"\u{1FAB8}",type:"fish",habitat:"Ocean",fact:"Some jellyfish are biologically immortal."},
+    {name:"Starfish",emoji:"\u{2B50}",type:"fish",habitat:"Ocean",fact:"Starfish can regenerate lost arms and some can regrow from a single arm."},
+    {name:"Crab",emoji:"\u{1F980}",type:"fish",habitat:"Coast",fact:"Crabs communicate by drumming or waving their pincers."},
+    {name:"Lobster",emoji:"\u{1F99E}",type:"fish",habitat:"Ocean",fact:"Lobsters taste with their legs and chew with their stomachs."}
+  ];
+
+  var generateBtn = document.getElementById('generate-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var resultContent = document.getElementById('result-content');
+
+  generateBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var type = document.getElementById('animal-type').value;
+    var count = parseInt(document.getElementById('animal-count').value, 10);
+
+    var pool = type === 'any' ? ANIMALS : ANIMALS.filter(function(a) { return a.type === type; });
+    if (pool.length === 0) { App.showToast('No animals match this filter.'); return; }
+
+    var results = [];
+    for (var i = 0; i < count; i++) {
+      results.push(RandomEngine.randomPick(pool));
+    }
+
+    resultContent.innerHTML = results.map(function(a, idx) {
+      return '<div class="result-list-item" style="flex-direction:column;align-items:flex-start;gap:0.25rem;">'
+        + '<div style="display:flex;align-items:center;gap:0.5rem;"><span class="num">' + (idx+1) + '</span><strong style="font-size:1.1rem;">' + a.emoji + ' ' + App.escapeHtml(a.name) + '</strong></div>'
+        + '<div style="font-size:0.85rem;color:#374151;"><strong>Type:</strong> ' + App.escapeHtml(a.type.charAt(0).toUpperCase() + a.type.slice(1)) + ' &middot; <strong>Habitat:</strong> ' + App.escapeHtml(a.habitat) + '</div>'
+        + '<div style="font-size:0.85rem;color:#6b7280;font-style:italic;">' + App.escapeHtml(a.fact) + '</div>'
+        + '</div>';
+    }).join('');
+
+    resultDisplay.style.display = 'block';
+    App.flashResult(resultDisplay);
+    App.addToHistory(results.map(function(a) { return a.emoji + ' ' + a.name; }).join(', '));
+  });
+
+  document.getElementById('share-btn').addEventListener('click', function() {
+    App.shareResult('Random animals: ' + resultContent.textContent.trim(), 'Random Animals');
+  });
+})();
+</script>
+</body>
+</html>

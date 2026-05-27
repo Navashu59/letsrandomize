@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Generator 1-100, 1-10, Lottery & Range Picker</title>
+<meta name="description" content="Generate random numbers in any range, including 1-100, 1-10, and lottery ranges. Set min, max, count, sorting, and unique-only options for raffles and sampling.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/random-number-generator/">
+<meta property="og:title" content="Random Number Generator 1-100, 1-10, Lottery & Range Picker">
+<meta property="og:description" content="Generate random numbers in any range with sorting and uniqueness options. Use it for 1-100 picks, lottery numbers, raffles, and sampling.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Random Number Generator - Pick Numbers in Any Range">
+<meta property="og:url" content="https://letsrandomize.org/tools/random-number-generator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Number Generator", "url":"https://letsrandomize.org/tools/random-number-generator/", "description":"Generate random numbers in any range with sorting and uniqueness options.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-08"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Number Generator", "item":"https://letsrandomize.org/tools/random-number-generator/"}]}, {"@context":"https://schema.org", "@type":"HowTo", "name":"How to Generate Random Numbers", "description":"Step-by-step guide to generating random numbers in any range for lottery picks, statistical sampling, raffles, and more.", "totalTime":"PT1M", "step":[{"@type":"HowToStep", "name":"Set Your Range", "text":"Enter the minimum and maximum values for your random numbers. For example, set 1 to 69 for Powerball main numbers."}, {"@type":"HowToStep", "name":"Choose Count and Options", "text":"Set how many numbers to generate, select sorting preference (ascending, descending, or none), and toggle Unique Only if you need non-repeating numbers."}, {"@type":"HowToStep", "name":"Click Generate", "text":"Hit the Generate Numbers button to instantly create your random numbers using the cryptographically secure Web Crypto API."}, {"@type":"HowToStep", "name":"Copy Your Results", "text":"Click the Copy button to save the generated numbers to your clipboard for use in any application."}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"Is this a truly random number generator?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. We use the Web Crypto API for cryptographically secure random number generation when available in your browser,  which provides true randomness suitable even for security applications."}}, {"@type":"Question", "name":"What range of numbers can I generate?", "acceptedAnswer":{"@type":"Answer", "text":"You can set any minimum and maximum value. The generator works with integers within the range you specify."}}, {"@type":"Question", "name":"Can I generate unique numbers only?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Toggle the Unique Only option and the generator will ensure no duplicate numbers appear in your results. Note: the count cannot exceed the range size when this option is enabled."}}, {"@type":"Question", "name":"Can I use this for lottery numbers?", "acceptedAnswer":{"@type":"Answer", "text":"Yes! Set the range to match your lottery (e.g.,  1-49) and enable Unique Only. This is great for picking lottery numbers,  raffle winners,  or any drawing."}}, {"@type":"Question", "name":"Can I sort the generated numbers?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the Sort option to display your numbers in ascending or descending order, or leave it on None for the original random order."}}, {"@type":"Question", "name":"What is the difference between pseudo-random and true random numbers?", "acceptedAnswer":{"@type":"Answer", "text":"Pseudo-random numbers are generated by algorithms (like Math.random()) that produce sequences that look random but are deterministic. True random numbers come from unpredictable physical processes. Our generator uses the Web Crypto API which provides cryptographically secure randomness — far superior to basic pseudo-random for fairness and security."}}, {"@type":"Question", "name":"How do I generate random numbers in a specific range like 1-49?", "acceptedAnswer":{"@type":"Answer", "text":"Set the Minimum field to 1 and Maximum to 49, choose how many numbers you want, and click Generate. Enable 'Unique Only' if you need non-repeating numbers (like lottery draws)."}}, {"@type":"Question", "name":"Can I generate random numbers for statistical sampling?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Set your population range, choose the sample size (Count), enable Unique Only for sampling without replacement, and generate. This works for research surveys, quality control sampling, and random selection from numbered lists."}}]}]
+</script>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Random Number Generator</nav>
+    <h1>Random Number Generator</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-08">Updated Mar 8, 2026</time></div>
+    <p>Generate random numbers in any range, including popular searches like random number 1-100, random number 1-10, raffle picks, lottery ranges, classroom draws, and statistical sampling. Choose your min, max, count, sorting, and uniqueness options, then generate results instantly in your browser.</p>
+    <div style="margin:12px 0 0;padding:12px 14px;border:1px solid #d1fae5;border-radius:10px;background:#ecfdf5;color:#1f2937;">
+      <strong>Quick answer:</strong> Use <strong>1-100</strong> for a simple random pick, <strong>1-10</strong> for games and classrooms, or <strong>1-49 with unique numbers</strong> for lottery-style draws. Need a different kind of draw? Try <a href="/tools/list-randomizer/">list randomizer</a>, <a href="/tools/random-team-generator/">random team generator</a>, or <a href="/tools/random-name-generator/">random name generator</a>.
+    </div>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+    <div class="generator-card">
+      <div class="generator-options">
+        <div class="option-group">
+          <label for="num-min">Minimum</label>
+          <input type="number" id="num-min" value="1">
+        </div>
+        <div class="option-group">
+          <label for="num-max">Maximum</label>
+          <input type="number" id="num-max" value="100">
+        </div>
+        <div class="option-group">
+          <label for="num-count">Count</label>
+          <input type="number" id="num-count" value="1" min="1" max="1000">
+        </div>
+        <div class="option-group">
+          <label for="num-sort">Sort</label>
+          <select id="num-sort">
+            <option value="none">None</option>
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+      </div>
+      <div class="checkbox-group mb-3">
+        <label class="checkbox-label"><input type="checkbox" id="num-unique"> Unique numbers only</label>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="generate-btn">Generate Numbers</button>
+      <div style="margin-top:0.75rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
+        <span style="font-size:0.85rem;color:#6b7280;">Quick:</span>
+        <button type="button" class="preset-btn" onclick="setPreset(1,100,1,'none',false)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">1-100</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,10,1,'none',false)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">1-10</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,49,6,'asc',true)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">Lottery 6/49</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,6,1,'none',false)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">Dice D6</button>
+      </div>
+
+      <div class="result-display" id="result-display" style="display:none;">
+        <div id="result-content" class="result-text large"></div>
+        <div class="result-actions">
+          <button class="btn btn-primary" id="again-btn" style="font-size:0.95rem;padding:8px 20px;">&#8635; Generate Again</button>
+          <button class="copy-btn" data-copy-target="result-content">Copy</button>
+          <button class="copy-btn" id="share-btn">Share</button>
+        </div>
+        <div id="session-counter" style="text-align:center;margin-top:8px;font-size:0.8rem;color:#888;"></div>
+      </div>
+    </div>
+
+    <div class="history-panel" id="history-panel">
+      <h3>Recent Results <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <div class="how-to">
+      <h2>How to Use the Random Number Generator</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Set Your Range</h3><p>Enter the minimum and maximum values for your random numbers.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Choose Count & Options</h3><p>Set how many numbers to generate, sorting preference, and whether to allow duplicates.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Click Generate</h3><p>Hit the button to instantly generate your random numbers.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><h3>Copy Results</h3><p>Click Copy to save the numbers to your clipboard for use anywhere.</p></div></div>
+      </div>
+    </div>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Pick the right randomizer for the job</h2>
+      <ul>
+        <li><strong>Draw numbers from a range:</strong> stay on this page for raffles, classroom picks, statistics work, and lottery-style ranges.</li>
+        <li><strong>Need to understand how fair number generation works:</strong> open <a href="/guides/how-random-number-generators-work/">how random number generators work</a>.</li>
+        <li><strong>Choosing from names or words instead of numbers:</strong> use <a href="/tools/list-randomizer/">list randomizer</a> or <a href="/tools/spin-the-wheel/">spin the wheel</a> for a more visible picker.</li>
+        <li><strong>Splitting a roster into groups:</strong> jump to <a href="/tools/random-team-generator/">random team generator</a> instead of running several number draws by hand.</li>
+      </ul>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Popular Lottery Number Ranges</h2>
+      <p>Use these ranges to generate random lottery numbers for popular draws worldwide. Set the min, max, and count, then enable "Unique Only."</p>
+      <div style="overflow-x:auto;">
+      <table class="data-table" style="width:100%;border-collapse:collapse;margin:1rem 0;">
+        <thead><tr style="background:#f1f5f9;"><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Lottery</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Main Numbers</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Bonus Ball</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Jackpot Odds</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Powerball (US)</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">5 from 1-69</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 from 1-26</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 in 292M</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Mega Millions (US)</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">5 from 1-70</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 from 1-25</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 in 302M</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">EuroMillions</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">5 from 1-50</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">2 from 1-12</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 in 139M</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">UK Lotto</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">6 from 1-59</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 bonus</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 in 45M</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Oz Lotto (AU)</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">7 from 1-47</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">2 supplementary</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1 in 45M</td></tr>
+          <tr><td style="padding:0.5rem 1rem;">Canada Lotto 6/49</td><td style="text-align:center;padding:0.5rem;">6 from 1-49</td><td style="text-align:center;padding:0.5rem;">1 bonus</td><td style="text-align:center;padding:0.5rem;">1 in 14M</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Pseudo-Random vs True Random Numbers</h2>
+      <p>Not all random number generators are created equal. Understanding the difference helps you choose the right tool for your needs.</p>
+      <div style="overflow-x:auto;">
+      <table class="data-table" style="width:100%;border-collapse:collapse;margin:1rem 0;">
+        <thead><tr style="background:#f1f5f9;"><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Feature</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Pseudo-Random (PRNG)</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Cryptographic (CSPRNG)</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">True Random (TRNG)</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Source</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Algorithm + seed</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">OS entropy pool</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Physical phenomena</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Example</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Math.random()</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Web Crypto API (this tool)</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Random.org (atmospheric noise)</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Predictable?</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Yes, if seed known</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">No (computationally infeasible)</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">No (physically impossible)</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Speed</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Very fast</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Fast</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Slow (needs hardware)</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Good for games?</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Overkill</td></tr>
+          <tr><td style="padding:0.5rem 1rem;font-weight:600;">Good for security?</td><td style="padding:0.5rem 1rem;">No</td><td style="padding:0.5rem 1rem;">Yes</td><td style="padding:0.5rem 1rem;">Yes</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>Our random number generator uses the <strong>Web Crypto API</strong> (CSPRNG), which draws from your operating system's entropy pool. This makes it suitable for lottery picks, fair drawings, statistical sampling, and security applications — all without needing an internet connection.</p>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Common Uses for Random Numbers</h2>
+      <div style="overflow-x:auto;">
+      <table class="data-table" style="width:100%;border-collapse:collapse;margin:1rem 0;">
+        <thead><tr style="background:#f1f5f9;"><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Use Case</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Range</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Count</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Unique?</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Notes</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Lottery numbers</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1-69</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">5-7</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Match your lottery's rules</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Dice roll</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1-6</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1-10</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">No</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Or use 1-20 for D20</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Raffle drawing</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1-500</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1-5</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Match your ticket range</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">PIN code</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">0-9</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">4-6</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">No</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Duplicates OK for PINs</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Survey sampling</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1-N</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">Sample size</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">N = population size</td></tr>
+          <tr><td style="padding:0.5rem 1rem;">Coin flip (heads/tails)</td><td style="text-align:center;padding:0.5rem;">1-2</td><td style="text-align:center;padding:0.5rem;">1</td><td style="text-align:center;padding:0.5rem;">No</td><td style="padding:0.5rem 1rem;">1 = heads, 2 = tails</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Quick-Start Random Number Presets</h2>
+      <p>Don't want to configure settings manually? Here are the most popular random number setups — just match the range and count to your need:</p>
+      <div style="overflow-x:auto;">
+      <table class="data-table" style="width:100%;border-collapse:collapse;margin:1rem 0;">
+        <thead><tr style="background:#f1f5f9;"><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">What You Need</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Min</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Max</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Count</th><th style="padding:0.6rem 1rem;text-align:center;border-bottom:2px solid #e2e8f0;">Unique?</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Sort</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Random number 1-100</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">100</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">No</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">None</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Random number 1-10</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">10</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">No</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">None</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Random number 1-49 (lottery)</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">49</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">6</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Ascending</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Random number list (10 numbers)</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1000</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">10</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">Yes</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Ascending</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">D20 dice roll</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">20</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">1</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">No</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">None</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Random 4-digit PIN</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">0</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">9</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">4</td><td style="text-align:center;padding:0.5rem;border-bottom:1px solid #e2e8f0;">No</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">None</td></tr>
+          <tr><td style="padding:0.5rem 1rem;font-weight:600;">Coin flip (heads/tails)</td><td style="text-align:center;padding:0.5rem;">1</td><td style="text-align:center;padding:0.5rem;">2</td><td style="text-align:center;padding:0.5rem;">1</td><td style="text-align:center;padding:0.5rem;">No</td><td style="padding:0.5rem 1rem;">None</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>How to Generate a Random Number List</h2>
+      <p>Need a list of random numbers for research, testing, or data analysis? Here's how to generate random number lists for different purposes:</p>
+      <div style="overflow-x:auto;">
+      <table class="data-table" style="width:100%;border-collapse:collapse;margin:1rem 0;">
+        <thead><tr style="background:#f1f5f9;"><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Purpose</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Recommended Settings</th><th style="padding:0.6rem 1rem;text-align:left;border-bottom:2px solid #e2e8f0;">Example Output</th></tr></thead>
+        <tbody>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Survey sample IDs</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Range 1-500, Count 50, Unique, Ascending</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-family:monospace;">3, 17, 42, 89, 156...</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Test data generation</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Range 1-1000, Count 100, No unique</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-family:monospace;">847, 23, 456, 23, 712...</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Bingo number caller</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Range 1-75, Count 75, Unique, None</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-family:monospace;">42, 7, 68, 15, 31...</td></tr>
+          <tr><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-weight:600;">Random seating chart</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;">Range 1-30, Count 30, Unique, None</td><td style="padding:0.5rem 1rem;border-bottom:1px solid #e2e8f0;font-family:monospace;">14, 3, 28, 7, 22...</td></tr>
+          <tr><td style="padding:0.5rem 1rem;font-weight:600;">Password seed numbers</td><td style="padding:0.5rem 1rem;">Range 0-9, Count 8, No unique</td><td style="padding:0.5rem 1rem;font-family:monospace;">7, 3, 9, 1, 0, 5, 8, 2</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p>After generating, click <strong>Copy</strong> to paste the numbers into Excel, Google Sheets, or any other application. Numbers are comma-separated for easy import.</p>
+    </section>
+
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><button class="faq-question">Is this a truly random number generator? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. We use the Web Crypto API for cryptographically secure random number generation when available, which provides true randomness suitable even for security applications.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What range of numbers can I generate? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">You can set any minimum and maximum value. The generator works with integers within the range you specify.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I generate unique numbers only? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Toggle the "Unique Only" checkbox and the generator will ensure no duplicate numbers. The count cannot exceed the range size with this option.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I use this for lottery numbers? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Absolutely! Set the range to match your lottery (e.g., 1-49) and enable Unique Only. Great for lottery numbers, raffle winners, or any drawing.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I sort the generated numbers? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Use the Sort dropdown to display in ascending or descending order, or leave it on None for the original random order.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What is the difference between pseudo-random and true random numbers? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Pseudo-random numbers are generated by algorithms that produce sequences that look random but are deterministic. True random numbers come from unpredictable physical processes. Our generator uses the Web Crypto API (CSPRNG) which provides cryptographically secure randomness — far superior to basic Math.random() for fairness and security.</div></div></div>
+      <div class="faq-item"><button class="faq-question">How do I generate random numbers in a specific range like 1-49? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Set the Minimum field to 1 and Maximum to 49, choose how many numbers you want, and click Generate. Enable "Unique Only" if you need non-repeating numbers (like lottery draws).</div></div></div>
+      <div class="faq-item"><button class="faq-question">Can I generate random numbers for statistical sampling? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Set your population range, choose the sample size (Count), enable Unique Only for sampling without replacement, and generate. This works for research surveys, quality control sampling, and random selection from numbered lists.</div></div></div>
+    </section>
+
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/random-password-generator/" class="card tool-card"><div class="tool-card-icon">&#128274;</div><h3>Password Generator</h3><p>Create secure random passwords.</p></a>
+        <a href="/tools/random-letter-generator/" class="card tool-card"><div class="tool-card-icon">&#9991;</div><h3>Letter Generator</h3><p>Random letters A-Z.</p></a>
+        <a href="/tools/spin-the-wheel/" class="card tool-card"><div class="tool-card-icon">&#127905;</div><h3>Spin the Wheel</h3><p>Animated random picker.</p></a>
+        <a href="/tools/list-randomizer/" class="card tool-card"><div class="tool-card-icon">&#128256;</div><h3>List Randomizer</h3><p>Shuffle any list.</p></a>
+        <a href="/guides/how-random-number-generators-work/" class="card tool-card"><div class="tool-card-icon">&#128214;</div><h3>How RNGs Work</h3><p>The science behind random numbers.</p></a>
+      </div>
+    </section>
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+    <a href="/guides/types-of-randomness/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Types of Randomness</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the different types of randomness from quantum to algorithmic.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline"><div class="author-avatar">SP</div><div>By <a href="/about/">Sam Parker</a> &middot; Updated Mar 8, 2026</div></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col"><h4>Generators</h4><a href="/tools/random-name-generator/">Name Generator</a><a href="/tools/random-team-generator/">Team Generator</a><a href="/tools/random-password-generator/">Password Generator</a><a href="/tools/random-number-generator/">Number Generator</a></div>
+      <div class="footer-col"><h4>More Tools</h4><a href="/tools/random-word-generator/">Word Generator</a><a href="/tools/list-randomizer/">List Randomizer</a><a href="/tools/spin-the-wheel/">Spin the Wheel</a><a href="/tools/random-color-generator/">Color Generator</a></div>
+      <div class="footer-col"><h4>Info</h4><a href="/about/">About</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Use</a></div>
+      <div class="footer-col"><h4>LetsRandomize</h4><p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up.</p></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var generateBtn = document.getElementById('generate-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var resultContent = document.getElementById('result-content');
+
+  window.setPreset = function(min, max, count, sort, unique) {
+    document.getElementById('num-min').value = min;
+    document.getElementById('num-max').value = max;
+    document.getElementById('num-count').value = count;
+    document.getElementById('num-sort').value = sort;
+    document.getElementById('num-unique').checked = unique;
+    generateBtn.click();
+  };
+
+  generateBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var min = parseInt(document.getElementById('num-min').value, 10);
+    var max = parseInt(document.getElementById('num-max').value, 10);
+    var count = parseInt(document.getElementById('num-count').value, 10);
+    var sort = document.getElementById('num-sort').value;
+    var unique = document.getElementById('num-unique').checked;
+
+    if (isNaN(min) || isNaN(max)) { App.showToast('Enter valid min and max values.'); return; }
+    if (min > max) { var t = min; min = max; max = t; }
+    if (count < 1) count = 1;
+    if (count > 1000) count = 1000;
+
+    var range = max - min + 1;
+    if (unique && count > range) {
+      App.showToast('Count (' + count + ') exceeds unique range (' + range + '). Reducing count.');
+      count = range;
+    }
+
+    var numbers = [];
+    if (unique) {
+      var pool = [];
+      for (var i = min; i <= max; i++) pool.push(i);
+      var shuffled = RandomEngine.randomShuffle(pool);
+      numbers = shuffled.slice(0, count);
+    } else {
+      for (var j = 0; j < count; j++) {
+        numbers.push(RandomEngine.randomInt(min, max));
+      }
+    }
+
+    if (sort === 'asc') numbers.sort(function(a, b) { return a - b; });
+    else if (sort === 'desc') numbers.sort(function(a, b) { return b - a; });
+
+    if (count === 1) {
+      resultContent.className = 'result-text large';
+      resultContent.textContent = numbers[0];
+    } else {
+      resultContent.className = 'result-text';
+      resultContent.textContent = numbers.join(', ');
+    }
+
+    resultDisplay.style.display = 'block';
+    App.flashResult(resultDisplay);
+    App.addToHistory(numbers.join(', '));
+  });
+
+  var sessionCount = 0;
+  var sessionCounter = document.getElementById('session-counter');
+
+  document.getElementById('again-btn').addEventListener('click', function() {
+    generateBtn.click();
+    generateBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  var origClick = generateBtn.onclick;
+  generateBtn.addEventListener('click', function() {
+    sessionCount++;
+    if (sessionCount > 1) {
+      sessionCounter.textContent = 'Results this session: ' + sessionCount;
+    }
+  });
+
+  document.getElementById('share-btn').addEventListener('click', function() {
+    App.shareResult('Random numbers: ' + resultContent.textContent, 'Random Numbers');
+  });
+})();
+</script>
+</body>
+</html>

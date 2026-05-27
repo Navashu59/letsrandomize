@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9032385955610751" crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice Roller Online — Roll D4, D6, D8, D10, D12, D20</title>
+<meta name="description" content="Roll dice online with D4, D6, D8, D10, D12, and D20 options. Roll 1-10 dice at once, add modifiers, and track your roll history. Free online dice roller.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/tools/dice-roller/">
+<meta property="og:title" content="Dice Roller Online — Roll D4, D6, D8, D10, D12, D20">
+<meta property="og:description" content="Roll dice online with D4-D20 options. Roll 1-10 dice, add modifiers, and track roll history.">
+<meta property="og:type" content="website">
+    <meta property="og:image" content="https://letsrandomize.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Dice Roller Online — Roll D4, D6, D8, D10, D12, D20">
+<meta property="og:url" content="https://letsrandomize.org/tools/dice-roller/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Dice Roller Online", "url":"https://letsrandomize.org/tools/dice-roller/", "description":"Roll dice online with D4,  D6,  D8,  D10,  D12,  and D20 options. Roll 1-10 dice with modifiers.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-04"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Dice Roller", "item":"https://letsrandomize.org/tools/dice-roller/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"What dice types are available?", "acceptedAnswer":{"@type":"Answer", "text":"We support D4 (4-sided),  D6 (standard 6-sided),  D8,  D10,  D12,  and D20. These cover all standard tabletop RPG and board game dice."}}, {"@type":"Question", "name":"Can I roll multiple dice at once?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. You can roll 1 to 10 dice simultaneously. Each die result is shown individually,  plus the total sum with any modifier applied."}}, {"@type":"Question", "name":"What are modifiers?", "acceptedAnswer":{"@type":"Answer", "text":"Modifiers let you add or subtract a number from your total roll. For example,  rolling 2d6+3 adds 3 to the sum of two six-sided dice. Great for D&D and other RPGs."}}, {"@type":"Question", "name":"Are the dice rolls truly random?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. We use the Web Crypto API for cryptographically secure random number generation,  ensuring fair and unbiased dice rolls every time."}}]}, {"@context":"https://schema.org", "@type":"Article", "headline":"Dice Roller Online", "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "publisher":{"@type":"Organization", "name":"LetsRandomize"}, "datePublished":"2025-01-01", "dateModified":"2026-03-04"}]
+</script>
+<style>
+.dice-visual { display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center; margin:1rem 0; }
+.die-face {
+  width:60px; height:60px; border-radius:0.75rem;
+  background:linear-gradient(135deg,#10b981,#059669);
+  color:#fff; font-size:1.5rem; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 3px 8px rgba(16,185,129,0.3);
+  animation:die-pop 0.3s ease;
+}
+@keyframes die-pop { 0%{transform:scale(0.5) rotate(-20deg);opacity:0} 100%{transform:scale(1) rotate(0);opacity:1} }
+.roll-total {
+  font-size:2rem; font-weight:800; color:#065f46; text-align:center; margin-top:0.5rem;
+}
+.roll-breakdown { font-size:0.9rem; color:#6b7280; text-align:center; }
+</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/tools/random-name-generator/">Names</a>
+      <a href="/tools/random-number-generator/">Numbers</a>
+      <a href="/tools/random-password-generator/">Passwords</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="tool-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Dice Roller
+    </nav>
+    <h1>Dice Roller Online</h1>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
+    <p>Roll virtual dice for D&amp;D, board games, or any tabletop RPG. Choose dice type, number of dice, and add modifiers.</p>
+  </div>
+</section>
+
+<main class="page-section">
+  <div class="container" style="max-width:800px;">
+
+
+    <div class="generator-card">
+      <div class="generator-options">
+        <div class="option-group">
+          <label for="dice-type">Dice Type</label>
+          <select id="dice-type">
+            <option value="4">D4</option>
+            <option value="6" selected>D6</option>
+            <option value="8">D8</option>
+            <option value="10">D10</option>
+            <option value="12">D12</option>
+            <option value="20">D20</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label for="dice-count">Number of Dice</label>
+          <select id="dice-count">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <label for="dice-modifier">Modifier</label>
+          <input type="number" id="dice-modifier" value="0" min="-100" max="100" placeholder="e.g. +3 or -2">
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="roll-btn">Roll Dice</button>
+
+      <div class="result-display" id="result-display" style="display:none;">
+        <div class="dice-visual" id="dice-visual"></div>
+        <div class="roll-total" id="roll-total"></div>
+        <div class="roll-breakdown" id="roll-breakdown"></div>
+        <div id="result-content" style="display:none;"></div>
+        <div class="result-actions">
+          <button class="copy-btn" data-copy-target="result-content">Copy Result</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-panel" id="history-panel">
+      <h3>Roll History <button class="clear-btn">Clear</button></h3>
+      <div class="history-list"></div>
+    </div>
+
+
+    <!-- How to Use -->
+    <div class="how-to">
+      <h2>How to Use the Dice Roller</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Select Dice Type</h3>
+            <p>Choose from D4, D6, D8, D10, D12, or D20 depending on your game needs.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Set Number &amp; Modifier</h3>
+            <p>Pick how many dice to roll (1-10) and optionally add a positive or negative modifier to the total.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Roll &amp; Read Results</h3>
+            <p>Click "Roll Dice" to see each die result, the total sum, and the breakdown with modifier applied.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">What dice types are available? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We support D4 (4-sided), D6 (standard 6-sided), D8, D10, D12, and D20. These cover all standard tabletop RPG and board game dice types.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I roll multiple dice at once? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. You can roll 1 to 10 dice simultaneously. Each die result is shown individually on screen, plus the total sum with any modifier applied.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What are modifiers? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Modifiers let you add or subtract a number from your total roll. For example, rolling 2d6+3 adds 3 to the sum of two six-sided dice. This is commonly used in D&amp;D and other tabletop RPGs for ability checks, attacks, and saving throws.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Are the dice rolls truly random? <span class="faq-icon">&#9660;</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. We use the Web Crypto API for cryptographically secure random number generation, ensuring fair and unbiased dice rolls every single time.</div></div>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related-section">
+      <h2 class="section-title">Related Generators</h2>
+      <div class="related-grid">
+        <a href="/tools/coin-flip-simulator/" class="card tool-card">
+          <div class="tool-card-icon">&#129689;</div>
+          <h3>Coin Flip Simulator</h3>
+          <p>Flip a coin with statistics tracking.</p>
+        </a>
+        <a href="/tools/random-number-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#128290;</div>
+          <h3>Random Number Generator</h3>
+          <p>Generate random numbers in any range.</p>
+        </a>
+        <a href="/tools/spin-the-wheel/" class="card tool-card">
+          <div class="tool-card-icon">&#127905;</div>
+          <h3>Spin the Wheel</h3>
+          <p>Custom spinning wheel picker.</p>
+        </a>
+        <a href="/tools/random-team-generator/" class="card tool-card">
+          <div class="tool-card-icon">&#129309;</div>
+          <h3>Random Team Generator</h3>
+          <p>Split names into random teams.</p>
+        </a>
+      </div>
+    </section>
+
+
+    
+<section class="related-guides" style="margin-top:2rem;padding:1.5rem;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;">
+  <h3 style="margin:0 0 1rem;color:#16a34a;font-size:1.1rem;">Further Reading</h3>
+  <div style="display:flex;flex-direction:column;gap:0.5rem;">
+    <a href="/guides/probability-of-coin-flips/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">Probability of Coin Flips</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Explore the math behind coin flip probability and streaks.</span>
+    </a>
+    <a href="/guides/how-random-number-generators-work/" style="display:block;padding:0.75rem 1rem;background:#fff;border-radius:8px;text-decoration:none;color:#1f2937;border:1px solid #dcfce7;transition:box-shadow 0.2s,border-color 0.2s;" onmouseover="this.style.boxShadow='0 2px 8px rgba(22,163,74,0.12)';this.style.borderColor='#86efac'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#dcfce7'">
+      <strong style="color:#16a34a;">How Random Number Generators Work</strong>
+      <span style="display:block;font-size:0.9rem;color:#4b5563;margin-top:0.25rem;">Understand the science behind pseudo-random and true random number generation.</span>
+    </a>
+  </div>
+</section>
+    <div class="author-byline">
+      <div class="author-avatar">SP</div>
+      <div>By <a href="/about/">Sam Parker</a> &middot; Updated February 2026</div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Generators</h4>
+        <a href="/tools/random-name-generator/">Name Generator</a>
+        <a href="/tools/random-team-generator/">Team Generator</a>
+        <a href="/tools/random-password-generator/">Password Generator</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="/tools/random-word-generator/">Word Generator</a>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+        <a href="/tools/random-color-generator/">Color Generator</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="/about/">About</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+      <div class="footer-col">
+        <h4>LetsRandomize</h4>
+        <p style="font-size:0.8rem;color:#9ca3af;">Free random generators. No sign-up. No tracking.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 LetsRandomize.org &middot; <a href="/about/">Sam Parker</a></div>
+  </div>
+</footer>
+
+<script src="/assets/js/random-engine.js"></script>
+<script src="/assets/js/app.js"></script>
+<script>
+(function() {
+  var rollBtn = document.getElementById('roll-btn');
+  var resultDisplay = document.getElementById('result-display');
+  var diceVisual = document.getElementById('dice-visual');
+  var rollTotal = document.getElementById('roll-total');
+  var rollBreakdown = document.getElementById('roll-breakdown');
+  var resultContent = document.getElementById('result-content');
+
+  rollBtn.addEventListener('click', function() {
+    App.animateGenerate(this);
+    var sides = parseInt(document.getElementById('dice-type').value, 10);
+    var count = parseInt(document.getElementById('dice-count').value, 10);
+    var modifier = parseInt(document.getElementById('dice-modifier').value, 10) || 0;
+
+    var rolls = [];
+    var sum = 0;
+    for (var i = 0; i < count; i++) {
+      var roll = RandomEngine.randomInt(1, sides);
+      rolls.push(roll);
+      sum += roll;
+    }
+    var total = sum + modifier;
+
+    // Visual dice
+    diceVisual.innerHTML = rolls.map(function(r) {
+      return '<div class="die-face">' + r + '</div>';
+    }).join('');
+
+    // Total
+    rollTotal.textContent = total;
+
+    // Breakdown
+    var notation = count + 'd' + sides;
+    var modStr = modifier > 0 ? '+' + modifier : (modifier < 0 ? modifier : '');
+    var breakdownStr = notation + modStr + ' = [' + rolls.join(', ') + ']';
+    if (modifier !== 0) breakdownStr += ' ' + (modifier > 0 ? '+' : '') + modifier;
+    breakdownStr += ' = ' + total;
+    rollBreakdown.textContent = breakdownStr;
+
+    // Hidden copy content
+    resultContent.textContent = breakdownStr;
+
+    resultDisplay.style.display = 'block';
+    App.flashResult(resultDisplay);
+    App.addToHistory(breakdownStr);
+  });
+})();
+</script>
+</body>
+</html>
