@@ -109,3 +109,50 @@ Next measurement:
 - Observe 7-14 days in GSC.
 - Compare query/page movement for `random letter generator`, `eight random lowercase letters`, `random 3 letter generator`, `a-z randomizer`, `random letters no repeats`, and excluded-letter variants if they appear.
 - If impressions increase but CTR stays weak, test title/meta next instead of adding more body copy.
+
+## 2026-05-27 - SERP Gap Batch for Ranking Pages
+
+Target pages:
+
+- `/tools/memory-test/`
+  - Baseline: 876 impressions, 27 clicks, 3.1% CTR, average position 6.7.
+  - Watch terms: `sequence memory test average`, `average sequence memory score`, `pattern memory test`, `sequence memory test`.
+- `/tools/cps-test/`
+  - Baseline: 541 impressions, 4 clicks, 0.7% CTR, average position 7.4.
+  - Watch terms: `cps test human benchmark`, `avg cps`, `is 50 cps good`, `what is the average cps of a human`.
+- `/tools/yes-or-no-generator/`
+  - Baseline: 629 impressions, 12 clicks, 1.9% CTR, average position 11.8.
+  - Watch terms: `yes or no flip`, `yes or no coin flip`, `coinflip yes or no`, `flip a coin yes or no`.
+- `/tools/number-memory-test/`
+  - Baseline: 476 impressions, 7 clicks, 1.5% CTR, average position 12.7.
+  - Watch terms: `number memory test`, `memory test numbers`, `remember the longest number`, `human benchmark number memory`.
+
+SERP gap used:
+
+- GSC query/page data identified pages with real impressions and under-monetized positions or CTR.
+- SEMrush was used as a second check where available, but GSC was treated as the primary source for live LetsRandomize query exposure.
+- Current SERP review showed repeated intent around:
+  - average score and score interpretation,
+  - Human Benchmark-style comparisons,
+  - pattern/sequence/digit-span wording,
+  - yes/no coin flip equivalence,
+  - whether extreme CPS scores such as 50 CPS are realistic.
+- DeepSeek was used to draft candidate copy, then the final page copy was rewritten and scoped manually.
+
+Actions:
+
+- Updated titles/meta where the SERP query gap was clear.
+- Added concise above-content support sections instead of rewriting the tools.
+- Added FAQ entries matching observed query intent.
+- Synced JSON-LD FAQ data and `dateModified` to `2026-05-27`.
+- Kept existing tool behavior unchanged.
+
+Next measurement:
+
+- Observe after 7-14 days in GSC before editing these same pages again.
+- Compare page/query movement against the baselines above.
+- Primary success signal: improved clicks and CTR for pages already near positions 5-12.
+- Secondary signal: new impressions for exact support queries such as `average sequence memory score`, `is 50 cps good`, and `yes or no coin flip`.
+- If impressions rise but CTR remains weak, test title/meta next.
+- If positions improve but clicks remain low, sharpen above-the-fold answer copy.
+- If there is no impression movement after 14-21 days, consider one focused support page only where the query intent is clearly separate from the tool page.
