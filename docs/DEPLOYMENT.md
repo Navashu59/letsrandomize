@@ -26,6 +26,8 @@ To avoid changing domains or recreating the production Pages project, GitHub now
 
 The first real content update from this independent repository was verified on 2026-05-27: `/tools/list-randomizer/` was updated in commit `bedcb06`, deployed by GitHub Actions run `26500918688`, and confirmed live on `https://letsrandomize.org/tools/list-randomizer/`.
 
+The old monorepo source at `/Users/bluepha/seo-revenue-system/sites/random-generators` has been downgraded to historical fallback/reference only. The monorepo `scripts/deploy-all.sh --site letsrandomize` command now skips that old source and prints this repository as the canonical deploy path.
+
 ## Active Deploy Path
 
 On every push to `main`, GitHub Actions deploys this repository to Cloudflare Pages:
