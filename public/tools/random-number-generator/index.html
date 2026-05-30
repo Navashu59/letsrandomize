@@ -8,12 +8,12 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Random Number Generator 1-100, 1-10, Lottery & Range Picker</title>
-<meta name="description" content="Generate random numbers in any range, including 1-26, 1-100, lottery ranges, and no-repeat number picker draws for raffles, games, and sampling.">
+<title>Free Random Number Generator: Custom Range & Lottery Picks</title>
+<meta name="description" content="Generate random numbers instantly in any range you set. Choose min, max, count, sorting, and unique-only options for lottery, raffle, or sampling.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://letsrandomize.org/tools/random-number-generator/">
-<meta property="og:title" content="Random Number Generator 1-100, 1-10, Lottery & Range Picker">
-<meta property="og:description" content="Generate random numbers in any range with sorting and uniqueness options. Use it for 1-100 picks, lottery numbers, raffles, and sampling.">
+<meta property="og:title" content="Free Random Number Generator: Custom Range & Lottery Picks">
+<meta property="og:description" content="Generate random numbers instantly in any range you set. Choose min, max, count, sorting, and unique-only options for lottery, raffle, or sampling.">
 <meta property="og:type" content="website">
     <meta property="og:image" content="https://letsrandomize.org/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -22,9 +22,42 @@
 <meta property="og:url" content="https://letsrandomize.org/tools/random-number-generator/">
 <link rel="stylesheet" href="/assets/css/style.css">
 <script type="application/ld+json">
-[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Random Number Generator","url":"https://letsrandomize.org/tools/random-number-generator/","description":"Generate random numbers in any range, including 1-26, 1-100, lottery ranges, and no-repeat number picker draws.","applicationCategory":"UtilityApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"datePublished":"2026-02-14","dateModified":"2026-05-27"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://letsrandomize.org/tools/"},{"@type":"ListItem","position":3,"name":"Random Number Generator","item":"https://letsrandomize.org/tools/random-number-generator/"}]},{"@context":"https://schema.org","@type":"HowTo","name":"How to Generate Random Numbers","description":"Step-by-step guide to generating random numbers in any range for lottery picks, statistical sampling, raffles, and more.","totalTime":"PT1M","step":[{"@type":"HowToStep","name":"Set Your Range","text":"Enter the minimum and maximum values for your random numbers. For example, set 1 to 69 for Powerball main numbers."},{"@type":"HowToStep","name":"Choose Count and Options","text":"Set how many numbers to generate, select sorting preference (ascending, descending, or none), and toggle Unique Only if you need non-repeating numbers."},{"@type":"HowToStep","name":"Click Generate","text":"Hit the Generate Numbers button to instantly create your random numbers using the cryptographically secure Web Crypto API."},{"@type":"HowToStep","name":"Copy Your Results","text":"Click the Copy button to save the generated numbers to your clipboard for use in any application."}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a truly random number generator?","acceptedAnswer":{"@type":"Answer","text":"Yes. We use the Web Crypto API for cryptographically secure random number generation when available in your browser,  which provides true randomness suitable even for security applications."}},{"@type":"Question","name":"What range of numbers can I generate?","acceptedAnswer":{"@type":"Answer","text":"You can set any minimum and maximum value. The generator works with integers within the range you specify."}},{"@type":"Question","name":"Can I generate unique numbers only?","acceptedAnswer":{"@type":"Answer","text":"Yes. Toggle the Unique Only option and the generator will ensure no duplicate numbers appear in your results. Note: the count cannot exceed the range size when this option is enabled."}},{"@type":"Question","name":"Can I use this for lottery numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes! Set the range to match your lottery (e.g.,  1-49) and enable Unique Only. This is great for picking lottery numbers,  raffle winners,  or any drawing."}},{"@type":"Question","name":"Can I sort the generated numbers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the Sort option to display your numbers in ascending or descending order, or leave it on None for the original random order."}},{"@type":"Question","name":"What is the difference between pseudo-random and true random numbers?","acceptedAnswer":{"@type":"Answer","text":"Pseudo-random numbers are generated by algorithms (like Math.random()) that produce sequences that look random but are deterministic. True random numbers come from unpredictable physical processes. Our generator uses the Web Crypto API which provides cryptographically secure randomness — far superior to basic pseudo-random for fairness and security."}},{"@type":"Question","name":"How do I generate random numbers in a specific range like 1-49?","acceptedAnswer":{"@type":"Answer","text":"Set the Minimum field to 1 and Maximum to 49, choose how many numbers you want, and click Generate. Enable 'Unique Only' if you need non-repeating numbers (like lottery draws)."}},{"@type":"Question","name":"Can I generate random numbers for statistical sampling?","acceptedAnswer":{"@type":"Answer","text":"Yes. Set your population range, choose the sample size (Count), enable Unique Only for sampling without replacement, and generate. This works for research surveys, quality control sampling, and random selection from numbered lists."}},{"@type":"Question","name":"How do I generate a random number from 1 to 26?","acceptedAnswer":{"@type":"Answer","text":"Set Minimum to 1 and Maximum to 26, leave Count at 1, and click Generate. If you need several numbers from 1-26 without duplicates, increase Count and enable Unique numbers only."}},{"@type":"Question","name":"What does no repeats mean?","acceptedAnswer":{"@type":"Answer","text":"No repeats means the same number will not appear twice in one generated result set. For example, if you generate 6 unique numbers from 1-49, each of the 6 numbers will be different."}},{"@type":"Question","name":"Is this a number randomizer or number picker?","acceptedAnswer":{"@type":"Answer","text":"It can be used as both. Generate one number when you need a picker, or generate several numbers when you need a randomized list from a numeric range."}}]}]
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Number Generator", "url":"https://letsrandomize.org/tools/random-number-generator/", "description":"Generate random numbers in any range with sorting and uniqueness options.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author":{"@type":"Person", "name":"Sam Parker", "url":"https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-03-08"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Number Generator", "item":"https://letsrandomize.org/tools/random-number-generator/"}]}, {"@context":"https://schema.org", "@type":"HowTo", "name":"How to Generate Random Numbers", "description":"Step-by-step guide to generating random numbers in any range for lottery picks, statistical sampling, raffles, and more.", "totalTime":"PT1M", "step":[{"@type":"HowToStep", "name":"Set Your Range", "text":"Enter the minimum and maximum values for your random numbers. For example, set 1 to 69 for Powerball main numbers."}, {"@type":"HowToStep", "name":"Choose Count and Options", "text":"Set how many numbers to generate, select sorting preference (ascending, descending, or none), and toggle Unique Only if you need non-repeating numbers."}, {"@type":"HowToStep", "name":"Click Generate", "text":"Hit the Generate Numbers button to instantly create your random numbers using the cryptographically secure Web Crypto API."}, {"@type":"HowToStep", "name":"Copy Your Results", "text":"Click the Copy button to save the generated numbers to your clipboard for use in any application."}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"Is this a truly random number generator?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. We use the Web Crypto API for cryptographically secure random number generation when available in your browser,  which provides true randomness suitable even for security applications."}}, {"@type":"Question", "name":"What range of numbers can I generate?", "acceptedAnswer":{"@type":"Answer", "text":"You can set any minimum and maximum value. The generator works with integers within the range you specify."}}, {"@type":"Question", "name":"Can I generate unique numbers only?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Toggle the Unique Only option and the generator will ensure no duplicate numbers appear in your results. Note: the count cannot exceed the range size when this option is enabled."}}, {"@type":"Question", "name":"Can I use this for lottery numbers?", "acceptedAnswer":{"@type":"Answer", "text":"Yes! Set the range to match your lottery (e.g.,  1-49) and enable Unique Only. This is great for picking lottery numbers,  raffle winners,  or any drawing."}}, {"@type":"Question", "name":"Can I sort the generated numbers?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the Sort option to display your numbers in ascending or descending order, or leave it on None for the original random order."}}, {"@type":"Question", "name":"What is the difference between pseudo-random and true random numbers?", "acceptedAnswer":{"@type":"Answer", "text":"Pseudo-random numbers are generated by algorithms (like Math.random()) that produce sequences that look random but are deterministic. True random numbers come from unpredictable physical processes. Our generator uses the Web Crypto API which provides cryptographically secure randomness — far superior to basic pseudo-random for fairness and security."}}, {"@type":"Question", "name":"How do I generate random numbers in a specific range like 1-49?", "acceptedAnswer":{"@type":"Answer", "text":"Set the Minimum field to 1 and Maximum to 49, choose how many numbers you want, and click Generate. Enable 'Unique Only' if you need non-repeating numbers (like lottery draws)."}}, {"@type":"Question", "name":"Can I generate random numbers for statistical sampling?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Set your population range, choose the sample size (Count), enable Unique Only for sampling without replacement, and generate. This works for research surveys, quality control sampling, and random selection from numbered lists."}}]}]
 </script>
-<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}
+.single-number {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  animation: pulse 1s ease-in-out;
+}
+.number-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 4px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+  transition: transform 0.2s ease;
+}
+.number-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+.preset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}</style>
 </head>
 <body>
 
@@ -46,7 +79,7 @@
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Random Number Generator</nav>
     <h1>Random Number Generator</h1>
-    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-05-27">Updated May 27, 2026</time></div>
+    <div class="eeat-byline"><span class="author">By Sam Parker</span><span class="sep">|</span><time datetime="2026-03-08">Updated Mar 8, 2026</time></div>
     <p>Generate random numbers in any range, including popular searches like random number 1-100, random number 1-10, raffle picks, lottery ranges, classroom draws, and statistical sampling. Choose your min, max, count, sorting, and uniqueness options, then generate results instantly in your browser.</p>
     <div style="margin:12px 0 0;padding:12px 14px;border:1px solid #d1fae5;border-radius:10px;background:#ecfdf5;color:#1f2937;">
       <strong>Quick answer:</strong> Use <strong>1-100</strong> for a simple random pick, <strong>1-10</strong> for games and classrooms, or <strong>1-49 with unique numbers</strong> for lottery-style draws. Need a different kind of draw? Try <a href="/tools/list-randomizer/">list randomizer</a>, <a href="/tools/random-team-generator/">random team generator</a>, or <a href="/tools/random-name-generator/">random name generator</a>.
@@ -87,10 +120,16 @@
       <button class="btn btn-primary btn-block" id="generate-btn">Generate Numbers</button>
       <div style="margin-top:0.75rem;display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;">
         <span style="font-size:0.85rem;color:#6b7280;">Quick:</span>
-        <button type="button" class="preset-btn" onclick="setPreset(1,100,1,'none',false)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">1-100</button>
-        <button type="button" class="preset-btn" onclick="setPreset(1,10,1,'none',false)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">1-10</button>
-        <button type="button" class="preset-btn" onclick="setPreset(1,49,6,'asc',true)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">Lottery 6/49</button>
-        <button type="button" class="preset-btn" onclick="setPreset(1,6,1,'none',false)" style="padding:0.35rem 0.75rem;border:1px solid #e5e7eb;border-radius:6px;background:#f9fafb;cursor:pointer;font-size:0.85rem;">Dice D6</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,100,1,'none',false)" style="padding:0.5rem 1rem;border:2px solid #e5e7eb;border-radius:10px;background:linear-gradient(135deg, #f9fafb, #f3f4f6);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(0,0,0,0.05);">1-100</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,10,1,'none',false)" style="padding:0.5rem 1rem;border:2px solid #e5e7eb;border-radius:10px;background:linear-gradient(135deg, #f9fafb, #f3f4f6);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(0,0,0,0.05);">1-10</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,49,6,'asc',true)" style="padding:0.5rem 1rem;border:2px solid #10b981;border-radius:10px;background:linear-gradient(135deg, #d1fae5, #a7f3d0);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(16,185,129,0.1);color:#065f46;">Lottery 6/49</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,6,1,'none',false)" style="padding:0.5rem 1rem;border:2px solid #f59e0b;border-radius:10px;background:linear-gradient(135deg, #fef3c7, #fde68a);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(245,158,11,0.1);color:#92400e;">Dice D6</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,69,5,'asc',true)" style="padding:0.5rem 1rem;border:2px solid #8b5cf6;border-radius:10px;background:linear-gradient(135deg, #ede9fe, #ddd6fe);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(139,92,246,0.1);color:#5b21b6;">Powerball</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,70,5,'asc',true)" style="padding:0.5rem 1rem;border:2px solid #ec4899;border-radius:10px;background:linear-gradient(135deg, #fce7f3, #fbcfe8);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(236,72,153,0.1);color:#9d174d;">Mega Millions</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,50,5,'asc',true)" style="padding:0.5rem 1rem;border:2px solid #06b6d4;border-radius:10px;background:linear-gradient(135deg, #cffafe, #a5f3fc);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(6,182,212,0.1);color:#0e7490;">EuroMillions</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,20,1,'none',false)" style="padding:0.5rem 1rem;border:2px solid #f97316;border-radius:10px;background:linear-gradient(135deg, #ffedd5, #fed7aa);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(249,115,22,0.1);color:#9a3412;">D20 RPG</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1,2,1,'none',false)" style="padding:0.5rem 1rem;border:2px solid #64748b;border-radius:10px;background:linear-gradient(135deg, #f1f5f9, #e2e8f0);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(100,116,139,0.1);color:#334155;">Coin Flip</button>
+        <button type="button" class="preset-btn" onclick="setPreset(1900,2026,1,'none',false)" style="padding:0.5rem 1rem;border:2px solid #14b8a6;border-radius:10px;background:linear-gradient(135deg, #ccfbf1, #99f6e4);cursor:pointer;font-size:0.9rem;font-weight:500;transition:all 0.2s ease;box-shadow:0 2px 4px rgba(20,184,166,0.1);color:#0f766e;">Random Year</button>
       </div>
 
       <div class="result-display" id="result-display" style="display:none;">
@@ -128,12 +167,6 @@
         <li><strong>Choosing from names or words instead of numbers:</strong> use <a href="/tools/list-randomizer/">list randomizer</a> or <a href="/tools/spin-the-wheel/">spin the wheel</a> for a more visible picker.</li>
         <li><strong>Splitting a roster into groups:</strong> jump to <a href="/tools/random-team-generator/">random team generator</a> instead of running several number draws by hand.</li>
       </ul>
-    </section>
-
-    <section class="content-section" style="margin-top:2rem;">
-      <h2>Random Number Picker With No Repeats</h2>
-      <p>For a simple random number picker, set the minimum and maximum range, choose how many results you need, and click Generate. For example, use 1 to 26 when you need a random number 1-26, or 1 to 100 for a standard classroom, game, or raffle draw.</p>
-      <p>Turn on Unique numbers only when you want no repeats. This is the same as drawing without replacement: each number can appear once in the result set, which is useful for lottery-style picks, sample IDs, seating assignments, and fair prize drawings.</p>
     </section>
 
     <section class="content-section" style="margin-top:2rem;">
@@ -237,9 +270,6 @@
       <div class="faq-item"><button class="faq-question">What is the difference between pseudo-random and true random numbers? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Pseudo-random numbers are generated by algorithms that produce sequences that look random but are deterministic. True random numbers come from unpredictable physical processes. Our generator uses the Web Crypto API (CSPRNG) which provides cryptographically secure randomness — far superior to basic Math.random() for fairness and security.</div></div></div>
       <div class="faq-item"><button class="faq-question">How do I generate random numbers in a specific range like 1-49? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Set the Minimum field to 1 and Maximum to 49, choose how many numbers you want, and click Generate. Enable "Unique Only" if you need non-repeating numbers (like lottery draws).</div></div></div>
       <div class="faq-item"><button class="faq-question">Can I generate random numbers for statistical sampling? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Set your population range, choose the sample size (Count), enable Unique Only for sampling without replacement, and generate. This works for research surveys, quality control sampling, and random selection from numbered lists.</div></div></div>
-      <div class="faq-item"><button class="faq-question">How do I generate a random number from 1 to 26? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Set Minimum to 1 and Maximum to 26, leave Count at 1, and click Generate. If you need several numbers from 1-26 without duplicates, increase Count and enable Unique numbers only.</div></div></div>
-      <div class="faq-item"><button class="faq-question">What does no repeats mean? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">No repeats means the same number will not appear twice in one generated result set. For example, if you generate 6 unique numbers from 1-49, each of the 6 numbers will be different.</div></div></div>
-      <div class="faq-item"><button class="faq-question">Is this a number randomizer or number picker? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">It can be used as both. Generate one number when you need a picker, or generate several numbers when you need a randomized list from a numeric range.</div></div></div>
     </section>
 
     <section class="related-section">
@@ -267,7 +297,7 @@
     </a>
   </div>
 </section>
-    <div class="author-byline"><div class="author-avatar">SP</div><div>By <a href="/about/">Sam Parker</a> &middot; Updated May 27, 2026</div></div>
+    <div class="author-byline"><div class="author-avatar">SP</div><div>By <a href="/about/">Sam Parker</a> &middot; Updated Mar 8, 2026</div></div>
   </div>
 </main>
 
@@ -336,10 +366,15 @@
 
     if (count === 1) {
       resultContent.className = 'result-text large';
-      resultContent.textContent = numbers[0];
+      // Add visual flair for single number
+      resultContent.innerHTML = '<span class="single-number">' + numbers[0] + '</span>';
     } else {
       resultContent.className = 'result-text';
-      resultContent.textContent = numbers.join(', ');
+      // Add visual styling for multiple numbers
+      var numbersHtml = numbers.map(function(num, index) {
+        return '<span class="number-badge">' + num + '</span>';
+      }).join(' ');
+      resultContent.innerHTML = numbersHtml;
     }
 
     resultDisplay.style.display = 'block';
