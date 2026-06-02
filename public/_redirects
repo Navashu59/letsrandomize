@@ -1,4 +1,8 @@
 https://www.letsrandomize.org/* https://letsrandomize.org/:splat 301
+/templates/tool /404.html 404
+/templates/tool.html /404.html 404
+/templates/guide /404.html 404
+/templates/guide.html /404.html 404
 /templates/* /404.html 404
 /tools/random-dice-roller/ /tools/dice-roller/ 301
 /games/reaction-time-test/ /tools/reaction-time-test/ 301
