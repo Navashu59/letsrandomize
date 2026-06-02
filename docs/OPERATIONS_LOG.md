@@ -1,5 +1,83 @@
 # LetsRandomize Operations Log
 
+## 2026-06-02 - Technical SEO Cleanup and Cloudflare Settings
+
+Target:
+
+- Site-wide technical SEO cleanup for `https://letsrandomize.org/`.
+- Goal: remove crawl/indexing ambiguity, keep deployment behavior predictable, and enable Cloudflare settings that help crawlability, HTTPS consistency, and page speed.
+
+Actions:
+
+- Added a custom `public/404.html` with `noindex, follow`.
+- Fixed soft-404 behavior so arbitrary missing URLs return HTTP 404 instead of serving the homepage.
+- Fixed damaged nested `<title>` tags on:
+  - `/tools/random-letter-generator/`
+  - `/tools/random-name-generator/`
+  - `/tools/random-team-generator/`
+- Fixed 26 broken internal links and added alias redirects for old or incorrect paths such as `/games/*`, `/tools/random-picker-wheel/`, and related guide/tool aliases.
+- Regenerated `public/sitemap.xml` with 53 indexable URLs and `lastmod` set to `2026-06-02`.
+- Added the two previously missing sitemap URLs:
+  - `/guides/how-to-use-random-name-generator/`
+  - `/tools/random-poem-generator/`
+- Updated `public/llms.txt` to use the current `/tools/` paths instead of old `/games/` paths.
+- Added missing Twitter card metadata across public HTML pages.
+- Deleted publicly published placeholder templates:
+  - `public/templates/tool.html`
+  - `public/templates/guide.html`
+- Added `Disallow: /templates/` in `public/robots.txt`.
+- Added a Cloudflare Redirect Rule for `/templates/*` to redirect template clean URLs away from stale published placeholders.
+
+Cloudflare settings:
+
+- Confirmed DNS records:
+  - `letsrandomize.org` CNAME to `letsrandomize.pages.dev`, proxied.
+  - `www.letsrandomize.org` CNAME to `letsrandomize.pages.dev`, proxied.
+- Confirmed SSL/TLS mode is `Full`.
+- Confirmed Universal SSL covers `letsrandomize.org` and `*.letsrandomize.org`.
+- Enabled Cloudflare recommended speed/HTTPS settings from the dashboard:
+  - Web Analytics RUM
+  - Speed Brain
+  - HTTP/2
+  - HTTP/3
+  - HTTP/2 to origin
+  - 0-RTT connection resumption
+  - Always Use HTTPS
+  - TLS 1.3
+  - Early Hints
+
+Validation:
+
+- Local validation after edits:
+  - Broken internal links: 0.
+  - Schema parse errors: 0.
+  - Title issues: 0.
+  - Missing social metadata: 0.
+  - Sitemap URLs: 53.
+  - Indexable HTML pages: 53.
+- Live validation after deployment:
+  - `/nonexistent-test-xyz/` returns HTTP 404.
+  - `/templates/tool.html` and `/templates/guide.html` return HTTP 404.
+  - `/templates/tool` and `/templates/guide` redirect through the Cloudflare rule instead of exposing template content.
+  - `/games/reaction-time-test/` redirects to `/tools/reaction-time-test/`.
+  - `/tools/random-picker-wheel/` redirects to `/tools/spin-the-wheel/`.
+  - `www` redirects to the apex domain.
+  - HTTP redirects to HTTPS.
+  - Live sitemap contains 53 URLs.
+  - Live robots.txt includes the sitemap and blocks `/templates/`.
+  - Cloudflare response headers confirmed HTTP/3, Brotli, and Speed Brain/speculation support.
+- GitHub Actions deploys succeeded for commits:
+  - `6a08386`
+  - `003b48e`
+  - `5a63a55`
+
+Next measurement:
+
+- Watch GSC coverage/indexing for soft-404, duplicate canonical, and not-found noise over the next 7-14 days.
+- Watch crawl discovery for the newly regenerated sitemap URLs.
+- Compare page/query movement only after Google has recrawled the changed pages.
+- Keep the GitHub Actions workflow/action upgrade task open because deploy logs still report Node.js 20 deprecation warnings for the current action versions.
+
 ## 2026-05-27 - First Focused Operations Cycle
 
 Baseline:
