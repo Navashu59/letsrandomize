@@ -1,5 +1,29 @@
 # LetsRandomize Operations Log
 
+## 2026-06-02 - Topical Authority Completion Pass
+
+Target:
+
+- Finish the remaining structural work from the LetsRandomize topical authority plan.
+- Convert the old shared `/tools/` hierarchy into a clearer structure without moving existing tool URLs.
+
+Actions:
+
+- Added `/decision-tools/` as the dedicated hub for list randomizers, team generators, picker wheels, drawings, yes/no choices, dice, cards, and fair selection guides.
+- Added `/generators/` as the dedicated hub for random name, word, letter, sentence, username, color, country, emoji, question, quote, joke, and date generators.
+- Linked the new hubs from homepage, tools index, guides index, and use-cases index.
+- Updated `public/sitemap.xml` from 63 to 65 URLs.
+- Updated `/tools/list-randomizer/` title/meta around `list randomizer`, `random list generator`, and `random order` intent.
+- Synced the SEO Revenue System ops files:
+  - `ops/sites/letsrandomize/topical_map.json`
+  - `ops/sites/letsrandomize/keyword_map.json`
+  - pending tasks `TASK-077`, `TASK-186`, `TASK-187`, and `TASK-194`
+
+Next measurement:
+
+- Wait for Google recrawl before judging hub or title/meta impact.
+- Compare GSC movement for `list/order/shuffle`, `team/group/classroom`, and `random list picker` terms after the next usable data window.
+
 ## 2026-06-02 - Technical SEO Cleanup and Cloudflare Settings
 
 Target:
