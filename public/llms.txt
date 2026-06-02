@@ -2,7 +2,11 @@
 
 > Free random generators and online tools for fair selection, team building, and decision making.
 
-LetsRandomize provides cryptographically secure random generators using the Web Crypto API and Fisher-Yates algorithm. All tools run client-side in your browser. No data is stored or transmitted.
+LetsRandomize provides browser-based random generator tools for everyday decisions, lists, teams, names, numbers, passwords, wheels, dice, and classroom activities. Core random generator tools use the Web Crypto API (`crypto.getRandomValues`) when available, with a Math.random fallback for older browsers. List and team shuffling tools use a Fisher-Yates shuffle through the shared randomization engine.
+
+User-entered lists, names, and generated results are processed in the browser for the current session. Some tools may store history or preferences in localStorage. Standard hosting, advertising, analytics, or CDN systems may still collect technical request data as described in the privacy policy.
+
+These tools are intended for everyday randomization and learning. They are not a substitute for certified randomness, legal/compliance-grade drawings, gambling systems, or independently audited selection processes.
 
 ## Tools
 
@@ -13,9 +17,24 @@ LetsRandomize provides cryptographically secure random generators using the Web 
 - [Random Name Generator](https://letsrandomize.org/tools/random-name-generator/): Generate random first and last names
 - [Random Password Generator](https://letsrandomize.org/tools/random-password-generator/): Create strong passwords with customizable rules
 
+## Decision and List Tools
+
+- [Decision Tools](https://letsrandomize.org/decision-tools/): Hub for list shuffles, team splits, wheels, drawings, dice, cards, and quick choices
+- [How to Randomize a List](https://letsrandomize.org/guides/how-to-randomize-a-list/): Clean and shuffle a list without losing items
+- [List Shuffler vs List Randomizer](https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/): Choose between a full list shuffle, a picker, or a team generator
+- [Fair Random Selection Methods](https://letsrandomize.org/guides/fair-random-selection-methods/): Understand fair selection methods and their limits
+- [How to Create Balanced Teams](https://letsrandomize.org/guides/how-to-create-balanced-teams/): Pick a random, seeded, or skill-balanced team method
+
 ## Games
 
 - [Reaction Time Test](https://letsrandomize.org/tools/reaction-time-test/): Measure visual reaction time in milliseconds
 - [CPS Test](https://letsrandomize.org/tools/cps-test/): Click speed test (clicks per second)
 - [Typing Speed Test](https://letsrandomize.org/tools/typing-speed-test/): Measure WPM typing speed
 - [Memory Test](https://letsrandomize.org/tools/memory-test/): Test short-term visual memory
+
+## Method and Limits
+
+- [About LetsRandomize](https://letsrandomize.org/about/): Site purpose, author, and implementation approach
+- [Privacy Policy](https://letsrandomize.org/privacy/): Browser-side processing, localStorage, ads, analytics, and third-party services
+- [Terms of Use](https://letsrandomize.org/terms/): Randomness limitations and appropriate use
+- [Sitemap](https://letsrandomize.org/sitemap.xml)

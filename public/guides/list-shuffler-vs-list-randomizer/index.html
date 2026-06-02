@@ -65,7 +65,10 @@
     },
     "datePublished": "2026-06-02",
     "dateModified": "2026-06-02",
-    "mainEntityOfPage": "https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/"
+    "mainEntityOfPage": "https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/",
+    "citation": [
+      "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -151,6 +154,12 @@
 
 <h2>Use a team generator for groups</h2>
 <p>If the final output should be teams, do not manually split a shuffled list unless the group is tiny. A team generator handles group count and uneven numbers more clearly.</p>
+
+        <section style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin:24px 0;background:#fff;">
+            <h2 style="font-size:1.2rem;margin-top:0;">Method and limits</h2>
+            <p>On LetsRandomize, the list randomizer creates a full shuffled order using the shared randomization engine. The engine uses the browser Web Crypto API when available and applies a Fisher-Yates shuffle for list order. Use it for everyday random order needs; use a documented official process for legal, regulated, or high-value drawings.</p>
+            <p style="font-size:0.9rem;color:#666;margin-bottom:0;">Source: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues" rel="noopener">MDN Web Docs on <code>crypto.getRandomValues()</code></a>.</p>
+        </section>
 
         <section>
             <h2>Related tools and guides</h2>

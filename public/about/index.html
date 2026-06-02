@@ -31,7 +31,7 @@
     "url": "https://letsrandomize.org/"
   },
   "datePublished": "2025-01-15",
-  "dateModified": "2025-01-15",
+  "dateModified": "2026-06-02",
   "mainEntityOfPage": "https://letsrandomize.org/about/"
 }
 </script>
@@ -86,17 +86,20 @@
     <h2>Our Approach</h2>
     <p>Every tool on LetsRandomize is built with these principles:</p>
     <ul style="list-style:disc;padding-left:1.5rem;margin-bottom:1rem;">
-      <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>Client-Side Only:</strong> All randomization happens in your browser. No data is ever sent to a server.</li>
-      <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>Cryptographically Secure:</strong> We use the Web Crypto API (crypto.getRandomValues) when available for true randomness.</li>
+      <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>Browser-Based Tools:</strong> User-entered lists, names, and generated results are processed in your browser for the current session.</li>
+      <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>Strong Random Source:</strong> Core random generator tools use the Web Crypto API (<code>crypto.getRandomValues</code>) when available.</li>
       <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>Mobile-First:</strong> Every tool is designed to work great on phones and tablets.</li>
       <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>No Sign-Up:</strong> All tools are completely free with no account required.</li>
       <li style="margin-bottom:0.5rem;color:#4b5563;"><strong>Fast & Lightweight:</strong> No heavy frameworks or external dependencies. Just clean HTML, CSS, and JavaScript.</li>
     </ul>
 
     <h2>About the Technology</h2>
-    <p>LetsRandomize uses a unified randomization engine built on top of the Web Crypto API. When your browser supports <code>crypto.getRandomValues()</code>, we use it for cryptographically secure random number generation. For older browsers, we fall back to <code>Math.random()</code>, which provides pseudorandom numbers suitable for most non-security applications.</p>
+    <p>LetsRandomize uses a shared randomization engine for core generator tools. When your browser supports <code>crypto.getRandomValues()</code>, those tools use cryptographically strong pseudorandom values from the Web Crypto API. For older browsers, the engine falls back to <code>Math.random()</code>, which is suitable for casual, non-security randomization but not for certified or high-risk selection.</p>
 
-    <p>The entire site is static HTML, CSS, and JavaScript. There is no backend server, no database, and no tracking cookies. Your generated results are stored locally in your browser using localStorage for the history feature, and you can clear them at any time.</p>
+    <p>The site is static HTML, CSS, and JavaScript. There is no app account or database for generated results. Some tools store history or preferences locally in your browser using localStorage, and standard hosting, advertising, analytics, or CDN services may still collect technical request data as described in the privacy policy.</p>
+
+    <h2>Appropriate Use</h2>
+    <p>LetsRandomize is designed for everyday randomization: classroom picks, team splits, casual drawings, dice rolls, practice exercises, and similar tasks. It is not a substitute for certified randomness, legal or compliance-grade drawings, gambling systems, or independently audited selection processes.</p>
 
     <h2>Contact</h2>
     <p>Have feedback, a tool suggestion, or found a bug? I would love to hear from you. Reach out through the contact options on this site and I will get back to you as soon as possible.</p>
@@ -104,7 +107,7 @@
     <div class="author-byline">
       <div class="author-avatar">SP</div>
       <div>
-        Written by <a href="/about/">Sam Parker</a> &middot; Last updated March 2026
+        Written by <a href="/about/">Sam Parker</a> &middot; Last updated June 2026
       </div>
     </div>
   </div>

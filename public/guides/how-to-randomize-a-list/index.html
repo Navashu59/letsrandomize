@@ -65,7 +65,10 @@
     },
     "datePublished": "2026-06-02",
     "dateModified": "2026-06-02",
-    "mainEntityOfPage": "https://letsrandomize.org/guides/how-to-randomize-a-list/"
+    "mainEntityOfPage": "https://letsrandomize.org/guides/how-to-randomize-a-list/",
+    "citation": [
+      "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -151,6 +154,12 @@
 
 <h2>When a list randomizer is better than a wheel</h2>
 <p>A wheel is more visual for picking one item. A list randomizer is better when you need a complete order, such as every student presenting, every task being assigned, or every entry being ranked.</p>
+
+        <section style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin:24px 0;background:#fff;">
+            <h2 style="font-size:1.2rem;margin-top:0;">Method and limits</h2>
+            <p>LetsRandomize's list tool uses the shared randomization engine, which uses the browser Web Crypto API when available and a Fisher-Yates shuffle for list order. This is appropriate for everyday lists, classes, meetings, and casual drawings, but it is not a certified or audited drawing system.</p>
+            <p style="font-size:0.9rem;color:#666;margin-bottom:0;">Source: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues" rel="noopener">MDN Web Docs on <code>crypto.getRandomValues()</code></a>.</p>
+        </section>
 
         <section>
             <h2>Related tools and guides</h2>
