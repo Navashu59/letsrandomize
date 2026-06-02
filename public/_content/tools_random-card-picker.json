@@ -72,11 +72,11 @@
     }
   ],
   "internal_links": {
-    "tool_cta": "tools/random-picker",
+    "tool_cta": "tools/random-decision-maker",
     "related_guides": [
-      "guides/random-decision-maker",
-      "guides/online-random-number-generator",
-      "guides/virtual-coin-flip-tool"
+      "tools/random-decision-maker",
+      "tools/random-number-generator",
+      "tools/coin-flip-simulator"
     ]
   },
   "word_count_target": "Approximately 1450 words",

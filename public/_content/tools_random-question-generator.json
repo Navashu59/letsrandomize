@@ -81,11 +81,11 @@
     }
   ],
   "internal_links": {
-    "tool_cta": "tools/random-picker-wheel",
+    "tool_cta": "tools/spin-the-wheel",
     "related_guides": [
-      "guides/icebreaker-questions-for-teams",
-      "guides/brainstorming-techniques",
-      "guides/classroom-engagement-tools"
+      "tools/random-question-generator",
+      "tools/random-word-generator",
+      "tools/random-team-generator"
     ]
   },
   "word_count_target": "Approximately 1650 words",

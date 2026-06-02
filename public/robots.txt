@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /pages/
 Disallow: /src/
+Disallow: /templates/
 
 Sitemap: https://letsrandomize.org/sitemap.xml

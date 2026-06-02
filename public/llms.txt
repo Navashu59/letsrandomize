@@ -15,7 +15,7 @@ LetsRandomize provides cryptographically secure random generators using the Web 
 
 ## Games
 
-- [Reaction Time Test](https://letsrandomize.org/games/reaction-time-test/): Measure visual reaction time in milliseconds
-- [CPS Test](https://letsrandomize.org/games/cps-test/): Click speed test (clicks per second)
-- [Typing Speed Test](https://letsrandomize.org/games/typing-speed-test/): Measure WPM typing speed
-- [Memory Test](https://letsrandomize.org/games/memory-test/): Test short-term visual memory
+- [Reaction Time Test](https://letsrandomize.org/tools/reaction-time-test/): Measure visual reaction time in milliseconds
+- [CPS Test](https://letsrandomize.org/tools/cps-test/): Click speed test (clicks per second)
+- [Typing Speed Test](https://letsrandomize.org/tools/typing-speed-test/): Measure WPM typing speed
+- [Memory Test](https://letsrandomize.org/tools/memory-test/): Test short-term visual memory

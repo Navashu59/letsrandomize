@@ -68,11 +68,11 @@
     }
   ],
   "internal_links": {
-    "tool_cta": "tools/random-student-selector",
+    "tool_cta": "tools/random-team-generator",
     "related_guides": [
-      "guides/classroom-engagement-techniques",
-      "guides/digital-tools-for-teachers",
-      "guides/forming-student-groups"
+      "tools/random-question-generator",
+      "tools/list-randomizer",
+      "guides/how-to-create-balanced-teams"
     ]
   },
   "word_count_target": "Approximately 1450 words",

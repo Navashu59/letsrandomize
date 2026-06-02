@@ -69,9 +69,9 @@
   "internal_links": {
     "tool_cta": "tools/random-word-generator",
     "related_guides": [
-      "guides/creative-writing-prompts",
-      "guides/brainstorming-techniques",
-      "guides/seo-content-ideation"
+      "tools/random-sentence-generator",
+      "tools/random-word-generator",
+      "tools/random-adjective-generator"
     ]
   },
   "word_count_target": "Approximately 1450 words",

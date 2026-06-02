@@ -80,11 +80,11 @@
     }
   ],
   "internal_links": {
-    "tool_cta": "tools/random-picker-wheel",
+    "tool_cta": "tools/spin-the-wheel",
     "related_guides": [
-      "guides/how-to-run-a-giveaway",
-      "guides/contest-vs-sweepstakes",
-      "guides/promotion-legal-checklist"
+      "tools/list-randomizer",
+      "tools/random-decision-maker",
+      "guides/fair-random-selection-methods"
     ]
   },
   "word_count_target": "Approximately 1650 words",

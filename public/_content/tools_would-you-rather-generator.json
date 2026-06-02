@@ -69,7 +69,7 @@
   "internal_links": {
     "tool_cta": "tools/random-question-generator",
     "related_guides": [
-      "guides/icebreaker-questions",
+      "tools/random-question-generator",
       "guides/team-building-activities",
       "guides/conversation-starters"
     ]

@@ -83,9 +83,9 @@
   "internal_links": {
     "tool_cta": "tools/random-word-generator",
     "related_guides": [
-      "guides/overcoming-writers-block",
-      "guides/creative-brainstorming-techniques",
-      "guides/writing-prompts-for-fiction"
+      "tools/random-sentence-generator",
+      "tools/random-word-generator",
+      "tools/random-question-generator"
     ]
   },
   "word_count_target": "Approximately 1650 words",
