@@ -65,3 +65,4 @@ SEMrush:
 - 2026-06-02: Plan created from GSC page/query evidence and SEMrush phrase checks.
 - 2026-06-02: Built 9 new P0 support pages, refreshed the random drawing guide, added `/use-cases/` index, and prepared sitemap updates.
 - 2026-06-02: Local QA passed: 63 indexable pages, 63 sitemap URLs, 0 broken internal links, 0 schema parse errors, 0 title/meta issues.
+- 2026-06-02: Deployed via GitHub Actions commit `0cca363`; live checks passed for all new support URLs and sitemap count is 63.
