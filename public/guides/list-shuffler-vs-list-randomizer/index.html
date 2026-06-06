@@ -55,7 +55,7 @@
     "description": "List shuffler and list randomizer usually mean the same thing, but the right tool depends on whether you need an order, a pick, or teams.",
     "author": {
       "@type": "Person",
-      "name": "Sam Park",
+      "name": "Sam Parker",
       "url": "https://letsrandomize.org/about/"
     },
     "publisher": {
@@ -64,7 +64,7 @@
       "url": "https://letsrandomize.org/"
     },
     "datePublished": "2026-06-02",
-    "dateModified": "2026-06-02",
+    "dateModified": "2026-06-07",
     "mainEntityOfPage": "https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/",
     "citation": [
       "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"
@@ -136,24 +136,27 @@
 
         <h1>List shuffler vs list randomizer</h1>
         <p>Most people use list shuffler and list randomizer to mean the same thing: take a list and put it in a random order. The important question is what you want after the shuffle.</p>
-        <p class="byline">By Sam Park | Updated <time datetime="2026-06-02">Jun 2, 2026</time></p>
+        <p class="byline">By Sam Parker | Updated <time datetime="2026-06-07">Jun 7, 2026</time></p>
 
         <div class="guide-callout">
             <strong>Quick answer:</strong> Use a list randomizer when you need a full shuffled order. Use a picker or wheel when you need one winner. Use a team generator when the shuffled list needs to become groups.
             <br><a class="tool-cta" href="/tools/list-randomizer/">Shuffle a list</a>
         </div>
 
-        <h2>The practical difference</h2>
+        <h2>List shuffler vs list randomizer: what is the practical difference?</h2>
 <p>A list shuffler usually emphasizes the action: shuffle this list. A list randomizer can mean shuffle the full list, pick random items, or create a random order. On LetsRandomize, the list randomizer focuses on complete random order.</p>
 
-<h2>Use a full shuffle for order</h2>
+<h2>When should I use "shuffle list" instead of picking one item?</h2>
 <p>Use a full shuffle when every item needs a place: presentation order, game turns, task rotation, seating order, queue order, or draft order. The result should include every original item exactly once unless duplicates were intentionally included.</p>
 
-<h2>Use a picker for one result</h2>
+<h2>When should I use a random picker instead of a list order randomizer?</h2>
 <p>If the job is choosing one winner or one option, a random picker or spin wheel can be more natural. The list randomizer still works, but a wheel is easier to show during a live draw.</p>
 
-<h2>Use a team generator for groups</h2>
+<h2>When should I use a team generator instead of a random list sorter?</h2>
 <p>If the final output should be teams, do not manually split a shuffled list unless the group is tiny. A team generator handles group count and uneven numbers more clearly.</p>
+
+<h2>Does a list shuffler handle duplicates?</h2>
+<p>Yes, but it treats each line as a separate entry. If the same name appears twice by accident, remove the duplicate first. If the duplicate represents two raffle tickets or two chances, leave it in and make the rule clear.</p>
 
         <section style="border:1px solid #e5e7eb;border-radius:8px;padding:16px;margin:24px 0;background:#fff;">
             <h2 style="font-size:1.2rem;margin-top:0;">Method and limits</h2>

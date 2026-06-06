@@ -21,9 +21,12 @@ These tools are intended for everyday randomization and learning. They are not a
 
 - [Decision Tools](https://letsrandomize.org/decision-tools/): Hub for list shuffles, team splits, wheels, drawings, dice, cards, and quick choices
 - [How to Randomize a List](https://letsrandomize.org/guides/how-to-randomize-a-list/): Clean and shuffle a list without losing items
+- [Random Order Generator](https://letsrandomize.org/guides/random-order-generator/): Choose between a full random order, a random picker, and a team split
+- [Random Name Order Generator](https://letsrandomize.org/guides/random-name-order-generator/): Put existing names in random order for turns, presentations, chores, or meetings
 - [List Shuffler vs List Randomizer](https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/): Choose between a full list shuffle, a picker, or a team generator
 - [Fair Random Selection Methods](https://letsrandomize.org/guides/fair-random-selection-methods/): Understand fair selection methods and their limits
 - [How to Create Balanced Teams](https://letsrandomize.org/guides/how-to-create-balanced-teams/): Pick a random, seeded, or skill-balanced team method
+- [Random Team Generator for Classroom](https://letsrandomize.org/guides/random-team-generator-for-classroom/): Create classroom groups while handling absent students, repeat pairings, and constraints
 
 ## Games
 
@@ -31,6 +34,8 @@ These tools are intended for everyday randomization and learning. They are not a
 - [CPS Test](https://letsrandomize.org/tools/cps-test/): Click speed test (clicks per second)
 - [Typing Speed Test](https://letsrandomize.org/tools/typing-speed-test/): Measure WPM typing speed
 - [Memory Test](https://letsrandomize.org/tools/memory-test/): Test short-term visual memory
+- [Reaction Time Scores](https://letsrandomize.org/guides/reaction-time-scores/): Explain good reaction time scores, 170ms, device latency, and test limits
+- [Chimp Test Scores](https://letsrandomize.org/guides/chimp-test-scores/): Explain chimp test scores, visual memory, practice effects, and non-IQ limits
 
 ## Method and Limits
 
