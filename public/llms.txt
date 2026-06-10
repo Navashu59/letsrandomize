@@ -1,8 +1,8 @@
 # LetsRandomize.org
 
-> Free random generators and online tools for fair selection, team building, and decision making.
+> Browser-based list randomizers, random order tools, team generators, pickers, and number tools for everyday decisions.
 
-LetsRandomize provides browser-based random generator tools for everyday decisions, lists, teams, names, numbers, passwords, wheels, dice, and classroom activities. Core random generator tools use the Web Crypto API (`crypto.getRandomValues`) when available, with a Math.random fallback for older browsers. List and team shuffling tools use a Fisher-Yates shuffle through the shared randomization engine.
+LetsRandomize provides browser-based tools for randomizing lists, putting names in random order, creating teams, picking from a list, generating numbers, and running classroom or meeting activities. Core random generator tools use the Web Crypto API (`crypto.getRandomValues`) when available, with a Math.random fallback for older browsers. List and team shuffling tools use a Fisher-Yates shuffle through the shared randomization engine.
 
 User-entered lists, names, and generated results are processed in the browser for the current session. Some tools may store history or preferences in localStorage. Standard hosting, advertising, analytics, or CDN systems may still collect technical request data as described in the privacy policy.
 
@@ -10,11 +10,11 @@ These tools are intended for everyday randomization and learning. They are not a
 
 ## Tools
 
-- [Random Number Generator](https://letsrandomize.org/tools/random-number-generator/): Generate random numbers in any range with multiple modes
-- [Random Team Generator](https://letsrandomize.org/tools/random-team-generator/): Split players into 2-8 fair random teams
 - [List Randomizer](https://letsrandomize.org/tools/list-randomizer/): Shuffle any list or pick N random items
+- [Random Team Generator](https://letsrandomize.org/tools/random-team-generator/): Split players into 2-8 fair random teams
 - [Spin the Wheel](https://letsrandomize.org/tools/spin-the-wheel/): Animated random picker wheel
 - [Random Name Generator](https://letsrandomize.org/tools/random-name-generator/): Generate random first and last names
+- [Random Number Generator](https://letsrandomize.org/tools/random-number-generator/): Generate random numbers in any range with multiple modes
 - [Random Password Generator](https://letsrandomize.org/tools/random-password-generator/): Create strong passwords with customizable rules
 
 ## Decision and List Tools
@@ -22,6 +22,7 @@ These tools are intended for everyday randomization and learning. They are not a
 - [Decision Tools](https://letsrandomize.org/decision-tools/): Hub for list shuffles, team splits, wheels, drawings, dice, cards, and quick choices
 - [How to Randomize a List](https://letsrandomize.org/guides/how-to-randomize-a-list/): Clean and shuffle a list without losing items
 - [Random Order Generator](https://letsrandomize.org/guides/random-order-generator/): Choose between a full random order, a random picker, and a team split
+- [Random Picker vs List Randomizer](https://letsrandomize.org/guides/random-picker-vs-list-randomizer/): Choose the right tool for one pick, a full order, a wheel draw, or random teams
 - [Random Name Order Generator](https://letsrandomize.org/guides/random-name-order-generator/): Put existing names in random order for turns, presentations, chores, or meetings
 - [List Shuffler vs List Randomizer](https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/): Choose between a full list shuffle, a picker, or a team generator
 - [Fair Random Selection Methods](https://letsrandomize.org/guides/fair-random-selection-methods/): Understand fair selection methods and their limits

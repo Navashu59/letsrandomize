@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-06-10T15:56:26+0800",
+  "response": {
+    "id": "5d413c05-be13-4bfa-888d-259411905d1f",
+    "object": "chat.completion",
+    "created": 1781078170,
+    "model": "deepseek-v4-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "```json\n{\n  \"recommended_edits\": [\n    {\n      \"page\": \"Homepage\",\n      \"action\": \"Reposition primary headline and subhead to lead with 'List Randomizer' and 'Random Order Generator' instead of 'Random Number Generator'. Move number tools below the fold or into a secondary section.\",\n      \"rationale\": \"Google SERP shows strong intent for list/order tools; number tools are already served by Google's built-in widget.\"\n    },\n    {\n      \"page\": \"List Randomizer page\",\n      \"action\": \"Add a clear, scannable H2: 'How to Randomize a List in Seconds' with step-by-step instructions. Include a bullet list of use cases: 'draw winners, shuffle teams, randomize quiz order, pick a random item'.\",\n      \"rationale\": \"Competitors (PineTools, GigaCalculator) use explicit use-case headers; current copy is too generic.\"\n    },\n    {\n      \"page\": \"List Randomizer page\",\n      \"action\": \"Add internal links to 'Random Order Guide' and 'Team Classroom Guide' within the first 200 words, using anchor text like 'learn how to randomize order for teams' and 'classroom group randomizer tips'.\",\n      \"rationale\": \"Strengthens topical cluster; competitors (RandomLists, Classtools) cross-link group/team tools.\"\n    },\n    {\n      \"page\": \"Random Order Guide\",\n      \"action\": \"Add a table comparing 'Simple shuffle vs. seeded random vs. crypto random' with pros/cons. Include a note that 'LetsRandomize uses crypto-grade randomness for fairness'.\",\n      \"rationale\": \"GigaCalculator and RANDOM.ORG highlight their randomness source; this builds trust and differentiates from Google's basic RNG.\"\n    },\n    {\n      \"page\": \"Team Classroom Guide\",\n      \"action\": \"Add a section 'How to Create Balanced Teams' with a step-by-step example (e.g., 'Paste 20 student names, choose 4 teams, click randomize'). Include a call-to-action button linking to the list randomizer.\",\n      \"rationale\": \"Keamk and Classroomscreen dominate 'team randomizer' queries; explicit workflow helps capture that traffic.\"\n    }\n  ],\n  \"risky_claims_to_remove\": [\n    {\n      \"claim\": \"Our random numbers are truly random / unpredictable\",\n      \"page\": \"Any page\",\n      \"risk\": \"Without hardware entropy source (like RANDOM.ORG's atmospheric noise), claiming 'truly random' is legally and technically risky. Replace with 'cryptographically secure pseudorandom' or 'high-quality randomness'.\"\n    },\n    {\n      \"claim\": \"Best randomizer on the web\",\n      \"page\": \"Homepage or List Randomizer\",\n      \"risk\": \"Subjective superlative; competitors (UltimateSolver, PineTools) can challenge. Remove or replace with 'fast, private, and easy-to-use list randomizer'.\"\n    },\n    {\n      \"claim\": \"Guaranteed no duplicates\",\n      \"page\": \"List Randomizer\",\n      \"risk\": \"If user pastes duplicate items, tool may still output duplicates. Add caveat: 'when all input items are unique'.\"\n    }\n  ],\n  \"missing_serp_gaps\": [\n    {\n      \"gap\": \"No dedicated 'team randomizer' or 'group generator' page\",\n      \"evidence\": \"SERP competitors: Keamk, Classtools, Classroomscreen all have standalone team/group tools. LetsRandomize only has a guide, not a tool page.\"\n    },\n    {\n      \"gap\": \"No 'pick random winner' or 'giveaway picker' page\",\n      \"evidence\": \"CommentPicker and GigaCalculator have dedicated giveaway/winner picker pages with export/save features. LetsRandomize lacks this.\"\n    },\n    {\n      \"gap\": \"No 'random order generator for lists with weights'\",\n      \"evidence\": \"UltimateSolver offers weighted random selection. No competitor covers weighted shuffle; this is an underserved query.\"\n    },\n    {\n      \"gap\": \"No 'reaction time stats' integration with list randomizer\",\n      \"evidence\": \"HumanBenchmark ranks for reaction time; LetsRandomize has a guide but no tool that combines reaction stats with randomization (e.g., 'randomize order based on reaction scores').\"\n    }\n  ],\n  \"p0_priority\": [\n    \"Reposition homepage to lead with list/order/picker tools\",\n    \"Add use-case headers and internal links to List Randomizer page\",\n    \"Remove 'truly random' and 'best' claims from all pages\",\n    \"Create a standalone 'Team Randomizer' tool page (or repurpose existing guide into a tool)\"\n  ],\n  \"p1_priority\": [\n    \"Add 'Pick Random Winner' page with export/save functionality\",\n    \"Add weighted shuffle option to list randomizer\",\n    \"Integrate reaction time stats with randomization (e.g., 'randomize order by reaction score')\",\n    \"Add comparison table of randomness sources to Random Order Guide\"\n  ]\n}\n```"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 241,
+      "completion_tokens": 1088,
+      "total_tokens": 1329,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 241
+    },
+    "system_fingerprint": "fp_8b330d02d0_prod0820_fp8_kvcache_20260402"
+  }
+}

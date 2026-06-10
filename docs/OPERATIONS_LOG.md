@@ -1,5 +1,40 @@
 # LetsRandomize Operations Log
 
+## 2026-06-10 - Google Widget Risk / List-Order-Picker Shift
+
+Target:
+
+- Reduce dependence on query types Google can satisfy with built-in random-number tools.
+- Protect existing URLs and traffic while shifting new growth emphasis toward list, order, picker, and team workflows.
+
+Actions:
+
+- Repositioned homepage toward list, order, picker, and team workflows instead of generic random generator positioning.
+- Strengthened `/tools/list-randomizer/` for random order, list shuffle, picker, and classroom/team internal links.
+- Added `/guides/random-picker-vs-list-randomizer/` to prevent picker/list/order/team intent overlap.
+- Updated `/guides/random-order-generator/` with a method trust comparison based on SERP gap.
+- Softened over-strong randomness/security/official drawing claims on list and number pages.
+- Updated `public/sitemap.xml` and `public/llms.txt`.
+- Recorded DeepSeek deputy review in `docs/deepseek-google-widget-shift-2026-06-10.json`.
+
+Validation:
+
+- JSON-LD parse: passed.
+- Sitemap XML parse: passed.
+- H1 check for touched pages: passed.
+- Risk phrase scan on touched pages: passed.
+- Local HTTP smoke at `http://127.0.0.1:8793/`: passed.
+- Playwright with system Chrome:
+  - Desktop title/H1 checks passed.
+  - `/tools/list-randomizer/` interaction returned 4 shuffled items.
+  - Mobile viewport `390px` overflow checks passed for the homepage, list randomizer, random picker vs list randomizer, random order, random number, and random list picker pages.
+
+Next measurement:
+
+- Watch GSC CTR for `list randomizer`, `random order generator`, `random list generator`, and picker variants.
+- Confirm existing random-number traffic remains stable after safer copy changes.
+- Use GSC query/page movement before deciding whether to build a standalone random winner picker.
+
 ## 2026-06-02 - Topical Authority Completion Pass
 
 Target:
