@@ -17,6 +17,13 @@ Actions:
 - Updated `public/sitemap.xml` and `public/llms.txt`.
 - Recorded DeepSeek deputy review in `docs/deepseek-google-widget-shift-2026-06-10.json`.
 
+Logic:
+
+- Google can intercept simple one-step random tools in SERP, so new growth should lean into workflows Google widgets cannot complete: user-provided lists, orders, teams, groups, and picker decisions.
+- Existing URL equity should be protected. The work intentionally avoided URL moves, redirects, or merging pages.
+- The list/order/shuffle cluster already had GSC evidence, so this was a weight-shift and CTR improvement pass rather than a speculative content expansion.
+- The new picker-vs-list-randomizer guide exists to reduce intent overlap, not to create another near-duplicate list page.
+
 Validation:
 
 - JSON-LD parse: passed.
@@ -31,9 +38,19 @@ Validation:
 
 Next measurement:
 
-- Watch GSC CTR for `list randomizer`, `random order generator`, `random list generator`, and picker variants.
-- Confirm existing random-number traffic remains stable after safer copy changes.
-- Use GSC query/page movement before deciding whether to build a standalone random winner picker.
+- Review on 2026-06-17:
+  - `/tools/list-randomizer/` CTR.
+  - `random order generator` related query CTR.
+  - `list/order/shuffle` cluster impressions.
+  - `team/group` page positions, especially whether they move into or closer to page 1.
+  - `/tools/random-number-generator/` click/impression stability.
+  - `/guides/random-picker-vs-list-randomizer/` indexing and long-tail impressions.
+- If the metrics move, judge whether to promote the approach into SOP:
+  - route around Google-widget risk without killing existing tool pages;
+  - use intent-boundary pages for adjacent tools;
+  - run claim-risk cleanup on sensitive copy;
+  - require SERP gap before adding support pages;
+  - protect existing winners with conservative edits.
 
 ## 2026-06-02 - Topical Authority Completion Pass
 
