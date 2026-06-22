@@ -1,5 +1,33 @@
 # LetsRandomize Operations Log
 
+## 2026-06-22 - List Randomizer CTR Test From Widget-Risk SOP
+
+Reason:
+
+- The 2026-06-10 Google widget risk shift produced early positive signals for list/order/shuffle exposure and random-order CTR.
+- `/tools/list-randomizer/` gained exposure and improved average position, but CTR remained weak as query mix broadened.
+- This page is eligible for a conservative title/meta CTR test because it has meaningful impressions and ranks around page 1 for the primary list/order cluster.
+
+Actions:
+
+- Updated `/tools/list-randomizer/` title from a names/tasks/items phrasing to a search-facing title that includes `random list generator` and order/shuffle intent.
+- Updated meta/OG/Twitter descriptions to emphasize paste-list, random order, and pick-random-items use cases.
+- Updated visible modified date, JSON-LD `dateModified`, and sitemap `lastmod` to `2026-06-22`.
+- Did not change URL, canonical, H1, tool behavior, internal page structure, or body content.
+
+Measurement:
+
+- Treat this as a new CTR test starting 2026-06-22.
+- Compare against the 2026-06-11 to 2026-06-20 post-shift baseline.
+- Primary page: `/tools/list-randomizer/`.
+- Primary query group: `list randomizer`, `random list generator`, `random order generator`, `randomize list`, `shuffle list`.
+- Guardrails: `/tools/random-number-generator/` should not show a material drop, and list/order impressions should not collapse.
+
+SOP:
+
+- Recorded as the first execution of `Widget-Risk Traffic Shift SOP`.
+- Do not add more list/order support pages until this CTR test has at least 7-14 days of data.
+
 ## 2026-06-10 - Google Widget Risk / List-Order-Picker Shift
 
 Target:
