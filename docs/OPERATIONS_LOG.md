@@ -1,5 +1,46 @@
 # LetsRandomize Operations Log
 
+## 2026-07-04 - Team / Classroom / Random Order SERP-Gap Deepening
+
+Reason:
+
+- Latest GSC/GA4 review showed the 2026-06 list/order shift is working: recent 7-day GSC clicks increased materially, and `/tools/list-randomizer/` remains the strongest page.
+- `/tools/list-randomizer/` is still under the 2026-06-22 CTR test window, so this pass intentionally avoids changing its title, H1, tool structure, or page body.
+- The next defensible cluster is team/group/classroom/order: `/tools/random-team-generator/` has meaningful impressions and sits close enough to page 1 to justify depth improvements.
+- Live SERP gap for random team/group/order queries showed competitors commonly cover group size, team count, duplicate handling, save/share/export, repeat pairings, reroll rules, presentation order, and classroom workflows.
+
+Data and review used:
+
+- GSC portfolio pull, 2026-05-23 to 2026-07-02.
+- GA4 Organic Search pull, 2026-05-23 to 2026-07-02.
+- Live SERP review for random team generator, random group generator classroom, random order generator, and put names in random order.
+- DeepSeek deputy review: `/Users/bluepha/seo-revenue-system/ops/research/deepseek-letsrandomize-team-order-expansion-2026-07-04.json`.
+- DeepSeek usage: 991 total tokens.
+
+Actions:
+
+- Updated `/tools/random-team-generator/` with user-search-style sections for splitting a list into random teams, deriving team count from desired group size, random pairs/groups of three, and duplicate-name handling.
+- Softened over-strong fairness language on `/tools/random-team-generator/`, including `truly unbiased`, `provably unbiased`, and unsupported "gold standard" style wording.
+- Updated `/guides/random-team-generator-for-classroom/` with sections for repeat pairings and team count vs group size decisions.
+- Updated `/guides/random-order-generator/` with sections for presentation order, duplicate handling, and reroll rules.
+- Updated JSON-LD `dateModified`, visible updated dates, and sitemap `lastmod` only for the three touched pages.
+
+Guardrails:
+
+- Did not change `/tools/list-randomizer/` while its CTR test is still active.
+- Did not add new near-duplicate support pages.
+- Did not claim certified, legal, audited, guaranteed, or true-random results.
+- Kept H2/H3 phrasing close to real user search questions while avoiding exact FAQ repetition where possible.
+
+Measurement:
+
+- Review after 14 days and 30 days.
+- Watch `/tools/random-team-generator/` impressions, CTR, and average position.
+- Watch classroom/team queries: `random team generator classroom`, `random group generator`, `random student group generator`, `random groups without repeats`.
+- Watch `/guides/random-team-generator-for-classroom/` impressions and long-tail classroom query pickup.
+- Watch `/guides/random-order-generator/` impressions/CTR for `random order generator`, `put names in random order`, `randomize presentation order`, and duplicate/reroll variants.
+- Guardrail: `/tools/list-randomizer/` and `/tools/random-number-generator/` should not show a material drop after this adjacent-cluster update.
+
 ## 2026-06-22 - List Randomizer CTR Test From Widget-Risk SOP
 
 Reason:

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <script type="application/ld+json">[
       {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://letsrandomize.org/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://letsrandomize.org/guides/"},{"@type":"ListItem","position":3,"name":"Random order generator"}]},
-      {"@context":"https://schema.org","@type":"Article","headline":"Random Order Generator: Shuffle Names, Tasks, and Lists","description":"Use a random order generator for names, tasks, speakers, chores, raffles, and classroom turns. Learn when to shuffle, pick, or split a list.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize","url":"https://letsrandomize.org/"},"datePublished":"2026-06-07","dateModified":"2026-06-10","mainEntityOfPage":"https://letsrandomize.org/guides/random-order-generator/","citation":["https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"]},
+      {"@context":"https://schema.org","@type":"Article","headline":"Random Order Generator: Shuffle Names, Tasks, and Lists","description":"Use a random order generator for names, tasks, speakers, chores, raffles, and classroom turns. Learn when to shuffle, pick, or split a list.","author":{"@type":"Person","name":"Sam Parker","url":"https://letsrandomize.org/about/"},"publisher":{"@type":"Organization","name":"LetsRandomize","url":"https://letsrandomize.org/"},"datePublished":"2026-06-07","dateModified":"2026-07-04","mainEntityOfPage":"https://letsrandomize.org/guides/random-order-generator/","citation":["https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues"]},
       {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a random order generator?","acceptedAnswer":{"@type":"Answer","text":"A random order generator takes a list you provide and returns every item in a shuffled sequence."}},{"@type":"Question","name":"Should I use a random order generator or a random picker?","acceptedAnswer":{"@type":"Answer","text":"Use a random order generator when every item needs a place. Use a picker when you only need one or a few results."}},{"@type":"Question","name":"Can I use it for names?","acceptedAnswer":{"@type":"Answer","text":"Yes. Paste one name per line, remove duplicates if needed, and shuffle the list to create a random name order."}}]}
     ]</script>
     <style>
@@ -52,7 +52,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a> <span>&rsaquo;</span> <a href="/guides/">Guides</a> <span>&rsaquo;</span> Random Order Generator</nav>
         <h1>Random order generator</h1>
         <p>A random order generator takes the exact list you already have and puts every item into a new sequence. It is the right tool when the output should still include every name, task, speaker, entry, or option.</p>
-        <p class="byline">By Sam Parker | Updated <time datetime="2026-06-10">Jun 10, 2026</time></p>
+        <p class="byline">By Sam Parker | Updated <time datetime="2026-07-04">Jul 4, 2026</time></p>
         <div class="guide-callout"><strong>Quick answer:</strong> Paste one item per line, choose <strong>Shuffle All</strong>, and use the result as your random order. Use a picker only when you need one winner, and use a team generator when the final output should be groups.<br><a class="tool-cta" href="/tools/list-randomizer/">Open the list randomizer</a></div>
 
         <h2>When should I use a random list order generator?</h2>
@@ -72,6 +72,12 @@
         <h2>How do I put names in random order without missing anyone?</h2>
         <p>Put one item on each line. Remove blank lines, check spelling, and decide whether duplicates are intentional. If two people share the same first name, add a last initial. If one person should have two raffle entries, enter that person twice and explain the rule before the draw.</p>
 
+        <h2>How do I randomize presentation order?</h2>
+        <p>Paste the speaker list, remove anyone who is absent, and shuffle once before the first presentation. Copy the result into the agenda, slide deck, or meeting chat so the order is easy to follow. If someone arrives late, add that person to the end or rerun only if presentations have not started.</p>
+
+        <h2>Should I remove duplicates before shuffling a list?</h2>
+        <p>Remove duplicates when each person or task should appear once. Keep duplicates only when they are intentional, such as two raffle entries for the same person or two repeated practice drills. If duplicates are allowed, state that rule before you randomize the list.</p>
+
         <h2>Is a browser-based random list sorter private and fair?</h2>
         <p>The LetsRandomize list tool runs in your browser for the current session. It uses the shared randomization engine, which uses the browser Web Crypto API when available and a Fisher-Yates shuffle for list order. That is appropriate for everyday classroom, meeting, game, and giveaway use. For legal, regulated, or high-value drawings, follow the official process required by the organizer.</p>
         <p style="font-size:0.9rem;color:#666;">Source: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues" rel="noopener">MDN Web Docs on <code>crypto.getRandomValues()</code></a>.</p>
@@ -89,6 +95,9 @@
 
         <h2>How do I prove a random list organizer result was fair?</h2>
         <p>Show the original list before you shuffle, state whether duplicates are allowed, shuffle once in front of the group, and keep the result visible. For recurring classes or meetings, save previous orders so the same person is not always first or last over time.</p>
+
+        <h2>When should I reroll a random order?</h2>
+        <p>Reroll when the input list was wrong: a missing name, accidental duplicate, or incorrect rule. Avoid rerolling just because someone dislikes the position they received. If rerolls are allowed, decide the limit before the shuffle so the result still feels neutral.</p>
 
         <section><h2>Related tools and guides</h2><div class="related-grid">
           <a href="/tools/list-randomizer/" class="guide-card"><h2>List Randomizer</h2><p>Shuffle names, tasks, entries, or options.</p></a>
