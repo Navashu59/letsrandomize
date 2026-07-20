@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3874459139746084"
+     crossorigin="anonymous"></script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Randomization Methodology - LetsRandomize</title>
+<meta name="description" content="Learn how LetsRandomize tools generate random results, handle user input, explain limitations, and choose algorithms for everyday randomization.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://letsrandomize.org/methodology/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Randomization Methodology",
+    "description": "How LetsRandomize tools generate random results and explain appropriate use.",
+    "author": {
+      "@type": "Person",
+      "name": "Sam Parker",
+      "url": "https://letsrandomize.org/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LetsRandomize",
+      "url": "https://letsrandomize.org/"
+    },
+    "datePublished": "2026-07-20",
+    "dateModified": "2026-07-20",
+    "mainEntityOfPage": "https://letsrandomize.org/methodology/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do LetsRandomize tools store my lists or generated results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "User-entered lists and generated results are processed in the browser for the current session. Some tools may store preferences or recent results locally in your browser, but LetsRandomize does not provide accounts or a server-side database for submitted lists."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the tools suitable for legal drawings or gambling?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. LetsRandomize tools are built for everyday randomization, learning, classrooms, games, and casual decisions. They are not certified, audited, or designed for gambling, regulated drawings, or legal compliance workflows."
+        }
+      }
+    ]
+  }
+]
+</script>
+<meta property="og:title" content="Randomization Methodology - LetsRandomize">
+<meta property="og:description" content="Learn how LetsRandomize tools generate random results, handle user input, explain limitations, and choose algorithms for everyday randomization.">
+<meta property="og:url" content="https://letsrandomize.org/methodology/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://letsrandomize.org/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Randomization Methodology - LetsRandomize">
+<meta name="twitter:description" content="Learn how LetsRandomize tools generate random results, handle user input, explain limitations, and choose algorithms for everyday randomization.">
+<meta name="twitter:image" content="https://letsrandomize.org/og-image.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo"><span>&#9858;</span> LetsRandomize</a>
+    <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav class="site-nav">
+      <a href="/tools/">All Tools</a>
+      <a href="/generators/">Generators</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container about-content" style="padding-top:2rem;padding-bottom:2rem;">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span>Methodology</nav>
+    <h1>Randomization Methodology</h1>
+    <p>LetsRandomize tools are designed for everyday randomization: shuffling lists, picking names, splitting teams, rolling dice, practicing memory tests, and making low-risk decisions. This page explains the shared approach behind the tools and the limits users should understand.</p>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Random source</h2>
+      <p>Core randomization tools use the browser Web Crypto API, specifically <code>crypto.getRandomValues()</code>, when it is available. That API draws from the operating system's entropy source and is a strong default for browser-based randomization.</p>
+      <p>When Web Crypto is unavailable, tools fall back to standard browser pseudorandom behavior. That fallback is acceptable for casual, non-security use, but it should not be treated as certified randomness.</p>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Algorithms used</h2>
+      <p>List shuffling tools use Fisher-Yates-style shuffling instead of sorting by a random comparator. Fisher-Yates avoids the bias caused by common shortcuts like <code>array.sort(() =&gt; Math.random() - 0.5)</code>.</p>
+      <p>Picker tools select from the available entries without changing the original list unless the tool explicitly offers a remove-after-pick option. Team and group tools shuffle the roster first, then distribute entries into groups according to the selected team count or team size.</p>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>User input and privacy</h2>
+      <p>Names, lists, options, and generated results are processed in the browser for the current session. LetsRandomize does not require accounts and does not provide a server-side database for submitted lists.</p>
+      <p>Some tools may keep recent results or preferences in browser localStorage so that the tool remains convenient during the same visit. Users can clear this data from the browser. Hosting, security, analytics, and advertising providers may still receive technical request data as described in the <a href="/privacy/">privacy policy</a>.</p>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Appropriate use</h2>
+      <p>These tools are appropriate for classrooms, team activities, meeting order, casual giveaways, games, writing prompts, practice tests, and personal decisions. They are not intended for gambling, cryptographic key generation, regulated prize drawings, legal allocation, medical decisions, or any workflow that requires a certified audit trail.</p>
+      <p>For formal drawings, publish official rules, verify entry eligibility, keep a record of entries, and use the process required by the organizer, platform, or applicable law.</p>
+    </section>
+
+    <section class="content-section" style="margin-top:2rem;">
+      <h2>Review and corrections</h2>
+      <p>Tool behavior and explanatory guides are reviewed for accuracy when pages are updated. If you find a bug, unclear wording, or a claim that needs correction, contact <strong>hello@letsrandomize.org</strong> with the page URL and the details.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Core Tools</h4>
+        <a href="/tools/list-randomizer/">List Randomizer</a>
+        <a href="/tools/random-number-generator/">Number Generator</a>
+        <a href="/tools/random-team-generator/">Team Generator</a>
+        <a href="/tools/spin-the-wheel/">Spin the Wheel</a>
+      </div>
+      <div class="footer-col">
+        <h4>Method Guides</h4>
+        <a href="/guides/how-random-number-generators-work/">How Random Numbers Work</a>
+        <a href="/guides/fair-random-selection-methods/">Fair Selection Methods</a>
+        <a href="/guides/types-of-randomness/">Types of Randomness</a>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="/about/">About LetsRandomize</a>
+        <a href="/methodology/">Methodology</a>
+        <a href="/contact/">Contact</a>
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 LetsRandomize.org. Built by <a href="/about/">Sam Parker</a>. All tools are free to use.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

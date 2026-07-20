@@ -1,5 +1,87 @@
 # LetsRandomize Operations Log
 
+## 2026-07-20 - List / Order Controlled Scale
+
+Reason:
+
+- The June list/order shift has enough positive signal to scale carefully: recent GA4 Organic Search sessions increased to 1,621 vs 1,164 prior, and recent GSC clicks increased to 764 vs 595 prior.
+- `/tools/list-randomizer/` remains the strongest page in the cluster, with high impressions and average position near page 1.
+- The chosen action was to deepen existing ranking URLs and improve CTR alignment, not create another near-duplicate list/order page.
+
+Inputs:
+
+- Existing 2026-06-10 widget-risk execution record and later operations log entries.
+- Live SERP gap review for list randomizer, random order generator, random list generator, shuffle list, and randomize list of names.
+- DeepSeek deputy review saved at `docs/deepseek-list-order-controlled-scale-2026-07-20.json`.
+- DeepSeek usage: 684 total tokens.
+
+Actions:
+
+- Updated `/tools/list-randomizer/` title/meta/OG/Twitter copy around shuffle names and randomize list order intent.
+- Added practical sections to `/tools/list-randomizer/` for randomizing a list of names, duplicates, and copying/sharing results.
+- Deepened `/guides/random-order-generator/` with copy-result and Excel/Google Sheets sections.
+- Deepened `/guides/how-to-randomize-a-list/` with class/meeting, spreadsheet/CSV, and save/share sections.
+- Deepened `/guides/random-picker-vs-list-randomizer/` with list-generator vs picker and copy/share decision sections.
+- Updated sitemap `lastmod` and `llms.txt` summaries for changed URLs.
+
+Guardrails:
+
+- No URL, canonical, noindex, or core tool UI changes.
+- No random-number page edits.
+- No unsupported certified/legal/audited randomness claims.
+- H2/H3 headings use real-search-style phrasing while avoiding FAQ duplication.
+
+Measurement:
+
+- Review after 14 days and 30 days.
+- Watch `/tools/list-randomizer/` clicks, impressions, CTR, and average position.
+- Watch query cluster: `list randomizer`, `random list generator`, `random order generator`, `shuffle list`, `randomize list`, `randomize list of names`, `put names in random order`.
+- Watch support page indexing and long-tail impressions.
+- Guardrail: `/tools/random-number-generator/` should not show a material drop.
+- Full execution record: `docs/LIST_ORDER_CONTROLLED_SCALE_EXECUTION_2026-07-20.md`.
+
+## 2026-07-20 - AdSense Low-Value Content Recrawl Watch
+
+Target:
+
+- Repair AdSense "low value content" signals while protecting current organic traffic and tool usability.
+- Push Google to recrawl trust, methodology, hub, and core tool improvements before requesting AdSense review again.
+
+Actions:
+
+- Added `/contact/` and `/methodology/`.
+- Unified author attribution to `Sam Parker`.
+- Added methodology/contact links across trust pages, hubs, and key tool footers.
+- Strengthened `/tools/`, `/generators/`, `/decision-tools/`, and `/use-cases/` as guidance hubs rather than thin link directories.
+- Added method, privacy, fairness, source, and appropriate-use notes to core tool pages.
+- Deployed to Cloudflare Pages:
+  - `https://83477fea.letsrandomize.pages.dev`
+  - `https://7c9669ed.letsrandomize.pages.dev`
+
+Guardrails:
+
+- No URL changes.
+- No `noindex` changes.
+- No canonical changes.
+- No redirects or page merges.
+- No deletion of pages.
+- No above-the-fold tool UI changes.
+
+Validation:
+
+- Production `/contact/`, `/methodology/`, and `/sitemap.xml` return HTTP 200.
+- Sitemap XML parse passed.
+- Internal link scan found 0 missing internal links.
+- HTML structure scan passed.
+- Key pages retained a single canonical and no `noindex`.
+
+Next measurement:
+
+- Submit updated sitemap and request indexing for trust pages, hubs, and protected core tools.
+- First GSC check: 2026-07-27.
+- Second GSC check and AdSense decision checkpoint: 2026-08-03 or later.
+- Detailed recrawl plan: `docs/ADSENSE_LOW_VALUE_RECRAWL_PLAN_2026-07-20.md`.
+
 ## 2026-07-04 - Team / Classroom / Random Order SERP-Gap Deepening
 
 Reason:

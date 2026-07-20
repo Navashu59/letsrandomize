@@ -26,6 +26,102 @@ const App = (function() {
 
   initLetsRandomizeAnalytics();
 
+  // --- Measurement for product validation ---
+  var analyticsState = {
+    returningBrowser: false,
+    storageAvailable: false
+  };
+
+  function initAnalyticsState() {
+    try {
+      var firstSeenKey = 'lr_first_seen_at';
+      analyticsState.returningBrowser = !!localStorage.getItem(firstSeenKey);
+      if (!analyticsState.returningBrowser) {
+        localStorage.setItem(firstSeenKey, new Date().toISOString());
+      }
+      analyticsState.storageAvailable = true;
+    } catch (e) {
+      analyticsState.returningBrowser = false;
+      analyticsState.storageAvailable = false;
+    }
+  }
+
+  function getToolName() {
+    var parts = window.location.pathname.replace(/^\/|\/$/g, '').split('/').filter(Boolean);
+    var rawName = parts[0] === 'tools' && parts[1] ? parts[1] : (parts.join('_') || 'home');
+    return rawName.replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '').toLowerCase();
+  }
+
+  function trackEvent(eventName, params) {
+    if (!eventName || typeof window.gtag !== 'function') return;
+    var payload = params || {};
+    payload.page_path = window.location.pathname;
+    payload.experiment_phase = payload.experiment_phase || 'baseline';
+    payload.is_returning_browser = analyticsState.returningBrowser ? 'yes' : 'no';
+    window.gtag('event', eventName, payload);
+  }
+
+  function getBucket(value, buckets) {
+    var n = parseInt(value, 10);
+    if (!isFinite(n) || n < 0) return 'unknown';
+    for (var i = 0; i < buckets.length; i++) {
+      if (n <= buckets[i].max) return buckets[i].label;
+    }
+    return buckets.length ? buckets[buckets.length - 1].label : 'unknown';
+  }
+
+  function getListSizeBucket(count) {
+    return getBucket(count, [
+      { max: 10, label: '1-10' },
+      { max: 30, label: '11-30' },
+      { max: 100, label: '31-100' },
+      { max: Infinity, label: '100+' }
+    ]);
+  }
+
+  function getUseCountBucket(count) {
+    return getBucket(count, [
+      { max: 1, label: '1' },
+      { max: 3, label: '2-3' },
+      { max: 10, label: '4-10' },
+      { max: Infinity, label: '10+' }
+    ]);
+  }
+
+  function getSessionToolUseCount(toolName) {
+    try {
+      var key = 'lr_session_tool_uses_' + toolName;
+      return parseInt(sessionStorage.getItem(key) || '0', 10) || 0;
+    } catch (e) {
+      return 0;
+    }
+  }
+
+  function incrementSessionToolUseCount(toolName) {
+    var nextCount = getSessionToolUseCount(toolName) + 1;
+    try {
+      sessionStorage.setItem('lr_session_tool_uses_' + toolName, String(nextCount));
+    } catch (e) {}
+    return nextCount;
+  }
+
+  function trackToolUse(toolName, params) {
+    toolName = toolName || getToolName();
+    params = params || {};
+    var useCount = incrementSessionToolUseCount(toolName);
+    var payload = Object.assign({}, params, {
+      tool_name: toolName,
+      use_count_bucket: getUseCountBucket(useCount)
+    });
+    trackEvent('tool_used', payload);
+    if (useCount > 1) {
+      trackEvent('repeat_tool_use', payload);
+    }
+    return useCount;
+  }
+
+  initAnalyticsState();
+
   // --- Toast Notification ---
   function showToast(message, type) {
     type = type || 'success';
@@ -272,6 +368,10 @@ const App = (function() {
         var el = document.getElementById(target);
         if (el) {
           copyToClipboard(el.textContent.trim(), e.target);
+          trackEvent('copy_result_clicked', {
+            tool_name: getToolName(),
+            copy_target: target || 'unknown'
+          });
         }
       }
     });
@@ -303,6 +403,10 @@ const App = (function() {
     shareResult: shareResult,
     confetti: confetti,
     escapeHtml: escapeHtml,
+    trackEvent: trackEvent,
+    trackToolUse: trackToolUse,
+    getListSizeBucket: getListSizeBucket,
+    getUseCountBucket: getUseCountBucket,
     init: init
   };
 

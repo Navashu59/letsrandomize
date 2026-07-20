@@ -10,7 +10,7 @@ These tools are intended for everyday randomization and learning. They are not a
 
 ## Tools
 
-- [List Randomizer](https://letsrandomize.org/tools/list-randomizer/): Shuffle any list or pick N random items
+- [List Randomizer](https://letsrandomize.org/tools/list-randomizer/): Shuffle names, tasks, entries, or any list into random order; pick N items and handle duplicates
 - [Random Team Generator](https://letsrandomize.org/tools/random-team-generator/): Split players into 2-8 fair random teams
 - [Spin the Wheel](https://letsrandomize.org/tools/spin-the-wheel/): Animated random picker wheel
 - [Random Name Generator](https://letsrandomize.org/tools/random-name-generator/): Generate random first and last names
@@ -20,9 +20,9 @@ These tools are intended for everyday randomization and learning. They are not a
 ## Decision and List Tools
 
 - [Decision Tools](https://letsrandomize.org/decision-tools/): Hub for list shuffles, team splits, wheels, drawings, dice, cards, and quick choices
-- [How to Randomize a List](https://letsrandomize.org/guides/how-to-randomize-a-list/): Clean and shuffle a list without losing items
-- [Random Order Generator](https://letsrandomize.org/guides/random-order-generator/): Choose between a full random order, a random picker, and a team split
-- [Random Picker vs List Randomizer](https://letsrandomize.org/guides/random-picker-vs-list-randomizer/): Choose the right tool for one pick, a full order, a wheel draw, or random teams
+- [How to Randomize a List](https://letsrandomize.org/guides/how-to-randomize-a-list/): Clean and shuffle names from a class, meeting, spreadsheet, or CSV without losing items
+- [Random Order Generator](https://letsrandomize.org/guides/random-order-generator/): Shuffle names, tasks, speakers, chores, raffles, or classroom turns and copy the result
+- [Random Picker vs List Randomizer](https://letsrandomize.org/guides/random-picker-vs-list-randomizer/): Choose between one random pick, a full copied order, a wheel draw, or random teams
 - [Random Name Order Generator](https://letsrandomize.org/guides/random-name-order-generator/): Put existing names in random order for turns, presentations, chores, or meetings
 - [List Shuffler vs List Randomizer](https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/): Choose between a full list shuffle, a picker, or a team generator
 - [Fair Random Selection Methods](https://letsrandomize.org/guides/fair-random-selection-methods/): Understand fair selection methods and their limits
@@ -41,6 +41,8 @@ These tools are intended for everyday randomization and learning. They are not a
 ## Method and Limits
 
 - [About LetsRandomize](https://letsrandomize.org/about/): Site purpose, author, and implementation approach
+- [Randomization Methodology](https://letsrandomize.org/methodology/): Random sources, shuffle algorithms, input handling, and appropriate-use limits
+- [Contact](https://letsrandomize.org/contact/): Feedback, bug reports, privacy questions, and correction requests
 - [Privacy Policy](https://letsrandomize.org/privacy/): Browser-side processing, localStorage, ads, analytics, and third-party services
 - [Terms of Use](https://letsrandomize.org/terms/): Randomness limitations and appropriate use
 - [Sitemap](https://letsrandomize.org/sitemap.xml)

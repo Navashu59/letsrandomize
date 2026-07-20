@@ -1,0 +1,14 @@
+{
+  "model": "deepseek-v4-flash",
+  "usage": {
+    "prompt_tokens": 244,
+    "completion_tokens": 440,
+    "total_tokens": 684,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 244
+  },
+  "content": "{\n  \"plan\": {\n    \"page\": \"/tools/list-randomizer/\",\n    \"title\": \"Random List Generator – Shuffle, Sort & Pick Randomly Online\",\n    \"meta_description\": \"Free online list randomizer. Shuffle any list, randomize order, pick random items, handle duplicates, copy/share results. Works with names, numbers, Excel/Sheets data.\"\n  },\n  \"deepen_pages\": [\n    {\n      \"url\": \"/tools/random-order/\",\n      \"new_h2_h3\": [\"How to randomize a list of names\", \"Shuffle list online free\", \"Duplicate handling options\", \"Copy and share results\", \"Random order for Excel/Sheets\"]\n    },\n    {\n      \"url\": \"/tools/list-randomizer/\",\n      \"new_h2_h3\": [\"Randomize list of names\", \"Shuffle list online\", \"Duplicate handling\", \"Copy/share result\", \"Excel/Sheets integration\"]\n    },\n    {\n      \"url\": \"/tools/how-to-randomize-a-list/\",\n      \"new_h2_h3\": [\"Step-by-step guide\", \"Randomize names list\", \"Shuffle list online\", \"Duplicate handling\", \"Copy/share result\"]\n    },\n    {\n      \"url\": \"/tools/random-picker-vs-list-randomizer/\",\n      \"new_h2_h3\": [\"Picker vs full order vs teams\", \"When to use each\", \"Duplicate handling comparison\", \"Copy/share result differences\"]\n    }\n  ],\n  \"sitemap_llms\": \"Update sitemap and llms.txt with new H2/H3 content and internal links.\",\n  \"metrics\": \"Record GA4 organic search, GSC clicks/impressions, avg position for /tools/list-randomizer/ before and after changes.\",\n  \"risks\": {\n    \"avoid\": [\"URL moves\", \"large new pages\", \"core tool UI changes\", \"keyword stuffing\", \"duplicate content\"],\n    \"include\": [\"small CTR title/meta tweaks\", \"real-user H2/H3\", \"internal linking\", \"sitemap update\"]\n  }\n}"
+}
