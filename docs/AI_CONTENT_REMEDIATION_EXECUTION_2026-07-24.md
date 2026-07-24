@@ -106,6 +106,16 @@ Production verification initially caught a stale shared-script cache and was
 therefore held open. The follow-up release must pass the same interaction suite
 with zero `pageerror` events before this execution is considered complete.
 
+Follow-up release `14ac48d` passed:
+
+- GitHub content-quality workflow: success
+- Cloudflare Pages deployment workflow: success
+- versioned production `app.js` contains the expected analytics helpers
+- 8 of 8 repaired generators produced results on the production domain
+- List Randomizer production regression passed
+- 0 production `pageerror` events
+- 0 mobile horizontal-overflow failures
+
 ## Observation Plan
 
 Use complete GSC days and compare equivalent 14-day windows.
