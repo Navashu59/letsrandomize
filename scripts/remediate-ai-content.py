@@ -404,10 +404,23 @@ def apply_page_copy(path: Path, data: dict, *, tool: bool = False) -> None:
         timestamp.string = "Updated Jul 24, 2026"
         byline.extend([author, separator, timestamp])
     if tool:
-        scripts = [tag.get("src") for tag in soup.find_all("script") if tag.get("src")]
+        scripts = [
+            tag.get("src", "").split("?")[0]
+            for tag in soup.find_all("script")
+            if tag.get("src")
+        ]
         if "/assets/js/prompt-generators.js" not in scripts:
-            app_script = soup.find("script", src="/assets/js/app.js")
-            new_script = soup.new_tag("script", src="/assets/js/prompt-generators.js")
+            app_script = next(
+                (
+                    tag
+                    for tag in soup.find_all("script")
+                    if tag.get("src", "").split("?")[0] == "/assets/js/app.js"
+                ),
+                None,
+            )
+            new_script = soup.new_tag(
+                "script", src="/assets/js/prompt-generators.js?v=20260724"
+            )
             if app_script:
                 app_script.insert_after(new_script)
             else:
@@ -443,6 +456,22 @@ def global_fixes() -> None:
     for path in PUBLIC.rglob("*.html"):
         text = path.read_text()
         original = text
+        text = text.replace(
+            'href="/assets/css/style.css"',
+            'href="/assets/css/style.css?v=20260724"',
+        )
+        text = text.replace(
+            'src="/assets/js/app.js"',
+            'src="/assets/js/app.js?v=20260724"',
+        )
+        text = text.replace(
+            'src="/assets/js/random-engine.js"',
+            'src="/assets/js/random-engine.js?v=20260724"',
+        )
+        text = text.replace(
+            'src="/assets/js/prompt-generators.js"',
+            'src="/assets/js/prompt-generators.js?v=20260724"',
+        )
         text = text.replace("LetsRandomize.com", "LetsRandomize.org")
         text = text.replace(
             "How Random Number Generators Work — A Complete Guide",

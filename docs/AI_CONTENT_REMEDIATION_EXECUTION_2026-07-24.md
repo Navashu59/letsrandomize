@@ -65,6 +65,9 @@ Site baseline: 1,320 clicks, 112,165 impressions, 1.2% CTR, average position
 - Updated matching `_content` source files so a future content generation pass
   cannot restore the removed claims.
 - Updated sitemap `lastmod` only for materially changed pages.
+- Versioned shared CSS and JavaScript asset URLs after production verification
+  found Cloudflare serving an older `app.js` from its one-year immutable cache.
+  This keeps HTML, tool code, and analytics helpers on the same release.
 
 ## DeepSeek Collaboration
 
@@ -98,6 +101,10 @@ Local verification:
 - 0 page errors during interaction tests
 - 0 horizontal overflow on the repaired tools at 390px
 - List Randomizer interaction regression passed
+
+Production verification initially caught a stale shared-script cache and was
+therefore held open. The follow-up release must pass the same interaction suite
+with zero `pageerror` events before this execution is considered complete.
 
 ## Observation Plan
 
