@@ -1,0 +1,8 @@
+{
+  "name": "letsrandomize-static-site",
+  "private": true,
+  "scripts": {
+    "audit:content": "node scripts/content-quality-audit.js public planning/content-quality.json",
+    "check": "npm run audit:content"
+  }
+}

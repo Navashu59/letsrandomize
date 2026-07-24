@@ -1,0 +1,34 @@
+{
+  "similarityThreshold": 0.78,
+  "minimumWords": 120,
+  "paragraphMinChars": 100,
+  "maxRepeatedParagraphPages": 3,
+  "maxRepeatedHeadingPages": 8,
+  "ignoredHeadings": [
+    "^Frequently Asked Questions$",
+    "^Related (Generators|Tools|Guides|Pages|References|Tools and Guides)$",
+    "^Further Reading$",
+    "^Recent Results( Clear)?$",
+    "^More Tools You Might Like$",
+    "^(List Randomizer|Random Team Generator|Spin the Wheel|Name Generator|Generate)$"
+  ],
+  "ignoredParagraphPatterns": [
+    "^User-entered values and generated results are processed in your browser\\."
+  ],
+  "allowedPairs": [],
+  "allowedPairPatterns": [],
+  "minimumWordExemptPaths": [
+    "^/$",
+    "^/(about|contact|privacy|terms)/$",
+    "^/(tools|guides|generators|decision-tools|use-cases)/$"
+  ],
+  "bannedPhrases": [
+    "searchers use this phrase",
+    "search console data shows",
+    "built for searches",
+    "keyword volume",
+    "semrush"
+  ],
+  "sourceRequiredPrefixes": [],
+  "sourceLinkPatterns": []
+}
