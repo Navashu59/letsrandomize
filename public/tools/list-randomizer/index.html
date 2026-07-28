@@ -29,7 +29,7 @@
 <script type="application/ld+json">
 [{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"List Randomizer", "url":"https://letsrandomize.org/tools/list-randomizer/", "description":"Shuffle and randomize any list or pick random items from a list.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author": {"@type": "Organization", "name": "LetsRandomize Editorial Team", "url": "https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-07-20"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"List Randomizer", "item":"https://letsrandomize.org/tools/list-randomizer/"}]}, {"@context":"https://schema.org", "@type":"HowTo", "name":"How to Randomize a List Online", "description":"Shuffle any list into random order in 3 simple steps using our free list randomizer.", "step":[{"@type":"HowToStep", "name":"Enter your list", "text":"Type or paste your items into the text box, one item per line."},{"@type":"HowToStep", "name":"Choose your mode", "text":"Select Shuffle All to randomize the entire list, or Pick N Items to select a random subset."},{"@type":"HowToStep", "name":"Click Randomize", "text":"Click the Randomize List button to instantly shuffle your items into a new random order."}], "totalTime":"PT1M", "tool":[{"@type":"HowToTool", "name":"Online list randomizer"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"How does the list randomizer shuffle items?", "acceptedAnswer":{"@type":"Answer", "text":"The tool uses the Fisher-Yates shuffle algorithm with browser cryptographic randomness when available."}}, {"@type":"Question", "name":"Can I pick a random subset of items from my list?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the Pick N Items option to select a specific number of random items from your list instead of shuffling the entire list."}}, {"@type":"Question", "name":"Is there a limit to how many items I can shuffle?", "acceptedAnswer":{"@type":"Answer", "text":"There is no practical limit for everyday use. Very large lists may depend on your browser and device memory."}}, {"@type":"Question", "name":"Can I use comma-separated items instead of one per line?", "acceptedAnswer":{"@type":"Answer", "text":"The tool works best with one item per line. If your list is comma-separated, paste it into a text editor or spreadsheet first and convert commas to line breaks."}}, {"@type":"Question", "name":"Is the shuffle fair enough for everyday use?", "acceptedAnswer":{"@type":"Answer", "text":"The tool uses a standard unbiased shuffle method and browser cryptographic randomness when available. It is appropriate for everyday list shuffling, but regulated drawings should follow the organizer's official process."}}, {"@type":"Question", "name":"How do I randomize a list in Excel or Google Sheets?", "acceptedAnswer":{"@type":"Answer", "text":"In Excel or Google Sheets, add =RAND() in a helper column next to your list, then sort by that column. If you want a quick browser-based shuffle, paste your list into this tool."}}, {"@type":"Question", "name":"Can I use a list randomizer for a raffle or giveaway?", "acceptedAnswer":{"@type":"Answer", "text":"Yes for casual giveaways. Enter participant names and use Pick N Items or Shuffle All, but follow the official rules for legal or regulated drawings."}}, {"@type":"Question", "name":"What is the Fisher-Yates shuffle algorithm?", "acceptedAnswer":{"@type":"Answer", "text":"Fisher-Yates is a standard algorithm for producing an unbiased permutation of a list by swapping each item with a randomly chosen remaining item."}}]}]
 </script>
-<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
+<style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}.pro-feedback-card{display:none;margin:1rem 0 0;padding:1rem;border:1px solid #d1fae5;border-radius:0.75rem;background:#fff;color:#1f2937}.pro-feedback-card.is-visible{display:block}.pro-feedback-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem}.pro-feedback-card h3{margin:0 0 0.35rem;font-size:1rem;color:#111827}.pro-feedback-card p{margin:0 0 0.85rem;font-size:0.92rem;color:#4b5563;line-height:1.5}.pro-feedback-card .trust-note{font-size:0.85rem;color:#047857;font-weight:600}.pro-feedback-close{border:0;background:transparent;color:#6b7280;font-size:1.25rem;line-height:1;cursor:pointer;padding:0 0.1rem}.pro-feedback-options{display:grid;gap:0.5rem;margin:0.75rem 0}.pro-feedback-option{display:flex;align-items:center;gap:0.5rem;padding:0.6rem 0.7rem;border:1px solid #e5e7eb;border-radius:0.5rem;background:#f9fafb;font-size:0.9rem;color:#374151;cursor:pointer}.pro-feedback-option:hover{border-color:#a7f3d0;background:#ecfdf5}.pro-feedback-option input{accent-color:#10b981}.pro-feedback-actions{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem}.pro-feedback-card .btn{padding:0.55rem 1rem;font-size:0.88rem}.pro-feedback-thanks{display:none;margin-top:0.75rem;font-size:0.9rem;color:#047857;font-weight:600}.pro-feedback-card.is-submitted form,.pro-feedback-card.is-submitted .pro-feedback-close{display:none}.pro-feedback-card.is-submitted .pro-feedback-thanks{display:block}@media (max-width:520px){.pro-feedback-card{padding:0.9rem}.pro-feedback-head{gap:0.5rem}.pro-feedback-option{font-size:0.86rem}}</style>
 </head>
 <body>
 
@@ -98,6 +98,30 @@
           <button class="copy-btn" id="share-btn">Share</button>
         </div>
         <div id="session-counter" style="text-align:center;margin-top:8px;font-size:0.8rem;color:#888;"></div>
+      </div>
+
+      <div class="pro-feedback-card" id="pro-feedback-card" aria-live="polite">
+        <div class="pro-feedback-head">
+          <div>
+            <h3>Quick question?</h3>
+            <p class="trust-note">The randomizer stays free. Always.</p>
+            <p>Which optional feature would help you most?</p>
+          </div>
+          <button type="button" class="pro-feedback-close" id="pro-feedback-close" aria-label="Dismiss feedback request">&times;</button>
+        </div>
+        <form id="pro-feedback-form">
+          <div class="pro-feedback-options" role="radiogroup" aria-label="Optional feature that would help most">
+            <label class="pro-feedback-option"><input type="radio" name="feature" value="save_lists"> Save lists</label>
+            <label class="pro-feedback-option"><input type="radio" name="feature" value="avoid_repeat_picks"> Avoid repeat picks</label>
+            <label class="pro-feedback-option"><input type="radio" name="feature" value="draw_history"> Keep history of draws</label>
+            <label class="pro-feedback-option"><input type="radio" name="feature" value="export_share_results"> Export / share results</label>
+            <label class="pro-feedback-option"><input type="radio" name="feature" value="other"> Other idea</label>
+          </div>
+          <div class="pro-feedback-actions">
+            <button type="submit" class="btn btn-secondary">Send feedback</button>
+          </div>
+        </form>
+        <div class="pro-feedback-thanks" id="pro-feedback-thanks">Thanks! This helps us decide what to build.</div>
       </div>
     </div>
 
@@ -416,6 +440,35 @@
   var resultContent = document.getElementById('result-content');
   var sessionCount = 0;
   var sessionCounter = document.getElementById('session-counter');
+  var feedbackCard = document.getElementById('pro-feedback-card');
+  var feedbackForm = document.getElementById('pro-feedback-form');
+  var feedbackClose = document.getElementById('pro-feedback-close');
+  var feedbackViewed = false;
+  var feedbackDismissed = false;
+  var feedbackStorageKey = 'lr_pro_feedback_submitted_at';
+
+  function hasRecentFeedbackSubmission() {
+    try {
+      var submittedAt = localStorage.getItem(feedbackStorageKey);
+      if (!submittedAt) return false;
+      var ageMs = Date.now() - new Date(submittedAt).getTime();
+      return isFinite(ageMs) && ageMs < 30 * 24 * 60 * 60 * 1000;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function showFeedbackCard() {
+    if (!feedbackCard || feedbackDismissed || hasRecentFeedbackSubmission()) return;
+    feedbackCard.classList.add('is-visible');
+    if (!feedbackViewed) {
+      feedbackViewed = true;
+      App.trackEvent('pro_feedback_viewed', {
+        tool_name: 'list_randomizer',
+        experiment_phase: 'premium_interest_phase_1'
+      });
+    }
+  }
 
   generateBtn.addEventListener('click', function() {
     App.animateGenerate(this);
@@ -447,10 +500,12 @@
       sessionCounter.textContent = 'Shuffles this session: ' + sessionCount;
     }
     App.trackToolUse('list_randomizer', {
+      experiment_phase: 'premium_interest_phase_1',
       mode: mode,
       list_size_bucket: App.getListSizeBucket(items.length),
       result_size_bucket: App.getListSizeBucket(result.length)
     });
+    showFeedbackCard();
   });
 
   document.getElementById('again-btn').addEventListener('click', function() {
@@ -461,6 +516,47 @@
   document.getElementById('share-btn').addEventListener('click', function() {
     App.shareResult('My randomized list!', 'List Randomizer');
   });
+
+  if (feedbackForm) {
+    feedbackForm.addEventListener('change', function(e) {
+      if (e.target && e.target.name === 'feature') {
+        App.trackEvent('pro_feature_selected', {
+          tool_name: 'list_randomizer',
+          experiment_phase: 'premium_interest_phase_1',
+          feature_choice: e.target.value
+        });
+      }
+    });
+
+    feedbackForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var selected = feedbackForm.querySelector('input[name="feature"]:checked');
+      if (!selected) {
+        App.showToast('Choose one option first.');
+        return;
+      }
+      App.trackEvent('pro_feedback_submitted', {
+        tool_name: 'list_randomizer',
+        experiment_phase: 'premium_interest_phase_1',
+        feature_choice: selected.value
+      });
+      try {
+        localStorage.setItem(feedbackStorageKey, new Date().toISOString());
+      } catch (err) {}
+      feedbackCard.classList.add('is-submitted');
+    });
+  }
+
+  if (feedbackClose) {
+    feedbackClose.addEventListener('click', function() {
+      feedbackDismissed = true;
+      if (feedbackCard) feedbackCard.classList.remove('is-visible');
+      App.trackEvent('pro_feedback_dismissed', {
+        tool_name: 'list_randomizer',
+        experiment_phase: 'premium_interest_phase_1'
+      });
+    });
+  }
 })();
 </script>
 </body>
