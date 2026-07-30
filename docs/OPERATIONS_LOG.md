@@ -1,5 +1,36 @@
 # LetsRandomize Operations Log
 
+## 2026-07-29 - Ranking Drop Recovery Stop-Loss
+
+Reason:
+
+- GSC showed the 2026-07-28 complete day at 27 clicks and 2,469 impressions, down materially from the 2026-07-20 to 2026-07-25 baseline.
+- URL Inspection showed the affected pages remain indexed, crawlable, canonicalized correctly, and fetchable, so the first response should reduce avoidable variables rather than make broad SEO changes.
+
+Actions:
+
+- Paused the `/tools/list-randomizer/` Pro feedback card and removed its `pro_feedback_*` event listeners.
+- Removed the `premium_interest_phase_1` parameter from normal List Randomizer `tool_used` tracking.
+- Unified public contact email to `navashu72@gmail.com` on `/contact/`, `/methodology/`, `/privacy/`, and `/terms/`.
+- Kept `/tools/list-randomizer/` URL, canonical, H1, title, schema, and core tool UI unchanged.
+
+Guardrails:
+
+- No URL, canonical, title, H1, noindex, login, paywall, or broad template changes.
+- No new indexable pages in this stop-loss pass.
+- Do not resume subscription or feedback testing until organic traffic stabilizes for at least 7 complete days.
+
+Recrawl:
+
+- Submitted homepage, List Randomizer, Yes/No Generator, and Random Team Generator through the Google Indexing API. Initial network errors on three URLs succeeded on retry.
+- Retry record: `/Users/bluepha/seo-revenue-system/ops/sites/letsrandomize/gsc_indexing_requests_recovery_2026-07-29.json`.
+
+Next measurement:
+
+- Watch complete GSC days for 2026-07-29 and 2026-07-30.
+- Escalate to targeted List Randomizer repair if sitewide clicks stay below 75 and List Randomizer stays below 25 clicks or worse than average position 9.5.
+- Full execution record: `docs/RANKING_DROP_RECOVERY_EXECUTION_2026-07-29.md`.
+
 ## 2026-07-20 - List / Order Controlled Scale
 
 Reason:
@@ -509,3 +540,39 @@ Next measurement:
 - For priority 1 pages, judge mainly by movement in positions 5-20 and CTR lift.
 - For priority 2 pages, judge first by new exact-query impressions and only then by average position.
 - For `/tools/random-password-generator/`, expect slower movement because baseline position is around 60; this page may need a larger authority/internal-link pass after observation.
+# 2026-07-29 - SERP Optimization Execution
+
+- Implemented conservative SERP optimization pass for LetsRandomize.
+- Fixed remaining metadata/title issues across indexable pages.
+- Strengthened `/tools/list-randomizer/` without changing URL, H1, or title.
+- Upgraded `/tools/random-team-generator/` for `random group generator` and `random team generator` intent with people-per-team mode, optional custom team names, and Copy CSV.
+- Strengthened `/tools/yes-or-no-generator/` around 50/50 and yes/no coin flip intent.
+- Verification passed: metadata crawl 0 issues, JSON-LD parse 0 errors, internal links 0 broken, content audit passed, local Playwright interaction test passed.
+- See `docs/SERP_OPTIMIZATION_EXECUTION_2026-07-29.md`.
+
+# 2026-07-30 - Bulk Page Change SEO Audit
+
+- Audited the 2026-07-24 bulk content-quality remediation as a possible ranking-drop trigger.
+- Confirmed protected pages kept URL, title, H1, canonical, description, and primary tool surface stable.
+- Identified site-controlled suspect signals: broad `Sam Parker` to `LetsRandomize Editorial Team` entity change, residual `SP` avatar mismatch, several low-signal pages compressed to thin content, and remaining absolute privacy claims.
+- `npm run check` still passes, so the issue is not a hard technical SEO failure.
+- See `docs/BULK_PAGE_CHANGE_SEO_AUDIT_2026-07-30.md`.
+## 2026-07-30 - Sam Parker author lock and SERP content rebuild
+
+- Confirmed Sam Parker as the permanent sitewide content author.
+- Normalized 68 HTML files and all structured author objects to `Person` /
+  `Sam Parker`; LetsRandomize remains the organization publisher.
+- Added author and absolute-privacy release blockers to the content audit.
+- Rebuilt the ten pages that lost 75-87% of their content on 2026-07-24.
+- Used live Google SERP research to map tool, use-case, audience, probability,
+  and safety intent without inventing unsupported features.
+- Replaced 17 absolute privacy claims across 11 pages with accurate
+  browser-processing and technical-request wording.
+- Applied the valid findings from an independent DeepSeek review.
+- Verified all JSON-LD, internal links, content checks, generator interactions,
+  mobile width behavior, and browser console output.
+- Deployed to Cloudflare Pages production at
+  `https://4f1f31f8.letsrandomize.pages.dev`; verified the custom domain and
+  resubmitted `https://letsrandomize.org/sitemap.xml` to Search Console.
+- Full execution record:
+  `docs/SAM_PARKER_CONTENT_REBUILD_EXECUTION_2026-07-30.md`.

@@ -150,8 +150,29 @@ const pages = walk(root)
 
 const failures = [];
 const warnings = [];
+const privacyAbsolutePatterns = [
+  /no data is (?:ever )?(?:sent|stored) (?:to|on) any server/i,
+  /never (?:sent|transmitted) to (?:our|any|a) server/i,
+  /no server requests are made/i,
+  /complete privacy protection/i,
+  /your data stays in your browser/i
+];
 
 for (const page of pages) {
+  if (/LetsRandomize Editorial Team|the LetsRandomize editorial team/i.test(page.html)) {
+    failures.push(`${page.url}: legacy editorial-team author entity found`);
+  }
+  const authorObjects = [...page.html.matchAll(/"author"\s*:\s*\{([\s\S]*?)\}/gi)];
+  for (const [, author] of authorObjects) {
+    if (!/"@type"\s*:\s*"Person"/i.test(author) || !/"name"\s*:\s*"Sam Parker"/i.test(author)) {
+      failures.push(`${page.url}: structured author must be Person "Sam Parker"`);
+    }
+  }
+  for (const pattern of privacyAbsolutePatterns) {
+    if (pattern.test(page.html)) {
+      failures.push(`${page.url}: absolute privacy claim "${pattern.source}"`);
+    }
+  }
   if (page.wordCount < rules.minimumWords && !isIgnored(page.url, rules.minimumWordExemptPaths)) {
     failures.push(`${page.url}: only ${page.wordCount} main-content words`);
   }
