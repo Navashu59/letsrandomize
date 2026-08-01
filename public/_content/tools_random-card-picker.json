@@ -1,9 +1,9 @@
 {
   "slug": "tools/random-card-picker",
-  "title": "Random Card Picker - Draw from a 52-Card Deck",
-  "meta_description": "Draw one random playing card from a standard 52-card deck. Each click is an independent draw.",
-  "h1": "Random Card Picker",
-  "intro": "Draw one rank and suit from a standard 52-card deck.",
+  "title": "Random Card Generator & Picker - Draw Playing Cards",
+  "meta_description": "Draw 1 to 13 playing cards with or without replacement. Add jokers, track the remaining deck, and reset at any time.",
+  "h1": "Random Card Generator and Picker",
+  "intro": "Draw one or more playing cards with optional jokers and replacement.",
   "sections": [
     {
       "h2": "How do I draw a random playing card?",
@@ -25,15 +25,15 @@
   "faq": [
     {
       "question": "Does this deck include jokers?",
-      "answer": "No. It uses the 52 standard cards from ace through king in four suits."
+      "answer": "Optional. Include two jokers adds a red and black joker."
     },
     {
       "question": "Can the same card be drawn twice?",
-      "answer": "Yes. The deck resets for every click."
+      "answer": "Only in replacement mode. Otherwise, a card stays out until reset."
     },
     {
       "question": "Can I draw several cards without replacement?",
-      "answer": "Not on this page. It returns one independent card per click."
+      "answer": "Yes. Draw up to 13 cards with replacement turned off."
     }
   ],
   "internal_links": {

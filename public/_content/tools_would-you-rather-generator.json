@@ -3,7 +3,7 @@
   "title": "Would You Rather Generator - Random Questions",
   "meta_description": "Pick a light, general-audience Would You Rather question for conversations, classes, or group games.",
   "h1": "Would You Rather Generator",
-  "intro": "Generate one either-or question for a conversation or low-pressure group activity.",
+  "intro": "Choose from 120 general, funny, kids, or thoughtful Would You Rather questions.",
   "sections": [
     {
       "h2": "How do I get a Would You Rather question?",
@@ -25,7 +25,7 @@
   "faq": [
     {
       "question": "Can I choose a category?",
-      "answer": "No. This version uses one mixed general-audience list."
+      "answer": "Yes. Choose General, Funny, Kids, Thoughtful, or All categories."
     },
     {
       "question": "Can I add my own questions?",

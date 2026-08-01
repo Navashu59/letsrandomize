@@ -315,6 +315,23 @@ main { flex: 1; }
   cursor: pointer;
 }
 
+.field-help,
+.generator-status {
+  margin: 0.5rem 0;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.generated-result-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.generated-result-list li + li { margin-top: 0.35rem; }
+
+#reset-deck { margin-top: 0.75rem; }
+
 /* Range slider */
 .range-value {
   font-size: 0.85rem;

@@ -1,133 +1,204 @@
 (function () {
   'use strict';
 
-  var path = window.location.pathname.replace(/\/+$/, '');
-  var slug = path.split('/').filter(Boolean).pop();
+  var slug = window.location.pathname.replace(/\/+$/, '').split('/').filter(Boolean).pop();
   var button = document.getElementById('generate-btn');
   var resultDisplay = document.getElementById('result-display');
   var resultContent = document.getElementById('result-content');
   var shareButton = document.getElementById('share-btn');
+  var data = window.GeneratorData || {};
+  var deck = [];
+  var pairNouns = [
+    'anchor', 'apple', 'arch', 'balloon', 'beacon', 'bell', 'bench', 'bicycle', 'book', 'bottle',
+    'box', 'bridge', 'cabin', 'camera', 'candle', 'castle', 'chair', 'clock', 'cloud', 'compass',
+    'door', 'engine', 'feather', 'field', 'flag', 'forest', 'garden', 'gate', 'harbor', 'island',
+    'key', 'kite', 'ladder', 'lamp', 'letter', 'library', 'map', 'mirror', 'mountain', 'notebook',
+    'ocean', 'path', 'pencil', 'planet', 'river', 'robot', 'room', 'signal', 'star', 'station',
+    'stone', 'storm', 'street', 'table', 'tower', 'train', 'tree', 'umbrella', 'window', 'workshop'
+  ];
 
-  if (!button || !resultDisplay || !resultContent || !window.RandomEngine || !window.App) {
-    return;
-  }
+  if (!button || !resultDisplay || !resultContent || !window.RandomEngine || !window.App) return;
 
-  var prompts = {
-    'random-question-generator': [
-      'What is a small habit that makes your day better?',
-      'What is something you would like to learn this year?',
-      'Which place would you happily visit again?',
-      'What is the best advice you have received?',
-      'What everyday task would you automate if you could?',
-      'Which book, film, or game changed your mind about something?',
-      'What is a skill you learned later than most people?',
-      'What would make this week feel successful?',
-      'Which meal could you eat every week?',
-      'What is one thing you appreciate about where you live?',
-      'What topic can you talk about for ten minutes without preparing?',
-      'If you had an extra free hour today, how would you use it?'
-    ],
-    'never-have-i-ever-generator': [
-      'Never have I ever missed a flight or train.',
-      'Never have I ever sent a message to the wrong person.',
-      'Never have I ever stayed awake all night.',
-      'Never have I ever tried to learn a musical instrument.',
-      'Never have I ever gotten lost in a new city.',
-      'Never have I ever cooked a meal without a recipe.',
-      'Never have I ever forgotten an important birthday.',
-      'Never have I ever sung in front of an audience.',
-      'Never have I ever changed my opinion after a friendly debate.',
-      'Never have I ever started a hobby and quit within a week.'
-    ],
-    'would-you-rather-generator': [
-      'Would you rather have an extra hour every day or an extra day every month?',
-      'Would you rather explore the ocean or explore space?',
-      'Would you rather always arrive ten minutes early or ten minutes late?',
-      'Would you rather give up music for a year or films for a year?',
-      'Would you rather work on one big project or several small projects?',
-      'Would you rather live near mountains or near the coast?',
-      'Would you rather be able to speak every language or play every instrument?',
-      'Would you rather plan every trip or travel without an itinerary?',
-      'Would you rather reread a favorite book or start a new one?',
-      'Would you rather cook dinner or wash the dishes?'
-    ],
-    'truth-or-dare-generator': [
-      'Truth: What is a harmless habit you rarely admit to?',
-      'Truth: What is the last thing that made you laugh?',
-      'Truth: Which skill would you most like to improve?',
-      'Truth: What is a small decision you are glad you made?',
-      'Truth: What food combination do you like that others find unusual?',
-      'Dare: Describe your day using only three words.',
-      'Dare: Hum the chorus of a song for ten seconds.',
-      'Dare: Give someone in the group a sincere compliment.',
-      'Dare: Tell a two-sentence story using the words blue, door, and Tuesday.',
-      'Dare: Balance a small object on the back of your hand for ten seconds.'
-    ]
-  };
-
-  var suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-  var ranks = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
-  var cards = [];
-  suits.forEach(function (suit) {
-    ranks.forEach(function (rank) {
-      cards.push(rank + ' of ' + suit);
-    });
-  });
-
-  function setupDecisionInput() {
-    if (slug !== 'random-decision-maker' || document.getElementById('decision-options')) {
-      return;
-    }
+  function field(id, label, control) {
     var wrapper = document.createElement('div');
-    wrapper.className = 'form-group';
-    wrapper.innerHTML =
-      '<label for="decision-options">Options, one per line</label>' +
-      '<textarea id="decision-options" rows="6" placeholder="Coffee&#10;Tea&#10;Water">Coffee\nTea\nWater</textarea>';
-    button.parentNode.insertBefore(wrapper, button);
-    button.textContent = 'Choose an Option';
+    wrapper.className = 'option-group';
+    wrapper.innerHTML = '<label for="' + id + '">' + label + '</label>' + control;
+    return wrapper;
   }
 
-  function valueForSlug() {
-    if (slug === 'random-noun-generator') {
-      return RandomEngine.randomWord('noun');
+  function addOptions(fields) {
+    var wrapper = document.createElement('div');
+    wrapper.className = 'generator-options';
+    fields.forEach(function (item) { wrapper.appendChild(item); });
+    button.parentNode.insertBefore(wrapper, button);
+  }
+
+  function selectField(id, label, options) {
+    return field(id, label, '<select id="' + id + '">' + options.map(function (item) {
+      return '<option value="' + item[0] + '">' + item[1] + '</option>';
+    }).join('') + '</select>');
+  }
+
+  function numberField(max) {
+    return field('result-count', 'How many?', '<input id="result-count" type="number" min="1" max="' + max + '" value="1">');
+  }
+
+  function checkboxField(id, label, checked) {
+    return field(id, '', '<label class="checkbox-label"><input id="' + id + '" type="checkbox"' + (checked ? ' checked' : '') + '> ' + label + '</label>');
+  }
+
+  function setupControls() {
+    if (slug === 'random-question-generator') {
+      addOptions([selectField('prompt-category', 'Category', [['all','All categories'],['general','Conversation'],['fun','Fun'],['deep','Thoughtful'],['kids','Kids'],['work','Work'],['writing','Writing']])]);
+    } else if (slug === 'would-you-rather-generator') {
+      addOptions([selectField('prompt-category', 'Category', [['all','All categories'],['general','General'],['funny','Funny'],['kids','Kids'],['thoughtful','Thoughtful']])]);
+    } else if (slug === 'never-have-i-ever-generator') {
+      addOptions([selectField('prompt-category', 'Category', [['all','All categories'],['general','General'],['funny','Funny'],['travel','Travel'],['skills','Skills']])]);
+    } else if (slug === 'truth-or-dare-generator') {
+      addOptions([
+        selectField('truth-mode', 'Prompt type', [['mixed','Truth or Dare'],['truth','Truth only'],['dare','Dare only']]),
+        selectField('prompt-category', 'Group', [['all','All groups'],['general','General'],['friends','Friends'],['family','Family']])
+      ]);
+    } else if (slug === 'random-noun-generator') {
+      addOptions([numberField(10), checkboxField('unique-results', 'No repeats in this set', true)]);
+    } else if (slug === 'random-adjective-generator') {
+      addOptions([
+        numberField(10),
+        selectField('adjective-mode', 'Output', [['adjective','Adjectives'],['pair','Adjective + noun']]),
+        checkboxField('unique-results', 'No repeats in this set', true)
+      ]);
+    } else if (slug === 'random-card-picker') {
+      addOptions([
+        numberField(13),
+        checkboxField('card-replacement', 'Return cards to the deck', false),
+        checkboxField('include-jokers', 'Include two jokers', false)
+      ]);
+      var status = document.createElement('p');
+      status.id = 'deck-status';
+      status.className = 'generator-status';
+      status.setAttribute('aria-live', 'polite');
+      button.parentNode.insertBefore(status, button.nextSibling);
+      var reset = document.createElement('button');
+      reset.id = 'reset-deck';
+      reset.className = 'btn btn-secondary btn-block';
+      reset.type = 'button';
+      reset.textContent = 'Reset Deck';
+      button.parentNode.insertBefore(reset, status.nextSibling);
+      reset.addEventListener('click', resetDeck);
+      document.getElementById('include-jokers').addEventListener('change', resetDeck);
+      resetDeck();
+    } else if (slug === 'random-decision-maker') {
+      var input = document.createElement('div');
+      input.className = 'form-group';
+      input.innerHTML = '<label for="decision-options">Options, one per line</label><textarea id="decision-options" rows="6" placeholder="Coffee&#10;Tea&#10;Water">Coffee\nTea\nWater</textarea><p class="field-help">Repeat an option on additional lines to give it more weight.</p>';
+      button.parentNode.insertBefore(input, button);
+      button.textContent = 'Choose an Option';
     }
-    if (slug === 'random-adjective-generator') {
-      return RandomEngine.randomWord('adjective');
+  }
+
+  function allCards() {
+    var cards = [];
+    ['Hearts','Diamonds','Clubs','Spades'].forEach(function (suit) {
+      ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King'].forEach(function (rank) { cards.push(rank + ' of ' + suit); });
+    });
+    if (document.getElementById('include-jokers') && document.getElementById('include-jokers').checked) cards.push('Red Joker', 'Black Joker');
+    return cards;
+  }
+
+  function resetDeck() {
+    deck = RandomEngine.randomShuffle(allCards());
+    updateDeckStatus();
+  }
+
+  function updateDeckStatus() {
+    var status = document.getElementById('deck-status');
+    if (status) status.textContent = deck.length + ' cards remaining in this deck.';
+  }
+
+  function promptPool(key) {
+    var source = data[key] || {};
+    var category = document.getElementById('prompt-category').value;
+    if (key === 'truthOrDare') {
+      var groups = category === 'all' ? Object.keys(source) : [category];
+      var mode = document.getElementById('truth-mode').value;
+      return groups.flatMap(function (group) {
+        if (mode === 'mixed') return source[group].truth.concat(source[group].dare);
+        return source[group][mode];
+      });
+    }
+    return category === 'all' ? Object.values(source).flat() : source[category];
+  }
+
+  function pickMany(pool, count, unique) {
+    if (unique) return RandomEngine.randomShuffle(pool).slice(0, Math.min(count, pool.length));
+    return Array.from({ length: count }, function () { return RandomEngine.randomPick(pool); });
+  }
+
+  function valuesForSlug() {
+    if (slug === 'random-question-generator') return [RandomEngine.randomPick(promptPool('questions'))];
+    if (slug === 'would-you-rather-generator') return [RandomEngine.randomPick(promptPool('wouldYouRather'))];
+    if (slug === 'never-have-i-ever-generator') return [RandomEngine.randomPick(promptPool('neverHaveIEver'))];
+    if (slug === 'truth-or-dare-generator') return [RandomEngine.randomPick(promptPool('truthOrDare'))];
+    if (slug === 'random-noun-generator' || slug === 'random-adjective-generator') {
+      var count = Number(document.getElementById('result-count').value);
+      var unique = document.getElementById('unique-results').checked;
+      var pool = slug === 'random-noun-generator' ? data.nouns : data.adjectives;
+      var values = pickMany(pool, count, unique);
+      if (slug === 'random-adjective-generator' && document.getElementById('adjective-mode').value === 'pair') {
+        values = values.map(function (value) { return value + ' ' + RandomEngine.randomPick(pairNouns); });
+      }
+      return values;
     }
     if (slug === 'random-card-picker') {
-      return RandomEngine.randomPick(cards);
+      var cardCount = Number(document.getElementById('result-count').value);
+      if (document.getElementById('card-replacement').checked) return pickMany(allCards(), cardCount, false);
+      if (deck.length < cardCount) {
+        App.showToast('Reset the deck or choose fewer cards.', 'error');
+        return null;
+      }
+      var drawn = deck.splice(0, cardCount);
+      updateDeckStatus();
+      return drawn;
     }
     if (slug === 'random-decision-maker') {
-      var options = document.getElementById('decision-options').value
-        .split(/\r?\n/)
-        .map(function (value) { return value.trim(); })
-        .filter(Boolean);
+      var options = document.getElementById('decision-options').value.split(/\r?\n/).map(function (value) { return value.trim(); }).filter(Boolean);
       if (options.length < 2) {
         App.showToast('Enter at least two options.', 'error');
         return null;
       }
-      return RandomEngine.randomPick(options);
+      return [RandomEngine.randomPick(options)];
     }
-    return RandomEngine.randomPick(prompts[slug] || []);
+    return null;
+  }
+
+  function render(values) {
+    resultContent.textContent = '';
+    if (values.length === 1) {
+      resultContent.textContent = values[0];
+      return;
+    }
+    var list = document.createElement('ol');
+    list.className = 'generated-result-list';
+    values.forEach(function (value) {
+      var item = document.createElement('li');
+      item.textContent = value;
+      list.appendChild(item);
+    });
+    resultContent.appendChild(list);
   }
 
   function generate() {
-    var value = valueForSlug();
-    if (!value) return;
+    var values = valuesForSlug();
+    if (!values || !values.length) return;
     App.animateGenerate(button);
-    resultContent.textContent = value;
+    render(values);
     resultDisplay.style.display = '';
     App.flashResult(resultDisplay);
-    App.addToHistory(value);
+    App.addToHistory(values.join(', '));
     App.trackToolUse(slug);
   }
 
-  setupDecisionInput();
+  setupControls();
   button.addEventListener('click', generate);
-
-  if (shareButton) {
-    shareButton.addEventListener('click', function () {
-      App.shareResult(resultContent.textContent.trim());
-    });
-  }
+  if (shareButton) shareButton.addEventListener('click', function () { App.shareResult(resultContent.textContent.trim()); });
 })();

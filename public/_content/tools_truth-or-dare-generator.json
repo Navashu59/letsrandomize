@@ -1,9 +1,9 @@
 {
   "slug": "tools/truth-or-dare-generator",
-  "title": "Truth or Dare Generator - Safe, Simple Prompts",
+  "title": "Truth or Dare Generator - Random Questions and Dares",
   "meta_description": "Generate a light truth question or simple dare for a voluntary, general-audience group game.",
   "h1": "Truth or Dare Generator",
-  "intro": "Pick one light truth question or low-risk dare from a built-in list.",
+  "intro": "Choose truth, dare, or mixed prompts for general, friends, or family groups.",
   "sections": [
     {
       "h2": "How does the Truth or Dare generator work?",
@@ -25,7 +25,7 @@
   "faq": [
     {
       "question": "Can I choose only truths or only dares?",
-      "answer": "No. The current tool selects from one mixed list."
+      "answer": "Yes. Choose Truth only, Dare only, or the mixed setting."
     },
     {
       "question": "Can players skip a prompt?",

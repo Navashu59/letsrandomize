@@ -1,5 +1,37 @@
 # LetsRandomize Operations Log
 
+## 2026-08-02 - Targeted Generator Utility Expansion
+
+Reason:
+
+- GSC and SEMrush research showed useful long-tail demand on card, question, noun, adjective, decision, and party-prompt pages, while the highest-traffic list/team/number/name pages required protection.
+- The affected pages had adequate explanatory length but thin tools: 10-12 prompts or roughly 100 words, single-result output, and no useful filters.
+
+Actions:
+
+- Added reviewed data for 149 random questions, 120 Would You Rather questions, 100 Never Have I Ever statements, 119 Truth or Dare prompts, 800 nouns, and 500 adjectives.
+- Added category controls, multi-result word generation, a neutral adjective-and-noun mode, visible weighted-choice guidance, and card draws with count, jokers, replacement, remaining-deck state, and reset.
+- Updated page copy and structured content sources to match the implemented controls; expanded About with testing, editorial, prompt, privacy, and corrections policies.
+- Removed one repeated Yes/No content section without changing its title, H1, URL, schema, or tool behavior.
+
+Guardrails:
+
+- No changes to List Randomizer, Team Generator, Number Generator, Name Generator, homepage, teacher guide, or randomness explainer.
+- Sam Parker remains the author and reviewer across the site.
+- Prompt audit blocks duplicates, leaked editorial notes, and sensitive general-audience terms. Page copy avoids absolute privacy claims.
+
+Verification:
+
+- `npm run check` passed for 72 indexable pages and all generator-data thresholds.
+- Browser regression covered all eight changed generators; multi-card, no-replacement, category, multi-word, adjective-pair, Truth-only, Family, and weighted-choice flows passed on desktop and 390px mobile without horizontal overflow or console errors.
+- DeepSeek independent release review returned `PASS` with zero blocking or required findings: `docs/deepseek-generator-expansion-review-2026-08-02.json`.
+
+Measurement:
+
+- Compare affected-page clicks, impressions, CTR, and average position after 7, 14, and 28 complete GSC days.
+- Keep the protected core pages as controls. Do not attribute sitewide movement to these changes until page-level and query-level data agree.
+- Watch tool-use events and return usage by affected path before expanding another cluster.
+
 ## 2026-07-29 - Ranking Drop Recovery Stop-Loss
 
 Reason:

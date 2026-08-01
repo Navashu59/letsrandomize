@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "audit:content": "node scripts/content-quality-audit.js public planning/content-quality.json",
-    "check": "npm run audit:content"
+    "audit:generator-data": "node scripts/generator-data-audit.js",
+    "check": "npm run audit:content && npm run audit:generator-data"
   }
 }

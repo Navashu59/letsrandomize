@@ -3,7 +3,7 @@
   "title": "Random Noun Generator - Pick an English Noun",
   "meta_description": "Generate one random English noun for writing prompts, vocabulary practice, games, or brainstorming.",
   "h1": "Random Noun Generator",
-  "intro": "Generate one English noun at a time from the site's built-in word list.",
+  "intro": "Generate up to ten nouns from a built-in list of 800 English words.",
   "sections": [
     {
       "h2": "How do I pick a random noun?",
@@ -25,7 +25,7 @@
   "faq": [
     {
       "question": "Can I generate more than one noun at once?",
-      "answer": "This page returns one noun per click."
+      "answer": "Yes. Choose up to ten nouns per set."
     },
     {
       "question": "Can I upload a word list?",
