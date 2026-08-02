@@ -608,3 +608,12 @@ Next measurement:
   resubmitted `https://letsrandomize.org/sitemap.xml` to Search Console.
 - Full execution record:
   `docs/SAM_PARKER_CONTENT_REBUILD_EXECUTION_2026-07-30.md`.
+
+## 2026-08-02 - Main-traffic SERP phased plan recorded
+
+- Completed GSC, GA4, logged-in Semrush, current SERP, local-page, and DeepSeek review for the main traffic pages.
+- Locked Sam Parker as author and prohibited concurrent edits to major traffic pages.
+- Set the first eligible Team experiment gate for 2026-08-15, followed by List on 2026-08-29, Number on 2026-09-12, and the backlog decision on 2026-09-26.
+- Added global and page-level stop-loss rules. Dates are review gates; changes proceed only when complete data is stable.
+- Kept List and Yes/No protected, rejected unsupported decimal work for Number, and separated Password trust repair from traffic-page SEO work.
+- Full plan: `docs/MAIN_TRAFFIC_SERP_PHASED_PLAN_2026-08-02.md`.
