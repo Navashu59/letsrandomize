@@ -617,3 +617,29 @@ Next measurement:
 - Added global and page-level stop-loss rules. Dates are review gates; changes proceed only when complete data is stable.
 - Kept List and Yes/No protected, rejected unsupported decimal work for Number, and separated Password trust repair from traffic-page SEO work.
 - Full plan: `docs/MAIN_TRAFFIC_SERP_PHASED_PLAN_2026-08-02.md`.
+
+## 2026-08-03 - Password Generator Trust Repair
+
+Scope and guardrails:
+
+- Performed the separate Password trust repair allowed by `docs/MAIN_TRAFFIC_SERP_PHASED_PLAN_2026-08-02.md`.
+- Kept Sam Parker as author. Did not add passphrase mode, expand SEO content, or change the protected List, Team, Number, Name, homepage, or Yes/No pages.
+
+Actions:
+
+- Removed the Password page's generated-result history panel, `App.addToHistory` call, and Share control. The page now removes its legacy Password-history localStorage key on load and does not persist newly generated passwords.
+- Replaced overconfident security and privacy language with implementation-specific wording, including the Web Crypto API / older-browser fallback, session-only result display, provider technical-request-data caveat, and an estimated-strength label.
+- Removed the fixed 90-day rotation recommendation; the page now recommends changes after suspected compromise, service requests, or applicable account policy.
+- Updated Password-page metadata, JSON-LD FAQ, visible update dates, and supporting copy to match the changed behavior.
+
+Verification:
+
+- `npm run check` passed: content audit covered 72 indexable pages with no failures or warnings; generator-data audit passed.
+- Focused local browser checks passed: 1- and 3-password generation, no Share or history controls, valid JSON-LD (`SoftwareApplication`, `BreadcrumbList`, `FAQPage`), canonical metadata, 33 resolved internal links, 390px mobile layout without horizontal overflow, and no console warnings/errors.
+- Production browser check passed at `2026-08-03T15:22:42Z`: the live page had the updated title/description, `dateModified` `2026-08-03`, Sam Parker author, expected internal links, no Share/history controls, successful generation, and no console warnings/errors.
+
+Deployment:
+
+- Commit `ef3bc03` (`fix: repair password generator trust cues`) was pushed to `main`.
+- GitHub Actions deployment [30827009348](https://github.com/Navashu59/letsrandomize/actions/runs/30827009348) completed successfully and published Cloudflare Pages production deployment `https://c82a7464.letsrandomize.pages.dev`.
+- Confirmed `https://letsrandomize.org/tools/random-password-generator/` serves the repaired production page after propagation.
