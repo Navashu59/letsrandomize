@@ -9,25 +9,25 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Random Password Generator — Create Strong Secure Passwords</title>
-<meta name="description" content="Generate strong, secure random passwords with custom length, uppercase, lowercase, numbers, and symbols. Free password generator with strength indicator.">
+<title>Random Password Generator | Custom Password Options</title>
+<meta name="description" content="Generate random passwords with custom length, uppercase, lowercase, numbers, and symbols. Copy a result into your password manager.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://letsrandomize.org/tools/random-password-generator/">
-<meta property="og:title" content="Random Password Generator — Create Strong Secure Passwords">
-<meta property="og:description" content="Generate strong, secure random passwords with custom length and character options.">
+<meta property="og:title" content="Random Password Generator | Custom Password Options">
+<meta property="og:description" content="Generate random passwords with custom length and character options.">
 <meta property="og:type" content="website">
     <meta property="og:image" content="https://letsrandomize.org/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Random Password Generator — Create Strong Secure Passwords">
+    <meta property="og:image:alt" content="Random Password Generator | Custom Password Options">
 <meta property="og:url" content="https://letsrandomize.org/tools/random-password-generator/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Random Password Generator — Create Strong Secure Passwords">
-<meta name="twitter:description" content="Generate strong, secure random passwords with custom length and character options.">
+<meta name="twitter:title" content="Random Password Generator | Custom Password Options">
+<meta name="twitter:description" content="Generate random passwords with custom length and character options.">
 <meta name="twitter:image" content="https://letsrandomize.org/og-image.png">
 <link rel="stylesheet" href="/assets/css/style.css?v=20260724">
 <script type="application/ld+json">
-[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Password Generator", "url":"https://letsrandomize.org/tools/random-password-generator/", "description":"Generate strong,  secure random passwords with custom options.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author": {"@type": "Person", "name": "Sam Parker", "url": "https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-07-20"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Password Generator", "item":"https://letsrandomize.org/tools/random-password-generator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"How secure are the generated passwords?", "acceptedAnswer":{"@type":"Answer", "text":"Very secure. We use crypto.getRandomValues() for cryptographically secure randomness. The tool generates password strings in your browser and does not intentionally submit those strings to our application servers."}}, {"@type":"Question", "name":"What is a good password length?", "acceptedAnswer":{"@type":"Answer", "text":"Security experts recommend at least 12-16 characters. Longer passwords are exponentially harder to crack. Our generator supports up to 64 characters."}}, {"@type":"Question", "name":"Should I include symbols in my password?", "acceptedAnswer":{"@type":"Answer", "text":"Yes,  when possible. Including symbols alongside uppercase,  lowercase,  and numbers greatly increases password entropy and makes it much harder to crack."}}, {"@type":"Question", "name":"Are my generated passwords stored anywhere?", "acceptedAnswer":{"@type":"Answer", "text":"The tool generates password strings in your browser and does not intentionally submit them to our application servers. The optional history feature stores recent results in your browser's localStorage until you clear them."}}, {"@type":"Question", "name":"Can I generate multiple passwords at once?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the count option to generate up to 10 passwords at once,  all with the same settings."}}]}]
+[{"@context":"https://schema.org", "@type":"SoftwareApplication", "name":"Random Password Generator", "url":"https://letsrandomize.org/tools/random-password-generator/", "description":"Generate random passwords with custom length and character options.", "applicationCategory":"UtilityApplication", "operatingSystem":"Any", "offers":{"@type":"Offer", "price":"0", "priceCurrency":"USD"}, "author": {"@type": "Person", "name": "Sam Parker", "url": "https://letsrandomize.org/about/"}, "datePublished":"2026-02-14", "dateModified":"2026-08-03"}, {"@context":"https://schema.org", "@type":"BreadcrumbList", "itemListElement":[{"@type":"ListItem", "position":1, "name":"Home", "item":"https://letsrandomize.org/"}, {"@type":"ListItem", "position":2, "name":"Tools", "item":"https://letsrandomize.org/tools/"}, {"@type":"ListItem", "position":3, "name":"Random Password Generator", "item":"https://letsrandomize.org/tools/random-password-generator/"}]}, {"@context":"https://schema.org", "@type":"FAQPage", "mainEntity":[{"@type":"Question", "name":"How are generated passwords handled?", "acceptedAnswer":{"@type":"Answer", "text":"The generator creates results in your browser and does not save them in browser storage. Technical request data is still handled by the site's providers as described in the privacy policy."}}, {"@type":"Question", "name":"What is a good password length?", "acceptedAnswer":{"@type":"Answer", "text":"Use a long, unique password. This generator supports 8 to 64 characters, and 16 characters is a practical default when the service allows it."}}, {"@type":"Question", "name":"Should I include symbols in my password?", "acceptedAnswer":{"@type":"Answer", "text":"Use the character types required by the service. A longer, unique password is generally more important than adding complexity a service does not support."}}, {"@type":"Question", "name":"Can I generate multiple passwords at once?", "acceptedAnswer":{"@type":"Answer", "text":"Yes. Use the count option to generate up to 10 passwords at once, all with the same settings."}}]}]
 </script>
 <style>.eeat-byline{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:#666;margin:8px 0 0;flex-wrap:wrap}.eeat-byline .author{font-weight:500;color:#444}.eeat-byline .sep{color:#ccc}</style>
 </head>
@@ -51,8 +51,8 @@
   <div class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/">Tools</a><span>/</span>Password Generator</nav>
     <h1>Random Password Generator</h1>
-    <div class="eeat-byline"><span class="author">Reviewed by Sam Parker</span><span class="sep">|</span><time datetime="2026-03-04">Updated Mar 4, 2026</time></div>
-    <p>Create strong, secure passwords with custom length and character types. Uses cryptographic randomization.</p>
+    <div class="eeat-byline"><span class="author">Reviewed by Sam Parker</span><span class="sep">|</span><time datetime="2026-08-03">Updated Aug 3, 2026</time></div>
+    <p>Generate password strings with custom length and character types.</p>
   </div>
 </section>
 
@@ -90,23 +90,17 @@
         <div class="strength-label" id="strength-label"></div>
         <div class="result-actions">
           <button class="copy-btn" data-copy-target="result-content">Copy All</button>
-          <button class="copy-btn" id="share-btn">Share</button>
         </div>
       </div>
-    </div>
-
-    <div class="history-panel" id="history-panel">
-      <h3>Recent Results <button class="clear-btn">Clear</button></h3>
-      <div class="history-list"></div>
     </div>
 
 
     <div class="how-to">
       <h2>How to Use the Password Generator</h2>
       <div class="steps">
-        <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Set Password Length</h3><p>Use the slider to choose a length between 8 and 64 characters. Longer is more secure.</p></div></div>
-        <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Choose Character Types</h3><p>Toggle uppercase, lowercase, numbers, and symbols. More variety means stronger passwords.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Generate</h3><p>Click the Generate button. The strength indicator shows how secure your password is.</p></div></div>
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Set Password Length</h3><p>Choose a length between 8 and 64 characters. A longer unique password is generally harder to guess.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Choose Character Types</h3><p>Select the character types accepted by the service where you will use the password.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Generate</h3><p>Click Generate. The indicator estimates guess resistance from the selected length and character set.</p></div></div>
         <div class="step"><div class="step-num">4</div><div class="step-content"><h3>Copy & Use</h3><p>Click Copy to save the password to your clipboard, then paste it into your account settings.</p></div></div>
       </div>
     </div>
@@ -115,15 +109,13 @@
     <section class="quick-answer-section">
       <h2>Quick Answer</h2>
       <div class="quick-answer-content">
-        <p>Use this Random Password Generator when you need to create strong, secure passwords for:</p>
+        <p>Use this Random Password Generator to create a unique password for:</p>
         <ul>
           <li><strong>Online accounts</strong> (email, social media, banking)</li>
-          <li><strong>Application credentials</strong> (SSH keys, API tokens, database passwords)</li>
           <li><strong>Wi-Fi networks</strong> and router admin panels</li>
-          <li><strong>Encrypted files</strong> and password-protected documents</li>
-          <li><strong>Two-factor authentication</strong> backup codes</li>
+          <li><strong>Password-protected files</strong> and documents</li>
         </ul>
-        <p><strong>Best practice:</strong> Generate passwords with at least 16 characters including uppercase, lowercase, numbers, and symbols. Never reuse passwords across different services.</p>
+        <p><strong>Best practice:</strong> Use a unique password for every service and save it in a reputable password manager. Use multi-factor authentication when it is available.</p>
       </div>
     </section>
 
@@ -136,16 +128,16 @@
           <p>When signing up for new online services, generate a unique password instead of using common patterns or reusing old passwords.</p>
         </div>
         <div class="use-case">
-          <h3>🔄 Password Rotation</h3>
-          <p>When it's time to update existing passwords (recommended every 90 days for critical accounts), generate fresh secure passwords.</p>
+          <h3>🔄 Password Changes</h3>
+          <p>Change a password after a suspected compromise, a service request, or when account policy requires it. Avoid routine changes that lead to predictable variations.</p>
         </div>
         <div class="use-case">
           <h3>🏢 Team Onboarding</h3>
-          <p>When setting up credentials for new team members, generate secure initial passwords that they can change after first login.</p>
+          <p>When setting up credentials for new team members, generate a unique initial password and require a change after first login.</p>
         </div>
         <div class="use-case">
           <h3>🔧 Development & Testing</h3>
-          <p>When creating test environments, mock databases, or development systems that need secure but disposable credentials.</p>
+          <p>When creating test environments or mock systems that need unique, disposable passwords.</p>
         </div>
       </div>
     </section>
@@ -157,8 +149,8 @@
         <div class="tip">
           <h3>✅ Do</h3>
           <ul>
-            <li>Use at least 16 characters</li>
-            <li>Include all character types</li>
+            <li>Use a length the service allows; 16 characters is a practical default</li>
+            <li>Choose the character types the service accepts</li>
             <li>Use a password manager</li>
             <li>Enable two-factor authentication</li>
             <li>Generate unique passwords for each service</li>
@@ -169,8 +161,8 @@
           <ul>
             <li>Use personal information</li>
             <li>Reuse passwords across sites</li>
-            <li>Use dictionary words</li>
-            <li>Share passwords via email</li>
+            <li>Use personal details or predictable patterns</li>
+            <li>Send passwords through email or chat</li>
             <li>Store passwords in plain text</li>
           </ul>
         </div>
@@ -178,10 +170,9 @@
     </section>
     <section class="faq-section">
       <h2>Frequently Asked Questions</h2>
-      <div class="faq-item"><button class="faq-question">How secure are the generated passwords? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Very secure. We use crypto.getRandomValues() for cryptographically secure randomness. The tool generates password strings in your browser and does not intentionally submit those strings to our application servers.</div></div></div>
-      <div class="faq-item"><button class="faq-question">What is a good password length? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Security experts recommend at least 12-16 characters. Longer passwords are exponentially harder to crack. Our generator supports up to 64 characters.</div></div></div>
-      <div class="faq-item"><button class="faq-question">Should I include symbols in my password? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes, when possible. Including symbols alongside uppercase, lowercase, and numbers greatly increases password entropy and makes it much harder to crack.</div></div></div>
-      <div class="faq-item"><button class="faq-question">Are my generated passwords stored anywhere? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">The tool generates password strings in your browser and does not intentionally submit them to our application servers. The optional history feature stores recent results in your browser's localStorage until you clear them.</div></div></div>
+      <div class="faq-item"><button class="faq-question">How are generated passwords handled? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">The generator creates results in your browser and does not save them in browser storage. Technical request data is still handled by the site's providers as described in the <a href="/privacy/">privacy policy</a>.</div></div></div>
+      <div class="faq-item"><button class="faq-question">What is a good password length? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Use a long, unique password. This generator supports 8 to 64 characters, and 16 characters is a practical default when the service allows it.</div></div></div>
+      <div class="faq-item"><button class="faq-question">Should I include symbols in my password? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Use the character types required by the service. A longer, unique password is generally more important than adding complexity a service does not support.</div></div></div>
       <div class="faq-item"><button class="faq-question">Can I generate multiple passwords at once? <span class="faq-icon">&#9660;</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes! Use the count dropdown to generate up to 10 passwords at once, all with the same settings. Each password is independently generated.</div></div></div>
     </section>
 
@@ -196,9 +187,9 @@
     </section>
 
     <section class="content-section" style="margin-top:2rem;">
-      <h2>How this password generator handles security</h2>
-      <p>Passwords are generated in the browser with <code>crypto.getRandomValues()</code> when available. The generated strings are not sent to a server by this tool. If you use the local history feature, recent generated results are stored only in your browser's localStorage until you clear them.</p>
-      <p>Use this page for creating strong account passwords, temporary credentials, and testing values. For long-term account security, save generated passwords in a reputable password manager and enable two-factor authentication where possible. See the <a href="/methodology/">methodology page</a> for broader randomization notes.</p>
+      <h2>How this password generator handles results</h2>
+      <p>The generator creates results in the browser and displays them only for the current page session. It uses the Web Crypto API when available and a <code>Math.random()</code> fallback in older browser environments. The generator does not save generated passwords in browser storage.</p>
+      <p>For account use, copy a result into a reputable password manager and enable multi-factor authentication where possible. Technical request data is still handled by the site's providers as described in the <a href="/privacy/">privacy policy</a>. See the <a href="/methodology/">methodology page</a> for broader randomization notes.</p>
     </section>
 
     
@@ -215,7 +206,7 @@
     </a>
   </div>
 </section>
-    <div class="author-byline"><div class="author-avatar">SP</div><div>Reviewed by Sam Parker &middot; Updated July 2026</div></div>
+    <div class="author-byline"><div class="author-avatar">SP</div><div>Reviewed by Sam Parker &middot; Updated August 2026</div></div>
   </div>
 </main>
 
@@ -235,6 +226,10 @@
 <script src="/assets/js/app.js?v=20260724"></script>
 <script>
 (function() {
+  try {
+    window.localStorage.removeItem('lr_history__tools_random-password-generator_');
+  } catch (e) {}
+
   var slider = document.getElementById('pwd-length');
   var valLabel = document.getElementById('pwd-length-val');
   var generateBtn = document.getElementById('generate-btn');
@@ -282,16 +277,11 @@
     var s = calcStrength(len, charset);
     strengthFill.style.width = s.pct + '%';
     strengthFill.style.background = s.color;
-    strengthLabel.textContent = 'Strength: ' + s.label;
+    strengthLabel.textContent = 'Estimated strength from selected settings: ' + s.label;
     strengthLabel.className = 'strength-label ' + s.cls;
 
     resultDisplay.style.display = 'block';
     App.flashResult(resultDisplay);
-    App.addToHistory(passwords[0].substring(0, 20) + '... (' + len + ' chars)');
-  });
-
-  document.getElementById('share-btn').addEventListener('click', function() {
-    App.shareResult('Generate secure passwords at LetsRandomize!', 'Password Generator');
   });
 })();
 </script>
