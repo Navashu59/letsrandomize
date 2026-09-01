@@ -11,7 +11,7 @@ These tools are intended for everyday randomization and learning. They are not a
 ## Tools
 
 - [List Randomizer](https://letsrandomize.org/tools/list-randomizer/): Shuffle names, tasks, entries, or any list into random order; pick N items and handle duplicates
-- [Random Team Generator](https://letsrandomize.org/tools/random-team-generator/): Split players into 2-8 fair random teams
+- [Random Team Generator](https://letsrandomize.org/tools/random-team-generator/): Split players, students, or participants into even random teams by team count or people per team
 - [Spin the Wheel](https://letsrandomize.org/tools/spin-the-wheel/): Animated random picker wheel
 - [Random Name Generator](https://letsrandomize.org/tools/random-name-generator/): Generate random first and last names
 - [Random Number Generator](https://letsrandomize.org/tools/random-number-generator/): Generate random numbers in any range with multiple modes
@@ -25,7 +25,7 @@ These tools are intended for everyday randomization and learning. They are not a
 - [Random Picker vs List Randomizer](https://letsrandomize.org/guides/random-picker-vs-list-randomizer/): Choose between one random pick, a full copied order, a wheel draw, or random teams
 - [Random Name Order Generator](https://letsrandomize.org/guides/random-name-order-generator/): Put existing names in random order for turns, presentations, chores, or meetings
 - [List Shuffler vs List Randomizer](https://letsrandomize.org/guides/list-shuffler-vs-list-randomizer/): Choose between a full list shuffle, a picker, or a team generator
-- [Fair Random Selection Methods](https://letsrandomize.org/guides/fair-random-selection-methods/): Understand fair selection methods and their limits
+- [Fair Random Selection Methods](https://letsrandomize.org/guides/fair-random-selection-methods/): Run a clearer casual random draw, document the result, and understand selection limits
 - [How to Create Balanced Teams](https://letsrandomize.org/guides/how-to-create-balanced-teams/): Pick a random, seeded, or skill-balanced team method
 - [Random Team Generator for Classroom](https://letsrandomize.org/guides/random-team-generator-for-classroom/): Create classroom groups while handling absent students, repeat pairings, and constraints
 
